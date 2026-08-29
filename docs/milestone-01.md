@@ -17,11 +17,11 @@ open a window, draw pixels, or introduce a platform dependency.
 
 The prototype provides:
 
-- a small typed expression vocabulary: `text`, `vstack`, and `identified`;
+- a small typed expression vocabulary: `text`, `vstack`, `hstack`,
+  `identified`, and `dynamic_list`;
 - user components expressed as ordinary C++ functions returning expressions;
 - an evaluation context that assigns structural identity paths;
-- `use_state<T>(initial_value)`, returning a handle to storage owned by a
-  persistent runtime;
+- named component-local state through `cx.state<T>("name", initial_value)`;
 - a reconciliation pass that preserves state for equal paths and removes
   state for paths that disappear; and
 - unit tests that exercise the identity and state-lifetime rules.
@@ -50,7 +50,7 @@ struct counter_component {};
 auto counter()
 {
     return stdui::component<counter_component>([](stdui::component_context& cx) {
-        auto count = cx.use_state<int>(0);
+        auto count = cx.state<int>("count", 0);
         return stdui::vstack(
             stdui::text("Count"),
             stdui::text(std::to_string(*count)));
@@ -77,24 +77,22 @@ APIs can be layered on top once the lifetime semantics are proved.
 During evaluation, every expression receives a path from:
 
 1. its structural position in the composition tree; and
-2. an explicit id, when `identified` is used.
+2. an explicit id, when `identified` or `dynamic_list` is used.
 
-State slots are identified by the component path plus the order of each
-`use_state` call within that component evaluation. The call order is a
-deliberate initial restriction, matching the normal rule for declarative
-local-state APIs: state hooks must be called unconditionally and in a stable
-order within a component.
+State slots are identified by the component path, component kind, state type,
+and explicit state name. State names must be unique within one component
+evaluation.
 
 An explicit id replaces the structural segment at its position; it does not
 depend on an address, a lambda instance, or a callback object.
 
 ## Acceptance criteria
 
-1. Re-evaluating an unchanged expression preserves a `use_state` value.
+1. Re-evaluating an unchanged expression preserves a named state value.
 2. Recreating component and callback objects does not change persistent state
    when the component path is unchanged.
 3. Replacing an unidentified sibling changes the affected structural identity.
-4. Explicit ids preserve a dynamic item's state across reordering.
+4. Explicit ids preserve a dynamic list item's state across reordering.
 5. Removing a component releases its local state after reconciliation.
 6. The public expressions remain value types and contain no exposed runtime
    node pointers.

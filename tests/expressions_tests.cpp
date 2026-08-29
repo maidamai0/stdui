@@ -12,6 +12,12 @@ struct row_component {};
 struct alternate_counter_component {};
 struct failing_component {};
 struct dual_counter_component {};
+struct dynamic_item_component {};
+
+struct dynamic_item {
+  std::string id;
+  int initial;
+};
 
 auto incrementing_counter(int initial_value) {
   return stdui::component<counter_component>([=](stdui::component_context &cx) {
@@ -67,6 +73,19 @@ auto duplicate_state_counter() {
     cx.state<int>("same", 0);
     return stdui::text("duplicate");
   });
+}
+
+auto make_dynamic_list(std::vector<dynamic_item> items) {
+  return stdui::dynamic_list(
+      std::move(items), [](dynamic_item const &item) { return item.id; },
+      [](dynamic_item const &item) {
+        return stdui::component<dynamic_item_component>([=](stdui::component_context &cx) {
+          auto count = cx.state<int>("count", item.initial);
+          auto current = *count;
+          *count = current + 1;
+          return stdui::text(item.id + ":" + std::to_string(current));
+        });
+      });
 }
 
 } // namespace
@@ -151,6 +170,26 @@ TEST_CASE("explicit ids preserve component state across reordering") {
   CHECK(first.children[1].content == "20");
   CHECK(reordered.children[0].content == "21");
   CHECK(reordered.children[1].content == "11");
+  CHECK(runtime.state_count() == 2);
+}
+
+TEST_CASE("dynamic list preserves item state across runtime-sized reordering") {
+  stdui::runtime runtime;
+
+  std::vector<dynamic_item> first_items{{"a", 10}, {"b", 20}};
+  auto first = runtime.reconcile(make_dynamic_list(std::move(first_items)));
+
+  std::vector<dynamic_item> second_items{{"b", 200}, {"a", 100}};
+  auto second = runtime.reconcile(make_dynamic_list(std::move(second_items)));
+
+  REQUIRE(first.kind == "dynamic_list");
+  REQUIRE(second.kind == "dynamic_list");
+  REQUIRE(first.children.size() == 2);
+  REQUIRE(second.children.size() == 2);
+  CHECK(first.children[0].content == "a:10");
+  CHECK(first.children[1].content == "b:20");
+  CHECK(second.children[0].content == "b:21");
+  CHECK(second.children[1].content == "a:11");
   CHECK(runtime.state_count() == 2);
 }
 

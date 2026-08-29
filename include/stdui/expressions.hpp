@@ -99,6 +99,27 @@ auto identified(Id &&id, Expression &&expression) {
 }
 
 /**
+ * A runtime-sized list of expressions identified by an id function.
+ *
+ * `IdFn` receives one item and returns an explicit id. `BodyFn` receives one
+ * item and returns another view expression.
+ */
+template <class Range, class IdFn, class BodyFn> struct dynamic_list_expression {
+  using is_stdui_expression = void;
+
+  Range items;
+  IdFn id_fn;
+  BodyFn body_fn;
+};
+
+/// Creates a dynamic list expression with explicit item ids.
+template <class Range, class IdFn, class BodyFn>
+auto dynamic_list(Range &&items, IdFn &&id_fn, BodyFn &&body_fn) {
+  return dynamic_list_expression<std::decay_t<Range>, std::decay_t<IdFn>, std::decay_t<BodyFn>>{
+      std::forward<Range>(items), std::forward<IdFn>(id_fn), std::forward<BodyFn>(body_fn)};
+}
+
+/**
  * A deferred component body plus its nominal component identity.
  *
  * `Kind` is a marker type used as compile-time component identity; it is not

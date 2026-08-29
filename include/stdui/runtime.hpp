@@ -163,6 +163,29 @@ private:
                     context);
   }
 
+  template <class Range, class IdFn, class BodyFn>
+  auto evaluate(dynamic_list_expression<Range, IdFn, BodyFn> const &expression, std::string path,
+                evaluation_context &context) {
+    inspection_node node{"dynamic_list", {}, {}};
+    std::unordered_set<std::string> child_paths;
+
+    for (auto &&item : expression.items) {
+      auto raw_id = std::invoke(expression.id_fn, item);
+      using storage_id_t = typename id_storage<std::decay_t<decltype(raw_id)>>::type;
+      storage_id_t id{raw_id};
+      auto child_path = path + "/" + explicit_id_segment(id);
+
+      if (!child_paths.insert(child_path).second) {
+        throw std::logic_error("duplicate item id");
+      }
+
+      auto child = std::invoke(expression.body_fn, item);
+      node.children.push_back(evaluate(child, std::move(child_path), context));
+    }
+
+    return node;
+  }
+
   template <class Kind, class Body>
   auto evaluate(component_expression<Kind, Body> const &expression, std::string path,
                 evaluation_context &context) {

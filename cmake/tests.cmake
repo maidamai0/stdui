@@ -17,6 +17,13 @@ target_include_directories(stdui_expression_tests PRIVATE ${SOURCE_DIR})
 target_link_libraries(stdui_expression_tests PRIVATE stdui)
 add_test(NAME stdui_expression_tests COMMAND stdui_expression_tests)
 
+add_executable(stdui_geometry_tests
+    ${CMAKE_CURRENT_LIST_DIR}/../tests/geometry_tests.cpp)
+add_dependencies(stdui_geometry_tests doctest)
+target_include_directories(stdui_geometry_tests PRIVATE ${SOURCE_DIR})
+target_link_libraries(stdui_geometry_tests PRIVATE stdui)
+add_test(NAME stdui_geometry_tests COMMAND stdui_geometry_tests)
+
 if(STDUI_ENABLE_COVERAGE)
     if(NOT CMAKE_CXX_COMPILER_ID MATCHES "Clang")
         message(FATAL_ERROR "STDUI_ENABLE_COVERAGE currently requires Clang/llvm-cov")

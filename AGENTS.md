@@ -30,7 +30,8 @@
 - Tests should accompany foundational behavior.
 - Keep platform/rendering dependencies out of the core UI model wherever practical.
 - Code comments describe current code behavior, not roadmap or future plans. Record milestone and future-work notes in `docs/`, never leave them in headers or implementation files.
-- Commit the current changes when the user says "LGTM", "go on", or otherwise approves the modification. Do not commit before such approval.
+- Workflow: make changes, wait for user approval, commit the approved changes, then continue with new uncommitted work. Repeat this loop.
+- One approval authorizes only the changes present when that approval is given. Never use an earlier approval to commit later work.
 
 ## Current status
 

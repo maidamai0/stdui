@@ -30,6 +30,7 @@
 - Tests should accompany foundational behavior.
 - Keep platform/rendering dependencies out of the core UI model wherever practical.
 - Code comments describe current code behavior, not roadmap or future plans. Record milestone and future-work notes in `docs/`, never leave them in headers or implementation files.
+- Commit the current changes when the user says "LGTM", "go on", or otherwise approves the modification. Do not commit before such approval.
 
 ## Current status
 

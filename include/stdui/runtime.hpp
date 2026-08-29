@@ -24,7 +24,8 @@ class runtime;
 struct state_key {
   std::string path;
   std::type_index kind;
-  std::size_t slot;
+  std::type_index state_type;
+  std::string name;
 
   bool operator==(state_key const &) const = default;
 };
@@ -35,7 +36,9 @@ struct state_key_hash {
     auto seed = std::hash<std::string>{}(key.path);
     auto kind_hash = std::hash<std::type_index>{}(key.kind);
     seed ^= kind_hash + 0x9e3779b9U + (seed << 6U) + (seed >> 2U);
-    seed ^= std::hash<std::size_t>{}(key.slot) + 0x9e3779b9U + (seed << 6U) + (seed >> 2U);
+    seed ^=
+        std::hash<std::type_index>{}(key.state_type) + 0x9e3779b9U + (seed << 6U) + (seed >> 2U);
+    seed ^= std::hash<std::string>{}(key.name) + 0x9e3779b9U + (seed << 6U) + (seed >> 2U);
     return seed;
   }
 };
@@ -73,19 +76,19 @@ public:
         context_(context) {}
 
   /**
-   * Obtains or reuses persistent state in component-local call order.
+   * Obtains or reuses a named component-local state object.
    *
-   * `initial_value` is used only when the slot is created. Calls must be
-   * unconditional and in the same order on every evaluation.
+   * The name must be unique within one component evaluation. `T` must be
+   * default-constructible when no initial value is supplied.
    */
-  template <class T> state_handle<T> use_state(T initial_value);
+  template <class T> state_handle<T> state(std::string name, T initial_value = T{});
 
 private:
   runtime &owner_;
   std::string component_path_;
   std::type_index component_kind_;
   evaluation_context &context_;
-  std::size_t next_state_slot_ = 0;
+  std::unordered_set<std::string> state_names_;
 };
 
 /// Owns persistent component state and reconciles expression updates.
@@ -115,8 +118,8 @@ private:
 
   template <class T>
   auto state_at(evaluation_context &context, std::string const &component_path,
-                std::type_index component_kind, std::size_t slot, T initial) {
-    state_key key{component_path, component_kind, slot};
+                std::type_index component_kind, std::string const &name, T initial) {
+    state_key key{component_path, component_kind, typeid(T), name};
     auto &staged = context.staged;
 
     auto it = staged.find(key);
@@ -239,8 +242,11 @@ private:
   state_store committed_state_slots_;
 };
 
-template <class T> state_handle<T> component_context::use_state(T initial_value) {
-  return owner_.state_at(context_, component_path_, component_kind_, next_state_slot_++,
+template <class T> state_handle<T> component_context::state(std::string name, T initial_value) {
+  if (!state_names_.insert(name).second) {
+    throw std::logic_error("duplicate component state name");
+  }
+  return owner_.state_at(context_, component_path_, component_kind_, name,
                          std::move(initial_value));
 }
 

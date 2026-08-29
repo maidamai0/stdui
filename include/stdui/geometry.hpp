@@ -24,6 +24,16 @@ struct rect {
   size extent;
 
   bool operator==(rect const &) const = default;
+
+  [[nodiscard]] bool contains(point const &candidate) const {
+    return candidate.x >= origin.x && candidate.x <= origin.x + extent.width &&
+           candidate.y >= origin.y && candidate.y <= origin.y + extent.height;
+  }
+
+  [[nodiscard]] rect inset(double amount) const {
+    return {{origin.x + amount, origin.y + amount},
+            {extent.width - 2.0 * amount, extent.height - 2.0 * amount}};
+  }
 };
 
 } // namespace stdui

@@ -24,3 +24,18 @@ TEST_CASE("rectangle identity includes origin and extent") {
   CHECK(rectangle == stdui::rect{{10.0, 20.0}, {30.0, 40.0}});
   CHECK(rectangle != stdui::rect{{11.0, 20.0}, {30.0, 40.0}});
 }
+
+TEST_CASE("rectangle containment uses half-open visual bounds") {
+  stdui::rect const rectangle{{0.0, 0.0}, {10.0, 10.0}};
+
+  CHECK(rectangle.contains({0.0, 0.0}));
+  CHECK(rectangle.contains({10.0, 10.0}));
+  CHECK_FALSE(rectangle.contains({-0.1, 0.0}));
+  CHECK_FALSE(rectangle.contains({0.0, 10.1}));
+}
+
+TEST_CASE("rectangle inset reduces extent around its center") {
+  stdui::rect const rectangle{{0.0, 0.0}, {10.0, 8.0}};
+
+  CHECK(rectangle.inset(1.0) == stdui::rect{{1.0, 1.0}, {8.0, 6.0}});
+}

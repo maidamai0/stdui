@@ -29,6 +29,7 @@
 - Avoid unnecessary allocations and runtime polymorphism, but do not sacrifice architectural clarity merely for micro-optimization.
 - Tests should accompany foundational behavior.
 - Keep platform/rendering dependencies out of the core UI model wherever practical.
+- Code comments describe current code behavior, not roadmap or future plans. Record milestone and future-work notes in `docs/`, never leave them in headers or implementation files.
 
 ## Current status
 

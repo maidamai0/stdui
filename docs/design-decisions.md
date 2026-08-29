@@ -98,6 +98,20 @@ Expose a framework-level text abstraction. Use platform text engines where advan
 
 Do not start with a large widget library or elaborate template machinery. Validate foundational concepts with small prototypes and preserve the distinction between decisions, hypotheses, and open questions.
 
+### D014 — First prototype boundary: persistent local state before rendering
+
+**Status:** Decided
+
+The first executable milestone validates typed composition, structural and
+explicit identity, reconciliation, and framework-managed local state in a
+headless test target. It intentionally excludes layout, events, text shaping,
+and rendering. This gives the project direct evidence for the most important
+boundary—recreated expressions versus persistent runtime state—before backend
+and platform choices add noise.
+
+The proposed API and acceptance criteria are recorded in
+`docs/milestone-01.md`.
+
 ## Important consequences
 
 These decisions intentionally imply that the framework is not a traditional retained-mode widget toolkit with a class hierarchy like:

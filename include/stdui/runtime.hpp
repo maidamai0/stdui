@@ -153,6 +153,12 @@ private:
     return evaluate_stack("hstack", expression.children, std::move(path), context);
   }
 
+  template <class... T>
+  auto evaluate(overlay_expression<T...> const &expression, std::string path,
+                evaluation_context &context) {
+    return evaluate_stack("overlay", expression.children, std::move(path), context);
+  }
+
   template <class Id, class Expression>
   auto evaluate(identified_expression<Id, Expression> const &expression, std::string path,
                 evaluation_context &context) {

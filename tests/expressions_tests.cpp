@@ -13,6 +13,7 @@ struct alternate_counter_component {};
 struct failing_component {};
 struct dual_counter_component {};
 struct dynamic_item_component {};
+struct mismatched_state_component {};
 
 struct dynamic_item {
   std::string id;
@@ -156,6 +157,22 @@ TEST_CASE("duplicate state names are rejected within a component") {
   CHECK(runtime.state_count() == 0);
 }
 
+TEST_CASE("state type changes are rejected within one component") {
+  stdui::runtime runtime;
+
+  runtime.reconcile(stdui::component<mismatched_state_component>([](stdui::component_context &cx) {
+    cx.state<int>("value", 0);
+    return stdui::text("int");
+  }));
+
+  CHECK_THROWS_AS(runtime.reconcile(stdui::component<mismatched_state_component>(
+                      [](stdui::component_context &cx) {
+                        cx.state<std::string>("value", "text");
+                        return stdui::text("string");
+                      })),
+                  std::logic_error);
+}
+
 TEST_CASE("explicit ids preserve component state across reordering") {
   stdui::runtime runtime;
 
@@ -191,6 +208,14 @@ TEST_CASE("dynamic list preserves item state across runtime-sized reordering") {
   CHECK(second.children[0].content == "b:21");
   CHECK(second.children[1].content == "a:11");
   CHECK(runtime.state_count() == 2);
+}
+
+TEST_CASE("dynamic list rejects duplicate item ids") {
+  stdui::runtime runtime;
+
+  std::vector<dynamic_item> items{{"same", 1}, {"same", 2}};
+  CHECK_THROWS_AS(runtime.reconcile(make_dynamic_list(std::move(items))), std::logic_error);
+  CHECK(runtime.state_count() == 0);
 }
 
 TEST_CASE("failed reconciliation keeps the previous committed state") {

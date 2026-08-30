@@ -24,7 +24,6 @@ class runtime;
 struct state_key {
   std::string path;
   std::type_index kind;
-  std::type_index state_type;
   std::string name;
 
   bool operator==(state_key const &) const = default;
@@ -36,8 +35,6 @@ struct state_key_hash {
     auto seed = std::hash<std::string>{}(key.path);
     auto kind_hash = std::hash<std::type_index>{}(key.kind);
     seed ^= kind_hash + 0x9e3779b9U + (seed << 6U) + (seed >> 2U);
-    seed ^=
-        std::hash<std::type_index>{}(key.state_type) + 0x9e3779b9U + (seed << 6U) + (seed >> 2U);
     seed ^= std::hash<std::string>{}(key.name) + 0x9e3779b9U + (seed << 6U) + (seed >> 2U);
     return seed;
   }
@@ -119,7 +116,7 @@ private:
   template <class T>
   auto state_at(evaluation_context &context, std::string const &component_path,
                 std::type_index component_kind, std::string const &name, T initial) {
-    state_key key{component_path, component_kind, typeid(T), name};
+    state_key key{component_path, component_kind, name};
     auto &staged = context.staged;
 
     auto it = staged.find(key);

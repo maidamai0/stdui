@@ -20,7 +20,7 @@ jobs:
           sudo ln -s "$LLVM_BIN_DIR/llvm-profdata" /usr/local/bin/llvm-profdata
 
       - name: Configure
-        run: cmake -S . -B build -DBUILD_TESTING=ON -DSTDUI_ENABLE_COVERAGE=ON
+        run: cmake -S . -B build -DCMAKE_CXX_COMPILER=clang++ -DBUILD_TESTING=ON -DSTDUI_ENABLE_COVERAGE=ON
 
       - name: Build
         run: cmake --build build --config Debug

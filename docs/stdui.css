@@ -1,0 +1,71 @@
+:root {
+  --page-background-color: #ffffff;
+  --page-foreground-color: #2b3038;
+  --page-link-color: #176c82;
+  --page-visited-link-color: #175d82;
+
+  --header-background-color: #163b52;
+  --header-foreground-color: #ffffff;
+  --header-separator-color: #2f7f91;
+  --title-background-color: #ffffff;
+  --title-separator-color: #c6d3dc;
+
+  --nav-background-color: #f5f7f8;
+  --nav-foreground-color: #234f62;
+  --nav-border-color: #d8e1e6;
+  --nav-text-normal-color: #34434c;
+  --nav-menu-active-bg: #dce9ed;
+
+  --memdecl-background-color: #f8fafb;
+  --memdecl-border-color: #d8e1e6;
+  --memdef-border-color: #b7cbd2;
+  --memdef-title-background-color: #e8f1f3;
+  --memdef-proto-background-color: #f3f7f8;
+
+  --fragment-background-color: #f8fafb;
+  --fragment-border-color: #d5e0e4;
+
+  --nav-font-size-level1: 13px;
+  --nav-font-size-level2: 11px;
+  --nav-font-size-level3: 10px;
+  --font-family-normal: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Ubuntu, Cantarell, "Noto Sans", sans-serif;
+  --font-family-nav: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Ubuntu, Cantarell, "Noto Sans", sans-serif;
+}
+
+#titlearea {
+  border-bottom: 4px solid #2f7f91;
+}
+
+#projectname {
+  color: #163b52;
+  font-size: 1.35rem;
+  font-weight: 650;
+}
+
+#projectbrief {
+  color: #52656f;
+}
+
+#side-nav {
+  border-right: 1px solid var(--nav-border-color);
+  background: var(--nav-background-color);
+}
+
+#doc-content {
+  max-width: 72rem;
+}
+
+.title {
+  color: #163b52;
+  border-bottom: 1px solid var(--title-separator-color);
+}
+
+.contents a:not(.el) {
+  border-bottom: 1px dotted var(--page-link-color);
+}
+
+.memtitle, .memproto, .memdoc {
+  box-shadow: none;
+}

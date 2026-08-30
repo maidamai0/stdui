@@ -1,0 +1,29 @@
+name: Coverage
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install LLVM tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y llvm
+          LLVM_BIN_DIR=$(find /usr/lib -maxdepth 1 -type d -name 'llvm-*' | sort -V | tail -n 1)/bin
+          sudo ln -s "$LLVM_BIN_DIR/llvm-cov" /usr/local/bin/llvm-cov
+          sudo ln -s "$LLVM_BIN_DIR/llvm-profdata" /usr/local/bin/llvm-profdata
+
+      - name: Configure
+        run: cmake -S . -B build -DBUILD_TESTING=ON -DSTDUI_ENABLE_COVERAGE=ON
+
+      - name: Build
+        run: cmake --build build --config Debug
+
+      - name: Generate coverage
+        run: cmake --build build --target stdui_coverage

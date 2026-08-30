@@ -1,0 +1,7 @@
+<map id="stdui::component_context" name="stdui::component_context">
+<area shape="rect" id="Node000001" title="Runtime services available while evaluating one component body." alt="" coords="48,102,220,128"/>
+<area shape="rect" id="Node000002" href="$classstdui_1_1runtime.html" title="Owns persistent component state and reconciles expression updates." alt="" coords="5,5,106,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="77,41,127,101,121,102,74,45"/>
+<area shape="rect" id="Node000003" href="$structstdui_1_1evaluation__context.html" title="Explicit state staging area for one evaluation." alt="" coords="130,5,296,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="196,42,146,103,143,99,191,44"/>
+</map>

@@ -1,0 +1,34 @@
+<map id="stdui::measure_vstack" name="stdui::measure_vstack">
+<area shape="rect" id="Node000001" title="Measures vertical children and distributes height by flexibility." alt="" coords="5,281,159,307"/>
+<area shape="poly" id="edge21_Node000001_Node000001" title=" " alt="" coords="48,282,42,273,46,263,60,257,82,255,106,257,120,266,115,268,105,262,82,260,61,262,50,267,48,272,54,280"/>
+<area shape="rect" id="Node000002" href="$namespacestdui_1_1detail.html#a34885f527b4f92f9e8e98a389e4eaa6e" title=" " alt="" coords="207,274,353,314"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="158,292,194,293,189,296,160,297"/>
+<area shape="poly" id="edge20_Node000002_Node000002" title=" " alt="" coords="242,273,240,264,246,255,260,249,280,247,301,250,316,258,310,259,300,255,280,252,261,254,250,259,246,265,247,274"/>
+<area shape="rect" id="Node000003" href="$namespacestdui.html#a12b5e2f23c37010d98c2c70f38940671" title="Applies proposal constraints to a size." alt="" coords="428,29,551,55"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="284,272,297,229,320,173,354,115,375,89,399,65,416,57,412,61,403,70,379,92,358,118,325,176,302,231,289,275"/>
+<area shape="rect" id="Node000005" href="$namespacestdui_1_1detail.html#ac21279841ce8188be6580ae4da5bb580" title=" " alt="" coords="426,103,554,144"/>
+<area shape="poly" id="edge6_Node000002_Node000005" title=" " alt="" coords="292,272,335,215,366,183,399,155,414,149,409,152,403,159,369,187,340,218,296,275"/>
+<area shape="rect" id="Node000006" href="$namespacestdui_1_1detail.html#a8a550ca16d49d373a56ecf99b53330ae" title=" " alt="" coords="426,192,554,233"/>
+<area shape="poly" id="edge8_Node000002_Node000006" title=" " alt="" coords="329,271,400,242,419,238,414,240,402,247,332,276"/>
+<area shape="rect" id="Node000007" href="$namespacestdui_1_1detail.html#a7574967968a418a80f729bda63041610" title=" " alt="" coords="401,281,578,307"/>
+<area shape="poly" id="edge10_Node000002_Node000007" title=" " alt="" coords="353,292,388,293,383,295,354,297"/>
+<area shape="rect" id="Node000009" href="$namespacestdui.html#a072d1995896773753468fbd235914909" title="Returns the space&#45;distribution policy of an element." alt="" coords="430,355,550,380"/>
+<area shape="poly" id="edge14_Node000002_Node000009" title=" " alt="" coords="340,312,439,348,434,350,340,318"/>
+<area shape="rect" id="Node000010" href="$namespacestdui_1_1detail.html#afc760d53caf3bb976a31261fb33822ab" title=" " alt="" coords="428,428,552,469"/>
+<area shape="poly" id="edge16_Node000002_Node000010" title=" " alt="" coords="305,312,403,391,444,420,438,420,399,395,304,318"/>
+<area shape="rect" id="Node000011" href="$namespacestdui_1_1detail.html#a0fe8b222b2031aed52efbceeb15880e1" title=" " alt="" coords="428,518,552,558"/>
+<area shape="poly" id="edge18_Node000002_Node000011" title=" " alt="" coords="292,312,335,391,367,436,403,479,439,510,434,509,399,483,362,440,331,393,290,317"/>
+<area shape="poly" id="edge5_Node000003_Node000003" title=" " alt="" coords="454,29,448,21,452,11,466,5,490,3,515,5,530,14,525,15,514,10,490,8,468,10,456,15,453,20,459,29"/>
+<area shape="rect" id="Node000004" href="$namespacestdui.html#a3a14a6fe38bfd045f02687b9a62a45f0" title="Applies one optional bound to a scalar value." alt="" coords="626,29,779,55"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="551,40,613,41,608,43,553,45"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="667,29,660,21,664,11,679,5,703,3,729,5,743,14,738,15,727,10,702,8,680,10,668,15,665,20,672,29"/>
+<area shape="poly" id="edge7_Node000005_Node000005" title=" " alt="" coords="450,102,448,93,454,84,469,79,490,77,512,79,527,87,522,88,511,84,490,82,470,84,458,88,453,94,455,103"/>
+<area shape="poly" id="edge9_Node000006_Node000006" title=" " alt="" coords="450,191,448,183,454,174,469,168,490,166,512,168,528,177,522,177,511,173,490,171,470,173,458,178,453,184,455,193"/>
+<area shape="poly" id="edge11_Node000007_Node000007" title=" " alt="" coords="454,281,448,273,452,263,466,257,490,255,515,257,530,266,525,267,514,262,490,260,468,262,456,267,453,272,459,281"/>
+<area shape="rect" id="Node000008" href="$namespacestdui_1_1detail.html#a2534548232b90fc41129a903d6e69531" title=" " alt="" coords="644,274,761,314"/>
+<area shape="poly" id="edge12_Node000007_Node000008" title=" " alt="" coords="578,292,631,294,626,295,579,297"/>
+<area shape="poly" id="edge13_Node000008_Node000008" title=" " alt="" coords="662,272,660,264,667,255,681,249,703,247,726,250,741,258,736,258,724,255,702,252,682,254,670,259,665,265,667,274"/>
+<area shape="poly" id="edge15_Node000009_Node000009" title=" " alt="" coords="454,354,448,346,452,336,466,330,490,328,515,331,530,340,525,340,514,336,490,333,468,335,456,340,453,345,459,355"/>
+<area shape="poly" id="edge17_Node000010_Node000010" title=" " alt="" coords="450,427,448,419,454,410,469,404,490,402,512,404,528,413,522,413,511,409,490,407,470,409,458,414,453,420,455,429"/>
+<area shape="poly" id="edge19_Node000011_Node000011" title=" " alt="" coords="450,516,448,508,454,499,469,493,490,491,512,494,527,503,522,502,511,499,490,496,470,498,458,503,453,509,455,519"/>
+</map>

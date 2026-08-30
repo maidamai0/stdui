@@ -1,0 +1,21 @@
+<map id="include/stdui/inspection.hpp" name="include/stdui/inspection.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="245,5,427,31"/>
+<area shape="rect" id="Node000002" href="$expressions_8hpp.html" title=" " alt="" coords="206,79,354,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="329,30,301,69,297,65,325,33"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,153,59,178"/>
+<area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="303,33,194,81,67,147,65,143,192,77,307,30"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="477,153,526,178"/>
+<area shape="poly" id="edge9_Node000001_Node000006" title=" " alt="" coords="347,29,379,63,420,103,473,144,468,143,417,107,376,67,345,34"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="430,79,487,105"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="357,29,428,71,422,71,356,34"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="83,153,157,178"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="255,105,162,148,160,143,250,106"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="237,108,74,154,73,149,236,103"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="182,153,269,178"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="273,104,245,142,242,138,269,106"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="318,103,464,151,459,152,317,108"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="294,153,376,178"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="290,102,319,141,314,140,288,107"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="400,153,453,178"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="305,103,391,145,385,145,304,108"/>
+</map>

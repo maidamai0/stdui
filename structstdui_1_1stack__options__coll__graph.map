@@ -1,0 +1,5 @@
+<map id="stdui::stack_options" name="stdui::stack_options">
+<area shape="rect" id="Node000001" title="Complete configuration for a horizontal or vertical stack." alt="" coords="5,102,144,128"/>
+<area shape="rect" id="Node000002" href="$structstdui_1_1edge__insets.html" title="Uniform or directional padding around a layout." alt="" coords="11,5,138,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="77,45,77,102,72,101,72,48"/>
+</map>

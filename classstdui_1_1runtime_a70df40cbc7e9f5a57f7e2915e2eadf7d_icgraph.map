@@ -1,0 +1,13 @@
+<map id="stdui::runtime::remember_child_path" name="stdui::runtime::remember_child_path">
+<area shape="rect" id="Node000001" title=" " alt="" coords="614,47,781,88"/>
+<area shape="rect" id="Node000002" href="$classstdui_1_1runtime.html#ab282b1fb68e499535e4abbec39ab28fd" title=" " alt="" coords="416,47,566,88"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="596,68,567,70,566,65,601,67"/>
+<area shape="rect" id="Node000003" href="$classstdui_1_1runtime.html#aab34f9f8f4c7db3742859e2b151b4d4f" title=" " alt="" coords="211,47,368,88"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="398,68,369,70,368,65,403,67"/>
+<area shape="rect" id="Node000004" href="$classstdui_1_1runtime.html#aa431236a9bf8e5d47728eced9c96e7f5" title=" " alt="" coords="5,5,163,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="193,46,141,34,141,29,198,44"/>
+<area shape="rect" id="Node000005" href="$classstdui_1_1runtime.html#a6f9790af543acb5260e3fd62c0c928a2" title=" " alt="" coords="5,55,163,80"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="193,68,164,70,163,65,198,67"/>
+<area shape="rect" id="Node000006" href="$classstdui_1_1runtime.html#a5d7002120c4278f5301b49eeaf7fe8cf" title=" " alt="" coords="5,104,163,130"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="198,90,141,106,140,101,193,91"/>
+</map>

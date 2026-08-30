@@ -1,0 +1,7 @@
+<map id="stdui::measure_overlay" name="stdui::measure_overlay">
+<area shape="rect" id="Node000001" title="Measures overlapping children as a single composite extent." alt="" coords="195,29,351,55"/>
+<area shape="poly" id="edge3_Node000001_Node000001" title=" " alt="" coords="305,14,295,10,273,8,252,10,241,15,239,20,244,30,240,28,233,21,237,11,251,5,273,3,297,5,311,15"/>
+<area shape="rect" id="Node000002" href="$namespacestdui.html#aab8df1b2a3fb52b92a385eaa8fc98031" title="Measures and arranges children in one overlay pass." alt="" coords="5,29,147,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,42,147,45,147,40,182,42"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="109,15,99,10,76,8,55,10,44,15,42,20,48,29,43,29,37,21,40,11,54,5,76,3,100,5,114,14"/>
+</map>

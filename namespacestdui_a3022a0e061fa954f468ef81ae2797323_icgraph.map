@@ -1,0 +1,8 @@
+<map id="stdui::inset_rect" name="stdui::inset_rect">
+<area shape="rect" id="Node000001" title="Returns a rectangle inset by the supplied padding." alt="" coords="192,31,306,56"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="277,15,268,12,249,9,231,11,221,16,219,21,224,31,219,29,214,22,217,12,229,6,249,4,270,7,282,16"/>
+<area shape="rect" id="Node000002" href="$namespacestdui.html#a3cff7be9f3e0ae889fd0700a292add36" title="Measures and arranges a horizontal stack using complete options." alt="" coords="5,5,144,31"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="174,33,144,31,144,26,179,33"/>
+<area shape="rect" id="Node000003" href="$namespacestdui.html#a164967d03c8432cd82c093bf0e04de54" title="Measures and arranges a vertical stack using complete options." alt="" coords="5,55,144,80"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="173,54,145,61,144,55,179,53"/>
+</map>

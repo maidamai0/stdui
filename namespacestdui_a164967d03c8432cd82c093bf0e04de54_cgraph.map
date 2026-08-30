@@ -1,0 +1,50 @@
+<map id="stdui::layout_vstack" name="stdui::layout_vstack">
+<area shape="rect" id="Node000001" title="Measures and arranges a vertical stack using complete options." alt="" coords="5,256,144,282"/>
+<area shape="rect" id="Node000002" href="$namespacestdui.html#a7d1f13f8976d99a55448ee49d162b1ff" title="Places measured vertical children according to cross&#45;axis alignment." alt="" coords="386,139,533,164"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,254,133,221,191,190,236,176,282,165,373,154,369,157,283,170,237,181,193,195,136,225,94,257"/>
+<area shape="rect" id="Node000003" href="$structstdui_1_1proposal.html#a5e2a2e82a8e215181cce83f6331befab" title=" " alt="" coords="378,195,541,220"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="98,253,141,233,191,217,279,204,365,202,360,205,279,209,192,222,143,238,102,257"/>
+<area shape="rect" id="Node000004" href="$namespacestdui.html#a3022a0e061fa954f468ef81ae2797323" title="Returns a rectangle inset by the supplied padding." alt="" coords="204,381,318,407"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="96,280,230,371,225,374,95,285"/>
+<area shape="rect" id="Node000005" href="$namespacestdui.html#a1e7351d55441d0716eae378570faed7e" title="Measures and arranges children in one vertical stack pass." alt="" coords="192,256,330,282"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="143,266,178,267,174,270,145,271"/>
+<area shape="rect" id="Node000006" href="$namespacestdui.html#a44794fc50535a5fc49d2b0b034d20f93" title="Measures vertical children and distributes height by flexibility." alt="" coords="383,281,536,307"/>
+<area shape="poly" id="edge32_Node000001_Node000006" title=" " alt="" coords="125,280,192,292,282,297,370,298,366,300,282,302,191,297,127,285"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="426,138,420,130,424,120,437,114,460,112,484,115,498,124,493,124,483,120,460,117,439,119,428,124,425,129,431,138"/>
+<area shape="poly" id="edge5_Node000004_Node000004" title=" " alt="" coords="229,381,223,373,227,363,240,357,261,355,283,357,297,366,291,366,282,362,261,360,241,362,231,367,229,372,234,381"/>
+<area shape="poly" id="edge7_Node000005_Node000002" title=" " alt="" coords="275,254,319,218,377,180,405,169,400,172,379,184,322,222,279,258"/>
+<area shape="poly" id="edge8_Node000005_Node000003" title=" " alt="" coords="304,253,403,224,399,227,306,258"/>
+<area shape="poly" id="edge9_Node000005_Node000005" title=" " alt="" coords="229,256,223,247,227,238,240,232,261,229,283,232,297,240,291,241,282,237,261,235,241,237,231,241,229,247,234,256"/>
+<area shape="poly" id="edge10_Node000005_Node000006" title=" " alt="" coords="330,275,370,282,365,283,331,280"/>
+<area shape="poly" id="edge31_Node000006_Node000006" title=" " alt="" coords="426,281,420,273,424,263,437,257,460,255,484,257,498,266,493,267,483,262,460,260,439,262,428,267,425,272,431,281"/>
+<area shape="rect" id="Node000007" href="$namespacestdui_1_1detail.html#a34885f527b4f92f9e8e98a389e4eaa6e" title=" " alt="" coords="589,274,736,314"/>
+<area shape="poly" id="edge11_Node000006_Node000007" title=" " alt="" coords="536,292,576,294,571,295,537,297"/>
+<area shape="poly" id="edge30_Node000007_Node000007" title=" " alt="" coords="624,272,622,264,628,255,642,249,663,247,685,250,699,258,694,258,683,255,662,252,643,254,632,259,627,265,629,274"/>
+<area shape="rect" id="Node000008" href="$namespacestdui.html#a12b5e2f23c37010d98c2c70f38940671" title="Applies proposal constraints to a size." alt="" coords="811,29,934,55"/>
+<area shape="poly" id="edge12_Node000007_Node000008" title=" " alt="" coords="667,272,680,229,703,173,736,115,758,89,782,65,794,61,798,58,785,70,762,92,741,118,707,176,685,231,671,275"/>
+<area shape="rect" id="Node000010" href="$namespacestdui_1_1detail.html#ac21279841ce8188be6580ae4da5bb580" title=" " alt="" coords="808,103,936,144"/>
+<area shape="poly" id="edge16_Node000007_Node000010" title=" " alt="" coords="675,272,718,215,748,183,782,155,792,152,796,149,785,159,752,187,722,218,679,276"/>
+<area shape="rect" id="Node000011" href="$namespacestdui_1_1detail.html#a8a550ca16d49d373a56ecf99b53330ae" title=" " alt="" coords="808,192,936,233"/>
+<area shape="poly" id="edge18_Node000007_Node000011" title=" " alt="" coords="712,271,783,242,802,238,797,240,785,247,714,276"/>
+<area shape="rect" id="Node000012" href="$namespacestdui_1_1detail.html#a7574967968a418a80f729bda63041610" title=" " alt="" coords="784,281,961,307"/>
+<area shape="poly" id="edge20_Node000007_Node000012" title=" " alt="" coords="736,292,771,294,765,295,737,297"/>
+<area shape="rect" id="Node000014" href="$namespacestdui.html#a072d1995896773753468fbd235914909" title="Returns the space&#45;distribution policy of an element." alt="" coords="812,355,932,380"/>
+<area shape="poly" id="edge24_Node000007_Node000014" title=" " alt="" coords="723,312,821,349,816,349,722,318"/>
+<area shape="rect" id="Node000015" href="$namespacestdui_1_1detail.html#afc760d53caf3bb976a31261fb33822ab" title=" " alt="" coords="810,428,934,469"/>
+<area shape="poly" id="edge26_Node000007_Node000015" title=" " alt="" coords="688,313,785,391,826,420,821,419,782,395,687,318"/>
+<area shape="rect" id="Node000016" href="$namespacestdui_1_1detail.html#a0fe8b222b2031aed52efbceeb15880e1" title=" " alt="" coords="810,518,934,558"/>
+<area shape="poly" id="edge28_Node000007_Node000016" title=" " alt="" coords="675,312,718,391,749,436,786,479,822,510,817,509,782,483,745,440,714,393,672,317"/>
+<area shape="poly" id="edge15_Node000008_Node000008" title=" " alt="" coords="837,28,830,21,835,11,849,5,872,3,898,5,913,14,907,15,897,10,872,8,850,10,838,15,836,20,842,29"/>
+<area shape="rect" id="Node000009" href="$namespacestdui.html#a3a14a6fe38bfd045f02687b9a62a45f0" title="Applies one optional bound to a scalar value." alt="" coords="1009,29,1161,55"/>
+<area shape="poly" id="edge13_Node000008_Node000009" title=" " alt="" coords="934,40,996,41,991,43,935,45"/>
+<area shape="poly" id="edge14_Node000009_Node000009" title=" " alt="" coords="1049,28,1043,21,1047,11,1061,5,1085,3,1111,5,1126,15,1121,15,1110,10,1085,8,1063,10,1051,15,1048,20,1054,30"/>
+<area shape="poly" id="edge17_Node000010_Node000010" title=" " alt="" coords="833,101,831,93,837,84,851,79,872,77,895,79,910,87,905,88,894,84,872,82,852,84,840,88,836,94,838,104"/>
+<area shape="poly" id="edge19_Node000011_Node000011" title=" " alt="" coords="833,191,831,183,837,174,851,168,872,166,895,168,910,177,905,177,894,173,872,171,852,173,840,178,836,184,838,193"/>
+<area shape="poly" id="edge21_Node000012_Node000012" title=" " alt="" coords="837,280,830,273,835,263,849,257,872,255,898,257,913,267,907,266,897,262,872,260,850,262,838,267,836,272,842,282"/>
+<area shape="rect" id="Node000013" href="$namespacestdui_1_1detail.html#a2534548232b90fc41129a903d6e69531" title=" " alt="" coords="1026,274,1144,314"/>
+<area shape="poly" id="edge22_Node000012_Node000013" title=" " alt="" coords="961,292,1014,294,1009,295,962,297"/>
+<area shape="poly" id="edge23_Node000013_Node000013" title=" " alt="" coords="1045,272,1043,264,1049,255,1064,249,1085,247,1108,250,1124,258,1118,258,1107,255,1085,252,1065,254,1053,259,1048,265,1050,275"/>
+<area shape="poly" id="edge25_Node000014_Node000014" title=" " alt="" coords="837,353,830,346,835,336,849,330,872,328,898,331,913,340,907,340,897,336,872,333,850,335,838,340,836,345,842,355"/>
+<area shape="poly" id="edge27_Node000015_Node000015" title=" " alt="" coords="833,426,831,419,837,410,851,404,872,402,895,404,910,413,905,413,894,409,872,407,852,409,840,414,836,420,837,429"/>
+<area shape="poly" id="edge29_Node000016_Node000016" title=" " alt="" coords="833,516,831,508,837,499,851,493,872,491,895,494,910,503,905,502,894,499,872,496,852,498,840,503,836,509,837,519"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="stdui::arrange_overlay" name="stdui::arrange_overlay">
+<area shape="rect" id="Node000001" title="Places measured children within the same bounds." alt="" coords="195,29,344,55"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="301,14,292,10,269,8,249,10,238,15,236,20,242,30,237,28,231,21,234,11,248,5,269,3,293,5,307,15"/>
+<area shape="rect" id="Node000002" href="$namespacestdui.html#aab8df1b2a3fb52b92a385eaa8fc98031" title="Measures and arranges children in one overlay pass." alt="" coords="5,29,147,55"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="177,42,147,45,147,40,182,42"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="108,15,98,10,76,8,56,10,45,15,43,20,48,29,43,29,37,21,41,11,54,5,76,3,100,5,113,14"/>
+</map>

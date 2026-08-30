@@ -1,0 +1,11 @@
+<map id="include/stdui/geometry.hpp" name="include/stdui/geometry.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="92,5,268,31"/>
+<area shape="rect" id="Node000002" href="$grid_8hpp.html" title=" " alt="" coords="5,153,150,178"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,40,112,58,92,80,84,98,80,118,79,153,74,151,74,117,79,97,87,78,109,54,138,37"/>
+<area shape="rect" id="Node000003" href="$layout_8hpp.html" title=" " alt="" coords="101,79,259,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="182,44,183,80,178,77,179,49"/>
+<area shape="rect" id="Node000004" href="$overlay_8hpp.html" title=" " alt="" coords="200,153,363,178"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="225,36,252,54,273,78,281,97,285,117,285,154,281,151,280,118,276,98,269,80,248,58,224,41"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="153,113,96,154,94,150,148,114"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="211,111,267,152,262,152,209,117"/>
+</map>

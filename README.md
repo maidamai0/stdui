@@ -2,8 +2,9 @@
 
 `stdui` is an experimental modern declarative UI framework for C++.
 
-[![CI](https://img.shields.io/github/actions/workflow/status/maidamai0/stdui/ci.yml?branch=main&label=CI)](https://github.com/maidamai0/stdui/actions/workflows/ci.yml)
-[![Coverage](https://img.shields.io/github/actions/workflow/status/maidamai0/stdui/coverage.yml?branch=main&label=coverage)](https://github.com/maidamai0/stdui/actions/workflows/coverage.yml)
+[![CI](https://github.com/maidamai0/stdui/actions/workflows/ci.yml/badge.svg)](https://github.com/maidamai0/stdui/actions/workflows/ci.yml)
+[![Coverage](https://github.com/maidamai0/stdui/actions/workflows/coverage.yml/badge.svg)](https://github.com/maidamai0/stdui/actions/workflows/coverage.yml)
+[![Docs](https://github.com/maidamai0/stdui/actions/workflows/docs.yml/badge.svg)](https://github.com/maidamai0/stdui/actions/workflows/docs.yml)
 
 > **Warning:** `stdui` is under heavy development and is not ready for production
 > use. The public API and behavior may change without notice.

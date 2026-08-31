@@ -16,7 +16,7 @@ TEST_CASE("layout tree materializes and measures nested stacks") {
       stdui::vstack(stdui::text("AB"), stdui::hstack(stdui::text("C"), stdui::text("DE"))));
   auto tree = stdui::materialize_layout(snapshot, measured_text);
 
-  CHECK(tree.kind == "vstack");
+  CHECK(tree.kind == stdui::layout_kind::vstack);
   CHECK(tree.measure(stdui::proposal::unbounded()) == stdui::size{24.0, 32.0});
 }
 
@@ -40,6 +40,6 @@ TEST_CASE("layout tree materializes overlay nodes") {
   auto snapshot = stdui::inspect(stdui::overlay(stdui::text("A"), stdui::text("BB")));
   auto tree = stdui::materialize_layout(snapshot, measured_text);
 
-  CHECK(tree.kind == "overlay");
+  CHECK(tree.kind == stdui::layout_kind::overlay);
   CHECK(tree.measure(stdui::proposal::unbounded()) == stdui::size{16.0, 16.0});
 }

@@ -32,6 +32,8 @@
 - Code comments describe current code behavior, not roadmap or future plans. Record milestone and future-work notes in `docs/`, never leave them in headers or implementation files.
 - Workflow: make changes, wait for user approval, commit the approved changes, then continue with new uncommitted work. Repeat this loop.
 - One approval authorizes only the changes present when that approval is given. Never use an earlier approval to commit later work.
+- Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
+- Pull request titles use a conventional commit prefix because pull requests are squash-merged.
 
 ## Current status
 

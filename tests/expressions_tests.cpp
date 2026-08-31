@@ -104,6 +104,17 @@ TEST_CASE("headless inspection preserves composed child order") {
   CHECK(tree.children[1].children[1].content == "Ada Yoon");
 }
 
+TEST_CASE("headless inspection preserves overlay child order") {
+  auto tree = stdui::inspect(
+      stdui::overlay(stdui::text("Back"), stdui::vstack(stdui::text("Front"), stdui::text("Top"))));
+
+  REQUIRE(tree.kind == "overlay");
+  REQUIRE(tree.children.size() == 2);
+  CHECK(tree.children[0].content == "Back");
+  CHECK(tree.children[1].kind == "vstack");
+  CHECK(tree.children[1].children[1].content == "Top");
+}
+
 TEST_CASE("runtime preserves local state for unchanged component identity") {
   stdui::runtime runtime;
 

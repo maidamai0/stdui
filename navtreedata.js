@@ -56,9 +56,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"structstdui_1_1id__storage_3_01std_1_1string__view_01_4.html"
+"structstdui_1_1dynamic__list__expression.html#a13da36d2b714232907f8874d1ea082d5"
 ];
 
-const SYNCONMSG = 'click to disable panel synchronization';
-const SYNCOFFMSG = 'click to enable panel synchronization';
-const LISTOFALLMEMBERS = 'List of all members';
+var SYNCONMSG = 'click to disable panel synchronisation';
+var SYNCOFFMSG = 'click to enable panel synchronisation';

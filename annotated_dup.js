@@ -3,8 +3,8 @@ var annotated_dup =
     [ "stdui", "namespacestdui.html", [
       [ "detail", "namespacestdui_1_1detail.html", [
         [ "stack_traits", "structstdui_1_1detail_1_1stack__traits.html", null ],
-        [ "stack_traits&lt; stack_axis::horizontal &gt;", "structstdui_1_1detail_1_1stack__traits_3_01stack__axis_1_1horizontal_01_4.html", "structstdui_1_1detail_1_1stack__traits_3_01stack__axis_1_1horizontal_01_4" ],
-        [ "stack_traits&lt; stack_axis::vertical &gt;", "structstdui_1_1detail_1_1stack__traits_3_01stack__axis_1_1vertical_01_4.html", "structstdui_1_1detail_1_1stack__traits_3_01stack__axis_1_1vertical_01_4" ]
+        [ "stack_traits< stack_axis::horizontal >", "structstdui_1_1detail_1_1stack__traits_3_01stack__axis_1_1horizontal_01_4.html", "structstdui_1_1detail_1_1stack__traits_3_01stack__axis_1_1horizontal_01_4" ],
+        [ "stack_traits< stack_axis::vertical >", "structstdui_1_1detail_1_1stack__traits_3_01stack__axis_1_1vertical_01_4.html", "structstdui_1_1detail_1_1stack__traits_3_01stack__axis_1_1vertical_01_4" ]
       ] ],
       [ "arranged_layout", "structstdui_1_1arranged__layout.html", "structstdui_1_1arranged__layout" ],
       [ "component_context", "classstdui_1_1component__context.html", "classstdui_1_1component__context" ],
@@ -16,7 +16,7 @@ var annotated_dup =
       [ "grid_options", "structstdui_1_1grid__options.html", "structstdui_1_1grid__options" ],
       [ "hstack_expression", "structstdui_1_1hstack__expression.html", "structstdui_1_1hstack__expression" ],
       [ "id_storage", "structstdui_1_1id__storage.html", "structstdui_1_1id__storage" ],
-      [ "id_storage&lt; std::string_view &gt;", "structstdui_1_1id__storage_3_01std_1_1string__view_01_4.html", "structstdui_1_1id__storage_3_01std_1_1string__view_01_4" ],
+      [ "id_storage< std::string_view >", "structstdui_1_1id__storage_3_01std_1_1string__view_01_4.html", "structstdui_1_1id__storage_3_01std_1_1string__view_01_4" ],
       [ "identified_expression", "structstdui_1_1identified__expression.html", "structstdui_1_1identified__expression" ],
       [ "inspection_node", "structstdui_1_1inspection__node.html", "structstdui_1_1inspection__node" ],
       [ "layout_result", "structstdui_1_1layout__result.html", "structstdui_1_1layout__result" ],

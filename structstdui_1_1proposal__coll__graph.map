@@ -1,5 +1,5 @@
 <map id="stdui::proposal" name="stdui::proposal">
-<area shape="rect" id="Node000001" title="Proposal containing one constraint per axis." alt="" coords="25,122,131,148"/>
-<area shape="rect" id="Node000002" href="$structstdui_1_1size__constraint.html" title="Optional minimum and maximum bound for one logical axis." alt="" coords="5,5,151,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="80,45,81,122,75,121,76,48"/>
+<area shape="rect" id="Node000001" title="Proposal containing one constraint per axis." alt="" coords="26,108,145,133"/>
+<area shape="rect" id="Node000002" href="$structstdui_1_1size__constraint.html" title="Optional minimum and maximum bound for one logical axis." alt="" coords="5,5,165,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,45,88,108,83,108,83,45"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="stdui::component_expression&lt; Kind, Body &gt;" name="stdui::component_expression&lt; Kind, Body &gt;">
-<area shape="rect" id="Node000001" title="A deferred component body plus its nominal component identity." alt="" coords="5,102,197,143"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="75,5,127,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,45,104,102,98,101,99,48"/>
+<area shape="rect" id="Node000001" title="A deferred component body plus its nominal component identity." alt="" coords="5,93,219,133"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="85,5,139,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,44,115,93,109,93,109,44"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="stdui::layout_result" name="stdui::layout_result">
-<area shape="rect" id="Node000001" title="Result of measuring a stack and its children." alt="" coords="5,102,137,128"/>
-<area shape="rect" id="Node000002" href="$structstdui_1_1size.html" title="Logical two&#45;dimensional size in device&#45;independent units." alt="" coords="30,5,112,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,45,74,102,68,101,69,48"/>
+<area shape="rect" id="Node000001" title="Result of measuring a stack and its children." alt="" coords="5,93,152,119"/>
+<area shape="rect" id="Node000002" href="$structstdui_1_1size.html" title="Logical two&#45;dimensional size in device&#45;independent units." alt="" coords="35,5,123,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,45,81,93,76,93,76,45"/>
 </map>

@@ -10,8 +10,8 @@ var indexSectionsWithContent =
   7: "ls",
   8: "cehlrsv",
   9: "c",
-  10: "as",
-  11: "celv"
+  10: "s",
+  11: "s"
 };
 
 var indexSectionNames =

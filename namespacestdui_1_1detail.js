@@ -1,8 +1,8 @@
 var namespacestdui_1_1detail =
 [
     [ "stack_traits", "structstdui_1_1detail_1_1stack__traits.html", null ],
-    [ "stack_traits&lt; stack_axis::horizontal &gt;", "structstdui_1_1detail_1_1stack__traits_3_01stack__axis_1_1horizontal_01_4.html", "structstdui_1_1detail_1_1stack__traits_3_01stack__axis_1_1horizontal_01_4" ],
-    [ "stack_traits&lt; stack_axis::vertical &gt;", "structstdui_1_1detail_1_1stack__traits_3_01stack__axis_1_1vertical_01_4.html", "structstdui_1_1detail_1_1stack__traits_3_01stack__axis_1_1vertical_01_4" ],
+    [ "stack_traits< stack_axis::horizontal >", "structstdui_1_1detail_1_1stack__traits_3_01stack__axis_1_1horizontal_01_4.html", "structstdui_1_1detail_1_1stack__traits_3_01stack__axis_1_1horizontal_01_4" ],
+    [ "stack_traits< stack_axis::vertical >", "structstdui_1_1detail_1_1stack__traits_3_01stack__axis_1_1vertical_01_4.html", "structstdui_1_1detail_1_1stack__traits_3_01stack__axis_1_1vertical_01_4" ],
     [ "stack_axis", "namespacestdui_1_1detail.html#a2c656a5144593849ec8c745e0ccc3819", [
       [ "horizontal", "namespacestdui_1_1detail.html#a2c656a5144593849ec8c745e0ccc3819a4505cad087312551a6fbbe6ebe163e0f", null ],
       [ "vertical", "namespacestdui_1_1detail.html#a2c656a5144593849ec8c745e0ccc3819ae6dec152d6a941fccb0a5e8cc2579cc3", null ]

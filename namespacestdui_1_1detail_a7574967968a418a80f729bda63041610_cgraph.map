@@ -1,7 +1,5 @@
 <map id="stdui::detail::distribute_flex" name="stdui::detail::distribute_flex">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,37,183,62"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="61,36,55,28,59,18,72,12,94,10,118,13,132,22,126,22,116,18,94,15,73,17,63,22,60,28,66,37"/>
-<area shape="rect" id="Node000002" href="$namespacestdui_1_1detail.html#a2534548232b90fc41129a903d6e69531" title=" " alt="" coords="231,29,348,70"/>
-<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="183,47,217,49,212,50,183,52"/>
-<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="252,27,250,19,256,10,270,5,289,3,311,5,325,14,319,13,309,10,289,8,271,10,260,15,256,20,257,30"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,13,205,38"/>
+<area shape="rect" id="Node000002" href="$namespacestdui_1_1detail.html#a2534548232b90fc41129a903d6e69531" title=" " alt="" coords="253,5,384,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="206,23,239,23,239,28,206,28"/>
 </map>

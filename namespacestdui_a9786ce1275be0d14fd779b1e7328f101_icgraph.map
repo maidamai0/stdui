@@ -1,6 +1,0 @@
-<map id="stdui::layout_hstack" name="stdui::layout_hstack">
-<area shape="rect" id="Node000001" title="Measures and arranges children in one horizontal stack pass." alt="" coords="192,29,330,55"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="291,14,282,10,261,8,241,10,231,15,229,20,234,30,229,28,223,21,227,11,240,5,261,3,283,5,297,15"/>
-<area shape="rect" id="Node000002" href="$namespacestdui.html#a3cff7be9f3e0ae889fd0700a292add36" title="Measures and arranges a horizontal stack using complete options." alt="" coords="5,29,144,55"/>
-<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="173,42,144,45,144,40,178,42"/>
-</map>

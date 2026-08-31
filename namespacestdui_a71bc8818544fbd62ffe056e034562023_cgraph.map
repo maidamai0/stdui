@@ -1,10 +1,7 @@
 <map id="stdui::measure_overlay" name="stdui::measure_overlay">
-<area shape="rect" id="Node000001" title="Measures overlapping children as a single composite extent." alt="" coords="5,29,162,55"/>
-<area shape="poly" id="edge5_Node000001_Node000001" title=" " alt="" coords="51,29,46,21,49,11,62,5,84,3,106,5,120,14,114,14,105,10,83,8,64,10,53,15,51,20,57,29"/>
-<area shape="rect" id="Node000002" href="$namespacestdui.html#a12b5e2f23c37010d98c2c70f38940671" title="Applies proposal constraints to a size." alt="" coords="210,29,333,55"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="162,40,197,42,191,42,162,45"/>
-<area shape="poly" id="edge4_Node000002_Node000002" title=" " alt="" coords="240,28,234,21,238,11,250,5,271,3,294,5,307,15,302,14,292,10,271,8,252,10,242,15,239,20,245,30"/>
-<area shape="rect" id="Node000003" href="$namespacestdui.html#a3a14a6fe38bfd045f02687b9a62a45f0" title="Applies one optional bound to a scalar value." alt="" coords="381,29,533,55"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="334,40,368,42,363,42,334,45"/>
-<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="426,28,420,21,423,11,436,5,457,3,480,5,493,15,488,14,478,10,457,8,438,10,427,15,425,20,430,30"/>
+<area shape="rect" id="Node000001" title="Measures overlapping children as a single composite extent." alt="" coords="5,5,180,31"/>
+<area shape="rect" id="Node000002" href="$namespacestdui.html#a12b5e2f23c37010d98c2c70f38940671" title="Applies proposal constraints to a size." alt="" coords="228,5,363,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,15,214,15,214,21,181,21"/>
+<area shape="rect" id="Node000003" href="$namespacestdui.html#a3a14a6fe38bfd045f02687b9a62a45f0" title="Applies one optional bound to a scalar value." alt="" coords="411,5,581,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="363,15,397,15,397,21,363,21"/>
 </map>

@@ -1,10 +1,9 @@
 <map id="stdui::inspect" name="stdui::inspect">
-<area shape="rect" id="Node000001" title="Converts text into its inspection representation." alt="" coords="153,55,252,80"/>
-<area shape="poly" id="edge3_Node000001_Node000001" title=" " alt="" coords="226,39,219,36,202,33,187,35,179,40,177,46,182,55,177,54,172,46,175,37,185,30,202,28,220,31,231,40"/>
-<area shape="rect" id="Node000002" href="$namespacestdui.html#aa46ced31cc50bf07c3d64f6b6b6a2095" title="Converts a horizontal stack and its children into an inspection tree." alt="" coords="5,5,105,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,50,96,34,96,29,149,48"/>
-<area shape="rect" id="Node000003" href="$namespacestdui.html#a79e22c78255d62267f52251d74e7caeb" title="Converts an overlay and its children into an inspection tree." alt="" coords="5,55,105,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="134,68,106,70,105,65,139,67"/>
-<area shape="rect" id="Node000004" href="$namespacestdui.html#a27ad77096487ab6a7ad6716fd627cd6e" title="Converts a vertical stack and its children into an inspection tree." alt="" coords="5,104,105,130"/>
-<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="150,85,97,106,95,101,144,87"/>
+<area shape="rect" id="Node000001" title="Converts text into its inspection representation." alt="" coords="163,55,272,80"/>
+<area shape="rect" id="Node000002" href="$namespacestdui.html#aa46ced31cc50bf07c3d64f6b6b6a2095" title="Converts a horizontal stack and its children into an inspection tree." alt="" coords="5,5,115,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,53,101,33,102,28,164,48"/>
+<area shape="rect" id="Node000003" href="$namespacestdui.html#a79e22c78255d62267f52251d74e7caeb" title="Converts an overlay and its children into an inspection tree." alt="" coords="5,55,115,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="149,70,115,70,115,65,149,65"/>
+<area shape="rect" id="Node000004" href="$namespacestdui.html#a27ad77096487ab6a7ad6716fd627cd6e" title="Converts a vertical stack and its children into an inspection tree." alt="" coords="5,104,115,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="164,87,102,106,101,101,163,82"/>
 </map>

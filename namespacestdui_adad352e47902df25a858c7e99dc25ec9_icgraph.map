@@ -1,10 +1,7 @@
 <map id="stdui::arrange_hstack" name="stdui::arrange_hstack">
-<area shape="rect" id="Node000001" title="Places measured horizontal children according to direction and alignment." alt="" coords="378,55,524,80"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="482,39,473,36,451,33,431,35,421,40,418,45,424,55,419,53,413,46,417,36,430,30,451,28,474,31,488,40"/>
-<area shape="rect" id="Node000002" href="$namespacestdui.html#a9786ce1275be0d14fd779b1e7328f101" title="Measures and arranges children in one horizontal stack pass." alt="" coords="192,29,330,55"/>
-<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="360,56,330,54,331,49,365,56"/>
-<area shape="rect" id="Node000003" href="$namespacestdui.html#a3cff7be9f3e0ae889fd0700a292add36" title="Measures and arranges a horizontal stack using complete options." alt="" coords="5,55,144,80"/>
-<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="362,70,144,70,144,65,363,65"/>
-<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="291,14,282,10,261,8,241,10,231,15,229,20,234,30,229,28,223,21,227,11,240,5,261,3,283,5,297,14"/>
-<area shape="poly" id="edge4_Node000002_Node000003" title=" " alt="" coords="174,54,145,61,144,55,179,53"/>
+<area shape="rect" id="Node000001" title="Places measured horizontal children according to direction and alignment." alt="" coords="207,31,369,56"/>
+<area shape="rect" id="Node000002" href="$namespacestdui.html#a9786ce1275be0d14fd779b1e7328f101" title="Measures and arranges children in one horizontal stack pass." alt="" coords="5,5,159,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="193,34,159,30,159,25,193,29"/>
+<area shape="rect" id="Node000003" href="$namespacestdui.html#a3cff7be9f3e0ae889fd0700a292add36" title="Measures and arranges a horizontal stack using complete options." alt="" coords="5,55,159,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="193,57,159,61,159,56,193,52"/>
 </map>

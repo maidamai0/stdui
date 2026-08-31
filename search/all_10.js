@@ -13,13 +13,17 @@ var searchData=
   ['state_10',['state',['../classstdui_1_1component__context.html#a438b73990881efbe084bab06c66fc0bf',1,'stdui::component_context']]],
   ['state_5fat_11',['state_at',['../classstdui_1_1runtime.html#a7e3abaeb7abf1bf2fc6bb9ef10a12cc0',1,'stdui::runtime']]],
   ['state_5fcount_12',['state_count',['../classstdui_1_1runtime.html#aa1339bf6fbb68e66c073f67260b025e8',1,'stdui::runtime']]],
-  ['state_5fhandle_13',['state_handle',['../classstdui_1_1state__handle.html',1,'stdui::state_handle&lt; T &gt;'],['../classstdui_1_1state__handle.html#a3cb160f70b9afbd1511646ab72e6ed55',1,'stdui::state_handle::state_handle()']]],
+  ['state_5fhandle_13',['state_handle',['../classstdui_1_1state__handle.html#a3cb160f70b9afbd1511646ab72e6ed55',1,'stdui::state_handle::state_handle()'],['../classstdui_1_1state__handle.html',1,'stdui::state_handle&lt; T &gt;']]],
   ['state_5fkey_14',['state_key',['../structstdui_1_1state__key.html',1,'stdui']]],
   ['state_5fkey_5fhash_15',['state_key_hash',['../structstdui_1_1state__key__hash.html',1,'stdui']]],
   ['state_5fnames_5f_16',['state_names_',['../classstdui_1_1component__context.html#aa3db2219f300c31bf76c460475838ac0',1,'stdui::component_context']]],
-  ['state_5fstore_17',['state_store',['../namespacestdui.html#ae91f04f9866e7b575c82625651596170',1,'stdui']]],
-  ['stdui_18',['stdui',['../namespacestdui.html',1,'stdui'],['../index.html',1,'stdui']]],
-  ['stdui_3a_3adetail_19',['detail',['../namespacestdui_1_1detail.html',1,'stdui']]],
-  ['storage_5fid_5ft_20',['storage_id_t',['../structstdui_1_1identified__expression.html#ad14734e6151fb870f7b4c687b6cd96ae',1,'stdui::identified_expression']]],
-  ['stretch_21',['stretch',['../namespacestdui.html#a7526688f87a6f52cb6e3fe5a60d0f046a7e84944493e379c33782eb1c9ecb82c3',1,'stdui']]]
+  ['state_5fstore_17',['state_store',['../namespacestdui.html#aa625fcaa39405babe0c329596b720911',1,'stdui']]],
+  ['stdui_18',['stdui',['../index.html',1,'stdui'],['../namespacestdui.html',1,'stdui']]],
+  ['stdui_3a_3acomponent_5fbody_19',['component_body',['../conceptstdui_1_1component__body.html',1,'stdui']]],
+  ['stdui_3a_3adetail_20',['detail',['../namespacestdui_1_1detail.html',1,'stdui']]],
+  ['stdui_3a_3aexplicit_5fid_21',['explicit_id',['../conceptstdui_1_1explicit__id.html',1,'stdui']]],
+  ['stdui_3a_3alayout_5felement_22',['layout_element',['../conceptstdui_1_1layout__element.html',1,'stdui']]],
+  ['stdui_3a_3aview_5fexpression_23',['view_expression',['../conceptstdui_1_1view__expression.html',1,'stdui']]],
+  ['storage_5fid_5ft_24',['storage_id_t',['../structstdui_1_1identified__expression.html#ab4d32cc2a58e0502575db091467d67e0',1,'stdui::identified_expression']]],
+  ['stretch_25',['stretch',['../namespacestdui.html#a7526688f87a6f52cb6e3fe5a60d0f046a7e84944493e379c33782eb1c9ecb82c3',1,'stdui']]]
 ];

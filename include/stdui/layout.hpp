@@ -295,6 +295,8 @@ inline auto arrange_hstack(std::span<size const> child_sizes, rect const &bounds
 
     if (direction == layout_direction::left_to_right) {
       x += child_size.width + spacing;
+    } else {
+      x -= spacing;
     }
   }
 

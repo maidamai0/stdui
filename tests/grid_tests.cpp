@@ -90,3 +90,17 @@ TEST_CASE("combined grid layout measures and arranges") {
   CHECK(result.frames[1] == stdui::rect{{8.0, 0.0}, {4.0, 5.0}});
   CHECK(result.frames[2] == stdui::rect{{0.0, 6.0}, {6.0, 7.0}});
 }
+
+TEST_CASE("zero-column grid returns an empty layout") {
+  std::vector<grid_box> children{
+      {{2.0, 3.0}},
+  };
+  stdui::grid_options options{
+      .columns = 0,
+  };
+
+  auto result = stdui::layout_grid(children, {{0.0, 0.0}, {10.0, 10.0}}, options);
+
+  CHECK(result.measurement.extent == stdui::size{0.0, 0.0});
+  CHECK(result.frames.empty());
+}

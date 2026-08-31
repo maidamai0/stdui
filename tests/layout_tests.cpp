@@ -240,6 +240,18 @@ TEST_CASE("horizontal arrangement supports right-to-left direction") {
   CHECK(frames[1] == stdui::rect{{5.0, 0.0}, {3.0, 5.0}});
 }
 
+TEST_CASE("right-to-left arrangement includes spacing") {
+  std::vector<stdui::size> const child_sizes{{2.0, 4.0}, {3.0, 5.0}};
+
+  auto frames = stdui::arrange_hstack(child_sizes, {{0.0, 0.0}, {10.0, 10.0}},
+                                      stdui::layout_direction::right_to_left,
+                                      stdui::layout_alignment::start, 1.0);
+
+  REQUIRE(frames.size() == 2);
+  CHECK(frames[0] == stdui::rect{{8.0, 0.0}, {2.0, 4.0}});
+  CHECK(frames[1] == stdui::rect{{4.0, 0.0}, {3.0, 5.0}});
+}
+
 TEST_CASE("vertical center alignment offsets child on cross axis") {
   std::vector<stdui::size> const child_sizes{{2.0, 4.0}};
 

@@ -1,4 +1,3 @@
-include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
 
 set(STDUI_INSTALL_CMAKEDIR "${CMAKE_INSTALL_LIBDIR}/cmake/stdui"

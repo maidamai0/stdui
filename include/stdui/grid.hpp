@@ -27,6 +27,10 @@ template <std::ranges::input_range Range>
 auto measure_grid(Range const &children, proposal const &proposal, grid_options const &options)
     -> layout_result {
   layout_result result;
+  if (options.columns == 0) {
+    return result;
+  }
+
   std::vector<double> column_widths(options.columns, 0.0);
   std::vector<double> row_heights;
 

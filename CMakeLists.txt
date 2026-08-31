@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.24)
 
 project(stdui VERSION 0.1.0 LANGUAGES CXX)
 
+include(GNUInstallDirs)
+
 option(STDUI_ENABLE_COVERAGE "Enable llvm-cov coverage instrumentation and reporting" OFF)
 set(STDUI_COVERAGE_THRESHOLD 90 CACHE STRING "Minimum required line coverage percentage")
 

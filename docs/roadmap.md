@@ -9,13 +9,6 @@ The current implementation has validated:
 - generic layout primitives for stacks, grids, and overlays;
 - package installation and CMake `find_package` consumption.
 
-### Known limitations
-
-- `measure()` and `arrange()` are computed independently in the materialized
-  layout tree: a node's reported extent and its arranged geometry can disagree
-  once flex `grow`/`fill` become settable through the expression DSL. Revisit
-  together with the layout-configuration milestone below.
-
 ## Next
 
 1. Materialize a persistent layout tree from reconciled expressions.

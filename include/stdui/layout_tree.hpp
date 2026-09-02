@@ -1,13 +1,16 @@
 #pragma once
 
 #include <stdui/geometry.hpp>
-#include <stdui/grid.hpp>
 #include <stdui/inspection.hpp>
 #include <stdui/layout.hpp>
 #include <stdui/overlay.hpp>
 
 #include <algorithm>
 #include <functional>
+#include <memory>
+#include <optional>
+#include <span>
+#include <stdexcept>
 #include <string>
 #include <string_view>
 #include <utility>
@@ -24,8 +27,7 @@ enum class layout_kind {
   hstack,
   vstack,
   overlay,
-  grid,
-  passthrough,
+  dynamic_list,
 };
 
 inline auto to_string(layout_kind kind) -> std::string {
@@ -38,15 +40,12 @@ inline auto to_string(layout_kind kind) -> std::string {
     return "vstack";
   case layout_kind::overlay:
     return "overlay";
-  case layout_kind::grid:
-    return "grid";
-  case layout_kind::passthrough:
-    return "passthrough";
+  case layout_kind::dynamic_list:
+    return "dynamic_list";
   }
-  return "passthrough";
 }
 
-inline auto to_layout_kind(std::string_view kind) -> layout_kind {
+inline auto to_layout_kind(std::string_view kind) -> std::optional<layout_kind> {
   if (kind == "text") {
     return layout_kind::text;
   }
@@ -59,15 +58,18 @@ inline auto to_layout_kind(std::string_view kind) -> layout_kind {
   if (kind == "overlay") {
     return layout_kind::overlay;
   }
-  if (kind == "grid") {
-    return layout_kind::grid;
+  if (kind == "dynamic_list") {
+    return layout_kind::dynamic_list;
   }
-  return layout_kind::passthrough;
+  return std::nullopt;
 }
 
 /// Positioned subtree produced by arranging a materialized layout node.
 /**
  * "box" refers to a view layout rectangle, not a rendered image frame.
+ * `bounds` is the rect the node's content occupies within its assigned frame:
+ * text leaves report their measured extent, containers the union of their
+ * arranged children's bounds.
  */
 struct layout_box {
   std::string kind;
@@ -78,57 +80,63 @@ struct layout_box {
 
 /// Persistent layout node materialized from a view expression snapshot.
 struct layout_node {
-  layout_kind kind = layout_kind::passthrough;
+  layout_kind kind = layout_kind::vstack;
   std::string content;
   std::vector<layout_node> children;
 
-  text_measure_fn text_measure;
+  /// Text measurement shared by all text leaves in the tree.
+  std::shared_ptr<text_measure_fn const> text_measure;
   flex_policy policy{};
   stack_options stack;
-  grid_options grid;
   overlay_options overlay;
 
   auto flex() const -> stdui::flex_policy { return policy; }
 
   auto measure(proposal const &proposal) const -> size {
-    switch (kind) {
-    case layout_kind::text:
-      return clamp_size(text_measure ? text_measure(content) : size{}, proposal);
-    case layout_kind::hstack:
-      return measure_stack(proposal, detail::stack_axis::horizontal);
-    case layout_kind::vstack:
-      return measure_stack(proposal, detail::stack_axis::vertical);
-    case layout_kind::overlay:
-      return clamp_size(measure_overlay(children, proposal).extent, proposal);
-    case layout_kind::grid:
-      return clamp_size(measure_grid(children, proposal, grid).extent, proposal);
-    case layout_kind::passthrough:
-      return measure_passthrough(proposal);
+    if (kind == layout_kind::text) {
+      return measure_text(proposal);
     }
-    return {};
+    if (kind == layout_kind::overlay) {
+      return clamp_size(measure_overlay(children, proposal).extent, proposal);
+    }
+    auto axis =
+        kind == layout_kind::hstack ? detail::stack_axis::horizontal : detail::stack_axis::vertical;
+    return measure_stack(proposal, axis);
   }
 
   auto arrange(rect const &bounds) const -> layout_box {
     layout_box box{to_string(kind), content, bounds, {}};
 
-    if (kind == layout_kind::text || children.empty()) {
-      auto measured = kind == layout_kind::text
-                          ? clamp_size(text_measure ? text_measure(content) : size{},
-                                       proposal::bounded(bounds.extent.width, bounds.extent.height))
-                          : size{};
-      box.bounds = {bounds.origin, measured};
+    if (kind == layout_kind::text) {
+      box.bounds = {bounds.origin,
+                    measure_text(proposal::bounded(bounds.extent.width, bounds.extent.height))};
+      return box;
+    }
+    if (children.empty()) {
+      box.bounds = {bounds.origin, {}};
       return box;
     }
 
-    auto child_bounds = arrange_children(bounds);
+    auto child_frames = arrange_children(bounds);
     box.children.reserve(children.size());
     for (std::size_t i = 0; i < children.size(); ++i) {
-      box.children.push_back(children[i].arrange(child_bounds[i]));
+      box.children.push_back(children[i].arrange(child_frames[i]));
     }
+    box.bounds = {bounds.origin, occupied_extent(bounds, box.children)};
     return box;
   }
 
 private:
+  auto measure_text(proposal const &proposal) const -> size {
+    if (text_measure == nullptr) {
+      return size{};
+    }
+    if (!*text_measure) {
+      return size{};
+    }
+    return clamp_size((*text_measure)(content), proposal);
+  }
+
   auto measure_stack(proposal const &proposal, detail::stack_axis axis) const -> size {
     auto content_proposal = inset_proposal(proposal, stack.padding);
     layout_result result;
@@ -140,34 +148,26 @@ private:
     return add_padding(clamp_size(result.extent, content_proposal), stack.padding);
   }
 
-  auto measure_passthrough(proposal const &proposal) const -> size {
-    if (children.empty()) {
-      return {};
+  auto arrange_children(rect const &bounds) const -> std::vector<rect> {
+    if (kind == layout_kind::hstack) {
+      return layout_hstack(children, bounds, stack).frames;
     }
-    size result;
-    for (auto const &child : children) {
-      auto child_size = child.measure(proposal);
-      result.width = std::max(result.width, child_size.width);
-      result.height = std::max(result.height, child_size.height);
+    if (kind == layout_kind::overlay) {
+      return layout_overlay(children, bounds, overlay).frames;
     }
-    return result;
+    return layout_vstack(children, bounds, stack).frames;
   }
 
-  auto arrange_children(rect const &bounds) const -> std::vector<rect> {
-    switch (kind) {
-    case layout_kind::hstack:
-      return layout_hstack(children, bounds, stack).frames;
-    case layout_kind::vstack:
-      return layout_vstack(children, bounds, stack).frames;
-    case layout_kind::overlay:
-      return layout_overlay(children, bounds, overlay).frames;
-    case layout_kind::grid:
-      return layout_grid(children, bounds, grid).frames;
-    case layout_kind::text:
-    case layout_kind::passthrough:
-      return std::vector<rect>(children.size(), bounds);
+  /// Union of the arranged child boxes relative to the assigned bounds.
+  static auto occupied_extent(rect const &bounds, std::span<layout_box const> boxes) -> size {
+    size result;
+    for (auto const &child : boxes) {
+      result.width = std::max(result.width,
+                              child.bounds.origin.x + child.bounds.extent.width - bounds.origin.x);
+      result.height = std::max(result.height, child.bounds.origin.y + child.bounds.extent.height -
+                                                  bounds.origin.y);
     }
-    return {};
+    return result;
   }
 
   static auto inset_proposal(proposal value, edge_insets const &insets) -> proposal {
@@ -188,31 +188,23 @@ private:
 };
 
 /// Creates a layout tree from a headless expression snapshot.
-inline auto materialize_layout(inspection_node const &node, text_measure_fn text_measure)
-    -> layout_node {
-  layout_node result;
-  result.kind = to_layout_kind(node.kind);
-  result.content = node.content;
+/**
+ * Unknown node kinds are rejected rather than assigned fallback geometry:
+ * silently overlapping children are harder to diagnose than an exception.
+ */
+inline auto materialize_layout(inspection_node const &node,
+                               std::shared_ptr<text_measure_fn const> text_measure) -> layout_node {
+  auto kind = to_layout_kind(node.kind);
+  if (!kind) {
+    throw std::logic_error("unknown layout kind: " + node.kind);
+  }
 
-  switch (result.kind) {
-  case layout_kind::text:
-    result.text_measure = std::move(text_measure);
+  layout_node result;
+  result.kind = *kind;
+  result.content = node.content;
+  if (result.kind == layout_kind::text) {
+    result.text_measure = text_measure;
     result.policy.grow = 0.0;
-    break;
-  case layout_kind::hstack:
-    result.stack.direction = layout_direction::left_to_right;
-    break;
-  case layout_kind::vstack:
-    result.stack.direction = layout_direction::left_to_right;
-    break;
-  case layout_kind::overlay:
-    result.overlay.alignment = layout_alignment::start;
-    break;
-  case layout_kind::grid:
-    result.grid.columns = 1;
-    break;
-  case layout_kind::passthrough:
-    break;
   }
 
   result.children.reserve(node.children.size());
@@ -221,6 +213,11 @@ inline auto materialize_layout(inspection_node const &node, text_measure_fn text
   }
 
   return result;
+}
+
+inline auto materialize_layout(inspection_node const &node, text_measure_fn text_measure)
+    -> layout_node {
+  return materialize_layout(node, std::make_shared<text_measure_fn const>(std::move(text_measure)));
 }
 
 } // namespace stdui

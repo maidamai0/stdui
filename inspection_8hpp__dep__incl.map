@@ -1,5 +1,7 @@
 <map id="include/stdui/inspection.hpp" name="include/stdui/inspection.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,209,31"/>
-<area shape="rect" id="Node000002" href="$runtime_8hpp.html" title=" " alt="" coords="13,79,201,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,44,110,79,105,79,105,44"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="75,5,279,31"/>
+<area shape="rect" id="Node000002" href="$layout__tree_8hpp.html" title=" " alt="" coords="5,79,156,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,41,106,81,102,76,150,37"/>
+<area shape="rect" id="Node000003" href="$runtime_8hpp.html" title=" " alt="" coords="180,86,368,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="203,37,261,84,258,88,200,41"/>
 </map>

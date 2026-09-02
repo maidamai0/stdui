@@ -1,0 +1,29 @@
+<map id="stdui::layout_node::arrange_children" name="stdui::layout_node::arrange_children">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,146,148,186"/>
+<area shape="rect" id="Node000002" href="$namespacestdui.html#a9786ce1275be0d14fd779b1e7328f101" title="Measures and arranges children in one horizontal stack pass." alt="" coords="199,80,352,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,143,226,108,228,113,132,148"/>
+<area shape="rect" id="Node000006" href="$namespacestdui.html#aab8df1b2a3fb52b92a385eaa8fc98031" title="Measures and arranges children in one overlay pass." alt="" coords="196,153,355,179"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="148,163,183,163,183,169,148,169"/>
+<area shape="rect" id="Node000011" href="$namespacestdui.html#a1e7351d55441d0716eae378570faed7e" title="Measures and arranges children in one vertical stack pass." alt="" coords="199,227,352,252"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="132,184,228,219,226,224,131,189"/>
+<area shape="rect" id="Node000003" href="$namespacestdui.html#adad352e47902df25a858c7e99dc25ec9" title="Places measured horizontal children according to direction and alignment." alt="" coords="413,55,575,80"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="352,81,399,76,399,81,353,86"/>
+<area shape="rect" id="Node000004" href="$structstdui_1_1proposal.html#a5e2a2e82a8e215181cce83f6331befab" title=" " alt="" coords="403,104,585,129"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="353,98,389,102,389,108,352,104"/>
+<area shape="rect" id="Node000005" href="$namespacestdui.html#ae9eaeb06aadaabe693a89ac62ff273a2" title="Measures horizontal children and distributes width by flexibility." alt="" coords="409,5,579,31"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="304,77,402,39,427,32,428,37,404,45,306,82"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="332,151,423,130,424,135,333,156"/>
+<area shape="rect" id="Node000007" href="$namespacestdui.html#a0b63555e157eb5703a992a313f5b0c8e" title="Places measured children within the same bounds." alt="" coords="410,203,578,228"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="333,176,424,197,423,202,332,181"/>
+<area shape="rect" id="Node000008" href="$namespacestdui.html#a71bc8818544fbd62ffe056e034562023" title="Measures overlapping children as a single composite extent." alt="" coords="407,153,581,179"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="355,163,393,163,393,169,355,169"/>
+<area shape="rect" id="Node000009" href="$namespacestdui.html#a12b5e2f23c37010d98c2c70f38940671" title="Applies proposal constraints to a size." alt="" coords="633,153,768,179"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="582,163,619,163,619,169,582,169"/>
+<area shape="rect" id="Node000010" href="$namespacestdui.html#a3a14a6fe38bfd045f02687b9a62a45f0" title="Applies one optional bound to a scalar value." alt="" coords="816,153,987,179"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="768,163,802,163,802,169,768,169"/>
+<area shape="poly" id="edge13_Node000011_Node000004" title=" " alt="" coords="299,224,353,189,376,164,386,152,401,140,417,132,419,137,404,144,389,156,380,167,356,193,302,229"/>
+<area shape="rect" id="Node000012" href="$namespacestdui.html#a7d1f13f8976d99a55448ee49d162b1ff" title="Places measured vertical children according to cross&#45;axis alignment." alt="" coords="413,301,575,327"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="306,250,404,287,428,295,427,300,402,293,304,255"/>
+<area shape="rect" id="Node000013" href="$namespacestdui.html#a44794fc50535a5fc49d2b0b034d20f93" title="Measures vertical children and distributes height by flexibility." alt="" coords="409,252,579,277"/>
+<area shape="poly" id="edge14_Node000011_Node000013" title=" " alt="" coords="353,246,396,251,395,256,352,251"/>
+</map>

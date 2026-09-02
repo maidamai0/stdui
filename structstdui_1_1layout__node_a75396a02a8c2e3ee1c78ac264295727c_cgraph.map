@@ -1,0 +1,15 @@
+<map id="stdui::layout_node::measure_stack" name="stdui::layout_node::measure_stack">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,120,148,160"/>
+<area shape="rect" id="Node000002" href="$structstdui_1_1layout__node.html#a3d14855bda1b6f535bccf47b35265dde" title=" " alt="" coords="209,5,352,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,118,144,86,195,55,208,48,211,53,197,60,147,91,105,122"/>
+<area shape="rect" id="Node000003" href="$namespacestdui.html#a12b5e2f23c37010d98c2c70f38940671" title="Applies proposal constraints to a size." alt="" coords="213,70,348,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="148,117,221,97,222,102,149,123"/>
+<area shape="rect" id="Node000005" href="$structstdui_1_1layout__node.html#ae576e29c639a82497ffb27e34cc718ce" title=" " alt="" coords="209,120,352,160"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="148,137,196,137,196,143,148,143"/>
+<area shape="rect" id="Node000006" href="$namespacestdui.html#ae9eaeb06aadaabe693a89ac62ff273a2" title="Measures horizontal children and distributes width by flexibility." alt="" coords="196,185,365,210"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="149,157,222,178,221,183,148,163"/>
+<area shape="rect" id="Node000007" href="$namespacestdui.html#a44794fc50535a5fc49d2b0b034d20f93" title="Measures vertical children and distributes height by flexibility." alt="" coords="196,234,365,259"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="104,158,146,189,197,219,217,227,215,232,195,224,143,193,101,162"/>
+<area shape="rect" id="Node000004" href="$namespacestdui.html#a3a14a6fe38bfd045f02687b9a62a45f0" title="Applies one optional bound to a scalar value." alt="" coords="413,70,584,95"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="348,80,400,80,400,85,348,85"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="stdui::layout_overlay" name="stdui::layout_overlay">
+<area shape="rect" id="Node000001" title="Measures and arranges children in one overlay pass." alt="" coords="387,37,545,62"/>
+<area shape="rect" id="Node000002" href="$structstdui_1_1layout__node.html#ac66405d4bbb134252e2de00800e3ed69" title=" " alt="" coords="196,29,339,69"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="373,52,339,52,339,47,373,47"/>
+<area shape="rect" id="Node000003" href="$structstdui_1_1layout__node.html#a376b8ecf764209ca245dfbd6ac24bcc2" title=" " alt="" coords="5,29,148,69"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="183,52,148,52,148,47,183,47"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="108,17,97,11,77,8,59,10,48,15,44,21,46,28,41,30,39,20,44,11,57,5,77,3,99,6,111,13"/>
+</map>

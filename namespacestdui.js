@@ -14,6 +14,8 @@ var namespacestdui =
     [ "id_storage< std::string_view >", "structstdui_1_1id__storage_3_01std_1_1string__view_01_4.html", "structstdui_1_1id__storage_3_01std_1_1string__view_01_4" ],
     [ "identified_expression", "structstdui_1_1identified__expression.html", "structstdui_1_1identified__expression" ],
     [ "inspection_node", "structstdui_1_1inspection__node.html", "structstdui_1_1inspection__node" ],
+    [ "layout_box", "structstdui_1_1layout__box.html", "structstdui_1_1layout__box" ],
+    [ "layout_node", "structstdui_1_1layout__node.html", "structstdui_1_1layout__node" ],
     [ "layout_result", "structstdui_1_1layout__result.html", "structstdui_1_1layout__result" ],
     [ "overlay_expression", "structstdui_1_1overlay__expression.html", "structstdui_1_1overlay__expression" ],
     [ "overlay_options", "structstdui_1_1overlay__options.html", "structstdui_1_1overlay__options" ],
@@ -34,6 +36,7 @@ var namespacestdui =
     [ "explicit_id", "conceptstdui_1_1explicit__id.html", null ],
     [ "layout_element", "conceptstdui_1_1layout__element.html", null ],
     [ "state_store", "namespacestdui.html#aa625fcaa39405babe0c329596b720911", null ],
+    [ "text_measure_fn", "namespacestdui.html#a11b7cf6cd9aabe98ae8a466e4b719146", null ],
     [ "layout_alignment", "namespacestdui.html#a7526688f87a6f52cb6e3fe5a60d0f046", [
       [ "start", "namespacestdui.html#a7526688f87a6f52cb6e3fe5a60d0f046aea2b2676c28c0db26d39331a336c6b92", null ],
       [ "center", "namespacestdui.html#a7526688f87a6f52cb6e3fe5a60d0f046aadb115059e28d960fa8badfac5516667", null ],
@@ -43,6 +46,13 @@ var namespacestdui =
     [ "layout_direction", "namespacestdui.html#a439e505cde7aafd3061bd818670b6e5a", [
       [ "left_to_right", "namespacestdui.html#a439e505cde7aafd3061bd818670b6e5aa1f8f6a66881ca551a945cf0ab4765dc1", null ],
       [ "right_to_left", "namespacestdui.html#a439e505cde7aafd3061bd818670b6e5aa74ecbc5c277e2952aac1ac167699d74c", null ]
+    ] ],
+    [ "layout_kind", "namespacestdui.html#a62d98f56870e76b778b429b8ef8f2702", [
+      [ "text", "namespacestdui.html#a62d98f56870e76b778b429b8ef8f2702a1cb251ec0d568de6a929b520c4aed8d1", null ],
+      [ "hstack", "namespacestdui.html#a62d98f56870e76b778b429b8ef8f2702ae3b51c4280b0442e7452ef17727b0ead", null ],
+      [ "vstack", "namespacestdui.html#a62d98f56870e76b778b429b8ef8f2702a91e181f51e63b479128db86870841b8d", null ],
+      [ "overlay", "namespacestdui.html#a62d98f56870e76b778b429b8ef8f2702a380e537acdaedd487ca1adb49d020f7e", null ],
+      [ "dynamic_list", "namespacestdui.html#a62d98f56870e76b778b429b8ef8f2702a0fe0435fadf4eb10b999275290726116", null ]
     ] ],
     [ "apply_constraint", "namespacestdui.html#a3a14a6fe38bfd045f02687b9a62a45f0", null ],
     [ "arrange_grid", "namespacestdui.html#a7c9af4b732407bc733baa009eb51287b", null ],
@@ -66,11 +76,15 @@ var namespacestdui =
     [ "layout_overlay", "namespacestdui.html#aab8df1b2a3fb52b92a385eaa8fc98031", null ],
     [ "layout_vstack", "namespacestdui.html#a1e7351d55441d0716eae378570faed7e", null ],
     [ "layout_vstack", "namespacestdui.html#a164967d03c8432cd82c093bf0e04de54", null ],
+    [ "materialize_layout", "namespacestdui.html#a8fc57a34c850af116c51fac88ddd6ae9", null ],
+    [ "materialize_layout", "namespacestdui.html#a535e8b718cbfb2407f6409b1622f6b07", null ],
     [ "measure_grid", "namespacestdui.html#a1e0d76dca5e776fca9b35bee9293a065", null ],
     [ "measure_hstack", "namespacestdui.html#ae9eaeb06aadaabe693a89ac62ff273a2", null ],
     [ "measure_overlay", "namespacestdui.html#a71bc8818544fbd62ffe056e034562023", null ],
     [ "measure_vstack", "namespacestdui.html#a44794fc50535a5fc49d2b0b034d20f93", null ],
     [ "overlay", "namespacestdui.html#a003ae783c60292ba4e2902838708632c", null ],
     [ "text", "namespacestdui.html#a71e3a789db80b2e7c5dcee138c8a48d6", null ],
+    [ "to_layout_kind", "namespacestdui.html#aed2b3e61f3f926e3d36a0b6a1e7cf77f", null ],
+    [ "to_string", "namespacestdui.html#a5a55f734789cd0b965e368729c99e529", null ],
     [ "vstack", "namespacestdui.html#afd258a7a66dbd0a8c44b74c6ef442181", null ]
 ];

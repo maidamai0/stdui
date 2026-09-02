@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vertical_0',['vertical',['../namespacestdui_1_1detail.html#a2c656a5144593849ec8c745e0ccc3819ae6dec152d6a941fccb0a5e8cc2579cc3',1,'stdui::detail']]]
+  ['right_5fto_5fleft_0',['right_to_left',['../namespacestdui.html#a439e505cde7aafd3061bd818670b6e5aa74ecbc5c277e2952aac1ac167699d74c',1,'stdui']]]
 ];

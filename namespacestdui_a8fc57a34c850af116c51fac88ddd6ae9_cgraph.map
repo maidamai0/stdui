@@ -1,0 +1,6 @@
+<map id="stdui::materialize_layout" name="stdui::materialize_layout">
+<area shape="rect" id="Node000001" title="Creates a layout tree from a headless expression snapshot." alt="" coords="5,29,141,69"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="37,30,34,20,40,11,53,5,73,3,96,6,109,13,106,17,95,11,73,8,55,10,44,15,40,21,42,28"/>
+<area shape="rect" id="Node000002" href="$namespacestdui.html#aed2b3e61f3f926e3d36a0b6a1e7cf77f" title=" " alt="" coords="189,37,348,62"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="142,47,176,47,176,52,142,52"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="stdui::layout_node::measure_text" name="stdui::layout_node::measure_text">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,148,45"/>
+<area shape="rect" id="Node000002" href="$namespacestdui.html#a12b5e2f23c37010d98c2c70f38940671" title="Applies proposal constraints to a size." alt="" coords="196,13,331,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,23,182,23,182,28,148,28"/>
+<area shape="rect" id="Node000003" href="$namespacestdui.html#a3a14a6fe38bfd045f02687b9a62a45f0" title="Applies one optional bound to a scalar value." alt="" coords="379,13,549,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="331,23,365,23,365,28,331,28"/>
+</map>

@@ -1,5 +1,12 @@
 <map id="stdui::measure_overlay" name="stdui::measure_overlay">
-<area shape="rect" id="Node000001" title="Measures overlapping children as a single composite extent." alt="" coords="212,5,387,31"/>
-<area shape="rect" id="Node000002" href="$namespacestdui.html#aab8df1b2a3fb52b92a385eaa8fc98031" title="Measures and arranges children in one overlay pass." alt="" coords="5,5,164,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="198,21,164,21,164,15,198,15"/>
+<area shape="rect" id="Node000001" title="Measures overlapping children as a single composite extent." alt="" coords="593,66,768,91"/>
+<area shape="rect" id="Node000002" href="$namespacestdui.html#aab8df1b2a3fb52b92a385eaa8fc98031" title="Measures and arranges children in one overlay pass." alt="" coords="387,37,545,62"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="579,68,545,63,546,58,580,62"/>
+<area shape="rect" id="Node000005" href="$structstdui_1_1layout__node.html#ab2c6e7d37f0986d2483ebaca7f19ffd5" title=" " alt="" coords="395,87,537,127"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="580,94,538,100,538,95,579,89"/>
+<area shape="rect" id="Node000003" href="$structstdui_1_1layout__node.html#ac66405d4bbb134252e2de00800e3ed69" title=" " alt="" coords="196,29,339,69"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="373,52,339,52,339,47,373,47"/>
+<area shape="rect" id="Node000004" href="$structstdui_1_1layout__node.html#a376b8ecf764209ca245dfbd6ac24bcc2" title=" " alt="" coords="5,29,148,69"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="183,52,148,52,148,47,183,47"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="108,17,97,11,77,8,59,10,48,15,44,21,46,28,41,30,39,20,44,11,57,5,77,3,99,6,111,13"/>
 </map>

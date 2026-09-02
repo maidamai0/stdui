@@ -1,0 +1,40 @@
+<map id="stdui::layout_node::arrange" name="stdui::layout_node::arrange">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,213,148,253"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="41,213,39,203,44,194,57,188,77,186,99,189,111,196,108,201,97,194,77,191,59,193,48,198,44,204,46,212"/>
+<area shape="rect" id="Node000002" href="$structstdui_1_1layout__node.html#ac66405d4bbb134252e2de00800e3ed69" title=" " alt="" coords="196,155,339,195"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="143,210,186,197,188,202,145,215"/>
+<area shape="rect" id="Node000005" href="$structstdui_1_1proposal.html#a5e2a2e82a8e215181cce83f6331befab" title=" " alt="" coords="593,104,776,129"/>
+<area shape="poly" id="edge17_Node000001_Node000005" title=" " alt="" coords="95,210,138,173,165,155,195,141,244,126,294,114,397,102,494,99,579,102,579,108,494,104,397,107,295,120,245,131,197,146,168,160,141,177,99,214"/>
+<area shape="rect" id="Node000015" href="$structstdui_1_1layout__node.html#aad9fbae17bda5ad9442619abcf81cfcd" title=" " alt="" coords="395,302,537,342"/>
+<area shape="poly" id="edge18_Node000001_Node000015" title=" " alt="" coords="149,230,240,236,291,244,339,255,383,272,423,293,420,297,381,277,338,261,290,249,240,242,148,235"/>
+<area shape="rect" id="Node000016" href="$structstdui_1_1layout__node.html#a2447e3c28789bcf36905cc23522723ae" title="Union of the arranged child boxes relative to the assigned bounds." alt="" coords="196,270,339,310"/>
+<area shape="poly" id="edge20_Node000001_Node000016" title=" " alt="" coords="145,250,188,263,186,268,143,255"/>
+<area shape="rect" id="Node000017" href="$namespacestdui.html#a5a55f734789cd0b965e368729c99e529" title=" " alt="" coords="208,335,327,360"/>
+<area shape="poly" id="edge21_Node000001_Node000017" title=" " alt="" coords="102,251,145,285,197,320,213,327,211,332,195,324,142,290,99,255"/>
+<area shape="rect" id="Node000003" href="$namespacestdui.html#a9786ce1275be0d14fd779b1e7328f101" title="Measures and arranges children in one horizontal stack pass." alt="" coords="389,160,543,185"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="339,172,376,171,376,177,339,177"/>
+<area shape="rect" id="Node000007" href="$namespacestdui.html#aab8df1b2a3fb52b92a385eaa8fc98031" title="Measures and arranges children in one overlay pass." alt="" coords="387,55,545,80"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="304,153,428,84,431,89,306,158"/>
+<area shape="rect" id="Node000012" href="$namespacestdui.html#a1e7351d55441d0716eae378570faed7e" title="Measures and arranges children in one vertical stack pass." alt="" coords="389,231,543,256"/>
+<area shape="poly" id="edge13_Node000002_Node000012" title=" " alt="" coords="327,193,416,224,414,229,326,198"/>
+<area shape="rect" id="Node000004" href="$namespacestdui.html#adad352e47902df25a858c7e99dc25ec9" title="Places measured horizontal children according to direction and alignment." alt="" coords="603,153,766,179"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="543,168,589,166,590,172,543,173"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="516,157,620,130,622,135,517,163"/>
+<area shape="rect" id="Node000006" href="$namespacestdui.html#ae9eaeb06aadaabe693a89ac62ff273a2" title="Measures horizontal children and distributes width by flexibility." alt="" coords="600,203,769,228"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="532,183,606,197,605,203,531,188"/>
+<area shape="poly" id="edge9_Node000007_Node000005" title=" " alt="" coords="524,77,615,98,614,104,522,83"/>
+<area shape="rect" id="Node000008" href="$namespacestdui.html#a0b63555e157eb5703a992a313f5b0c8e" title="Places measured children within the same bounds." alt="" coords="601,55,769,80"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="546,65,587,65,587,70,546,70"/>
+<area shape="rect" id="Node000009" href="$namespacestdui.html#a71bc8818544fbd62ffe056e034562023" title="Measures overlapping children as a single composite extent." alt="" coords="597,5,772,31"/>
+<area shape="poly" id="edge10_Node000007_Node000009" title=" " alt="" coords="522,52,614,31,615,36,524,57"/>
+<area shape="rect" id="Node000010" href="$namespacestdui.html#a12b5e2f23c37010d98c2c70f38940671" title="Applies proposal constraints to a size." alt="" coords="824,179,959,204"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="755,28,777,40,811,68,840,102,880,165,875,168,836,105,808,72,775,44,752,33"/>
+<area shape="rect" id="Node000011" href="$namespacestdui.html#a3a14a6fe38bfd045f02687b9a62a45f0" title="Applies one optional bound to a scalar value." alt="" coords="1007,179,1177,204"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="959,189,993,189,993,194,959,194"/>
+<area shape="poly" id="edge15_Node000012_Node000005" title=" " alt="" coords="492,228,544,195,557,180,566,166,576,152,592,138,603,132,606,137,595,143,580,156,571,169,562,183,547,199,495,233"/>
+<area shape="rect" id="Node000013" href="$namespacestdui.html#a7d1f13f8976d99a55448ee49d162b1ff" title="Places measured vertical children according to cross&#45;axis alignment." alt="" coords="603,252,766,277"/>
+<area shape="poly" id="edge14_Node000012_Node000013" title=" " alt="" coords="543,248,590,253,589,258,543,253"/>
+<area shape="rect" id="Node000014" href="$namespacestdui.html#a44794fc50535a5fc49d2b0b034d20f93" title="Measures vertical children and distributes height by flexibility." alt="" coords="600,301,769,327"/>
+<area shape="poly" id="edge16_Node000012_Node000014" title=" " alt="" coords="502,254,594,286,623,295,622,300,593,291,500,259"/>
+<area shape="poly" id="edge19_Node000015_Node000010" title=" " alt="" coords="528,340,583,352,647,359,713,356,745,349,775,337,810,312,839,280,861,245,877,215,882,218,866,248,843,283,814,316,777,342,746,354,713,361,646,365,582,357,527,345"/>
+</map>

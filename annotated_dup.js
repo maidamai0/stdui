@@ -19,6 +19,8 @@ var annotated_dup =
       [ "id_storage< std::string_view >", "structstdui_1_1id__storage_3_01std_1_1string__view_01_4.html", "structstdui_1_1id__storage_3_01std_1_1string__view_01_4" ],
       [ "identified_expression", "structstdui_1_1identified__expression.html", "structstdui_1_1identified__expression" ],
       [ "inspection_node", "structstdui_1_1inspection__node.html", "structstdui_1_1inspection__node" ],
+      [ "layout_box", "structstdui_1_1layout__box.html", "structstdui_1_1layout__box" ],
+      [ "layout_node", "structstdui_1_1layout__node.html", "structstdui_1_1layout__node" ],
       [ "layout_result", "structstdui_1_1layout__result.html", "structstdui_1_1layout__result" ],
       [ "overlay_expression", "structstdui_1_1overlay__expression.html", "structstdui_1_1overlay__expression" ],
       [ "overlay_options", "structstdui_1_1overlay__options.html", "structstdui_1_1overlay__options" ],

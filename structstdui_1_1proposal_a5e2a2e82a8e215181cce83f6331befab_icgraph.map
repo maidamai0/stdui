@@ -1,15 +1,23 @@
 <map id="stdui::proposal::bounded" name="stdui::proposal::bounded">
-<area shape="rect" id="Node000001" title=" " alt="" coords="212,129,395,155"/>
-<area shape="rect" id="Node000002" href="$namespacestdui.html#a594bf636a307c0d7a5cbe55cbefadb0f" title="Measures and arranges children in one grid pass." alt="" coords="17,5,152,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="276,123,226,83,163,44,135,33,137,28,165,40,229,79,279,118"/>
-<area shape="rect" id="Node000003" href="$namespacestdui.html#a9786ce1275be0d14fd779b1e7328f101" title="Measures and arranges children in one horizontal stack pass." alt="" coords="8,55,161,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="255,127,163,94,128,83,129,77,165,89,257,122"/>
-<area shape="rect" id="Node000004" href="$namespacestdui.html#a3cff7be9f3e0ae889fd0700a292add36" title="Measures and arranges a horizontal stack using complete options." alt="" coords="8,104,161,129"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="198,132,161,128,162,123,199,127"/>
-<area shape="rect" id="Node000005" href="$namespacestdui.html#aab8df1b2a3fb52b92a385eaa8fc98031" title="Measures and arranges children in one overlay pass." alt="" coords="5,153,164,179"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="199,156,165,160,164,155,198,151"/>
-<area shape="rect" id="Node000006" href="$namespacestdui.html#a1e7351d55441d0716eae378570faed7e" title="Measures and arranges children in one vertical stack pass." alt="" coords="8,203,161,228"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="254,162,165,193,127,205,125,200,163,187,252,157"/>
-<area shape="rect" id="Node000007" href="$namespacestdui.html#a164967d03c8432cd82c093bf0e04de54" title="Measures and arranges a vertical stack using complete options." alt="" coords="8,252,161,277"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="278,166,228,204,165,242,134,254,132,249,163,237,225,199,275,161"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="593,138,776,163"/>
+<area shape="rect" id="Node000002" href="$structstdui_1_1layout__node.html#a376b8ecf764209ca245dfbd6ac24bcc2" title=" " alt="" coords="5,81,148,121"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="664,129,615,75,582,49,544,29,487,14,427,8,367,11,308,21,251,35,200,51,120,84,118,79,199,46,250,29,306,15,366,6,427,3,488,8,546,24,585,44,619,71,668,125"/>
+<area shape="rect" id="Node000003" href="$namespacestdui.html#a594bf636a307c0d7a5cbe55cbefadb0f" title="Measures and arranges children in one grid pass." alt="" coords="399,39,533,65"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="650,133,601,106,544,79,513,67,515,62,546,74,603,101,653,129"/>
+<area shape="rect" id="Node000004" href="$namespacestdui.html#a9786ce1275be0d14fd779b1e7328f101" title="Measures and arranges children in one horizontal stack pass." alt="" coords="389,89,543,114"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="614,138,523,117,524,112,615,132"/>
+<area shape="rect" id="Node000006" href="$namespacestdui.html#a3cff7be9f3e0ae889fd0700a292add36" title="Measures and arranges a horizontal stack using complete options." alt="" coords="389,138,543,163"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="580,153,543,153,543,148,580,148"/>
+<area shape="rect" id="Node000007" href="$namespacestdui.html#aab8df1b2a3fb52b92a385eaa8fc98031" title="Measures and arranges children in one overlay pass." alt="" coords="387,187,545,213"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="615,169,524,190,523,185,614,164"/>
+<area shape="rect" id="Node000008" href="$namespacestdui.html#a1e7351d55441d0716eae378570faed7e" title="Measures and arranges children in one vertical stack pass." alt="" coords="389,237,543,262"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="653,173,603,200,546,228,515,239,513,234,544,223,601,196,650,168"/>
+<area shape="rect" id="Node000009" href="$namespacestdui.html#a164967d03c8432cd82c093bf0e04de54" title="Measures and arranges a vertical stack using complete options." alt="" coords="389,286,543,311"/>
+<area shape="poly" id="edge12_Node000001_Node000009" title=" " alt="" coords="665,176,615,227,582,254,547,277,521,288,519,284,544,272,579,249,611,223,662,172"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="108,70,97,63,77,60,59,62,48,67,44,73,46,80,41,82,39,72,44,63,57,57,77,55,99,58,111,65"/>
+<area shape="rect" id="Node000005" href="$structstdui_1_1layout__node.html#ac66405d4bbb134252e2de00800e3ed69" title=" " alt="" coords="196,131,339,171"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="402,120,340,136,338,130,400,115"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="182,132,147,122,149,117,184,126"/>
+<area shape="poly" id="edge9_Node000007_Node000005" title=" " alt="" coords="400,187,338,171,340,166,402,181"/>
+<area shape="poly" id="edge11_Node000008_Node000005" title=" " alt="" coords="402,235,386,228,336,201,295,173,298,169,339,196,388,223,404,230"/>
 </map>

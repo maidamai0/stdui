@@ -202,9 +202,11 @@ inline auto materialize_layout(inspection_node const &node,
   layout_node result;
   result.kind = *kind;
   result.content = node.content;
+  result.policy = node.policy;
+  result.stack = node.stack;
+  result.overlay = node.overlay;
   if (result.kind == layout_kind::text) {
     result.text_measure = text_measure;
-    result.policy.grow = 0.0;
   }
 
   result.children.reserve(node.children.size());

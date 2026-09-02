@@ -24,10 +24,10 @@ a real screen needs.
 - Add a scroll container primitive (viewport, clipped content, scroll offsets).
 - Add a text measurement bridge to a platform text engine (measure-only).
 
-Known limitation: `measure()` and `arrange()` are computed independently in
-the materialized layout tree: a node's reported extent and its arranged
-geometry can disagree once flex `grow`/`fill` become settable through the
-expression DSL. Revisit during this phase.
+`measure()` reports a node's layout extent while `layout_box::bounds` reports
+the rect its content occupies within the assigned frame. Both passes run the
+same deterministic layout algorithms, so arranged frames agree with measured
+child sizes; the two values differ only where flex leaves unclaimed space.
 
 ## Phase 3 — Interaction and state
 

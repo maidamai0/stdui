@@ -138,25 +138,38 @@ private:
   }
 
   auto evaluate(text_expression const &expression, std::string, evaluation_context &) {
-    return inspection_node{"text", expression.value, {}};
+    inspection_node node{"text", expression.value, {}};
+    node.policy.grow = 0.0;
+    return node;
   }
 
   template <class... T>
   auto evaluate(vstack_expression<T...> const &expression, std::string path,
                 evaluation_context &context) {
-    return evaluate_stack("vstack", expression.children, std::move(path), context);
+    return evaluate_stack("vstack", expression.children, expression.options, {}, std::move(path),
+                          context);
   }
 
   template <class... T>
   auto evaluate(hstack_expression<T...> const &expression, std::string path,
                 evaluation_context &context) {
-    return evaluate_stack("hstack", expression.children, std::move(path), context);
+    return evaluate_stack("hstack", expression.children, expression.options, {}, std::move(path),
+                          context);
   }
 
   template <class... T>
   auto evaluate(overlay_expression<T...> const &expression, std::string path,
                 evaluation_context &context) {
-    return evaluate_stack("overlay", expression.children, std::move(path), context);
+    return evaluate_stack("overlay", expression.children, {}, expression.options, std::move(path),
+                          context);
+  }
+
+  template <class Expression>
+  auto evaluate(flex_expression<Expression> const &expression, std::string path,
+                evaluation_context &context) {
+    auto node = evaluate(expression.expression, std::move(path), context);
+    node.policy = expression.policy;
+    return node;
   }
 
   template <class Id, class Expression>
@@ -198,9 +211,12 @@ private:
   }
 
   template <class Tuple>
-  auto evaluate_stack(char const *kind, Tuple const &children, std::string path,
+  auto evaluate_stack(char const *kind, Tuple const &children, stack_options const &stack,
+                      overlay_options const &overlay, std::string path,
                       evaluation_context &context) {
     inspection_node node{kind, {}, {}};
+    node.stack = stack;
+    node.overlay = overlay;
     append_children(node, children, path, context,
                     std::make_index_sequence<std::tuple_size_v<Tuple>>{});
     return node;

@@ -12,11 +12,6 @@
 
 namespace stdui {
 
-/// Configuration for overlapping children in the same bounds.
-struct overlay_options {
-  layout_alignment alignment = layout_alignment::start;
-};
-
 /// Measures overlapping children as a single composite extent.
 template <std::ranges::input_range Range>
   requires layout_element<std::ranges::range_value_t<Range>>

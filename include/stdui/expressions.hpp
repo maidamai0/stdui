@@ -1,5 +1,7 @@
 #pragma once
 
+#include <stdui/layout_options.hpp>
+
 #include <concepts>
 #include <string>
 #include <string_view>
@@ -44,36 +46,85 @@ inline auto text(std::string value) { return text_expression{std::move(value)}; 
 template <view_expression... T> struct vstack_expression {
   using is_stdui_expression = void;
 
+  stack_options options;
   std::tuple<T...> children;
 };
 
 /// Creates a value expression owning the supplied children in their written order.
 template <view_expression... T> auto vstack(T &&...x) {
-  return vstack_expression<std::decay_t<T>...>{{std::forward<T>(x)...}};
+  return vstack_expression<std::decay_t<T>...>{{}, {std::forward<T>(x)...}};
+}
+
+/// Creates a value expression with explicit stack configuration.
+template <view_expression... T> auto vstack(stack_options options, T &&...x) {
+  return vstack_expression<std::decay_t<T>...>{std::move(options), {std::forward<T>(x)...}};
 }
 
 /// Orders children horizontally as semantic structure, without producing geometry.
 template <view_expression... T> struct hstack_expression {
   using is_stdui_expression = void;
 
+  stack_options options;
   std::tuple<T...> children;
 };
 
 /// Creates a value expression owning the supplied children in their written order.
 template <view_expression... T> auto hstack(T &&...x) {
-  return hstack_expression<std::decay_t<T>...>{{std::forward<T>(x)...}};
+  return hstack_expression<std::decay_t<T>...>{{}, {std::forward<T>(x)...}};
+}
+
+/// Creates a value expression with explicit stack configuration.
+template <view_expression... T> auto hstack(stack_options options, T &&...x) {
+  return hstack_expression<std::decay_t<T>...>{std::move(options), {std::forward<T>(x)...}};
 }
 
 /// Stacks children in z-order without imposing a main axis.
 template <view_expression... T> struct overlay_expression {
   using is_stdui_expression = void;
 
+  overlay_options options;
   std::tuple<T...> children;
 };
 
 /// Creates a value expression owning overlapping children in their written order.
 template <view_expression... T> auto overlay(T &&...x) {
-  return overlay_expression<std::decay_t<T>...>{{std::forward<T>(x)...}};
+  return overlay_expression<std::decay_t<T>...>{{}, {std::forward<T>(x)...}};
+}
+
+/// Creates a value expression with explicit overlay configuration.
+template <view_expression... T> auto overlay(overlay_options options, T &&...x) {
+  return overlay_expression<std::decay_t<T>...>{std::move(options), {std::forward<T>(x)...}};
+}
+
+/**
+ * Wraps a child expression with an explicit flex participation policy.
+ *
+ * The policy describes how the child takes part in its parent's main-axis
+ * space distribution: `grow` is a finite relative share, `fill` consumes all
+ * remaining space. It is analogous to SwiftUI's `.layoutPriority(...)`
+ * expressed as a wrapper because C++ member modifiers need shared extension
+ * machinery.
+ */
+template <view_expression Expression> struct flex_expression {
+  using is_stdui_expression = void;
+
+  flex_policy policy;
+  Expression expression;
+};
+
+/// Creates a child expression with an explicit flex policy.
+template <view_expression Expression> auto flex(flex_policy policy, Expression &&expression) {
+  return flex_expression<std::decay_t<Expression>>{policy, std::forward<Expression>(expression)};
+}
+
+/// Creates a child expression with a finite grow weight.
+template <view_expression Expression> auto grow(double weight, Expression &&expression) {
+  return flex({weight, false}, std::forward<Expression>(expression));
+}
+
+/// Creates a child expression that consumes all remaining main-axis space.
+template <view_expression Expression> auto fill(Expression &&expression) {
+  return flex({1.0, true}, std::forward<Expression>(expression));
 }
 
 /// Selects a stable storage type for an explicit identity.

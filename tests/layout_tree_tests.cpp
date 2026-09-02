@@ -158,3 +158,61 @@ TEST_CASE("flex distribution applies through the materialized tree") {
   CHECK(frame.children[1].bounds.origin == stdui::point{29.0, 0.0});
   CHECK(frame.bounds.extent == stdui::size{37.0, 16.0});
 }
+
+TEST_CASE("DSL stack options flow into materialized measure and arrange") {
+  stdui::stack_options options;
+  options.spacing = 4.0;
+  options.padding = {1.0, 2.0, 1.0, 2.0};
+
+  auto snapshot = stdui::inspect(stdui::vstack(options, stdui::text("A"), stdui::text("B")));
+  auto tree = stdui::materialize_layout(snapshot, measured_text);
+
+  CHECK(tree.measure(stdui::proposal::unbounded()) == stdui::size{10.0, 40.0});
+
+  auto frame = tree.arrange({{0.0, 0.0}, {100.0, 100.0}});
+  REQUIRE(frame.children.size() == 2);
+  CHECK(frame.children[0].bounds == stdui::rect{{1.0, 2.0}, {8.0, 16.0}});
+  CHECK(frame.children[1].bounds.origin == stdui::point{1.0, 22.0});
+  CHECK(frame.bounds.extent == stdui::size{9.0, 38.0});
+}
+
+TEST_CASE("DSL overlay alignment flows into materialized arrangement") {
+  stdui::overlay_options options;
+  options.alignment = stdui::layout_alignment::end;
+
+  auto snapshot = stdui::inspect(stdui::overlay(options, stdui::text("A")));
+  auto tree = stdui::materialize_layout(snapshot, measured_text);
+
+  auto frame = tree.arrange({{0.0, 0.0}, {100.0, 100.0}});
+  REQUIRE(frame.children.size() == 1);
+  CHECK(frame.children[0].bounds.origin == stdui::point{92.0, 84.0});
+}
+
+TEST_CASE("DSL grow policies distribute space through the materialized tree") {
+  stdui::runtime runtime;
+  stdui::stack_options options;
+  options.spacing = 4.0;
+
+  auto snapshot = runtime.reconcile(stdui::hstack(options, stdui::grow(1.0, stdui::text("A")),
+                                                  stdui::grow(3.0, stdui::text("B"))));
+  auto tree = stdui::materialize_layout(snapshot, measured_text);
+
+  CHECK(tree.measure(stdui::proposal::bounded(100.0, 16.0)) == stdui::size{100.0, 16.0});
+
+  auto frame = tree.arrange({{0.0, 0.0}, {100.0, 16.0}});
+  REQUIRE(frame.children.size() == 2);
+  CHECK(frame.children[0].bounds == stdui::rect{{0.0, 0.0}, {8.0, 16.0}});
+  CHECK(frame.children[1].bounds.origin == stdui::point{32.0, 0.0});
+  CHECK(frame.bounds.extent == stdui::size{40.0, 16.0});
+}
+
+TEST_CASE("DSL fill policy consumes the remaining main-axis space") {
+  stdui::runtime runtime;
+  auto snapshot = runtime.reconcile(stdui::hstack(stdui::text("A"), stdui::fill(stdui::text("B"))));
+  auto tree = stdui::materialize_layout(snapshot, measured_text);
+
+  auto frame = tree.arrange({{0.0, 0.0}, {100.0, 16.0}});
+  REQUIRE(frame.children.size() == 2);
+  CHECK(frame.children[1].bounds.origin == stdui::point{8.0, 0.0});
+  CHECK(frame.bounds.extent == stdui::size{16.0, 16.0});
+}

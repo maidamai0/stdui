@@ -259,3 +259,53 @@ TEST_CASE("reconciliation removes state for components that disappear") {
   runtime.reconcile(stdui::vstack(stdui::text("Empty")));
   CHECK(runtime.state_count() == 0);
 }
+
+TEST_CASE("stack options are preserved through inspection") {
+  stdui::stack_options options;
+  options.spacing = 4.0;
+  options.padding = {1.0, 2.0, 3.0, 4.0};
+
+  auto tree = stdui::inspect(stdui::vstack(options, stdui::text("A")));
+
+  CHECK(tree.stack.spacing == 4.0);
+  CHECK(tree.stack.padding.left == 1.0);
+  CHECK(tree.stack.padding.top == 2.0);
+  CHECK(tree.stack.padding.right == 3.0);
+  CHECK(tree.stack.padding.bottom == 4.0);
+}
+
+TEST_CASE("overlay alignment is preserved through inspection") {
+  stdui::overlay_options options;
+  options.alignment = stdui::layout_alignment::center;
+
+  auto tree = stdui::inspect(stdui::overlay(options, stdui::text("A")));
+
+  CHECK(tree.overlay.alignment == stdui::layout_alignment::center);
+}
+
+TEST_CASE("flex wrappers attach grow and fill policies to their children") {
+  auto tree = stdui::inspect(
+      stdui::hstack(stdui::grow(2.0, stdui::text("A")), stdui::fill(stdui::text("B"))));
+
+  REQUIRE(tree.children.size() == 2);
+  CHECK(tree.children[0].kind == "text");
+  CHECK(tree.children[0].policy.grow == 2.0);
+  CHECK_FALSE(tree.children[0].policy.fill);
+  CHECK(tree.children[1].policy.grow == 1.0);
+  CHECK(tree.children[1].policy.fill);
+  CHECK(tree.policy.grow == 1.0);
+}
+
+TEST_CASE("runtime preserves stack options and flex policies") {
+  stdui::runtime runtime;
+  stdui::stack_options options;
+  options.spacing = 3.0;
+
+  auto tree = runtime.reconcile(
+      stdui::vstack(options, stdui::grow(1.5, stdui::text("A")), stdui::text("B")));
+
+  CHECK(tree.stack.spacing == 3.0);
+  REQUIRE(tree.children.size() == 2);
+  CHECK(tree.children[0].policy.grow == 1.5);
+  CHECK(tree.children[1].policy.grow == 0.0);
+}

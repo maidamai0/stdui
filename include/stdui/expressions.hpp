@@ -1,5 +1,7 @@
 #pragma once
 
+#include <stdui/layout_options.hpp>
+
 #include <concepts>
 #include <string>
 #include <string_view>
@@ -150,4 +152,23 @@ template <class Kind, component_body Body> struct component_expression {
 template <class Kind, component_body Body> auto component(Body &&body) {
   return component_expression<Kind, std::decay_t<Body>>{std::forward<Body>(body)};
 }
+
+/// Arranges children in a fixed-column grid.
+template <view_expression... T> struct grid_expression {
+  using is_stdui_expression = void;
+
+  grid_options options;
+  std::tuple<T...> children;
+};
+
+/// Creates a grid expression with default options (single column).
+template <view_expression... T> auto grid(T &&...x) {
+  return grid_expression<std::decay_t<T>...>{{}, {std::forward<T>(x)...}};
+}
+
+/// Creates a grid expression with explicit configuration.
+template <view_expression... T> auto grid(grid_options options, T &&...x) {
+  return grid_expression<std::decay_t<T>...>{std::move(options), {std::forward<T>(x)...}};
+}
+
 } // namespace stdui

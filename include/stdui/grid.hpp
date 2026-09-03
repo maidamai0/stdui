@@ -13,14 +13,6 @@
 
 namespace stdui {
 
-/// Configuration for a grid layout.
-struct grid_options {
-  std::size_t columns = 1;
-  double row_spacing = 0.0;
-  double column_spacing = 0.0;
-  layout_alignment cell_alignment = layout_alignment::stretch;
-};
-
 /// Measures children into a fixed-column grid.
 template <std::ranges::input_range Range>
   requires layout_element<std::ranges::range_value_t<Range>>

@@ -259,3 +259,234 @@ TEST_CASE("reconciliation removes state for components that disappear") {
   runtime.reconcile(stdui::vstack(stdui::text("Empty")));
   CHECK(runtime.state_count() == 0);
 }
+
+TEST_CASE("text expression with empty string") {
+  auto tree = stdui::inspect(stdui::text(""));
+  CHECK(tree.kind == "text");
+  CHECK(tree.content == "");
+}
+
+TEST_CASE("text expression with very long string") {
+  std::string long_text(10000, 'X');
+  auto tree = stdui::inspect(stdui::text(long_text));
+  CHECK(tree.kind == "text");
+  CHECK(tree.content == long_text);
+}
+
+TEST_CASE("text expression with special characters") {
+  auto tree = stdui::inspect(stdui::text("Hello\nWorld\t!@#$%"));
+  CHECK(tree.kind == "text");
+  CHECK(tree.content == "Hello\nWorld\t!@#$%");
+}
+
+TEST_CASE("vstack with no children") {
+  auto tree = stdui::inspect(stdui::vstack());
+  CHECK(tree.kind == "vstack");
+  CHECK(tree.children.size() == 0);
+}
+
+TEST_CASE("vstack with single child") {
+  auto tree = stdui::inspect(stdui::vstack(stdui::text("Single")));
+  CHECK(tree.kind == "vstack");
+  CHECK(tree.children.size() == 1);
+  CHECK(tree.children[0].content == "Single");
+}
+
+TEST_CASE("vstack with many children") {
+  auto tree = stdui::inspect(stdui::vstack(
+      stdui::text("1"), stdui::text("2"), stdui::text("3"),
+      stdui::text("4"), stdui::text("5"), stdui::text("6")
+  ));
+  CHECK(tree.kind == "vstack");
+  CHECK(tree.children.size() == 6);
+  CHECK(tree.children[5].content == "6");
+}
+
+TEST_CASE("hstack with no children") {
+  auto tree = stdui::inspect(stdui::hstack());
+  CHECK(tree.kind == "hstack");
+  CHECK(tree.children.size() == 0);
+}
+
+TEST_CASE("hstack with single child") {
+  auto tree = stdui::inspect(stdui::hstack(stdui::text("Solo")));
+  CHECK(tree.kind == "hstack");
+  CHECK(tree.children.size() == 1);
+}
+
+TEST_CASE("hstack with many children") {
+  auto tree = stdui::inspect(stdui::hstack(
+      stdui::text("A"), stdui::text("B"), stdui::text("C"),
+      stdui::text("D"), stdui::text("E")
+  ));
+  CHECK(tree.kind == "hstack");
+  CHECK(tree.children.size() == 5);
+}
+
+TEST_CASE("overlay with no children") {
+  auto tree = stdui::inspect(stdui::overlay());
+  CHECK(tree.kind == "overlay");
+  CHECK(tree.children.size() == 0);
+}
+
+TEST_CASE("overlay with single child") {
+  auto tree = stdui::inspect(stdui::overlay(stdui::text("Only")));
+  CHECK(tree.kind == "overlay");
+  CHECK(tree.children.size() == 1);
+}
+
+TEST_CASE("deeply nested structures") {
+  auto tree = stdui::inspect(
+      stdui::vstack(
+          stdui::hstack(
+              stdui::overlay(
+                  stdui::vstack(
+                      stdui::text("Deep")
+                  )
+              )
+          )
+      )
+  );
+  CHECK(tree.kind == "vstack");
+  CHECK(tree.children[0].kind == "hstack");
+  CHECK(tree.children[0].children[0].kind == "overlay");
+  CHECK(tree.children[0].children[0].children[0].kind == "vstack");
+  CHECK(tree.children[0].children[0].children[0].children[0].content == "Deep");
+}
+
+TEST_CASE("mixed container types") {
+  auto tree = stdui::inspect(
+      stdui::vstack(
+          stdui::text("Header"),
+          stdui::hstack(
+              stdui::text("Left"),
+              stdui::overlay(
+                  stdui::text("Back"),
+                  stdui::text("Front")
+              ),
+              stdui::text("Right")
+          ),
+          stdui::text("Footer")
+      )
+  );
+  CHECK(tree.children.size() == 3);
+  CHECK(tree.children[1].children.size() == 3);
+  CHECK(tree.children[1].children[1].children.size() == 2);
+}
+
+TEST_CASE("runtime: multiple sequential reconciliations") {
+  stdui::runtime runtime;
+
+  auto r1 = runtime.reconcile(incrementing_counter(0));
+  auto r2 = runtime.reconcile(incrementing_counter(100));
+  auto r3 = runtime.reconcile(incrementing_counter(200));
+  auto r4 = runtime.reconcile(incrementing_counter(300));
+
+  CHECK(r1.content == "0");
+  CHECK(r2.content == "1");
+  CHECK(r3.content == "2");
+  CHECK(r4.content == "3");
+}
+
+TEST_CASE("runtime: alternating component types") {
+  stdui::runtime runtime;
+
+  auto c1 = runtime.reconcile(incrementing_counter(0));
+  auto a1 = runtime.reconcile(alternate_incrementing_counter(10));
+  auto c2 = runtime.reconcile(incrementing_counter(20));
+
+  CHECK(c1.content == "0");
+  CHECK(a1.content == "10");
+  CHECK(c2.content == "20");
+  CHECK(runtime.state_count() == 1);
+}
+
+TEST_CASE("runtime: state cleanup on structure change") {
+  stdui::runtime runtime;
+
+  runtime.reconcile(stdui::vstack(
+      incrementing_counter(0),
+      incrementing_counter(10),
+      incrementing_counter(20)
+  ));
+  CHECK(runtime.state_count() == 3);
+
+  runtime.reconcile(stdui::vstack(
+      incrementing_counter(100)
+  ));
+  CHECK(runtime.state_count() == 1);
+}
+
+TEST_CASE("identified: integer ids") {
+  stdui::runtime runtime;
+
+  auto first = runtime.reconcile(stdui::vstack(
+      stdui::identified(1, incrementing_row(10)),
+      stdui::identified(2, incrementing_row(20))
+  ));
+
+  auto reordered = runtime.reconcile(stdui::vstack(
+      stdui::identified(2, incrementing_row(200)),
+      stdui::identified(1, incrementing_row(100))
+  ));
+
+  CHECK(first.children[0].content == "10");
+  CHECK(first.children[1].content == "20");
+  CHECK(reordered.children[0].content == "21");
+  CHECK(reordered.children[1].content == "11");
+}
+
+TEST_CASE("identified: string_view ids") {
+  stdui::runtime runtime;
+
+  std::string_view id_a = "alpha";
+  std::string_view id_b = "beta";
+
+  auto first = runtime.reconcile(stdui::vstack(
+      stdui::identified(id_a, incrementing_row(10)),
+      stdui::identified(id_b, incrementing_row(20))
+  ));
+
+  CHECK(first.children[0].content == "10");
+  CHECK(runtime.state_count() == 2);
+}
+
+TEST_CASE("dynamic list: adding items") {
+  stdui::runtime runtime;
+
+  std::vector<dynamic_item> items1{{"a", 10}};
+  runtime.reconcile(make_dynamic_list(std::move(items1)));
+
+  std::vector<dynamic_item> items2{{"a", 100}, {"b", 20}};
+  auto result = runtime.reconcile(make_dynamic_list(std::move(items2)));
+
+  CHECK(result.children[0].content == "a:11");
+  CHECK(result.children[1].content == "b:20");
+  CHECK(runtime.state_count() == 2);
+}
+
+TEST_CASE("dynamic list: removing items") {
+  stdui::runtime runtime;
+
+  std::vector<dynamic_item> items1{{"a", 10}, {"b", 20}, {"c", 30}};
+  runtime.reconcile(make_dynamic_list(std::move(items1)));
+  CHECK(runtime.state_count() == 3);
+
+  std::vector<dynamic_item> items2{{"b", 200}};
+  auto result = runtime.reconcile(make_dynamic_list(std::move(items2)));
+
+  CHECK(result.children.size() == 1);
+  CHECK(result.children[0].content == "b:21");
+  CHECK(runtime.state_count() == 1);
+}
+
+TEST_CASE("dynamic list: empty list") {
+  stdui::runtime runtime;
+
+  std::vector<dynamic_item> items;
+  auto result = runtime.reconcile(make_dynamic_list(std::move(items)));
+
+  CHECK(result.kind == "dynamic_list");
+  CHECK(result.children.size() == 0);
+  CHECK(runtime.state_count() == 0);
+}

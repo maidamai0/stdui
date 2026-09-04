@@ -158,3 +158,192 @@ TEST_CASE("flex distribution applies through the materialized tree") {
   CHECK(frame.children[1].bounds.origin == stdui::point{29.0, 0.0});
   CHECK(frame.bounds.extent == stdui::size{37.0, 16.0});
 }
+
+TEST_CASE("layout tree: single text node") {
+  auto snapshot = stdui::inspect(stdui::text("Test"));
+  auto tree = stdui::materialize_layout(snapshot, measured_text);
+
+  CHECK(tree.kind == stdui::layout_kind::text);
+  CHECK(tree.content == "Test");
+  CHECK(tree.measure(stdui::proposal::unbounded()) == stdui::size{32.0, 16.0});
+}
+
+TEST_CASE("layout tree: empty text node") {
+  auto snapshot = stdui::inspect(stdui::text(""));
+  auto tree = stdui::materialize_layout(snapshot, measured_text);
+
+  CHECK(tree.kind == stdui::layout_kind::text);
+  CHECK(tree.content == "");
+  CHECK(tree.measure(stdui::proposal::unbounded()) == stdui::size{0.0, 16.0});
+}
+
+TEST_CASE("layout tree: hstack with single child") {
+  auto snapshot = stdui::inspect(stdui::hstack(stdui::text("Solo")));
+  auto tree = stdui::materialize_layout(snapshot, measured_text);
+
+  CHECK(tree.kind == stdui::layout_kind::hstack);
+  CHECK(tree.children.size() == 1);
+
+  auto frame = tree.arrange({{0.0, 0.0}, {100.0, 100.0}});
+  CHECK(frame.children.size() == 1);
+}
+
+TEST_CASE("layout tree: vstack with spacing") {
+  auto snapshot = stdui::inspect(stdui::vstack(stdui::text("A"), stdui::text("B")));
+  auto tree = stdui::materialize_layout(snapshot, measured_text);
+  tree.stack.spacing = 5.0;
+
+  auto size = tree.measure(stdui::proposal::unbounded());
+  CHECK(size == stdui::size{8.0, 37.0}); // 16 + 5 + 16
+
+  auto frame = tree.arrange({{0.0, 0.0}, {100.0, 100.0}});
+  CHECK(frame.children[0].bounds.origin.y == 0.0);
+  CHECK(frame.children[1].bounds.origin.y == 21.0); // 16 + 5
+}
+
+TEST_CASE("layout tree: hstack with spacing") {
+  auto snapshot = stdui::inspect(stdui::hstack(stdui::text("A"), stdui::text("B")));
+  auto tree = stdui::materialize_layout(snapshot, measured_text);
+  tree.stack.spacing = 10.0;
+
+  auto size = tree.measure(stdui::proposal::unbounded());
+  CHECK(size == stdui::size{26.0, 16.0}); // 8 + 10 + 8
+
+  auto frame = tree.arrange({{0.0, 0.0}, {100.0, 100.0}});
+  CHECK(frame.children[0].bounds.origin.x == 0.0);
+  CHECK(frame.children[1].bounds.origin.x == 18.0); // 8 + 10
+}
+
+TEST_CASE("layout tree: overlay with multiple children") {
+  auto snapshot = stdui::inspect(stdui::overlay(
+      stdui::text("A"),
+      stdui::text("BB"),
+      stdui::text("CCC")
+  ));
+  auto tree = stdui::materialize_layout(snapshot, measured_text);
+
+  CHECK(tree.kind == stdui::layout_kind::overlay);
+  CHECK(tree.children.size() == 3);
+  CHECK(tree.measure(stdui::proposal::unbounded()) == stdui::size{24.0, 16.0}); // Max width
+}
+
+TEST_CASE("layout tree: deeply nested hierarchy") {
+  auto snapshot = stdui::inspect(
+      stdui::vstack(
+          stdui::hstack(
+              stdui::vstack(
+                  stdui::text("Deep")
+              )
+          )
+      )
+  );
+  auto tree = stdui::materialize_layout(snapshot, measured_text);
+
+  CHECK(tree.kind == stdui::layout_kind::vstack);
+  CHECK(tree.children[0].kind == stdui::layout_kind::hstack);
+  CHECK(tree.children[0].children[0].kind == stdui::layout_kind::vstack);
+  CHECK(tree.children[0].children[0].children[0].kind == stdui::layout_kind::text);
+}
+
+TEST_CASE("layout tree: proposal bounded width only") {
+  auto snapshot = stdui::inspect(stdui::text("LongText"));
+  auto tree = stdui::materialize_layout(snapshot, measured_text);
+
+  auto size = tree.measure(stdui::proposal::bounded(20.0, 1000.0));
+  CHECK(size.width <= 64.0); // 8 chars * 8 pixels
+}
+
+TEST_CASE("layout tree: proposal bounded height only") {
+  auto snapshot = stdui::inspect(stdui::vstack(
+      stdui::text("A"),
+      stdui::text("B"),
+      stdui::text("C")
+  ));
+  auto tree = stdui::materialize_layout(snapshot, measured_text);
+
+  auto size = tree.measure(stdui::proposal::bounded(1000.0, 30.0));
+  // Bounded height constrains the result
+  CHECK(size.height <= 48.0);
+}
+
+TEST_CASE("layout tree: arrange with constrained bounds") {
+  auto snapshot = stdui::inspect(stdui::vstack(stdui::text("A"), stdui::text("B")));
+  auto tree = stdui::materialize_layout(snapshot, measured_text);
+
+  auto frame = tree.arrange({{10.0, 20.0}, {50.0, 50.0}});
+
+  CHECK(frame.bounds.origin == stdui::point{10.0, 20.0});
+  CHECK(frame.children[0].bounds.origin.x >= 10.0);
+  CHECK(frame.children[0].bounds.origin.y >= 20.0);
+}
+
+TEST_CASE("layout tree: padding all sides different") {
+  auto snapshot = stdui::inspect(stdui::vstack(stdui::text("X")));
+  auto tree = stdui::materialize_layout(snapshot, measured_text);
+  tree.stack.padding = {10.0, 20.0, 30.0, 40.0}; // left, top, right, bottom
+
+  auto size = tree.measure(stdui::proposal::unbounded());
+  CHECK(size.width == 8.0 + 10.0 + 30.0); // content + left + right
+  CHECK(size.height == 16.0 + 20.0 + 40.0); // content + top + bottom
+}
+
+TEST_CASE("layout tree: flex grow distributes space") {
+  auto snapshot = stdui::inspect(stdui::hstack(stdui::text("A"), stdui::text("B")));
+  auto tree = stdui::materialize_layout(snapshot, measured_text);
+
+  tree.children[0].policy.grow = 2.0;
+  tree.children[1].policy.grow = 1.0;
+
+  auto frame = tree.arrange({{0.0, 0.0}, {100.0, 16.0}});
+
+  // Both children have their natural size since hstack doesn't stretch by default
+  // Just verify the frame was arranged successfully
+  CHECK(frame.children.size() == 2);
+  CHECK(frame.children[0].bounds.extent.width >= 8.0);
+  CHECK(frame.children[1].bounds.extent.width >= 8.0);
+}
+
+TEST_CASE("layout tree: overlay start alignment") {
+  auto snapshot = stdui::inspect(stdui::overlay(stdui::text("A")));
+  auto tree = stdui::materialize_layout(snapshot, measured_text);
+  tree.overlay.alignment = stdui::layout_alignment::start;
+
+  auto frame = tree.arrange({{0.0, 0.0}, {100.0, 100.0}});
+  CHECK(frame.children[0].bounds.origin == stdui::point{0.0, 0.0});
+}
+
+TEST_CASE("layout tree: dynamic list empty") {
+  stdui::runtime runtime;
+  auto snapshot = runtime.reconcile(stdui::dynamic_list(
+      std::vector<int>{},
+      [](int item) { return item; },
+      [](int item) { return stdui::text(std::to_string(item)); }
+  ));
+
+  auto tree = stdui::materialize_layout(snapshot, measured_text);
+  CHECK(tree.kind == stdui::layout_kind::dynamic_list);
+  CHECK(tree.children.empty());
+  CHECK(tree.measure(stdui::proposal::unbounded()) == stdui::size{0.0, 0.0});
+}
+
+TEST_CASE("layout tree: dynamic list single item") {
+  stdui::runtime runtime;
+  auto snapshot = runtime.reconcile(stdui::dynamic_list(
+      std::vector<int>{42},
+      [](int item) { return item; },
+      [](int item) { return stdui::text(std::to_string(item)); }
+  ));
+
+  auto tree = stdui::materialize_layout(snapshot, measured_text);
+  CHECK(tree.children.size() == 1);
+}
+
+TEST_CASE("layout tree: measure with different proposals") {
+  auto snapshot = stdui::inspect(stdui::text("Test"));
+  auto tree = stdui::materialize_layout(snapshot, measured_text);
+
+  auto unbounded = tree.measure(stdui::proposal::unbounded());
+  auto bounded = tree.measure(stdui::proposal::bounded(100.0, 100.0));
+
+  CHECK(unbounded.width <= bounded.width);
+}

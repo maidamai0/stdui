@@ -233,3 +233,220 @@ TEST_CASE("integration: counter component pattern") {
   auto count_verify = ctx1.state(0);
   CHECK(count_verify.get() == 1);
 }
+
+TEST_CASE("state_storage: non-sequential slot allocation") {
+  stdui::state_storage storage;
+
+  // Allocate slot 5 first (skipping 0-4)
+  int *slot5 = storage.get_or_create(5, 100);
+  CHECK(*slot5 == 100);
+  CHECK(storage.slot_count() == 6); // Slots 0-5 allocated
+
+  // Now allocate slot 2
+  int *slot2 = storage.get_or_create(2, 42);
+  CHECK(*slot2 == 42);
+  CHECK(storage.slot_count() == 6); // No change
+
+  // Verify slot 5 still intact
+  int *slot5_again = storage.get_or_create(5, 999);
+  CHECK(*slot5_again == 100); // Original value
+}
+
+TEST_CASE("state_storage: same slot different types returns nullptr") {
+  stdui::state_storage storage;
+
+  int *slot0_int = storage.get_or_create(0, 42);
+  REQUIRE(slot0_int != nullptr);
+  CHECK(*slot0_int == 42);
+
+  // Try to get the same slot as a different type
+  double *slot0_double = storage.get_or_create(0, 3.14);
+  CHECK(slot0_double == nullptr); // Type mismatch
+}
+
+TEST_CASE("state_storage: slot count after partial allocation") {
+  stdui::state_storage storage;
+
+  storage.get_or_create(0, 1);
+  CHECK(storage.slot_count() == 1);
+
+  storage.get_or_create(2, 3); // Skip slot 1
+  CHECK(storage.slot_count() == 3);
+
+  storage.get_or_create(10, 11); // Skip slots 3-9
+  CHECK(storage.slot_count() == 11);
+}
+
+TEST_CASE("state: dereference operator with const") {
+  stdui::state_storage storage;
+  stdui::component_context ctx(&storage, [] {});
+
+  auto const count = ctx.state(42);
+  CHECK(*count == 42);
+}
+
+TEST_CASE("state: modify with complex lambda") {
+  stdui::state_storage storage;
+  int change_count = 0;
+  stdui::component_context ctx(&storage, [&] { ++change_count; });
+
+  struct Counter {
+    int value;
+    std::string label;
+  };
+
+  auto counter = ctx.state(Counter{0, "count"});
+
+  counter.modify([](Counter &c) {
+    c.value += 10;
+    c.label = "updated";
+  });
+
+  CHECK(counter.get().value == 10);
+  CHECK(counter.get().label == "updated");
+  CHECK(change_count == 1);
+}
+
+TEST_CASE("state: modify with mutable lambda") {
+  stdui::state_storage storage;
+  stdui::component_context ctx(&storage, [] {});
+
+  auto count = ctx.state(0);
+
+  int increment = 5;
+  count.modify([increment](int &val) mutable {
+    val += increment;
+    increment = 10; // Mutate captured variable
+  });
+
+  CHECK(count.get() == 5);
+}
+
+TEST_CASE("state: multiple modifications in sequence") {
+  stdui::state_storage storage;
+  int change_count = 0;
+  stdui::component_context ctx(&storage, [&] { ++change_count; });
+
+  auto count = ctx.state(0);
+
+  count.modify([](int &val) { val += 1; });
+  count.modify([](int &val) { val *= 2; });
+  count.modify([](int &val) { val -= 3; });
+
+  CHECK(count.get() == -1); // (0 + 1) * 2 - 3 = -1
+  CHECK(change_count == 3);
+}
+
+TEST_CASE("state: arrow operator with nested structs") {
+  stdui::state_storage storage;
+  stdui::component_context ctx(&storage, [] {});
+
+  struct Inner {
+    int value;
+  };
+
+  struct Outer {
+    Inner inner;
+    std::string name;
+  };
+
+  auto outer = ctx.state(Outer{{42}, "test"});
+  CHECK(outer->inner.value == 42);
+  CHECK(outer->name == "test");
+}
+
+TEST_CASE("state: get returns const reference") {
+  stdui::state_storage storage;
+  stdui::component_context ctx(&storage, [] {});
+
+  auto count = ctx.state(42);
+  auto const &ref = count.get();
+
+  CHECK(ref == 42);
+  CHECK(&ref == &count.get()); // Same address
+}
+
+TEST_CASE("state: set with move semantics") {
+  stdui::state_storage storage;
+  stdui::component_context ctx(&storage, [] {});
+
+  auto str = ctx.state(std::string("initial"));
+
+  std::string moved_str = "moved";
+  str.set(std::move(moved_str));
+
+  CHECK(str.get() == "moved");
+  CHECK(moved_str.empty()); // Was moved from
+}
+
+TEST_CASE("state: default constructed handle is invalid") {
+  stdui::state<int> handle;
+
+  CHECK_THROWS_WITH(handle.get(), "state: accessing uninitialized state handle");
+  CHECK_THROWS_WITH(*handle, "state: accessing uninitialized state handle");
+}
+
+TEST_CASE("component_context: default constructed is invalid") {
+  stdui::component_context ctx;
+
+  CHECK(ctx.current_slot() == 0);
+  CHECK_THROWS_WITH(ctx.state(0), "component_context: no storage available");
+}
+
+TEST_CASE("component_context: reset preserves storage") {
+  stdui::state_storage storage;
+  stdui::component_context ctx(&storage, [] {});
+
+  auto s1 = ctx.state(1);
+  auto s2 = ctx.state(2);
+  CHECK(ctx.current_slot() == 2);
+
+  ctx.reset_slot_counter();
+  CHECK(ctx.current_slot() == 0);
+
+  // Storage still accessible
+  auto s1_again = ctx.state(999); // Gets existing value
+  CHECK(s1_again.get() == 1); // Original value preserved
+}
+
+TEST_CASE("state_storage: handles move-only types") {
+  stdui::state_storage storage;
+
+  auto ptr = storage.get_or_create(0, std::make_unique<int>(42));
+  REQUIRE(ptr != nullptr);
+  CHECK(**ptr == 42);
+}
+
+TEST_CASE("state: works with vector types") {
+  stdui::state_storage storage;
+  stdui::component_context ctx(&storage, [] {});
+
+  auto vec = ctx.state(std::vector<int>{1, 2, 3});
+  CHECK(vec.get().size() == 3);
+  CHECK(vec.get()[0] == 1);
+
+  vec.modify([](std::vector<int> &v) {
+    v.push_back(4);
+  });
+
+  CHECK(vec.get().size() == 4);
+  CHECK(vec.get()[3] == 4);
+}
+
+TEST_CASE("state: no change callback is valid") {
+  stdui::state_storage storage;
+  stdui::component_context ctx(&storage, nullptr);
+
+  auto count = ctx.state(0);
+  count.set(5); // Should not crash with null callback
+  CHECK(count.get() == 5);
+}
+
+TEST_CASE("component_context: empty on_change callback") {
+  stdui::state_storage storage;
+  stdui::component_context ctx(&storage, std::function<void()>{});
+
+  auto count = ctx.state(0);
+  count.set(5); // Should not crash with empty callback
+  CHECK(count.get() == 5);
+}

@@ -360,3 +360,83 @@ TEST_CASE("application: stateless component") {
   CHECK(app.registry().component_count() >= 1);
   CHECK(app.layout_tree() != nullptr);
 }
+
+TEST_CASE("application: run method executes event loop") {
+  auto root = std::make_shared<hello_component>();
+  stdui::application app(root);
+
+  stdui::null_platform platform;
+  app.initialize(platform);
+
+  CHECK_NOTHROW(app.run());
+}
+
+TEST_CASE("run_app: convenience function") {
+  auto root = std::make_shared<hello_component>();
+  stdui::null_platform platform;
+
+  CHECK_NOTHROW(stdui::run_app(root, platform));
+}
+
+TEST_CASE("run_app: with custom config") {
+  auto root = std::make_shared<hello_component>();
+  stdui::app_config config{
+      .title = "Custom",
+      .window_size = {640.0, 480.0},
+  };
+
+  stdui::null_platform platform;
+  CHECK_NOTHROW(stdui::run_app(root, platform, config));
+}
+
+TEST_CASE("run_app: with stateful component") {
+  auto root = std::make_shared<stateful_component>();
+  stdui::null_platform platform;
+
+  CHECK_NOTHROW(stdui::run_app(root, platform));
+}
+
+TEST_CASE("run_app: with layout component") {
+  auto root = std::make_shared<layout_component>();
+  stdui::null_platform platform;
+
+  CHECK_NOTHROW(stdui::run_app(root, platform));
+}
+
+TEST_CASE("application: run after invalidations") {
+  auto root = std::make_shared<stateful_component>();
+  stdui::application app(root);
+
+  stdui::null_platform platform;
+  app.initialize(platform);
+
+  app.invalidate();
+  app.invalidate();
+
+  CHECK_NOTHROW(app.run());
+}
+
+TEST_CASE("application: run multiple times") {
+  auto root = std::make_shared<hello_component>();
+  stdui::application app(root);
+
+  stdui::null_platform platform;
+  app.initialize(platform);
+
+  CHECK_NOTHROW(app.run());
+  CHECK_NOTHROW(app.run());
+}
+
+TEST_CASE("application: registry same throughout") {
+  auto root = std::make_shared<stateful_component>();
+  stdui::application app(root);
+
+  auto &reg1 = app.registry();
+
+  stdui::null_platform platform;
+  app.initialize(platform);
+
+  auto &reg2 = app.registry();
+  CHECK(&reg1 == &reg2);
+}
+

@@ -1,4 +1,4 @@
-# stdui Architecture
+# stdui Architecture {#architecture}
 
 ## 1. Purpose
 

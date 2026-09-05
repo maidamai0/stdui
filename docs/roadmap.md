@@ -1,4 +1,4 @@
-# stdui Roadmap
+# stdui Roadmap {#roadmap}
 
 The roadmap is organized into phases. Near-term phases are detailed into
 review-sized items; later phases are coarse epics that decompose when work

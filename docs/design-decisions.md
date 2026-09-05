@@ -1,4 +1,4 @@
-# stdui Design Decisions
+# stdui Design Decisions {#design_decisions}
 
 This document records decisions made during the initial architecture discussion. These are intentionally separated from implementation details. A decision can later be revised, but changes should be explicit.
 

@@ -281,7 +281,19 @@ skia_context->flush();
 
 ## 3. Text Rendering Deep Dive
 
-### 3.1 The Three-Stage Process
+### 3.1 Dynamic Glyph Atlas System
+
+**Overview:**
+
+Glyphs are loaded **on-demand** as text is rendered. First use of a character takes 1-3ms (rasterize + upload), subsequent uses are instant (already in GPU).
+
+**Atlas specifications:**
+- Size: 2048×2048 pixels (~4MB GPU memory)
+- Capacity: 500-1000 glyphs (depends on font size)
+- Strategy: Dynamic allocation, LRU eviction when full
+- Sufficient for typical applications (including CJK)
+
+### 3.2 The Three-Stage Process
 
 **Stage 1: Shaping (CPU, per string)**
 
@@ -337,7 +349,7 @@ void main() {
 }
 ```
 
-### 3.2 Glyph Atlas System
+### 3.3 Glyph Atlas Implementation
 
 **Dynamic Atlas:**
 ```cpp
@@ -373,17 +385,46 @@ class GlyphAtlas {
 ```
 
 **Performance Characteristics:**
-- First use of glyph: 1-3ms (rasterize + upload)
+- First use of glyph: 1-3ms (rasterize + upload) - **per character**
 - Cached glyph: <0.01ms (texture lookup)
+- Upload strategy: One character at a time, as needed
 - Atlas size: 2048×2048 = ~4MB GPU memory
 - Typical cache: 500-1000 glyphs (covers most UI text)
 - Eviction: LRU when atlas fills (rare in practice)
+
+**Example - rendering "Hello World":**
+```
+First frame:
+- 'H' not cached → rasterize + upload (2ms)
+- 'e' not cached → rasterize + upload (2ms)  
+- 'l' not cached → rasterize + upload (2ms)
+- 'l' cached → instant
+- 'o' not cached → rasterize + upload (2ms)
+- ... (8 unique chars × 2ms = ~16ms)
+
+Second frame:
+- All characters cached → <0.1ms total
+```
+
+**CJK Text Support:**
+- Chinese "你好世界" → Load 4 characters on first use
+- Don't pre-load all 20,000+ CJK characters
+- Users typically see 500-1000 unique characters in UI
+- Atlas capacity is sufficient
+
+**Text Color & Gradients:**
+- ✅ Solid colors supported
+- ✅ Linear/radial gradients supported
+- Glyph atlas stores coverage only (shape)
+- Color applied at composite time (shader)
+- Same glyph can be reused with different colors
 
 **Flexibility:**
 - ✅ Any font, any size, any character
 - ✅ Unicode fully supported (emoji, CJK, complex scripts)
 - ✅ Dynamic font changes at runtime
 - ✅ No pre-population needed
+- ✅ One atlas sufficient for typical applications
 
 ---
 
@@ -717,20 +758,22 @@ int main() {
 
 User never creates `platform`, `window`, or `application` objects directly.
 
-### 6.2 Canvas Integration
+### 6.2 Scene View Integration
 
-**Canvas = View for user-controlled 3D rendering**
+**Scene View = View for user-controlled 3D rendering**
+
+Following SwiftUI's naming convention, we use `scene_view` instead of `canvas` (which is too generic and could mean 2D or 3D).
 
 ```cpp
 #include <stdui/stdui.hpp>
-#include <stdui/canvas.hpp>  // Optional header
+#include <stdui/scene_view.hpp>  // Optional header
 
 auto make_3d_app() {
     return stdui::hstack(
         make_sidebar(),
         
-        // Canvas participates in layout like any view
-        stdui::canvas([](stdui::canvas_context& ctx) {
+        // Scene view participates in layout like any view
+        stdui::scene_view([](stdui::scene_context& ctx) {
             // This callback runs on canvas thread
             
             #ifdef __APPLE__
@@ -755,46 +798,101 @@ auto make_3d_app() {
 }
 ```
 
-**Canvas as first-class view:**
+**Scene view as first-class view:**
 ```cpp
 // Apply modifiers like any view
-stdui::canvas(render_callback)
+stdui::scene_view(render_callback)
     .frame({800, 600})              // Size constraint
     .corner_radius(8.0)             // Rounded corners (SDF shader)
     .shadow({0, 4}, 8.0, 0.3)       // Drop shadow
     .background(stdui::color::black())
 ```
 
-**Canvas context API:**
+**Scene context API - Platform-Specific Headers:**
+
+To avoid `#ifdef` in user code and provide type safety, each platform has its own scene context header:
+
 ```cpp
+// stdui/scene_view.hpp (base interface)
 namespace stdui {
-    class canvas_context {
+    class scene_context {
     public:
-        // Size assigned by layout
-        size canvas_size() const;
-        
-        // Native API handles
-        #ifdef __APPLE__
-        id<MTLDevice> metal_device() const;
-        id<MTLCommandQueue> metal_queue() const;
-        MTLRenderPassDescriptor* render_pass() const;
-        id<CAMetalDrawable> current_drawable() const;
-        #endif
-        
-        #ifdef __linux__
-        VkDevice vulkan_device() const;
-        VkQueue vulkan_queue() const;
-        VkRenderPass vulkan_render_pass() const;
-        VkImage vulkan_target_image() const;
-        #endif
-        
-        #ifdef _WIN32
-        ID3D12Device* d3d12_device() const;
-        ID3D12CommandQueue* d3d12_queue() const;
-        IDXGISwapChain* d3d12_swapchain() const;
-        #endif
+        virtual ~scene_context() = default;
+        virtual size scene_size() const = 0;
     };
 }
+
+// stdui/scene_view_metal.hpp (macOS only)
+#include <Metal/Metal.h>
+
+namespace stdui {
+    class metal_scene_context : public scene_context {
+    public:
+        id<MTLDevice> device() const;
+        id<MTLCommandQueue> queue() const;
+        MTLRenderPassDescriptor* render_pass() const;
+        id<CAMetalDrawable> current_drawable() const;
+        
+    };
+}
+
+// stdui/scene_view_vulkan.hpp (Linux only)
+#include <vulkan/vulkan.h>
+
+namespace stdui {
+    class vulkan_scene_context : public scene_context {
+    public:
+        VkDevice device() const;
+        VkQueue queue() const;
+        VkRenderPass render_pass() const;
+        VkImage target_image() const;
+    };
+}
+
+// stdui/scene_view_d3d12.hpp (Windows only)
+#include <d3d12.h>
+
+namespace stdui {
+    class d3d12_scene_context : public scene_context {
+    public:
+        ID3D12Device* device() const;
+        ID3D12CommandQueue* queue() const;
+        IDXGISwapChain* swapchain() const;
+    };
+}
+```
+
+**User code (platform-specific):**
+
+```cpp
+// my_renderer_macos.mm (macOS implementation)
+#include <stdui/scene_view_metal.hpp>
+
+void render_scene(stdui::scene_context& ctx) {
+    auto& metal = static_cast<stdui::metal_scene_context&>(ctx);
+    id<MTLDevice> device = metal.device();
+    id<MTLCommandQueue> queue = metal.queue();
+    
+    // Metal rendering code...
+}
+
+// my_renderer_linux.cpp (Linux implementation)
+#include <stdui/scene_view_vulkan.hpp>
+
+void render_scene(stdui::scene_context& ctx) {
+    auto& vulkan = static_cast<stdui::vulkan_scene_context&>(ctx);
+    VkDevice device = vulkan.device();
+    VkQueue queue = vulkan.queue();
+    
+    // Vulkan rendering code...
+}
+```
+
+**Benefits:**
+- ✅ No `#ifdef` in user code (platform-specific headers instead)
+- ✅ Type-safe (no void* casts)
+- ✅ Natural usage (3D code is inherently platform-specific)
+- ✅ Extensible (easy to add WebGPU later)
 ```
 
 ### 6.3 Header Organization
@@ -813,9 +911,12 @@ namespace stdui {
 
 **Optional (when needed):**
 ```cpp
-#include <stdui/canvas.hpp>     // 3D canvas integration
-#include <stdui/effects.hpp>    // Blur, shadows, gradients
-#include <stdui/animation.hpp>  // Phase 5 (future)
+#include <stdui/scene_view.hpp>         // Base scene view API
+#include <stdui/scene_view_metal.hpp>   // macOS Metal (platform-specific)
+#include <stdui/scene_view_vulkan.hpp>  // Linux Vulkan (platform-specific)
+#include <stdui/scene_view_d3d12.hpp>   // Windows D3D12 (platform-specific)
+#include <stdui/effects.hpp>            // Blur, shadows, gradients
+#include <stdui/animation.hpp>          // Phase 5 (future)
 ```
 
 ---
@@ -829,7 +930,10 @@ stdui/
 ├── include/
 │   └── stdui/
 │       ├── stdui.hpp                  # Umbrella header
-│       ├── canvas.hpp                 # Optional: canvas API
+│       ├── scene_view.hpp             # Base scene view API
+│       ├── scene_view_metal.hpp       # Optional: macOS Metal
+│       ├── scene_view_vulkan.hpp      # Optional: Linux Vulkan
+│       ├── scene_view_d3d12.hpp       # Optional: Windows D3D12
 │       ├── effects.hpp                # Optional: effects API
 │       └── rendering.hpp              # Platform-agnostic interface
 │
@@ -841,17 +945,17 @@ stdui/
 │   └── platform/
 │       ├── macos/
 │       │   ├── metal_renderer.mm      # Metal 2D renderer
-│       │   ├── metal_canvas.mm        # Metal canvas context
+│       │   ├── metal_scene_view.mm    # Metal scene context
 │       │   └── core_text_shaper.mm    # Text shaping
 │       │
 │       ├── windows/
 │       │   ├── direct2d_renderer.cpp  # Direct2D renderer
-│       │   ├── d3d12_canvas.cpp       # D3D12 canvas context
+│       │   ├── d3d12_scene_view.cpp   # D3D12 scene context
 │       │   └── directwrite_shaper.cpp # Text shaping
 │       │
 │       └── linux/
 │           ├── skia_renderer.cpp      # Skia+Vulkan renderer
-│           ├── vulkan_canvas.cpp      # Vulkan canvas context
+│           ├── vulkan_scene_view.cpp  # Vulkan scene context
 │           └── harfbuzz_shaper.cpp    # Text shaping
 │
 ├── tests/
@@ -875,77 +979,125 @@ stdui/
 
 ### 7.2 CMake Configuration
 
-```cmake
-# Platform detection
-if(APPLE)
-    set(STDUI_PLATFORM "macos")
-elseif(WIN32)
-    set(STDUI_PLATFORM "windows")
-elseif(UNIX)
-    set(STDUI_PLATFORM "linux")
-endif()
+**Main CMakeLists.txt (clean and simple):**
 
-# Rendering library
-add_library(stdui_rendering
-    # Common code
+```cmake
+cmake_minimum_required(VERSION 3.24)
+project(stdui VERSION 0.1.0 LANGUAGES CXX)
+
+# Core library (header-only)
+add_library(stdui INTERFACE)
+add_library(stdui::stdui ALIAS stdui)
+
+target_include_directories(stdui INTERFACE
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>
+)
+target_compile_features(stdui INTERFACE cxx_std_20)
+
+# Platform-specific rendering (dispatched to separate files)
+include(cmake/rendering.cmake)
+
+# Testing, docs, install
+include(CTest)
+if(BUILD_TESTING)
+    include(cmake/tests.cmake)
+endif()
+include(cmake/docs.cmake)
+include(cmake/install.cmake)
+```
+
+**cmake/rendering.cmake (platform dispatch):**
+
+```cmake
+# Rendering implementation library
+add_library(stdui_rendering STATIC
     src/rendering/render_tree.cpp
     src/rendering/glyph_atlas.cpp
-    
-    # Platform-specific (selected by CMake)
-    src/platform/${STDUI_PLATFORM}/renderer_impl.cpp
-    src/platform/${STDUI_PLATFORM}/canvas_impl.cpp
-    src/platform/${STDUI_PLATFORM}/text_impl.cpp
 )
 
-# Platform-specific dependencies
-if(STDUI_PLATFORM STREQUAL "macos")
-    target_sources(stdui_rendering PRIVATE
-        src/platform/macos/metal_renderer.mm
-        src/platform/macos/metal_canvas.mm
-        src/platform/macos/core_text_shaper.mm
-    )
-    target_link_libraries(stdui_rendering PRIVATE
-        "-framework Metal"
-        "-framework MetalKit"
-        "-framework CoreText"
-        "-framework QuartzCore"
-    )
-    
-elseif(STDUI_PLATFORM STREQUAL "windows")
-    target_sources(stdui_rendering PRIVATE
-        src/platform/windows/direct2d_renderer.cpp
-        src/platform/windows/d3d12_canvas.cpp
-        src/platform/windows/directwrite_shaper.cpp
-    )
-    target_link_libraries(stdui_rendering PRIVATE
-        d2d1.lib
-        dwrite.lib
-        d3d12.lib
-        dxgi.lib
-    )
-    
-elseif(STDUI_PLATFORM STREQUAL "linux")
-    find_package(Vulkan REQUIRED)
-    find_package(Skia REQUIRED)
-    find_package(HarfBuzz REQUIRED)
-    
-    target_sources(stdui_rendering PRIVATE
-        src/platform/linux/skia_renderer.cpp
-        src/platform/linux/vulkan_canvas.cpp
-        src/platform/linux/harfbuzz_shaper.cpp
-    )
-    target_link_libraries(stdui_rendering PRIVATE
-        Vulkan::Vulkan
-        Skia::Skia
-        HarfBuzz::HarfBuzz
-    )
+target_link_libraries(stdui_rendering PUBLIC stdui)
+
+# Platform-specific configuration (dispatched)
+if(APPLE)
+    include(cmake/platform/macos.cmake)
+elseif(WIN32)
+    include(cmake/platform/windows.cmake)
+elseif(UNIX)
+    include(cmake/platform/linux.cmake)
 endif()
 
-# Link to main library
+# Link rendering to main target
 target_link_libraries(stdui INTERFACE stdui_rendering)
 ```
 
-**Key principle:** Platform code selected at compile time by CMake, not `#ifdef` in source.
+**cmake/platform/macos.cmake:**
+
+```cmake
+target_sources(stdui_rendering PRIVATE
+    src/platform/macos/metal_renderer.mm
+    src/platform/macos/metal_scene_view.mm
+    src/platform/macos/core_text_shaper.mm
+)
+
+target_link_libraries(stdui_rendering PRIVATE
+    "-framework Metal"
+    "-framework MetalKit"
+    "-framework CoreText"
+    "-framework QuartzCore"
+)
+```
+
+**cmake/platform/windows.cmake:**
+
+```cmake
+target_sources(stdui_rendering PRIVATE
+    src/platform/windows/direct2d_renderer.cpp
+    src/platform/windows/d3d12_scene_view.cpp
+    src/platform/windows/directwrite_shaper.cpp
+)
+
+target_link_libraries(stdui_rendering PRIVATE
+    d2d1.lib
+    dwrite.lib
+    d3d12.lib
+    dxgi.lib
+)
+```
+
+**cmake/platform/linux.cmake:**
+
+```cmake
+find_package(Vulkan REQUIRED)
+find_package(Skia REQUIRED)
+find_package(HarfBuzz REQUIRED)
+
+target_sources(stdui_rendering PRIVATE
+    src/platform/linux/skia_renderer.cpp
+    src/platform/linux/vulkan_scene_view.cpp
+    src/platform/linux/harfbuzz_shaper.cpp
+)
+
+target_link_libraries(stdui_rendering PRIVATE
+    Vulkan::Vulkan
+    Skia::Skia
+    HarfBuzz::HarfBuzz
+)
+```
+
+**User perspective (single target):**
+
+```cmake
+find_package(stdui CONFIG REQUIRED)
+target_link_libraries(my_app PRIVATE stdui::stdui)
+# Done! Backend selected automatically by platform
+```
+
+**Key principles:**
+- ✅ Clean main CMakeLists.txt
+- ✅ Platform dispatch in separate cmake/ files
+- ✅ One target for users: `stdui::stdui`
+- ✅ No `#ifdef` in source code
 
 ---
 
@@ -990,11 +1142,12 @@ target_link_libraries(stdui INTERFACE stdui_rendering)
 - Visual parity tests
 - Complete cross-platform coverage
 
-### Phase 4.5: Canvas Integration (2 weeks)
+### Phase 4.5: Scene View Integration (2 weeks)
 
 **Deliverables:**
-- `canvas` view implementation
-- Canvas context API (Metal/Vulkan/D3D12)
+- `scene_view` view implementation
+- Scene context API (Metal/Vulkan/D3D12)
+- Platform-specific headers (no #ifdef in user code)
 - OS compositor integration
 - Thread management
 - Example: Spinning cube with UI chrome
@@ -1004,9 +1157,12 @@ target_link_libraries(stdui INTERFACE stdui_rendering)
 **Deliverables:**
 - VSync and frame scheduling
 - Performance profiling and optimization
+- GPU/CPU microbenchmarks (Google Benchmark)
+- Frame timing measurements (Metal/Vulkan timestamps)
 - HiDPI/Retina support verification
 - Window resize handling
 - Production documentation
+- Code coverage >90% verified
 
 **Total: 15 weeks (3.75 months)**
 

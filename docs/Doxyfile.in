@@ -79,17 +79,17 @@ SOURCE_TOOLTIPS        = YES
 VERBATIM_HEADERS       = YES
 ALPHABETICAL_INDEX     = YES
 
-HTML_COLORSTYLE        = DARK
-HTML_COLORSTYLE_HUE    = 209
-HTML_COLORSTYLE_SAT    = 255
-HTML_COLORSTYLE_GAMMA  = 113
 GENERATE_HTML          = YES
 HTML_OUTPUT            = html
 HTML_FILE_EXTENSION    = .html
+HTML_HEADER            =
+HTML_FOOTER            =
 HTML_EXTRA_STYLESHEET  = "@PROJECT_SOURCE_DIR@/docs/doxygen-awesome.css" \
-                         "@PROJECT_SOURCE_DIR@/docs/doxygen-awesome-sidebar-only.css" \
-                         "@PROJECT_SOURCE_DIR@/docs/custom.css" \
-                         "@PROJECT_SOURCE_DIR@/docs/doxygen-awesome-custom.css"
+                         "@PROJECT_SOURCE_DIR@/docs/doxygen-awesome-sidebar-only.css"
+HTML_COLORSTYLE        = LIGHT
+HTML_COLORSTYLE_HUE    = 209
+HTML_COLORSTYLE_SAT    = 100
+HTML_COLORSTYLE_GAMMA  = 240
 HTML_DYNAMIC_SECTIONS  = YES
 HTML_INDEX_NUM_ENTRIES = 100
 DISABLE_INDEX          = NO
@@ -97,7 +97,6 @@ GENERATE_TREEVIEW      = YES
 FULL_SIDEBAR           = NO
 ENUM_VALUES_PER_LINE   = 4
 TREEVIEW_WIDTH         = 270
-LAYOUT_FILE            = "@PROJECT_SOURCE_DIR@/docs/layout.xml"
 EXT_LINKS_IN_WINDOW    = NO
 OBFUSCATE_EMAILS       = YES
 SEARCHENGINE           = YES

@@ -223,13 +223,42 @@ var NAVTREE =
         [ "Technology References", "md_docs_2rendering-research-report.html#autotoc_md152", null ]
       ] ]
     ] ],
-    [ "GitHub", "^https://github.com/maidamai0/stdui", null ]
+    [ "Namespaces", "namespaces.html", [
+      [ "Namespace List", "namespaces.html", "namespaces_dup" ],
+      [ "Namespace Members", "namespacemembers.html", [
+        [ "All", "namespacemembers.html", null ],
+        [ "Functions", "namespacemembers_func.html", null ],
+        [ "Typedefs", "namespacemembers_type.html", null ],
+        [ "Enumerations", "namespacemembers_enum.html", null ]
+      ] ]
+    ] ],
+    [ "Concepts", "concepts.html", "concepts" ],
+    [ "Classes", "annotated.html", [
+      [ "Class List", "annotated.html", "annotated_dup" ],
+      [ "Class Index", "classes.html", null ],
+      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
+      [ "Class Members", "functions.html", [
+        [ "All", "functions.html", "functions_dup" ],
+        [ "Functions", "functions_func.html", null ],
+        [ "Variables", "functions_vars.html", null ],
+        [ "Typedefs", "functions_type.html", null ],
+        [ "Enumerations", "functions_enum.html", null ],
+        [ "Related Symbols", "functions_rela.html", null ]
+      ] ]
+    ] ],
+    [ "Files", "files.html", [
+      [ "File List", "files.html", "files_dup" ]
+    ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"architecture.html"
+"annotated.html",
+"classstdui_1_1platform__window.html#a85e49a24475341efaba60af101d74b5e",
+"getting_started.html#autotoc_md40",
+"roadmap.html#autotoc_md154",
+"structstdui_1_1layout__node.html#ac5089c91c2d78aabfd5c46d7f7da2bae"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

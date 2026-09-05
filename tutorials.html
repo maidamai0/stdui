@@ -96,19 +96,19 @@ $(document).ready(function(){initNavTree('tutorials.html',''); initResizable(); 
   <div class="headertitle"><div class="title">stdui Tutorials</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md161"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md125"></a>
 Tutorial 1: Building Your First Layout</h1>
-<h2><a class="anchor" id="autotoc_md162"></a>
+<h2><a class="anchor" id="autotoc_md126"></a>
 Introduction</h2>
 <p>This tutorial walks through creating a simple application layout using stdui's core primitives. You'll learn about stacks, text elements, and basic composition.</p>
-<h2><a class="anchor" id="autotoc_md163"></a>
+<h2><a class="anchor" id="autotoc_md127"></a>
 Prerequisites</h2>
 <ul>
 <li>C++20 compiler</li>
 <li>stdui installed (see Getting Started guide)</li>
 <li>Basic familiarity with C++</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md164"></a>
+<h2><a class="anchor" id="autotoc_md128"></a>
 Step 1: Include Headers</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="expressions_8hpp.html">stdui/expressions.hpp</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="layout_8hpp.html">stdui/layout.hpp</a>&gt;</span></div>
@@ -117,13 +117,13 @@ Step 1: Include Headers</h2>
 <div class="ttc" id="aexpressions_8hpp_html"><div class="ttname"><a href="expressions_8hpp.html">expressions.hpp</a></div></div>
 <div class="ttc" id="ageometry_8hpp_html"><div class="ttname"><a href="geometry_8hpp.html">geometry.hpp</a></div></div>
 <div class="ttc" id="alayout_8hpp_html"><div class="ttname"><a href="layout_8hpp.html">layout.hpp</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md165"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md129"></a>
 Step 2: Create a Simple Text Element</h2>
 <p>The most basic UI element is text:</p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> greeting = <a class="code hl_enumvalue" href="namespacestdui.html#a62d98f56870e76b778b429b8ef8f2702a1cb251ec0d568de6a929b520c4aed8d1">stdui::text</a>(<span class="stringliteral">&quot;Hello, stdui!&quot;</span>);</div>
 <div class="ttc" id="anamespacestdui_html_a62d98f56870e76b778b429b8ef8f2702a1cb251ec0d568de6a929b520c4aed8d1"><div class="ttname"><a href="namespacestdui.html#a62d98f56870e76b778b429b8ef8f2702a1cb251ec0d568de6a929b520c4aed8d1">stdui::layout_kind::text</a></div><div class="ttdeci">@ text</div></div>
 </div><!-- fragment --><p>This creates a <b>view expression</b> - a description of what should appear, not the actual UI element itself.</p>
-<h2><a class="anchor" id="autotoc_md166"></a>
+<h2><a class="anchor" id="autotoc_md130"></a>
 Step 3: Stack Elements Vertically</h2>
 <p>Let's create a vertical stack of text elements:</p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> make_profile() {</div>
@@ -135,7 +135,7 @@ Step 3: Stack Elements Vertically</h2>
 <div class="line">}</div>
 <div class="ttc" id="anamespacestdui_html_a62d98f56870e76b778b429b8ef8f2702a91e181f51e63b479128db86870841b8d"><div class="ttname"><a href="namespacestdui.html#a62d98f56870e76b778b429b8ef8f2702a91e181f51e63b479128db86870841b8d">stdui::layout_kind::vstack</a></div><div class="ttdeci">@ vstack</div></div>
 </div><!-- fragment --><p><code>vstack</code> arranges children from top to bottom. Each child is a separate text element.</p>
-<h2><a class="anchor" id="autotoc_md167"></a>
+<h2><a class="anchor" id="autotoc_md131"></a>
 Step 4: Add Horizontal Layout</h2>
 <p>Combine vertical and horizontal stacks:</p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> make_contact_card() {</div>
@@ -154,7 +154,7 @@ Step 4: Add Horizontal Layout</h2>
 <div class="line">}</div>
 <div class="ttc" id="anamespacestdui_html_a62d98f56870e76b778b429b8ef8f2702ae3b51c4280b0442e7452ef17727b0ead"><div class="ttname"><a href="namespacestdui.html#a62d98f56870e76b778b429b8ef8f2702ae3b51c4280b0442e7452ef17727b0ead">stdui::layout_kind::hstack</a></div><div class="ttdeci">@ hstack</div></div>
 </div><!-- fragment --><p><code>hstack</code> arranges children from left to right.</p>
-<h2><a class="anchor" id="autotoc_md168"></a>
+<h2><a class="anchor" id="autotoc_md132"></a>
 Step 5: Use Overlay for Layering</h2>
 <p>Overlay places elements on top of each other:</p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> make_badge() {</div>
@@ -165,7 +165,7 @@ Step 5: Use Overlay for Layering</h2>
 <div class="line">}</div>
 <div class="ttc" id="anamespacestdui_html_a62d98f56870e76b778b429b8ef8f2702a380e537acdaedd487ca1adb49d020f7e"><div class="ttname"><a href="namespacestdui.html#a62d98f56870e76b778b429b8ef8f2702a380e537acdaedd487ca1adb49d020f7e">stdui::layout_kind::overlay</a></div><div class="ttdeci">@ overlay</div></div>
 </div><!-- fragment --><p>Children are drawn in order (first = back, last = front).</p>
-<h2><a class="anchor" id="autotoc_md169"></a>
+<h2><a class="anchor" id="autotoc_md133"></a>
 Step 6: Create a Grid Layout</h2>
 <p>For more structured layouts, use grids:</p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> make_dashboard() {</div>
@@ -184,7 +184,7 @@ Step 6: Create a Grid Layout</h2>
 <div class="ttc" id="anamespacestdui_html_a5a504dd66879a424d300a42315d922ab"><div class="ttname"><a href="namespacestdui.html#a5a504dd66879a424d300a42315d922ab">stdui::grid</a></div><div class="ttdeci">auto grid(T &amp;&amp;...x)</div><div class="ttdoc">Creates a grid expression with default options (single column).</div><div class="ttdef"><b>Definition</b> <a href="expressions_8hpp_source.html#l00165">expressions.hpp:165</a></div></div>
 <div class="ttc" id="astructstdui_1_1grid__options_html"><div class="ttname"><a href="structstdui_1_1grid__options.html">stdui::grid_options</a></div><div class="ttdoc">Configuration for grid layouts.</div><div class="ttdef"><b>Definition</b> <a href="layout__options_8hpp_source.html#l00049">layout_options.hpp:49</a></div></div>
 <div class="ttc" id="astructstdui_1_1grid__options_html_a6b98bf3a3ceb8c9ab92bfe7443da74e5"><div class="ttname"><a href="structstdui_1_1grid__options.html#a6b98bf3a3ceb8c9ab92bfe7443da74e5">stdui::grid_options::columns</a></div><div class="ttdeci">std::size_t columns</div><div class="ttdef"><b>Definition</b> <a href="layout__options_8hpp_source.html#l00050">layout_options.hpp:50</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md170"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md134"></a>
 Step 7: Measure and Arrange</h2>
 <p>To actually layout your UI, you need to measure and arrange:</p>
 <div class="fragment"><div class="line"><span class="keywordtype">int</span> main() {</div>
@@ -213,7 +213,7 @@ Step 7: Measure and Arrange</h2>
 <div class="ttc" id="anamespacestdui_html_a7d1f13f8976d99a55448ee49d162b1ff"><div class="ttname"><a href="namespacestdui.html#a7d1f13f8976d99a55448ee49d162b1ff">stdui::arrange_vstack</a></div><div class="ttdeci">auto arrange_vstack(std::span&lt; size const &gt; child_sizes, rect const &amp;bounds, layout_alignment alignment=layout_alignment::start, double spacing=0.0) -&gt; std::vector&lt; rect &gt;</div><div class="ttdoc">Places measured vertical children according to cross-axis alignment.</div><div class="ttdef"><b>Definition</b> <a href="layout_8hpp_source.html#l00272">layout.hpp:272</a></div></div>
 <div class="ttc" id="astructstdui_1_1proposal_html_a5e2a2e82a8e215181cce83f6331befab"><div class="ttname"><a href="structstdui_1_1proposal.html#a5e2a2e82a8e215181cce83f6331befab">stdui::proposal::bounded</a></div><div class="ttdeci">static auto bounded(double width, double height) -&gt; proposal</div><div class="ttdef"><b>Definition</b> <a href="layout_8hpp_source.html#l00029">layout.hpp:29</a></div></div>
 <div class="ttc" id="astructstdui_1_1rect_html"><div class="ttname"><a href="structstdui_1_1rect.html">stdui::rect</a></div><div class="ttdoc">Axis-aligned logical rectangle defined by an origin and extent.</div><div class="ttdef"><b>Definition</b> <a href="geometry_8hpp_source.html#l00022">geometry.hpp:22</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md171"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md135"></a>
 Key Takeaways</h2>
 <ol type="1">
 <li><b>View expressions describe structure</b> - They're not the actual UI</li>
@@ -221,7 +221,7 @@ Key Takeaways</h2>
 <li><b>Composition is powerful</b> - Nest stacks to create complex layouts</li>
 <li><b>Two-phase layout</b> - Measure constraints, then arrange geometry</li>
 </ol>
-<h2><a class="anchor" id="autotoc_md172"></a>
+<h2><a class="anchor" id="autotoc_md136"></a>
 Next Steps</h2>
 <ul>
 <li>Tutorial 2: Working with State</li>
@@ -229,12 +229,12 @@ Next Steps</h2>
 <li>Tutorial 4: Dynamic Lists and Identity</li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md174"></a>
+<h1><a class="anchor" id="autotoc_md138"></a>
 Tutorial 2: Working with State</h1>
-<h2><a class="anchor" id="autotoc_md175"></a>
+<h2><a class="anchor" id="autotoc_md139"></a>
 Introduction</h2>
 <p>Learn how to create interactive UIs with state management. You'll build a counter component that responds to user actions.</p>
-<h2><a class="anchor" id="autotoc_md176"></a>
+<h2><a class="anchor" id="autotoc_md140"></a>
 Understanding State in stdui</h2>
 <p>stdui has two types of state:</p>
 <ol type="1">
@@ -242,7 +242,7 @@ Understanding State in stdui</h2>
 <li><b>Framework state</b> - UI-local state managed by stdui</li>
 </ol>
 <p>Framework state persists across view expression evaluations.</p>
-<h2><a class="anchor" id="autotoc_md177"></a>
+<h2><a class="anchor" id="autotoc_md141"></a>
 Step 1: Define a Stateful Component</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="component_8hpp.html">stdui/component.hpp</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="state_8hpp.html">stdui/state.hpp</a>&gt;</span></div>
@@ -263,7 +263,7 @@ Step 1: Define a Stateful Component</h2>
 <div class="line">}</div>
 <div class="ttc" id="acomponent_8hpp_html"><div class="ttname"><a href="component_8hpp.html">component.hpp</a></div></div>
 <div class="ttc" id="astate_8hpp_html"><div class="ttname"><a href="state_8hpp.html">state.hpp</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md178"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md142"></a>
 Step 2: Understanding Component Context</h2>
 <p>The <code>component_context</code> provides:</p>
 <ul>
@@ -271,7 +271,7 @@ Step 2: Understanding Component Context</h2>
 <li>State is tied to component identity</li>
 <li>State survives across re-evaluations</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md179"></a>
+<h2><a class="anchor" id="autotoc_md143"></a>
 Step 3: Modifying State</h2>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> make_interactive_counter() {</div>
 <div class="line">    <span class="keywordflow">return</span> stdui::component&lt;counter_tag&gt;([](<span class="keyword">auto</span>&amp; ctx) {</div>
@@ -289,7 +289,7 @@ Step 3: Modifying State</h2>
 <div class="line">        );</div>
 <div class="line">    });</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md180"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md144"></a>
 Step 4: Multiple State Variables</h2>
 <p>Components can have multiple state variables:</p>
 <div class="fragment"><div class="line"><span class="keyword">struct </span>form_tag {};</div>
@@ -307,7 +307,7 @@ Step 4: Multiple State Variables</h2>
 <div class="line">        );</div>
 <div class="line">    });</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md181"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md145"></a>
 Step 5: Component Identity</h2>
 <p>Identity determines which state belongs to which component:</p>
 <div class="fragment"><div class="line"><span class="comment">// Same component type, different instances</span></div>
@@ -331,7 +331,7 @@ Step 5: Component Identity</h2>
 <div class="line">);</div>
 <div class="ttc" id="anamespacestdui_html_a62d98f56870e76b778b429b8ef8f2702a0fe0435fadf4eb10b999275290726116"><div class="ttname"><a href="namespacestdui.html#a62d98f56870e76b778b429b8ef8f2702a0fe0435fadf4eb10b999275290726116">stdui::layout_kind::dynamic_list</a></div><div class="ttdeci">@ dynamic_list</div></div>
 <div class="ttc" id="anamespacestdui_html_aef0f44eadb26be0edc82e1a7cb1d60a2"><div class="ttname"><a href="namespacestdui.html#aef0f44eadb26be0edc82e1a7cb1d60a2">stdui::identified</a></div><div class="ttdeci">auto identified(Id &amp;&amp;id, Expression &amp;&amp;expression)</div><div class="ttdoc">Creates an explicitly identified child expression.</div><div class="ttdef"><b>Definition</b> <a href="expressions_8hpp_source.html#l00109">expressions.hpp:109</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md182"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md146"></a>
 Key Takeaways</h2>
 <ol type="1">
 <li><b>State persists across evaluations</b> - Not ordinary C++ variables</li>
@@ -340,12 +340,12 @@ Key Takeaways</h2>
 <li><b>Explicit identity for lists</b> - Use <code>identified()</code> and <code>dynamic_list()</code></li>
 </ol>
 <hr  />
-<h1><a class="anchor" id="autotoc_md184"></a>
+<h1><a class="anchor" id="autotoc_md148"></a>
 Tutorial 3: Creating Reusable Components</h1>
-<h2><a class="anchor" id="autotoc_md185"></a>
+<h2><a class="anchor" id="autotoc_md149"></a>
 Introduction</h2>
 <p>Learn to build reusable, composable UI components following stdui's architecture.</p>
-<h2><a class="anchor" id="autotoc_md186"></a>
+<h2><a class="anchor" id="autotoc_md150"></a>
 Simple Function Components</h2>
 <p>The simplest component is just a function:</p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> button_label(std::string_view text) {</div>
@@ -361,7 +361,7 @@ Simple Function Components</h2>
 <div class="line">    button_label(<span class="stringliteral">&quot;OK&quot;</span>),</div>
 <div class="line">    button_label(<span class="stringliteral">&quot;Cancel&quot;</span>)</div>
 <div class="line">);</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md187"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md151"></a>
 Parameterized Components</h2>
 <p>Components can accept configuration:</p>
 <div class="fragment"><div class="line"><span class="keyword">struct </span>card_config {</div>
@@ -381,7 +381,7 @@ Parameterized Components</h2>
 <div class="line">        <a class="code hl_enumvalue" href="namespacestdui.html#a62d98f56870e76b778b429b8ef8f2702a1cb251ec0d568de6a929b520c4aed8d1">stdui::text</a>(<span class="stringliteral">&quot;---&quot;</span>)</div>
 <div class="line">    );</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md188"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md152"></a>
 Components with Children</h2>
 <p>Accept view expressions as children:</p>
 <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<a class="code hl_concept" href="conceptstdui_1_1view__expression.html">stdui::view_expression</a>... Children&gt;</div>
@@ -400,7 +400,7 @@ Components with Children</h2>
 <div class="line">    <a class="code hl_enumvalue" href="namespacestdui.html#a62d98f56870e76b778b429b8ef8f2702a1cb251ec0d568de6a929b520c4aed8d1">stdui::text</a>(<span class="stringliteral">&quot;Option 2&quot;</span>)</div>
 <div class="line">);</div>
 <div class="ttc" id="aconceptstdui_1_1view__expression_html"><div class="ttname"><a href="conceptstdui_1_1view__expression.html">stdui::view_expression</a></div><div class="ttdoc">Matches value types with an opt-in expression tag.</div><div class="ttdef"><b>Definition</b> <a href="expressions_8hpp_source.html#l00022">expressions.hpp:22</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md189"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md153"></a>
 Stateful Reusable Components</h2>
 <p>For components needing state, use the component system:</p>
 <div class="fragment"><div class="line"><span class="keyword">struct </span>expandable_section_tag {};</div>
@@ -427,7 +427,7 @@ Stateful Reusable Components</h2>
 <div class="line">    });</div>
 <div class="line">}</div>
 <div class="ttc" id="astructstdui_1_1inspection__node_html"><div class="ttname"><a href="structstdui_1_1inspection__node.html">stdui::inspection_node</a></div><div class="ttdoc">Backend-independent snapshot of an expression tree.</div><div class="ttdef"><b>Definition</b> <a href="inspection_8hpp_source.html#l00016">inspection.hpp:16</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md190"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md154"></a>
 Component Libraries</h2>
 <p>Organize related components:</p>
 <div class="fragment"><div class="line"><span class="keyword">namespace </span>my_ui {</div>
@@ -451,7 +451,7 @@ Component Libraries</h2>
 <div class="line">    my_ui::divider(),</div>
 <div class="line">    my_ui::heading(<span class="stringliteral">&quot;Next Section&quot;</span>)</div>
 <div class="line">);</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md191"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md155"></a>
 Key Takeaways</h2>
 <ol type="1">
 <li><b>Start with functions</b> - Simplest components are pure functions</li>
@@ -460,7 +460,7 @@ Key Takeaways</h2>
 <li><b>State when needed</b> - Use <code>component&lt;Tag&gt;</code> for stateful components</li>
 <li><b>Create libraries</b> - Group related components in namespaces</li>
 </ol>
-<h2><a class="anchor" id="autotoc_md192"></a>
+<h2><a class="anchor" id="autotoc_md156"></a>
 Next Steps</h2>
 <ul>
 <li>Explore the standard component library (when available)</li>

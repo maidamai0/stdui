@@ -28,38 +28,38 @@ var index =
       [ "Contributing", "getting_started.html#autotoc_md54", null ]
     ] ],
     [ "stdui Tutorials", "tutorials.html", [
-      [ "Tutorial 1: Building Your First Layout", "tutorials.html#autotoc_md161", [
-        [ "Introduction", "tutorials.html#autotoc_md162", null ],
-        [ "Prerequisites", "tutorials.html#autotoc_md163", null ],
-        [ "Step 1: Include Headers", "tutorials.html#autotoc_md164", null ],
-        [ "Step 2: Create a Simple Text Element", "tutorials.html#autotoc_md165", null ],
-        [ "Step 3: Stack Elements Vertically", "tutorials.html#autotoc_md166", null ],
-        [ "Step 4: Add Horizontal Layout", "tutorials.html#autotoc_md167", null ],
-        [ "Step 5: Use Overlay for Layering", "tutorials.html#autotoc_md168", null ],
-        [ "Step 6: Create a Grid Layout", "tutorials.html#autotoc_md169", null ],
-        [ "Step 7: Measure and Arrange", "tutorials.html#autotoc_md170", null ],
-        [ "Key Takeaways", "tutorials.html#autotoc_md171", null ],
-        [ "Next Steps", "tutorials.html#autotoc_md172", null ]
+      [ "Tutorial 1: Building Your First Layout", "tutorials.html#autotoc_md125", [
+        [ "Introduction", "tutorials.html#autotoc_md126", null ],
+        [ "Prerequisites", "tutorials.html#autotoc_md127", null ],
+        [ "Step 1: Include Headers", "tutorials.html#autotoc_md128", null ],
+        [ "Step 2: Create a Simple Text Element", "tutorials.html#autotoc_md129", null ],
+        [ "Step 3: Stack Elements Vertically", "tutorials.html#autotoc_md130", null ],
+        [ "Step 4: Add Horizontal Layout", "tutorials.html#autotoc_md131", null ],
+        [ "Step 5: Use Overlay for Layering", "tutorials.html#autotoc_md132", null ],
+        [ "Step 6: Create a Grid Layout", "tutorials.html#autotoc_md133", null ],
+        [ "Step 7: Measure and Arrange", "tutorials.html#autotoc_md134", null ],
+        [ "Key Takeaways", "tutorials.html#autotoc_md135", null ],
+        [ "Next Steps", "tutorials.html#autotoc_md136", null ]
       ] ],
-      [ "Tutorial 2: Working with State", "tutorials.html#autotoc_md174", [
-        [ "Introduction", "tutorials.html#autotoc_md175", null ],
-        [ "Understanding State in stdui", "tutorials.html#autotoc_md176", null ],
-        [ "Step 1: Define a Stateful Component", "tutorials.html#autotoc_md177", null ],
-        [ "Step 2: Understanding Component Context", "tutorials.html#autotoc_md178", null ],
-        [ "Step 3: Modifying State", "tutorials.html#autotoc_md179", null ],
-        [ "Step 4: Multiple State Variables", "tutorials.html#autotoc_md180", null ],
-        [ "Step 5: Component Identity", "tutorials.html#autotoc_md181", null ],
-        [ "Key Takeaways", "tutorials.html#autotoc_md182", null ]
+      [ "Tutorial 2: Working with State", "tutorials.html#autotoc_md138", [
+        [ "Introduction", "tutorials.html#autotoc_md139", null ],
+        [ "Understanding State in stdui", "tutorials.html#autotoc_md140", null ],
+        [ "Step 1: Define a Stateful Component", "tutorials.html#autotoc_md141", null ],
+        [ "Step 2: Understanding Component Context", "tutorials.html#autotoc_md142", null ],
+        [ "Step 3: Modifying State", "tutorials.html#autotoc_md143", null ],
+        [ "Step 4: Multiple State Variables", "tutorials.html#autotoc_md144", null ],
+        [ "Step 5: Component Identity", "tutorials.html#autotoc_md145", null ],
+        [ "Key Takeaways", "tutorials.html#autotoc_md146", null ]
       ] ],
-      [ "Tutorial 3: Creating Reusable Components", "tutorials.html#autotoc_md184", [
-        [ "Introduction", "tutorials.html#autotoc_md185", null ],
-        [ "Simple Function Components", "tutorials.html#autotoc_md186", null ],
-        [ "Parameterized Components", "tutorials.html#autotoc_md187", null ],
-        [ "Components with Children", "tutorials.html#autotoc_md188", null ],
-        [ "Stateful Reusable Components", "tutorials.html#autotoc_md189", null ],
-        [ "Component Libraries", "tutorials.html#autotoc_md190", null ],
-        [ "Key Takeaways", "tutorials.html#autotoc_md191", null ],
-        [ "Next Steps", "tutorials.html#autotoc_md192", null ]
+      [ "Tutorial 3: Creating Reusable Components", "tutorials.html#autotoc_md148", [
+        [ "Introduction", "tutorials.html#autotoc_md149", null ],
+        [ "Simple Function Components", "tutorials.html#autotoc_md150", null ],
+        [ "Parameterized Components", "tutorials.html#autotoc_md151", null ],
+        [ "Components with Children", "tutorials.html#autotoc_md152", null ],
+        [ "Stateful Reusable Components", "tutorials.html#autotoc_md153", null ],
+        [ "Component Libraries", "tutorials.html#autotoc_md154", null ],
+        [ "Key Takeaways", "tutorials.html#autotoc_md155", null ],
+        [ "Next Steps", "tutorials.html#autotoc_md156", null ]
       ] ]
     ] ],
     [ "stdui Architecture", "architecture.html", [
@@ -104,12 +104,12 @@ var index =
       [ "Known risks to investigate", "design_decisions.html#autotoc_md34", null ]
     ] ],
     [ "stdui Roadmap", "roadmap.html", [
-      [ "Phase 1 — Foundation (validated)", "roadmap.html#autotoc_md154", null ],
-      [ "Phase 2 — Layout and measurement", "roadmap.html#autotoc_md155", null ],
-      [ "Phase 3 — Interaction and state", "roadmap.html#autotoc_md156", null ],
-      [ "Phase 4 — Rendering", "roadmap.html#autotoc_md157", null ],
-      [ "Phase 5 — Batteries", "roadmap.html#autotoc_md158", null ],
-      [ "Phase 6 — Platform hardening", "roadmap.html#autotoc_md159", null ],
-      [ "Project management", "roadmap.html#autotoc_md160", null ]
+      [ "Phase 1 — Foundation (validated)", "roadmap.html#autotoc_md118", null ],
+      [ "Phase 2 — Layout and measurement", "roadmap.html#autotoc_md119", null ],
+      [ "Phase 3 — Interaction and state", "roadmap.html#autotoc_md120", null ],
+      [ "Phase 4 — Rendering", "roadmap.html#autotoc_md121", null ],
+      [ "Phase 5 — Batteries", "roadmap.html#autotoc_md122", null ],
+      [ "Phase 6 — Platform hardening", "roadmap.html#autotoc_md123", null ],
+      [ "Project management", "roadmap.html#autotoc_md124", null ]
     ] ]
 ];

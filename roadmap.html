@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('roadmap.html',''); initResizable(); })
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>The roadmap is organized into phases. Near-term phases are detailed into review-sized items; later phases are coarse epics that decompose when work reaches them. Each phase maps to a GitHub milestone, and the GitHub project tracks the items on this roadmap.</p>
-<h1><a class="anchor" id="autotoc_md154"></a>
+<h1><a class="anchor" id="autotoc_md118"></a>
 Phase 1 — Foundation (validated)</h1>
 <ul>
 <li>typed view expressions and headless reconciliation;</li>
@@ -107,7 +107,7 @@ Phase 1 — Foundation (validated)</h1>
 <li>package installation and CMake <code>find_package</code> consumption;</li>
 <li>initial GitHub release and deployed API docs.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md155"></a>
+<h1><a class="anchor" id="autotoc_md119"></a>
 Phase 2 — Layout and measurement</h1>
 <p>Goal: layout becomes configurable through the DSL and covers the primitives a real screen needs.</p>
 <ul>
@@ -117,7 +117,7 @@ Phase 2 — Layout and measurement</h1>
 <li>Add a text measurement bridge to a platform text engine (measure-only).</li>
 </ul>
 <p>Known limitation: <code>measure()</code> and <code>arrange()</code> are computed independently in the materialized layout tree: a node's reported extent and its arranged geometry can disagree once flex <code>grow</code>/<code>fill</code> become settable through the expression DSL. Revisit during this phase.</p>
-<h1><a class="anchor" id="autotoc_md156"></a>
+<h1><a class="anchor" id="autotoc_md120"></a>
 Phase 3 — Interaction and state</h1>
 <p>Goal: the UI reacts to input and to application-owned data.</p>
 <ul>
@@ -127,7 +127,7 @@ Phase 3 — Interaction and state</h1>
 <li>Add gesture recognition (tap, press, pan).</li>
 <li>Add observable application state with dependency tracking and invalidation.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md157"></a>
+<h1><a class="anchor" id="autotoc_md121"></a>
 Phase 4 — Rendering</h1>
 <p>Goal: prove the backend pluggability claim. An interface is only real once two implementations exist.</p>
 <ul>
@@ -138,7 +138,7 @@ Phase 4 — Rendering</h1>
 <li>Add frame scheduling and vsync.</li>
 </ul>
 <p>Acceptance: one demo application renders identically through both backends.</p>
-<h1><a class="anchor" id="autotoc_md158"></a>
+<h1><a class="anchor" id="autotoc_md122"></a>
 Phase 5 — Batteries</h1>
 <p>Goal: standard components built from the same composition machinery.</p>
 <ul>
@@ -148,15 +148,19 @@ Phase 5 — Batteries</h1>
 <li>Add animation and transitions.</li>
 <li>Add a standard component catalog in increments (button, toggle, slider, text field, picker, list, table, navigation, dialogs).</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md159"></a>
+<h1><a class="anchor" id="autotoc_md123"></a>
 Phase 6 — Platform hardening</h1>
 <ul>
 <li>Add platform windowing, application lifecycle, and device scale handling.</li>
 <li>Add accessibility platform bridges (screen reader integration).</li>
 <li>Add IME/text input integration.</li>
 <li>Add clipboard and drag-and-drop.</li>
+<li>Add webview integration (native web engines: WKWebView, WebView2, WebKitGTK).</li>
+<li>Add file dialogs (open, save, directory picker).</li>
+<li>Add system tray icon and menu integration.</li>
+<li>Add system notifications.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md160"></a>
+<h1><a class="anchor" id="autotoc_md124"></a>
 Project management</h1>
 <p>The GitHub project tracks this roadmap in <code>Todo</code>, <code>In Progress</code>, and <code>Done</code> columns. Each item is a GitHub issue and a single complete feature suitable for one review and one commit. </p>
 </div></div><!-- contents -->

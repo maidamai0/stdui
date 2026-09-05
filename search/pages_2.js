@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['getting_20started_20with_20stdui_0',['Getting Started with stdui',['../getting_started.html',1,'index']]]
+  ['decisions_0',['stdui Design Decisions',['../design_decisions.html',1,'index']]],
+  ['design_1',['Phase 4: Rendering Subsystem Design',['../md_docs_2phase4-rendering.html',1,'']]],
+  ['design_20decisions_2',['stdui Design Decisions',['../design_decisions.html',1,'index']]]
 ];

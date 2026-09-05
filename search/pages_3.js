@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['proposal_0',['Rendering Subsystem: Research Report &amp; Design Proposal',['../md_docs_2rendering-research-report.html',1,'']]]
+  ['getting_20started_20with_20stdui_0',['Getting Started with stdui',['../getting_started.html',1,'index']]]
 ];

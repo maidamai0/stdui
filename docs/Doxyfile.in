@@ -79,7 +79,7 @@ SOURCE_TOOLTIPS        = YES
 VERBATIM_HEADERS       = YES
 ALPHABETICAL_INDEX     = YES
 
-HTML_COLORSTYLE        = AUTO_LIGHT
+HTML_COLORSTYLE        = DARK
 HTML_COLORSTYLE_HUE    = 209
 HTML_COLORSTYLE_SAT    = 255
 HTML_COLORSTYLE_GAMMA  = 113
@@ -88,7 +88,8 @@ HTML_OUTPUT            = html
 HTML_FILE_EXTENSION    = .html
 HTML_EXTRA_STYLESHEET  = "@PROJECT_SOURCE_DIR@/docs/doxygen-awesome.css" \
                          "@PROJECT_SOURCE_DIR@/docs/doxygen-awesome-sidebar-only.css" \
-                         "@PROJECT_SOURCE_DIR@/docs/custom.css"
+                         "@PROJECT_SOURCE_DIR@/docs/custom.css" \
+                         "@PROJECT_SOURCE_DIR@/docs/doxygen-awesome-custom.css"
 HTML_DYNAMIC_SECTIONS  = YES
 HTML_INDEX_NUM_ENTRIES = 100
 DISABLE_INDEX          = NO

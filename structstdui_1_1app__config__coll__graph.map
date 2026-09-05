@@ -1,0 +1,7 @@
+<map id="stdui::app_config" name="stdui::app_config">
+<area shape="rect" id="Node000001" title="Application configuration." alt="" coords="42,93,174,119"/>
+<area shape="rect" id="Node000002" href="$structstdui_1_1size.html" title="Logical two&#45;dimensional size in device&#45;independent units." alt="" coords="5,5,93,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="48,44,53,68,64,81,79,91,76,95,61,85,48,71,43,45"/>
+<area shape="rect" id="Node000003" href="$structstdui_1_1color.html" title="RGBA color representation (0.0 to 1.0 per channel)." alt="" coords="121,5,215,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="158,44,141,71,121,94,117,91,137,68,153,42"/>
+</map>

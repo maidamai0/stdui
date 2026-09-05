@@ -1,13 +1,11 @@
 var searchData=
 [
-  ['edge_5finsets_0',['edge_insets',['../structstdui_1_1edge__insets.html',1,'stdui']]],
-  ['end_1',['end',['../namespacestdui.html#a7526688f87a6f52cb6e3fe5a60d0f046a7f021a1415b86f2d013b2618fb31ae53',1,'stdui']]],
-  ['evaluate_2',['evaluate',['../classstdui_1_1runtime.html#a7b4db3ce9ba97b1379e5578589b6f970',1,'stdui::runtime::evaluate(component_expression&lt; Kind, Body &gt; const &amp;expression, std::string path, evaluation_context &amp;context)'],['../classstdui_1_1runtime.html#ab49b059cdbac3c99bb50c188af983371',1,'stdui::runtime::evaluate(dynamic_list_expression&lt; Range, IdFn, BodyFn &gt; const &amp;expression, std::string path, evaluation_context &amp;context)'],['../classstdui_1_1runtime.html#aefd806b403b7755794bd05b741460c45',1,'stdui::runtime::evaluate(identified_expression&lt; Id, Expression &gt; const &amp;expression, std::string path, evaluation_context &amp;context)'],['../classstdui_1_1runtime.html#a6f9790af543acb5260e3fd62c0c928a2',1,'stdui::runtime::evaluate(overlay_expression&lt; T... &gt; const &amp;expression, std::string path, evaluation_context &amp;context)'],['../classstdui_1_1runtime.html#aa431236a9bf8e5d47728eced9c96e7f5',1,'stdui::runtime::evaluate(hstack_expression&lt; T... &gt; const &amp;expression, std::string path, evaluation_context &amp;context)'],['../classstdui_1_1runtime.html#a5d7002120c4278f5301b49eeaf7fe8cf',1,'stdui::runtime::evaluate(vstack_expression&lt; T... &gt; const &amp;expression, std::string path, evaluation_context &amp;context)'],['../classstdui_1_1runtime.html#aae51a613df5204a5885541a6a6216ca2',1,'stdui::runtime::evaluate(text_expression const &amp;expression, std::string, evaluation_context &amp;)']]],
-  ['evaluate_5fchild_3',['evaluate_child',['../classstdui_1_1runtime.html#a0cb1c701ae26b4b08ac6d244459f549f',1,'stdui::runtime::evaluate_child(Child const &amp;child, std::string path, evaluation_context &amp;context)'],['../classstdui_1_1runtime.html#ad342aea23cb933b80cbc64180c5eb030',1,'stdui::runtime::evaluate_child(identified_expression&lt; Id, Expression &gt; const &amp;child, std::string path, evaluation_context &amp;context)']]],
-  ['evaluate_5fstack_4',['evaluate_stack',['../classstdui_1_1runtime.html#aab34f9f8f4c7db3742859e2b151b4d4f',1,'stdui::runtime']]],
-  ['evaluation_5fcontext_5',['evaluation_context',['../structstdui_1_1evaluation__context.html',1,'stdui']]],
-  ['explicit_5fid_5fsegment_6',['explicit_id_segment',['../classstdui_1_1runtime.html#a50293bee6952e0ef16bfae561cfa53d3',1,'stdui::runtime']]],
-  ['expression_7',['expression',['../structstdui_1_1identified__expression.html#ac977d1960284ab69a045bb5dd3687d09',1,'stdui::identified_expression']]],
-  ['expressions_2ehpp_8',['expressions.hpp',['../expressions_8hpp.html',1,'']]],
-  ['extent_9',['extent',['../structstdui_1_1rect.html#a56f93eef8ad6dc49a6eca38257672c62',1,'stdui::rect::extent'],['../structstdui_1_1layout__result.html#a045314eed70c6c925d2c5cf243bcfdd4',1,'stdui::layout_result::extent']]]
+  ['5_0',['Future Work (Phase 5+)',['../md_docs_2rendering-research-report.html#autotoc_md134',1,'']]],
+  ['5_20—_20batteries_1',['Phase 5 — Batteries',['../roadmap.html#autotoc_md158',1,'']]],
+  ['5_20implementation_20phases_2',['5. Implementation Phases',['../md_docs_2rendering-research-report.html#autotoc_md102',1,'']]],
+  ['5_20state_20management_3',['5. State Management',['../getting_started.html#autotoc_md46',1,'']]],
+  ['5_20ui_20primitives_20vs_20rendering_20primitives_4',['5. UI primitives vs rendering primitives',['../architecture.html#autotoc_md4',1,'']]],
+  ['5_3a_20component_20identity_5',['Step 5: Component Identity',['../tutorials.html#autotoc_md181',1,'']]],
+  ['5_3a_20use_20overlay_20for_20layering_6',['Step 5: Use Overlay for Layering',['../tutorials.html#autotoc_md168',1,'']]],
+  ['5_3a_20viewport_20integration_7',['Phase 4.5: Viewport Integration',['../md_docs_2rendering-research-report.html#autotoc_md111',1,'']]]
 ];

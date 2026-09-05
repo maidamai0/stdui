@@ -1,0 +1,5 @@
+<map id="stdui::platform_window" name="stdui::platform_window">
+<area shape="rect" id="Node000001" title="Platform window abstraction." alt="" coords="5,5,180,31"/>
+<area shape="rect" id="Node000002" href="$classstdui_1_1null__window.html" title="Null window implementation for testing." alt="" coords="21,79,164,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,44,95,79,90,79,90,44"/>
+</map>

@@ -1,9 +1,11 @@
 <map id="stdui::inspect" name="stdui::inspect">
-<area shape="rect" id="Node000001" title="Converts text into its inspection representation." alt="" coords="163,55,272,80"/>
-<area shape="rect" id="Node000002" href="$namespacestdui.html#aa46ced31cc50bf07c3d64f6b6b6a2095" title="Converts a horizontal stack and its children into an inspection tree." alt="" coords="5,5,115,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,53,101,33,102,28,164,48"/>
-<area shape="rect" id="Node000003" href="$namespacestdui.html#a79e22c78255d62267f52251d74e7caeb" title="Converts an overlay and its children into an inspection tree." alt="" coords="5,55,115,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="149,70,115,70,115,65,149,65"/>
-<area shape="rect" id="Node000004" href="$namespacestdui.html#a27ad77096487ab6a7ad6716fd627cd6e" title="Converts a vertical stack and its children into an inspection tree." alt="" coords="5,104,115,129"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="164,87,102,106,101,101,163,82"/>
+<area shape="rect" id="Node000001" title="Converts text into its inspection representation." alt="" coords="199,80,308,105"/>
+<area shape="rect" id="Node000002" href="$namespacestdui.html#aa46ced31cc50bf07c3d64f6b6b6a2095" title="Converts a horizontal stack and its children into an inspection tree." alt="" coords="23,5,133,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="216,76,150,44,120,33,121,28,152,40,218,71"/>
+<area shape="rect" id="Node000003" href="$namespacestdui.html#a79e22c78255d62267f52251d74e7caeb" title="Converts an overlay and its children into an inspection tree." alt="" coords="23,55,133,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="184,85,133,78,133,73,185,80"/>
+<area shape="rect" id="Node000004" href="$namespacestdui.html#a27ad77096487ab6a7ad6716fd627cd6e" title="Converts a vertical stack and its children into an inspection tree." alt="" coords="23,104,133,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="185,105,133,112,133,107,184,99"/>
+<area shape="rect" id="Node000005" href="$namespacestdui.html#a1f98f70356bdd9cc93e19c48f80f1b2a" title="Helper: Inspects any view expression and returns inspection_node." alt="" coords="5,153,151,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="216,114,152,143,118,156,116,151,150,138,213,109"/>
 </map>

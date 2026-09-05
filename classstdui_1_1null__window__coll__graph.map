@@ -1,0 +1,11 @@
+<map id="stdui::null_window" name="stdui::null_window">
+<area shape="rect" id="Node000001" title="Null window implementation for testing." alt="" coords="177,183,320,208"/>
+<area shape="rect" id="Node000002" href="$classstdui_1_1platform__window.html" title="Platform window abstraction." alt="" coords="5,87,180,113"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,117,231,180,228,185,122,122"/>
+<area shape="rect" id="Node000003" href="$structstdui_1_1size.html" title="Logical two&#45;dimensional size in device&#45;independent units." alt="" coords="205,87,293,113"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="251,126,251,183,246,183,246,126"/>
+<area shape="rect" id="Node000004" href="$classstdui_1_1simple__event__dispatcher.html" title="Simple event dispatcher implementation." alt="" coords="317,80,468,120"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="353,130,268,185,265,180,351,125"/>
+<area shape="rect" id="Node000005" href="$classstdui_1_1event__dispatcher.html" title="Event dispatcher interface." alt="" coords="305,5,480,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="395,44,395,80,390,80,390,44"/>
+</map>

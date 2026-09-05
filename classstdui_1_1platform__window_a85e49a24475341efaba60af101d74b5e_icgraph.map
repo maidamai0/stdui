@@ -1,0 +1,5 @@
+<map id="stdui::platform_window::title" name="stdui::platform_window::title">
+<area shape="rect" id="Node000001" title="Returns the window title." alt="" coords="203,5,377,45"/>
+<area shape="rect" id="Node000002" href="$classstdui_1_1null__platform.html#ad6fc831d424945874475b999d634d994" title="Creates a new window with the specified size and title." alt="" coords="5,5,155,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,28,155,28,155,23,189,23"/>
+</map>

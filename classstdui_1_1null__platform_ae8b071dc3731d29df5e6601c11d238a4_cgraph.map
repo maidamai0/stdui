@@ -1,0 +1,5 @@
+<map id="stdui::null_platform::text_measurer_factory" name="stdui::null_platform::text_measurer_factory">
+<area shape="rect" id="Node000001" title="Returns the default text measurer factory for this platform." alt="" coords="5,5,184,45"/>
+<area shape="rect" id="Node000002" href="$namespacestdui.html#a71e3a789db80b2e7c5dcee138c8a48d6" title="Creates a leaf expression that owns value." alt="" coords="232,13,320,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,23,218,23,218,28,184,28"/>
+</map>

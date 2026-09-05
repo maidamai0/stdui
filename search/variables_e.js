@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['padding_0',['padding',['../structstdui_1_1stack__options.html#a51f633cd47d04ad1f4f9e55b642a66d9',1,'stdui::stack_options']]],
-  ['path_1',['path',['../structstdui_1_1state__key.html#a8d47a8dae1a5bc543f0e9ee3b5a495d0',1,'stdui::state_key']]],
-  ['policy_2',['policy',['../structstdui_1_1layout__node.html#a343e7321a2cf36b9c4681c93082a65e5',1,'stdui::layout_node']]]
+  ['on_5fchange_5f_0',['on_change_',['../classstdui_1_1state.html#a18fd60e4e156f9ee78f8563f480a11be',1,'stdui::state']]],
+  ['on_5fstate_5fchange_5f_1',['on_state_change_',['../classstdui_1_1component__context.html#ab02d7dafb9d93b45858ffed4e0ecfd83',1,'stdui::component_context']]],
+  ['options_2',['options',['../structstdui_1_1grid__expression.html#ab05e7abb8f0f52f4faaef4d51c63b8e1',1,'stdui::grid_expression']]],
+  ['origin_3',['origin',['../structstdui_1_1rect.html#ac42958a74e0a1ba5e7d1b1332d6f0cda',1,'stdui::rect']]],
+  ['overlay_4',['overlay',['../structstdui_1_1layout__node.html#a136cab29d7001bba10189c73b3ea86df',1,'stdui::layout_node']]],
+  ['owner_5f_5',['owner_',['../classstdui_1_1component__context.html#ad7955b0cb0fc706d6fd35def1df87b81',1,'stdui::component_context']]]
 ];

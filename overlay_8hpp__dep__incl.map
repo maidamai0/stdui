@@ -1,5 +1,7 @@
 <map id="include/stdui/overlay.hpp" name="include/stdui/overlay.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,189,31"/>
-<area shape="rect" id="Node000002" href="$layout__tree_8hpp.html" title=" " alt="" coords="22,79,173,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,44,100,79,95,79,95,44"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="18,5,202,31"/>
+<area shape="rect" id="Node000002" href="$layout__tree_8hpp.html" title=" " alt="" coords="35,79,185,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,44,113,79,107,79,107,44"/>
+<area shape="rect" id="Node000003" href="$application_8hpp.html" title=" " alt="" coords="5,167,215,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="113,132,113,166,107,166,107,132"/>
 </map>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unbounded_0',['unbounded',['../structstdui_1_1proposal.html#af6ae0b808c7791afc448c29e615654b4',1,'stdui::proposal']]]
+  ['join_0',['join',['../structstdui_1_1stroke__style.html#a3969b847a1eb34ab76d1808150b1a3e5',1,'stdui::stroke_style']]]
 ];

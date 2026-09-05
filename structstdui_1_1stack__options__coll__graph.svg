@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Complete configuration for a horizontal or vertical stack.">
+<g id="a_Node000001"><a xlink:title="Configuration for stack layouts.">
 <polygon fill="#999999" stroke="#666666" points="114,-19 0,-19 0,0 114,0 114,-19"/>
 <text text-anchor="middle" x="57" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">stdui::stack_options</text>
 </a>
@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="structstdui_1_1edge__insets.html" target="_top" xlink:title="Uniform or directional padding around a layout.">
+<g id="a_Node000002"><a xlink:href="structstdui_1_1edge__insets.html" target="_top" xlink:title="Padding applied to all four edges.">
 <polygon fill="white" stroke="#666666" points="109.5,-85 4.5,-85 4.5,-66 109.5,-66 109.5,-85"/>
 <text text-anchor="middle" x="57" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">stdui::edge_insets</text>
 </a>

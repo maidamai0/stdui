@@ -1,0 +1,12 @@
+<map id="stdui::component_base::instance_id" name="stdui::component_base::instance_id">
+<area shape="rect" id="Node000001" title="Returns a unique instance ID for this component (default: based on address)." alt="" coords="805,5,979,45"/>
+<area shape="rect" id="Node000002" href="$classstdui_1_1component__evaluator.html#adf02aab509731753f4a84e15a57fc682" title="Evaluates a component, returning its body as an inspection_node." alt="" coords="553,5,757,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="791,28,758,28,758,23,791,23"/>
+<area shape="rect" id="Node000003" href="$classstdui_1_1application.html#a3b70c80c1ece19291e8dda9913941b0a" title="Evaluates the component tree and materializes layout." alt="" coords="371,5,505,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="539,28,506,28,506,23,539,23"/>
+<area shape="rect" id="Node000004" href="$classstdui_1_1application.html#a7508bae116a225494339dc214fa3e57d" title="Initializes the application and creates the window." alt="" coords="5,5,140,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="357,25,323,24,188,24,140,25,140,20,188,19,323,19,357,20"/>
+<area shape="rect" id="Node000005" href="$classstdui_1_1application.html#a2d57546b748c271efc052c72af0496e6" title="Renders the current layout tree." alt="" coords="188,33,323,73"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="358,40,324,46,323,40,357,35"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="174,44,140,38,141,33,175,38"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="stdui::application::run" name="stdui::application::run">
+<area shape="rect" id="Node000001" title="Runs the application event loop (blocks until window closes)." alt="" coords="5,13,168,38"/>
+<area shape="rect" id="Node000002" href="$classstdui_1_1platform.html#ad0984c152c8814038984341be6bd3598" title="Runs the platform event loop (blocks until all windows are closed)." alt="" coords="216,5,363,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,23,202,23,202,28,168,28"/>
+</map>

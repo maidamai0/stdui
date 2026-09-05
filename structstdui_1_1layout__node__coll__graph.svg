@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="structstdui_1_1flex__policy.html" target="_top" xlink:title="Describes how an element participates in main&#45;axis space distribution.">
+<g id="a_Node000002"><a xlink:href="structstdui_1_1flex__policy.html" target="_top" xlink:title="Space&#45;distribution policy for flex layout.">
 <polygon fill="white" stroke="#666666" points="99,-85 0,-85 0,-66 99,-66 99,-85"/>
 <text text-anchor="middle" x="49.5" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">stdui::flex_policy</text>
 </a>
@@ -39,7 +39,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="structstdui_1_1stack__options.html" target="_top" xlink:title="Complete configuration for a horizontal or vertical stack.">
+<g id="a_Node000003"><a xlink:href="structstdui_1_1stack__options.html" target="_top" xlink:title="Configuration for stack layouts.">
 <polygon fill="white" stroke="#666666" points="231.5,-85 117.5,-85 117.5,-66 231.5,-66 231.5,-85"/>
 <text text-anchor="middle" x="174.5" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">stdui::stack_options</text>
 </a>
@@ -58,7 +58,7 @@
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="structstdui_1_1edge__insets.html" target="_top" xlink:title="Uniform or directional padding around a layout.">
+<g id="a_Node000004"><a xlink:href="structstdui_1_1edge__insets.html" target="_top" xlink:title="Padding applied to all four edges.">
 <polygon fill="white" stroke="#666666" points="227,-151 122,-151 122,-132 227,-132 227,-151"/>
 <text text-anchor="middle" x="174.5" y="-139" font-family="Helvetica,sans-Serif" font-size="10.00">stdui::edge_insets</text>
 </a>
@@ -77,7 +77,7 @@
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="structstdui_1_1overlay__options.html" target="_top" xlink:title="Configuration for overlapping children in the same bounds.">
+<g id="a_Node000005"><a xlink:href="structstdui_1_1overlay__options.html" target="_top" xlink:title="Configuration for overlay layouts.">
 <polygon fill="white" stroke="#666666" points="375,-85 250,-85 250,-66 375,-66 375,-85"/>
 <text text-anchor="middle" x="312.5" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">stdui::overlay_options</text>
 </a>

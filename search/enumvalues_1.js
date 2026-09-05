@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dynamic_5flist_0',['dynamic_list',['../namespacestdui.html#a62d98f56870e76b778b429b8ef8f2702a0fe0435fadf4eb10b999275290726116',1,'stdui']]]
+  ['center_0',['center',['../namespacestdui.html#a7526688f87a6f52cb6e3fe5a60d0f046aadb115059e28d960fa8badfac5516667',1,'stdui']]]
 ];

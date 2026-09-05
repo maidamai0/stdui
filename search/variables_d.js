@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['origin_0',['origin',['../structstdui_1_1rect.html#ac42958a74e0a1ba5e7d1b1332d6f0cda',1,'stdui::rect']]],
-  ['overlay_1',['overlay',['../structstdui_1_1layout__node.html#a136cab29d7001bba10189c73b3ea86df',1,'stdui::layout_node']]],
-  ['owner_5f_2',['owner_',['../classstdui_1_1component__context.html#ad7955b0cb0fc706d6fd35def1df87b81',1,'stdui::component_context']]]
+  ['name_0',['name',['../structstdui_1_1state__key.html#ab5217ced33f88418f3c8e71762a04ff6',1,'stdui::state_key']]],
+  ['needs_5fupdate_5f_1',['needs_update_',['../classstdui_1_1application.html#a5c4e7a9a03b257a67e98a76e06e6f40a',1,'stdui::application']]],
+  ['new_5fsize_2',['new_size',['../structstdui_1_1resize__event.html#ad1bb9150da2d2d1154dab6e053b6bf5e',1,'stdui::resize_event']]],
+  ['next_5fid_5f_3',['next_id_',['../classstdui_1_1simple__event__dispatcher.html#abb39855c845586af7c70bb910d9b4af2',1,'stdui::simple_event_dispatcher']]]
 ];

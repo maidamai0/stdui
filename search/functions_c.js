@@ -1,5 +1,9 @@
 var searchData=
 [
-  ['reconcile_0',['reconcile',['../classstdui_1_1runtime.html#a26fe642b108824b003e0515bee36e7da',1,'stdui::runtime']]],
-  ['remember_5fchild_5fpath_1',['remember_child_path',['../classstdui_1_1runtime.html#a70df40cbc7e9f5a57f7e2915e2eadf7d',1,'stdui::runtime']]]
+  ['occupied_5fextent_0',['occupied_extent',['../structstdui_1_1layout__node.html#a2447e3c28789bcf36905cc23522723ae',1,'stdui::layout_node']]],
+  ['operator_28_29_1',['operator()',['../structstd_1_1hash_3_01stdui_1_1component__id_01_4.html#aa0d6c5396a97266d075469136061315d',1,'std::hash&lt; stdui::component_id &gt;::operator()()'],['../structstdui_1_1state__key__hash.html#a73c24c170f6743b496e5e5e63be83912',1,'stdui::state_key_hash::operator()()']]],
+  ['operator_2a_2',['operator*',['../classstdui_1_1state__handle.html#a87d6fa1fc129e4373ec8cf2d7b52fb98',1,'stdui::state_handle::operator*()'],['../classstdui_1_1state.html#a56b40f47c3177212973b740384304888',1,'stdui::state::operator*()']]],
+  ['operator_2d_3e_3',['operator-&gt;',['../classstdui_1_1state__handle.html#a33ae057ba2d2f2b50221a68654935acf',1,'stdui::state_handle::operator-&gt;()'],['../classstdui_1_1state.html#af5c43edaeff942f8a643c648a138f6d3',1,'stdui::state::operator-&gt;()']]],
+  ['operator_3d_3d_4',['operator==',['../structstdui_1_1component__id.html#a862a9384cd1c5649c8bcffdd2d3a417f',1,'stdui::component_id::operator==()'],['../structstdui_1_1keyboard__modifiers.html#a82a8d572440eac5c138adaba31cd36d6',1,'stdui::keyboard_modifiers::operator==()'],['../structstdui_1_1point.html#ae463a26558496ebdde1c7d83a782826f',1,'stdui::point::operator==()'],['../structstdui_1_1size.html#ad9f37de0c01c71e003d86f64ba2fc91e',1,'stdui::size::operator==()'],['../structstdui_1_1rect.html#a595d4ecdbfa0d006c7443156b45c533f',1,'stdui::rect::operator==()'],['../structstdui_1_1color.html#a46ca6b4098195f99c41dbfa965d4b3aa',1,'stdui::color::operator==()'],['../structstdui_1_1state__key.html#a3f6f5a418c0d6f796271b8bf2115158a',1,'stdui::state_key::operator==()'],['../structstdui_1_1font__descriptor.html#a0b46b867637764f0badf9a0a6a334474',1,'stdui::font_descriptor::operator==()']]],
+  ['overlay_5',['overlay',['../namespacestdui.html#a003ae783c60292ba4e2902838708632c',1,'stdui']]]
 ];

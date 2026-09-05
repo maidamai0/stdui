@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['stdui_0',['stdui',['../index.html',1,'']]]
+  ['architecture_0',['stdui Architecture',['../architecture.html',1,'index']]]
 ];

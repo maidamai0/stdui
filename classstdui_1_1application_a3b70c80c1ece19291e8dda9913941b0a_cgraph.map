@@ -1,0 +1,20 @@
+<map id="stdui::application::update" name="stdui::application::update">
+<area shape="rect" id="Node000001" title="Evaluates the component tree and materializes layout." alt="" coords="5,181,140,221"/>
+<area shape="rect" id="Node000002" href="$classstdui_1_1component__evaluator.html#adf02aab509731753f4a84e15a57fc682" title="Evaluates a component, returning its body as an inspection_node." alt="" coords="188,117,392,157"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,179,207,159,209,164,141,184"/>
+<area shape="rect" id="Node000007" href="$classstdui_1_1application.html#a02b7463a79285a40187aafc5a7f8f980" title="Requests a re&#45;evaluation and redraw." alt="" coords="223,181,357,221"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="140,199,209,199,209,204,140,204"/>
+<area shape="rect" id="Node000008" href="$namespacestdui.html#a8fc57a34c850af116c51fac88ddd6ae9" title="Creates a layout tree from a headless expression snapshot." alt="" coords="222,269,358,309"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="124,219,228,262,226,266,122,224"/>
+<area shape="rect" id="Node000003" href="$classstdui_1_1component__base.html#a6ddca0516bc4ca3f5e3215314e24352f" title="Returns the component&#39;s view tree. Called during evaluation." alt="" coords="449,5,623,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="323,115,377,85,439,55,457,48,459,53,441,60,379,90,326,120"/>
+<area shape="rect" id="Node000004" href="$classstdui_1_1component__registry.html#a6515cd4970915d3a0f1eec756c79c988" title="Returns the state storage for a component, creating it if necessary." alt="" coords="440,69,632,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="392,115,426,108,427,113,393,120"/>
+<area shape="rect" id="Node000005" href="$classstdui_1_1component__base.html#a84fdb1f54ed11a98131a3c6bfa961941" title="Returns a unique instance ID for this component (default: based on address)." alt="" coords="449,133,623,173"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="392,141,436,144,435,149,392,147"/>
+<area shape="rect" id="Node000006" href="$classstdui_1_1component__base.html#ab3a706e89f724173903c79019d9adf7e" title="Returns the component&#39;s type index for identity tracking." alt="" coords="449,197,623,237"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="356,155,393,167,463,190,462,195,391,172,354,160"/>
+<area shape="poly" id="edge8_Node000008_Node000008" title=" " alt="" coords="249,270,247,260,254,250,268,245,290,243,315,246,329,253,327,258,314,251,290,248,269,250,257,255,252,261,255,268"/>
+<area shape="rect" id="Node000009" href="$namespacestdui.html#aed2b3e61f3f926e3d36a0b6a1e7cf77f" title=" " alt="" coords="457,277,615,302"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="358,287,443,287,443,292,358,292"/>
+</map>

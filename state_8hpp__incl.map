@@ -1,0 +1,21 @@
+<map id="include/stdui/state.hpp" name="include/stdui/state.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="341,5,511,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,52,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="341,32,215,52,66,82,65,76,214,46,340,27"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="77,79,157,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="377,33,171,80,170,75,376,28"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="181,79,252,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="393,33,265,77,263,72,392,28"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="276,79,363,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="410,33,350,73,347,69,407,28"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="387,79,465,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="429,31,429,65,423,65,423,31"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="489,79,576,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="445,28,505,69,502,73,442,33"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="600,79,692,104"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="462,28,598,72,597,77,461,33"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="716,79,840,104"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="483,28,708,73,707,79,482,33"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="864,79,927,104"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="512,25,666,45,851,76,850,81,665,50,511,31"/>
+</map>

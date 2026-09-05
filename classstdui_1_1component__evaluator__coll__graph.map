@@ -1,0 +1,5 @@
+<map id="stdui::component_evaluator" name="stdui::component_evaluator">
+<area shape="rect" id="Node000001" title="Component evaluator." alt="" coords="5,93,209,119"/>
+<area shape="rect" id="Node000002" href="$classstdui_1_1component__registry.html" title="Component registry for tracking instances and their state." alt="" coords="11,5,203,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,45,110,93,105,93,105,45"/>
+</map>

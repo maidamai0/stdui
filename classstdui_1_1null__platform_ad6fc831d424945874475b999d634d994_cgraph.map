@@ -1,0 +1,7 @@
+<map id="stdui::null_platform::create_window" name="stdui::null_platform::create_window">
+<area shape="rect" id="Node000001" title="Creates a new window with the specified size and title." alt="" coords="5,37,155,77"/>
+<area shape="rect" id="Node000002" href="$classstdui_1_1text__measurer__factory.html#a6ffd626bb6060b89af7167d8d175a7a2" title="Creates a text measurer for the current platform." alt="" coords="211,5,369,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="155,43,197,37,198,42,155,49"/>
+<area shape="rect" id="Node000003" href="$classstdui_1_1platform__window.html#a85e49a24475341efaba60af101d74b5e" title="Returns the window title." alt="" coords="203,69,377,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="155,66,189,71,189,77,155,71"/>
+</map>

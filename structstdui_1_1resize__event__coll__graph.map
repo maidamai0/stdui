@@ -1,0 +1,5 @@
+<map id="stdui::resize_event" name="stdui::resize_event">
+<area shape="rect" id="Node000001" title="Window resize event data." alt="" coords="5,93,151,119"/>
+<area shape="rect" id="Node000002" href="$structstdui_1_1size.html" title="Logical two&#45;dimensional size in device&#45;independent units." alt="" coords="34,5,122,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,45,81,93,75,93,75,45"/>
+</map>

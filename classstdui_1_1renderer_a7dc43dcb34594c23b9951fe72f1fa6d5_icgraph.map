@@ -1,0 +1,10 @@
+<map id="stdui::renderer::draw_text" name="stdui::renderer::draw_text">
+<area shape="rect" id="Node000001" title="Draws text at the specified position." alt="" coords="553,37,744,62"/>
+<area shape="rect" id="Node000002" href="$classstdui_1_1application.html#ab27b5d30f0136074ecda2911195454f6" title="Recursively renders a layout box and its children." alt="" coords="371,29,505,69"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="540,52,506,52,506,47,540,47"/>
+<area shape="poly" id="edge4_Node000002_Node000002" title=" " alt="" coords="468,17,458,11,438,8,421,10,411,15,407,21,409,28,404,30,402,20,407,11,419,5,438,3,459,6,471,13"/>
+<area shape="rect" id="Node000003" href="$classstdui_1_1application.html#a2d57546b748c271efc052c72af0496e6" title="Renders the current layout tree." alt="" coords="188,29,323,69"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="357,52,323,52,323,47,357,47"/>
+<area shape="rect" id="Node000004" href="$classstdui_1_1application.html#a7508bae116a225494339dc214fa3e57d" title="Initializes the application and creates the window." alt="" coords="5,29,140,69"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="174,52,141,52,141,47,174,47"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="stdui::renderer::begin_frame" name="stdui::renderer::begin_frame">
+<area shape="rect" id="Node000001" title="Begins a new rendering frame. Must be called before any draw operations." alt="" coords="371,5,532,45"/>
+<area shape="rect" id="Node000002" href="$classstdui_1_1application.html#a2d57546b748c271efc052c72af0496e6" title="Renders the current layout tree." alt="" coords="188,5,323,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="357,28,323,28,323,23,357,23"/>
+<area shape="rect" id="Node000003" href="$classstdui_1_1application.html#a7508bae116a225494339dc214fa3e57d" title="Initializes the application and creates the window." alt="" coords="5,5,140,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="174,28,141,28,141,23,174,23"/>
+</map>

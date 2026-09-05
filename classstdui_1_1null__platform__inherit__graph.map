@@ -1,0 +1,5 @@
+<map id="stdui::null_platform" name="stdui::null_platform">
+<area shape="rect" id="Node000001" title="Null platform implementation for testing." alt="" coords="5,79,155,104"/>
+<area shape="rect" id="Node000002" href="$classstdui_1_1platform.html" title="Platform&#45;specific initialization and window creation." alt="" coords="21,5,139,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,44,83,79,77,79,77,44"/>
+</map>

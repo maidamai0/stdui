@@ -108,6 +108,7 @@ $(document).ready(function(){initNavTree('layout_8hpp.html',''); initResizable()
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="geometry_8hpp_source.html">stdui/geometry.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="layout__options_8hpp_source.html">stdui/layout_options.hpp</a>&gt;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;concepts&gt;</code><br />
 <code>#include &lt;optional&gt;</code><br />
@@ -120,14 +121,14 @@ $(document).ready(function(){initNavTree('layout_8hpp.html',''); initResizable()
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="layout_8hpp__incl.svg" width="810" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="layout_8hpp__incl.svg" width="1018" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="layout_8hpp__dep__incl.svg" width="432" height="198"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="layout_8hpp__dep__incl.svg" width="432" height="271"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="layout_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -137,12 +138,6 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1arranged__layout.html">stdui::arranged_layout</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fully arranged stack result.  <a href="structstdui_1_1arranged__layout.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1edge__insets.html">stdui::edge_insets</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uniform or directional padding around a layout.  <a href="structstdui_1_1edge__insets.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1flex__policy.html">stdui::flex_policy</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Describes how an element participates in main-axis space distribution.  <a href="structstdui_1_1flex__policy.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1layout__result.html">stdui::layout_result</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Result of measuring a stack and its children.  <a href="structstdui_1_1layout__result.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -151,9 +146,6 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1size__constraint.html">stdui::size_constraint</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional minimum and maximum bound for one logical axis.  <a href="structstdui_1_1size__constraint.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1stack__options.html">stdui::stack_options</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Complete configuration for a horizontal or vertical stack.  <a href="structstdui_1_1stack__options.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1detail_1_1stack__traits_3_01stack__axis_1_1horizontal_01_4.html">stdui::detail::stack_traits&lt; stack_axis::horizontal &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -175,18 +167,6 @@ Concepts</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a7526688f87a6f52cb6e3fe5a60d0f046" id="r_a7526688f87a6f52cb6e3fe5a60d0f046"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestdui.html#a7526688f87a6f52cb6e3fe5a60d0f046">stdui::layout_alignment</a> { <a class="el" href="namespacestdui.html#a7526688f87a6f52cb6e3fe5a60d0f046aea2b2676c28c0db26d39331a336c6b92">stdui::start</a>
-, <a class="el" href="namespacestdui.html#a7526688f87a6f52cb6e3fe5a60d0f046aadb115059e28d960fa8badfac5516667">stdui::center</a>
-, <a class="el" href="namespacestdui.html#a7526688f87a6f52cb6e3fe5a60d0f046a7f021a1415b86f2d013b2618fb31ae53">stdui::end</a>
-, <a class="el" href="namespacestdui.html#a7526688f87a6f52cb6e3fe5a60d0f046a7e84944493e379c33782eb1c9ecb82c3">stdui::stretch</a>
- }</td></tr>
-<tr class="memdesc:a7526688f87a6f52cb6e3fe5a60d0f046"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cross-axis alignment used while arranging children.  <a href="namespacestdui.html#a7526688f87a6f52cb6e3fe5a60d0f046">More...</a><br /></td></tr>
-<tr class="separator:a7526688f87a6f52cb6e3fe5a60d0f046"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a439e505cde7aafd3061bd818670b6e5a" id="r_a439e505cde7aafd3061bd818670b6e5a"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestdui.html#a439e505cde7aafd3061bd818670b6e5a">stdui::layout_direction</a> { <a class="el" href="namespacestdui.html#a439e505cde7aafd3061bd818670b6e5aa1f8f6a66881ca551a945cf0ab4765dc1">stdui::left_to_right</a>
-, <a class="el" href="namespacestdui.html#a439e505cde7aafd3061bd818670b6e5aa74ecbc5c277e2952aac1ac167699d74c">stdui::right_to_left</a>
- }</td></tr>
-<tr class="memdesc:a439e505cde7aafd3061bd818670b6e5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Horizontal writing direction used during arrangement.  <a href="namespacestdui.html#a439e505cde7aafd3061bd818670b6e5a">More...</a><br /></td></tr>
-<tr class="separator:a439e505cde7aafd3061bd818670b6e5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c656a5144593849ec8c745e0ccc3819" id="r_a2c656a5144593849ec8c745e0ccc3819"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestdui_1_1detail.html#a2c656a5144593849ec8c745e0ccc3819">stdui::detail::stack_axis</a> { <a class="el" href="namespacestdui_1_1detail.html#a2c656a5144593849ec8c745e0ccc3819a4505cad087312551a6fbbe6ebe163e0f">stdui::detail::horizontal</a>
 , <a class="el" href="namespacestdui_1_1detail.html#a2c656a5144593849ec8c745e0ccc3819ae6dec152d6a941fccb0a5e8cc2579cc3">stdui::detail::vertical</a>
  }</td></tr>

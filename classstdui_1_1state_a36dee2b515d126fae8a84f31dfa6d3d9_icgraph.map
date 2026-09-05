@@ -1,0 +1,7 @@
+<map id="stdui::state::get" name="stdui::state::get">
+<area shape="rect" id="Node000001" title="Returns the current value of this state." alt="" coords="228,31,352,56"/>
+<area shape="rect" id="Node000002" href="$classstdui_1_1state.html#a56b40f47c3177212973b740384304888" title="Allows reading the state value." alt="" coords="10,5,175,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="214,36,175,31,176,26,215,31"/>
+<area shape="rect" id="Node000003" href="$classstdui_1_1state.html#af5c43edaeff942f8a643c648a138f6d3" title="Allows accessing the state value members." alt="" coords="5,55,180,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="215,55,180,59,180,54,214,50"/>
+</map>

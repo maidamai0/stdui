@@ -106,7 +106,8 @@ $(document).ready(function(){initNavTree('expressions_8hpp.html',''); initResiza
   <div class="headertitle"><div class="title">expressions.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;concepts&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="layout__options_8hpp_source.html">stdui/layout_options.hpp</a>&gt;</code><br />
+<code>#include &lt;concepts&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;string_view&gt;</code><br />
 <code>#include &lt;tuple&gt;</code><br />
@@ -117,14 +118,14 @@ $(document).ready(function(){initNavTree('expressions_8hpp.html',''); initResiza
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="expressions_8hpp__incl.svg" width="575" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="expressions_8hpp__incl.svg" width="782" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="expressions_8hpp__dep__incl.svg" width="374" height="198"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="expressions_8hpp__dep__incl.svg" width="660" height="271"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="expressions_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -136,6 +137,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1dynamic__list__expression.html">stdui::dynamic_list_expression&lt; Range, IdFn, BodyFn &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A runtime-sized list of expressions identified by an id function.  <a href="structstdui_1_1dynamic__list__expression.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1grid__expression.html">stdui::grid_expression&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arranges children in a fixed-column grid.  <a href="structstdui_1_1grid__expression.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1hstack__expression.html">stdui::hstack_expression&lt; T &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Orders children horizontally as semantic structure, without producing geometry.  <a href="structstdui_1_1hstack__expression.html#details">More...</a><br /></td></tr>
@@ -185,6 +189,14 @@ Functions</h2></td></tr>
 <tr class="memitem:a35025c95d04b04fa6504aacec6f8d49a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestdui.html#a35025c95d04b04fa6504aacec6f8d49a">stdui::dynamic_list</a> (Range &amp;&amp;items, IdFn &amp;&amp;id_fn, BodyFn &amp;&amp;body_fn)</td></tr>
 <tr class="memdesc:a35025c95d04b04fa6504aacec6f8d49a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a dynamic list expression with explicit item ids.  <br /></td></tr>
 <tr class="separator:a35025c95d04b04fa6504aacec6f8d49a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08ed62f2da9c0505055e5a4ddee417a6" id="r_a08ed62f2da9c0505055e5a4ddee417a6"><td class="memTemplParams" colspan="2">template&lt;view_expression... T&gt; </td></tr>
+<tr class="memitem:a08ed62f2da9c0505055e5a4ddee417a6"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestdui.html#a08ed62f2da9c0505055e5a4ddee417a6">stdui::grid</a> (<a class="el" href="structstdui_1_1grid__options.html">grid_options</a> options, T &amp;&amp;...x)</td></tr>
+<tr class="memdesc:a08ed62f2da9c0505055e5a4ddee417a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a grid expression with explicit configuration.  <br /></td></tr>
+<tr class="separator:a08ed62f2da9c0505055e5a4ddee417a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a504dd66879a424d300a42315d922ab" id="r_a5a504dd66879a424d300a42315d922ab"><td class="memTemplParams" colspan="2">template&lt;view_expression... T&gt; </td></tr>
+<tr class="memitem:a5a504dd66879a424d300a42315d922ab"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestdui.html#a5a504dd66879a424d300a42315d922ab">stdui::grid</a> (T &amp;&amp;...x)</td></tr>
+<tr class="memdesc:a5a504dd66879a424d300a42315d922ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a grid expression with default options (single column).  <br /></td></tr>
+<tr class="separator:a5a504dd66879a424d300a42315d922ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6853850a1bf22e209f1b669db2d384c9" id="r_a6853850a1bf22e209f1b669db2d384c9"><td class="memTemplParams" colspan="2">template&lt;view_expression... T&gt; </td></tr>
 <tr class="memitem:a6853850a1bf22e209f1b669db2d384c9"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestdui.html#a6853850a1bf22e209f1b669db2d384c9">stdui::hstack</a> (T &amp;&amp;...x)</td></tr>
 <tr class="memdesc:a6853850a1bf22e209f1b669db2d384c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a value expression owning the supplied children in their written order.  <br /></td></tr>

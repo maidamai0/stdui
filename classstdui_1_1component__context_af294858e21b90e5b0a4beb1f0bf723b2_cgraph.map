@@ -1,0 +1,5 @@
+<map id="stdui::component_context::state" name="stdui::component_context::state">
+<area shape="rect" id="Node000001" title="Creates or retrieves a persistent state handle." alt="" coords="5,5,196,45"/>
+<area shape="rect" id="Node000002" href="$classstdui_1_1state__storage.html#a2eaf014059e4c5615e57915046a774d0" title="Allocates a state slot or returns the existing value." alt="" coords="244,5,395,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="196,23,230,23,230,28,196,28"/>
+</map>

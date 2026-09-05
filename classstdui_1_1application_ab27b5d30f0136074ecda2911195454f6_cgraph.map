@@ -1,0 +1,8 @@
+<map id="stdui::application::render_box" name="stdui::application::render_box">
+<area shape="rect" id="Node000001" title="Recursively renders a layout box and its children." alt="" coords="5,29,140,69"/>
+<area shape="poly" id="edge3_Node000001_Node000001" title=" " alt="" coords="33,30,31,20,37,10,51,5,73,3,97,6,111,13,108,18,96,11,73,8,52,10,40,15,36,21,38,28"/>
+<area shape="rect" id="Node000002" href="$structstdui_1_1color.html#ad3b606fb73670fb486694828a0ad1bae" title=" " alt="" coords="215,11,352,37"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,39,201,31,201,37,141,44"/>
+<area shape="rect" id="Node000003" href="$classstdui_1_1renderer.html#a7dc43dcb34594c23b9951fe72f1fa6d5" title="Draws text at the specified position." alt="" coords="188,61,379,86"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="141,54,175,58,174,64,140,60"/>
+</map>

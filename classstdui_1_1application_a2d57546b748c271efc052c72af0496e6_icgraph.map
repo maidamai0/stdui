@@ -1,0 +1,5 @@
+<map id="stdui::application::render" name="stdui::application::render">
+<area shape="rect" id="Node000001" title="Renders the current layout tree." alt="" coords="188,5,323,45"/>
+<area shape="rect" id="Node000002" href="$classstdui_1_1application.html#a7508bae116a225494339dc214fa3e57d" title="Initializes the application and creates the window." alt="" coords="5,5,140,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,28,141,28,141,23,174,23"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="include/stdui/text_measurement.hpp" name="include/stdui/text_measurement.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="36,5,184,45"/>
+<area shape="rect" id="Node000002" href="$platform_8hpp.html" title=" " alt="" coords="13,167,207,192"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,57,71,87,68,102,70,118,83,144,100,165,96,168,79,147,65,119,63,102,66,85,81,55"/>
+<area shape="rect" id="Node000004" href="$rendering_8hpp.html" title=" " alt="" coords="79,93,277,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="137,54,170,91,166,95,133,58"/>
+<area shape="rect" id="Node000003" href="$application_8hpp.html" title=" " alt="" coords="5,240,215,265"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="113,206,113,240,107,240,107,206"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="159,130,123,168,119,165,156,127"/>
+</map>

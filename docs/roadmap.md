@@ -69,6 +69,10 @@ Goal: standard components built from the same composition machinery.
 - Add accessibility platform bridges (screen reader integration).
 - Add IME/text input integration.
 - Add clipboard and drag-and-drop.
+- Add webview integration (native web engines: WKWebView, WebView2, WebKitGTK).
+- Add file dialogs (open, save, directory picker).
+- Add system tray icon and menu integration.
+- Add system notifications.
 
 ## Project management
 

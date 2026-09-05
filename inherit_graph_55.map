@@ -1,5 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$classstdui_1_1text__measurer.html" title="Platform&#45;agnostic text measurement interface." alt="" coords="5,13,163,38"/>
-<area shape="rect" id="Node000001" href="$classstdui_1_1cached__text__measurer.html" title="Convenience wrapper that caches font metrics." alt="" coords="211,5,352,45"/>
-<area shape="poly" id="edge6_Node000000_Node000001" title=" " alt="" coords="176,23,210,23,210,28,176,28"/>
-</map>

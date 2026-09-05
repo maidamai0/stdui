@@ -1,5 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$classstdui_1_1platform__window.html" title="Platform window abstraction." alt="" coords="5,5,180,31"/>
-<area shape="rect" id="Node000001" href="$classstdui_1_1null__window.html" title="Null window implementation for testing." alt="" coords="228,5,371,31"/>
-<area shape="poly" id="edge4_Node000000_Node000001" title=" " alt="" coords="194,15,227,15,227,21,194,21"/>
-</map>

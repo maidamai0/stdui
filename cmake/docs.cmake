@@ -11,13 +11,12 @@ if(STDUI_BUILD_DOCS)
     set(STDUI_DOCS_OUTPUT_DIR "${CMAKE_CURRENT_BINARY_DIR}/docs")
     file(MAKE_DIRECTORY "${STDUI_DOCS_OUTPUT_DIR}")
 
-    configure_file(
-        ${CMAKE_CURRENT_SOURCE_DIR}/docs/Doxyfile.in
-        ${STDUI_DOCS_OUTPUT_DIR}/Doxyfile
-        @ONLY)
+    set(DOXYFILE_IN ${CMAKE_CURRENT_SOURCE_DIR}/docs/Doxyfile.in)
+    set(DOXYFILE_OUT ${STDUI_DOCS_OUTPUT_DIR}/Doxyfile)
+    configure_file(${DOXYFILE_IN} ${DOXYFILE_OUT} @ONLY)
 
     add_custom_target(stdui_docs
-        COMMAND ${DOXYGEN_EXECUTABLE} ${STDUI_DOCS_OUTPUT_DIR}/Doxyfile
+        COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYFILE_OUT}
         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
         COMMENT "Generating stdui API documentation")
 endif()

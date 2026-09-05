@@ -13,7 +13,7 @@ write_basic_package_version_file(
     VERSION ${PROJECT_VERSION}
     COMPATIBILITY SameMajorVersion)
 
-install(TARGETS stdui EXPORT stduiTargets)
+install(TARGETS stdui stdui_rendering EXPORT stduiTargets)
 install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 install(EXPORT stduiTargets
     FILE stduiTargets.cmake

@@ -15,6 +15,19 @@ target_include_directories(stdui INTERFACE
     $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
 target_compile_features(stdui INTERFACE cxx_std_20)
 
+# Rendering subsystem (compiled implementation)
+add_library(stdui_rendering STATIC
+    src/rendering/render_tree_builder.cpp
+)
+
+target_include_directories(stdui_rendering PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
+target_compile_features(stdui_rendering PUBLIC cxx_std_20)
+
+# Link rendering library to main interface
+target_link_libraries(stdui INTERFACE stdui_rendering)
+
 include(CTest)
 if(BUILD_TESTING)
     include(cmake/tests.cmake)

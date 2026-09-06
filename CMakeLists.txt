@@ -16,14 +16,36 @@ target_include_directories(stdui INTERFACE
 target_compile_features(stdui INTERFACE cxx_std_20)
 
 # Rendering subsystem (compiled implementation)
-add_library(stdui_rendering STATIC
+set(STDUI_RENDERING_SOURCES
     src/rendering/render_tree_builder.cpp
+    src/rendering/renderer_factory.cpp
+)
+
+# Add Metal renderer on Apple platforms
+if(APPLE)
+    list(APPEND STDUI_RENDERING_SOURCES
+        src/rendering/metal_renderer.mm
+        src/rendering/glyph_atlas.mm
+    )
+endif()
+
+add_library(stdui_rendering STATIC
+    ${STDUI_RENDERING_SOURCES}
 )
 
 target_include_directories(stdui_rendering PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
 target_compile_features(stdui_rendering PUBLIC cxx_std_20)
+
+# Link Metal framework on Apple platforms
+if(APPLE)
+    target_link_libraries(stdui_rendering PUBLIC
+        "-framework Metal"
+        "-framework QuartzCore"
+        "-framework CoreText"
+    )
+endif()
 
 # Link rendering library to main interface
 target_link_libraries(stdui INTERFACE stdui_rendering)

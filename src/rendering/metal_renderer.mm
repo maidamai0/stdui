@@ -5,6 +5,7 @@
 
 #include "stdui/rendering/metal_renderer.hpp"
 #include "stdui/rendering/glyph_atlas.hpp"
+#include "stdui/rendering/path_tessellator.hpp"
 #include <simd/simd.h>
 #include <vector>
 
@@ -46,6 +47,9 @@ struct metal_renderer::impl {
     // Text rendering
     std::unique_ptr<glyph_atlas> atlas;
 
+    // Path rendering
+    std::unique_ptr<path_tessellator> tessellator;
+
     // Viewport
     size viewport;
 
@@ -84,6 +88,9 @@ struct metal_renderer::impl {
         // Initialize glyph atlas (2048x2048 texture)
         atlas = std::make_unique<glyph_atlas>(2048, 2048);
         atlas->set_metal_device(device);
+
+        // Initialize path tessellator
+        tessellator = std::make_unique<path_tessellator>();
 
         // Initialize projection matrix
         update_projection_matrix();
@@ -406,7 +413,37 @@ void metal_renderer::render_text(const text_node& node) {
 }
 
 void metal_renderer::render_path(const path_node& node) {
-    // TODO: Implement path rendering
+    const auto& props = node.properties();
+
+    // Tessellate fill
+    auto fill_triangles = impl_->tessellator->tessellate(
+        props.commands,
+        props.points,
+        props.fill_color
+    );
+
+    // Add triangles to vertex buffer
+    for (const auto& tri : fill_triangles) {
+        impl_->vertices.push_back({tri.v0, tri.color, {0, 0}});
+        impl_->vertices.push_back({tri.v1, tri.color, {0, 0}});
+        impl_->vertices.push_back({tri.v2, tri.color, {0, 0}});
+    }
+
+    // Tessellate stroke if present
+    if (props.stroke_color.has_value()) {
+        auto stroke_triangles = impl_->tessellator->create_stroke(
+            props.commands,
+            props.points,
+            *props.stroke_color,
+            props.stroke_width
+        );
+
+        for (const auto& tri : stroke_triangles) {
+            impl_->vertices.push_back({tri.v0, tri.color, {0, 0}});
+            impl_->vertices.push_back({tri.v1, tri.color, {0, 0}});
+            impl_->vertices.push_back({tri.v2, tri.color, {0, 0}});
+        }
+    }
 }
 
 void metal_renderer::render_image(const image_node& node) {

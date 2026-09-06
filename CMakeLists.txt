@@ -26,6 +26,7 @@ if(APPLE)
     list(APPEND STDUI_RENDERING_SOURCES
         src/rendering/metal_renderer.mm
         src/rendering/glyph_atlas.mm
+        src/rendering/path_tessellator.mm
     )
 endif()
 

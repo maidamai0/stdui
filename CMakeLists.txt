@@ -32,6 +32,7 @@ if(APPLE)
         src/platform/macos/metal_renderer.mm
         src/platform/macos/glyph_atlas.mm
         src/platform/macos/path_tessellator.mm
+        src/platform/macos/image_cache.mm
     )
     target_link_libraries(stdui_rendering PUBLIC
         "-framework Metal"

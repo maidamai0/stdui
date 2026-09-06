@@ -6,6 +6,7 @@
 #include "stdui/rendering/metal_renderer.hpp"
 #include "stdui/rendering/glyph_atlas.hpp"
 #include "stdui/rendering/path_tessellator.hpp"
+#include "stdui/rendering/image_cache.hpp"
 #include <simd/simd.h>
 #include <vector>
 
@@ -50,6 +51,9 @@ struct metal_renderer::impl {
     // Path rendering
     std::unique_ptr<path_tessellator> tessellator;
 
+    // Image rendering
+    std::unique_ptr<image_cache> images;
+
     // Viewport
     size viewport;
 
@@ -91,6 +95,9 @@ struct metal_renderer::impl {
 
         // Initialize path tessellator
         tessellator = std::make_unique<path_tessellator>();
+
+        // Initialize image cache
+        images = std::make_unique<image_cache>(device);
 
         // Initialize projection matrix
         update_projection_matrix();
@@ -447,7 +454,32 @@ void metal_renderer::render_path(const path_node& node) {
 }
 
 void metal_renderer::render_image(const image_node& node) {
-    // TODO: Implement image rendering
+    const auto& props = node.properties();
+
+    // Get texture from cache
+    id<MTLTexture> texture = impl_->images->get_texture(props.texture_id);
+    if (!texture) {
+        return;  // Image not loaded
+    }
+
+    // Create textured quad
+    float x = props.bounds.origin.x;
+    float y = props.bounds.origin.y;
+    float w = props.bounds.extent.width;
+    float h = props.bounds.extent.height;
+
+    simd_float4 color_vec = simd_make_float4(1.0f, 1.0f, 1.0f, props.opacity);
+
+    // Two triangles for image quad with texture coordinates
+    impl_->vertices.push_back({{x, y}, color_vec, {0, 0}});
+    impl_->vertices.push_back({{x + w, y}, color_vec, {1, 0}});
+    impl_->vertices.push_back({{x, y + h}, color_vec, {0, 1}});
+
+    impl_->vertices.push_back({{x + w, y}, color_vec, {1, 0}});
+    impl_->vertices.push_back({{x + w, y + h}, color_vec, {1, 1}});
+    impl_->vertices.push_back({{x, y + h}, color_vec, {0, 1}});
+
+    // TODO: Bind image texture for rendering (requires texture pipeline)
 }
 
 void metal_renderer::render_group(const group_node& node) {

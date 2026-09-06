@@ -150,6 +150,8 @@ private:
 class rectangle_node : public render_node {
 public:
     rectangle_node() : render_node(render_node_type::rectangle) {}
+    explicit rectangle_node(const rectangle_properties& props)
+        : render_node(render_node_type::rectangle), props_(props) {}
 
     const rectangle_properties& properties() const { return props_; }
     rectangle_properties& properties() { return props_; }
@@ -162,6 +164,8 @@ private:
 class text_node : public render_node {
 public:
     text_node() : render_node(render_node_type::text) {}
+    explicit text_node(const text_properties& props)
+        : render_node(render_node_type::text), props_(props) {}
 
     const text_properties& properties() const { return props_; }
     text_properties& properties() { return props_; }
@@ -174,6 +178,8 @@ private:
 class path_node : public render_node {
 public:
     path_node() : render_node(render_node_type::path) {}
+    explicit path_node(const path_properties& props)
+        : render_node(render_node_type::path), props_(props) {}
 
     const path_properties& properties() const { return props_; }
     path_properties& properties() { return props_; }
@@ -186,6 +192,8 @@ private:
 class image_node : public render_node {
 public:
     image_node() : render_node(render_node_type::image) {}
+    explicit image_node(const image_properties& props)
+        : render_node(render_node_type::image), props_(props) {}
 
     const image_properties& properties() const { return props_; }
     image_properties& properties() { return props_; }

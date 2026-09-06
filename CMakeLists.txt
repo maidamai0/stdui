@@ -15,46 +15,8 @@ target_include_directories(stdui INTERFACE
     $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
 target_compile_features(stdui INTERFACE cxx_std_20)
 
-# Rendering subsystem (compiled implementation)
-add_library(stdui_rendering STATIC
-    src/rendering/render_tree_builder.cpp
-    src/rendering/renderer_factory.cpp
-    src/rendering/frustum_culler.cpp
-)
-
-target_include_directories(stdui_rendering PUBLIC
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-    $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
-target_compile_features(stdui_rendering PUBLIC cxx_std_20)
-
-# Platform-specific rendering backends
-if(APPLE)
-    target_sources(stdui_rendering PRIVATE
-        src/platform/macos/metal_renderer.mm
-        src/platform/macos/glyph_atlas.mm
-        src/platform/macos/path_tessellator.mm
-        src/platform/macos/image_cache.mm
-    )
-    target_link_libraries(stdui_rendering PUBLIC
-        "-framework Metal"
-        "-framework QuartzCore"
-        "-framework CoreText"
-    )
-elseif(WIN32)
-    target_sources(stdui_rendering PRIVATE
-        src/platform/windows/direct2d_renderer.cpp
-    )
-    target_link_libraries(stdui_rendering PUBLIC
-        d2d1
-        dwrite
-    )
-elseif(UNIX)
-    # Linux: Skia/Vulkan backend (future)
-    message(WARNING "Linux rendering backend not yet implemented")
-endif()
-
-# Link rendering library to main interface
-target_link_libraries(stdui INTERFACE stdui_rendering)
+# Platform-specific rendering (dispatched to separate file)
+include(cmake/rendering.cmake)
 
 include(CTest)
 if(BUILD_TESTING)

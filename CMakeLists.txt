@@ -19,6 +19,7 @@ target_compile_features(stdui INTERFACE cxx_std_20)
 add_library(stdui_rendering STATIC
     src/rendering/render_tree_builder.cpp
     src/rendering/renderer_factory.cpp
+    src/rendering/frustum_culler.cpp
 )
 
 target_include_directories(stdui_rendering PUBLIC

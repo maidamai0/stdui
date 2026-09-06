@@ -7,6 +7,7 @@
 #include "stdui/rendering/glyph_atlas.hpp"
 #include "stdui/rendering/path_tessellator.hpp"
 #include "stdui/rendering/image_cache.hpp"
+#include "stdui/rendering/frustum_culler.hpp"
 #include <simd/simd.h>
 #include <vector>
 
@@ -53,6 +54,9 @@ struct metal_renderer::impl {
 
     // Image rendering
     std::unique_ptr<image_cache> images;
+
+    // Optimization
+    frustum_culler culler;
 
     // Viewport
     size viewport;
@@ -220,6 +224,9 @@ struct metal_renderer::impl {
 
         uniforms* uniform_data = static_cast<uniforms*>([uniform_buffer contents]);
         uniform_data->projection_matrix = projection;
+
+        // Update frustum culler viewport
+        culler.set_viewport(rect{{0, 0}, viewport});
     }
 
     void add_rectangle(const rect& bounds, const color& fill_color, float corner_radius) {
@@ -331,7 +338,8 @@ size metal_renderer::viewport_size() const {
 }
 
 void metal_renderer::render_node_internal(const render_node& node) {
-    if (!node.is_visible()) {
+    // Frustum culling optimization
+    if (!impl_->culler.should_render(node)) {
         return;
     }
 

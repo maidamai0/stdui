@@ -16,22 +16,9 @@ target_include_directories(stdui INTERFACE
 target_compile_features(stdui INTERFACE cxx_std_20)
 
 # Rendering subsystem (compiled implementation)
-set(STDUI_RENDERING_SOURCES
+add_library(stdui_rendering STATIC
     src/rendering/render_tree_builder.cpp
     src/rendering/renderer_factory.cpp
-)
-
-# Add Metal renderer on Apple platforms
-if(APPLE)
-    list(APPEND STDUI_RENDERING_SOURCES
-        src/rendering/metal_renderer.mm
-        src/rendering/glyph_atlas.mm
-        src/rendering/path_tessellator.mm
-    )
-endif()
-
-add_library(stdui_rendering STATIC
-    ${STDUI_RENDERING_SOURCES}
 )
 
 target_include_directories(stdui_rendering PUBLIC
@@ -39,13 +26,29 @@ target_include_directories(stdui_rendering PUBLIC
     $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
 target_compile_features(stdui_rendering PUBLIC cxx_std_20)
 
-# Link Metal framework on Apple platforms
+# Platform-specific rendering backends
 if(APPLE)
+    target_sources(stdui_rendering PRIVATE
+        src/platform/macos/metal_renderer.mm
+        src/platform/macos/glyph_atlas.mm
+        src/platform/macos/path_tessellator.mm
+    )
     target_link_libraries(stdui_rendering PUBLIC
         "-framework Metal"
         "-framework QuartzCore"
         "-framework CoreText"
     )
+elseif(WIN32)
+    target_sources(stdui_rendering PRIVATE
+        src/platform/windows/direct2d_renderer.cpp
+    )
+    target_link_libraries(stdui_rendering PUBLIC
+        d2d1
+        dwrite
+    )
+elseif(UNIX)
+    # Linux: Skia/Vulkan backend (future)
+    message(WARNING "Linux rendering backend not yet implemented")
 endif()
 
 # Link rendering library to main interface

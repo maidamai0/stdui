@@ -4,3 +4,5 @@
 /Testing/
 /compile_commands.json
 *.profraw
+.DS_Store
+tests/output_images/

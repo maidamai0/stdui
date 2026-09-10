@@ -4,6 +4,10 @@ project(stdui VERSION 0.1.0 LANGUAGES CXX)
 
 include(GNUInstallDirs)
 
+if(APPLE)
+    enable_language(OBJCXX)
+endif()
+
 option(STDUI_ENABLE_COVERAGE "Enable llvm-cov coverage instrumentation and reporting" OFF)
 set(STDUI_COVERAGE_THRESHOLD 90 CACHE STRING "Minimum required line coverage percentage")
 

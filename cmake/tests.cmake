@@ -12,15 +12,26 @@ ExternalProject_Get_Property(doctest SOURCE_DIR)
 
 file(GLOB STDUI_TEST_SOURCES
     CONFIGURE_DEPENDS
-    "${CMAKE_CURRENT_LIST_DIR}/../tests/*_tests.cpp")
+    "${CMAKE_CURRENT_LIST_DIR}/../tests/*_tests.cpp"
+    "${CMAKE_CURRENT_LIST_DIR}/../tests/*_tests.mm")
 
 foreach(test_source IN LISTS STDUI_TEST_SOURCES)
     get_filename_component(test_name "${test_source}" NAME_WE)
-    set(target_name "stdui_${test_name}")
+    if(test_name MATCHES "^stdui_")
+        set(target_name "${test_name}")
+    else()
+        set(target_name "stdui_${test_name}")
+    endif()
     add_executable("${target_name}" "${test_source}")
     add_dependencies("${target_name}" doctest)
     target_include_directories("${target_name}" PRIVATE ${SOURCE_DIR})
     target_link_libraries("${target_name}" PRIVATE stdui)
+    if(APPLE AND test_source MATCHES "\\.mm$")
+        target_link_libraries("${target_name}" PRIVATE
+            "-framework Foundation"
+            "-framework CoreGraphics"
+            "-framework ImageIO")
+    endif()
     add_test(NAME "${target_name}" COMMAND "${target_name}")
     list(APPEND STDUI_TEST_TARGETS "${target_name}")
 endforeach()

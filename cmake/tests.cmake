@@ -10,6 +10,30 @@ ExternalProject_Add(doctest
     TEST_COMMAND "")
 ExternalProject_Get_Property(doctest SOURCE_DIR)
 
+set(STDUI_CORE_TEST_NAMES
+    component_tests
+    core_contracts_tests
+    expressions_tests
+    geometry_tests
+    grid_expression_tests
+    grid_tests
+    layout_tests
+    layout_tree_tests
+    overlay_tests
+    state_tests)
+
+set(STDUI_RUNTIME_TEST_NAMES
+    application_tests
+    runtime_contracts_tests)
+
+set(STDUI_RENDER_TEST_NAMES
+    render_tree_tests
+    stdui_frustum_culler_tests
+    stdui_metal_visual_tests)
+
+set(STDUI_PLATFORM_TEST_NAMES
+    platform_tests)
+
 file(GLOB STDUI_TEST_SOURCES
     CONFIGURE_DEPENDS
     "${CMAKE_CURRENT_LIST_DIR}/../tests/*_tests.cpp"
@@ -33,8 +57,35 @@ foreach(test_source IN LISTS STDUI_TEST_SOURCES)
             "-framework ImageIO")
     endif()
     add_test(NAME "${target_name}" COMMAND "${target_name}")
+    if(test_name IN_LIST STDUI_CORE_TEST_NAMES)
+        set(test_label "core")
+        list(APPEND STDUI_CORE_TEST_TARGETS "${target_name}")
+    elseif(test_name IN_LIST STDUI_RUNTIME_TEST_NAMES)
+        set(test_label "runtime")
+        list(APPEND STDUI_RUNTIME_TEST_TARGETS "${target_name}")
+    elseif(test_name IN_LIST STDUI_RENDER_TEST_NAMES)
+        set(test_label "render")
+        list(APPEND STDUI_RENDER_TEST_TARGETS "${target_name}")
+    else()
+        set(test_label "platform")
+        list(APPEND STDUI_PLATFORM_TEST_TARGETS "${target_name}")
+    endif()
+    set_tests_properties("${target_name}" PROPERTIES LABELS "${test_label}")
     list(APPEND STDUI_TEST_TARGETS "${target_name}")
 endforeach()
+
+foreach(test_label IN ITEMS core runtime render platform)
+    string(TOUPPER "${test_label}" test_label_upper)
+    add_custom_target(stdui_test_${test_label}
+        COMMAND ${CMAKE_CTEST_COMMAND} --output-on-failure -L ${test_label}
+        DEPENDS ${STDUI_${test_label_upper}_TEST_TARGETS}
+        USES_TERMINAL)
+endforeach()
+
+add_custom_target(stdui_test_all
+    COMMAND ${CMAKE_CTEST_COMMAND} --output-on-failure
+    DEPENDS ${STDUI_TEST_TARGETS}
+    USES_TERMINAL)
 
 if(STDUI_ENABLE_COVERAGE)
     if(NOT CMAKE_CXX_COMPILER_ID MATCHES "Clang")

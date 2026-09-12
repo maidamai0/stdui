@@ -112,6 +112,43 @@ and platform choices add noise.
 The proposed API and acceptance criteria are recorded in
 `docs/milestone-01.md`.
 
+### D015 — Four-layer architecture with explicit ownership
+
+**Status:** Decided
+
+The framework is divided into `stdui_core`, `stdui_runtime`, `stdui_render`,
+and `stdui_platform`. Each layer is a library with a narrow public contract and
+backend implementations remain optional plugins. Lower layers do not include
+headers from execution or backend layers. The detailed contract is recorded in
+`docs/layered-architecture.md`.
+
+### D016 — Core describes effects; rendering implements them
+
+**Status:** Decided
+
+Opacity, clipping, blur, and shadow are backend-neutral effect descriptions in
+the core scene model. Their layout and hit-testing consequences belong to core.
+The actual blur, shadow-map, compositing, or software approximation belongs to
+the rendering layer.
+
+### D017 — Animation descriptions are core API; execution is runtime
+
+**Status:** Decided
+
+Users specify animation through core curves, transitions, triggers, and
+animatable values. Runtime owns clocks, timelines, interruption, scheduling,
+and invalidation. Rendering receives only the concrete values for the current
+frame.
+
+### D018 — Runtime is a system-independent event and timing engine
+
+**Status:** Decided
+
+Runtime consumes neutral events and a clock through interfaces rather than
+depending on an operating-system event loop. Platform adapters translate native
+events and expose surfaces. This makes runtime deterministic and testable with
+queued events, a manual clock, and frame execution on demand.
+
 ## Important consequences
 
 These decisions intentionally imply that the framework is not a traditional retained-mode widget toolkit with a class hierarchy like:

@@ -99,7 +99,7 @@ struct direct2d_renderer::impl {
     }
 
     D2D1_COLOR_F to_d2d_color(const color& c) {
-        return D2D1::ColorF(c.r, c.g, c.b, c.a);
+        return D2D1::ColorF(c.red, c.green, c.blue, c.alpha);
     }
 
     D2D1_RECT_F to_d2d_rect(const rect& r) {

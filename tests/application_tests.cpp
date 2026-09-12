@@ -26,14 +26,9 @@ public:
 class layout_component : public stdui::typed_component<layout_component> {
 public:
   auto body(stdui::component_context &ctx) const -> stdui::inspection_node override {
-    return stdui::inspect(stdui::vstack(
-        stdui::text("Header"),
-        stdui::hstack(
-            stdui::text("Left"),
-            stdui::text("Right")
-        ),
-        stdui::text("Footer")
-    ));
+    return stdui::inspect(stdui::vstack(stdui::text("Header"),
+                                        stdui::hstack(stdui::text("Left"), stdui::text("Right")),
+                                        stdui::text("Footer")));
   }
 };
 
@@ -159,10 +154,10 @@ TEST_CASE("application: multiple components share registry") {
 
 TEST_CASE("app_config: various background colors") {
   stdui::app_config config1{.background_color = stdui::color{1.0, 0.0, 0.0, 1.0}};
-  CHECK(config1.background_color.red == 1.0);
+  CHECK(config1.background_color.red == doctest::Approx(1.0f));
 
   stdui::app_config config2{.background_color = stdui::color{0.5, 0.5, 0.5, 0.8}};
-  CHECK(config2.background_color.alpha == 0.8);
+  CHECK(config2.background_color.alpha == doctest::Approx(0.8f));
 }
 
 TEST_CASE("app_config: various window sizes") {
@@ -290,10 +285,7 @@ TEST_CASE("application: overlay component") {
   class overlay_component : public stdui::typed_component<overlay_component> {
   public:
     auto body(stdui::component_context &ctx) const -> stdui::inspection_node override {
-      return stdui::inspect(stdui::overlay(
-          stdui::text("Back"),
-          stdui::text("Front")
-      ));
+      return stdui::inspect(stdui::overlay(stdui::text("Back"), stdui::text("Front")));
     }
   };
 
@@ -439,4 +431,3 @@ TEST_CASE("application: registry same throughout") {
   auto &reg2 = app.registry();
   CHECK(&reg1 == &reg2);
 }
-

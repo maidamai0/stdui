@@ -7,42 +7,38 @@
 
 namespace stdui {
 
-/// RGBA color representation
+/// Logical RGBA color with channels in the range [0, 1].
 struct color {
-    float r = 0.0f;
-    float g = 0.0f;
-    float b = 0.0f;
-    float a = 1.0f;
+  float red = 0.0f;
+  float green = 0.0f;
+  float blue = 0.0f;
+  float alpha = 1.0f;
 
-    constexpr color() = default;
-    constexpr color(float red, float green, float blue, float alpha = 1.0f)
-        : r(red), g(green), b(blue), a(alpha) {}
+  constexpr color() = default;
+  constexpr color(float red_value, float green_value, float blue_value, float alpha_value = 1.0f)
+      : red(red_value), green(green_value), blue(blue_value), alpha(alpha_value) {}
 
-    /// Create color from 8-bit RGB values
-    static constexpr color from_rgb(uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha = 255) {
-        return color{
-            red / 255.0f,
-            green / 255.0f,
-            blue / 255.0f,
-            alpha / 255.0f
-        };
-    }
+  /// Creates a color from 8-bit channels.
+  static constexpr auto from_rgb(uint8_t red_value, uint8_t green_value, uint8_t blue_value,
+                                 uint8_t alpha_value = 255) -> color {
+    return {red_value / 255.0f, green_value / 255.0f, blue_value / 255.0f, alpha_value / 255.0f};
+  }
 
-    /// Convert to 32-bit RGBA (0xRRGGBBAA)
-    constexpr uint32_t to_rgba() const {
-        return (static_cast<uint32_t>(r * 255) << 24) |
-               (static_cast<uint32_t>(g * 255) << 16) |
-               (static_cast<uint32_t>(b * 255) << 8) |
-               static_cast<uint32_t>(a * 255);
-    }
+  /// Packs the color as 0xRRGGBBAA.
+  constexpr auto to_rgba() const -> uint32_t {
+    return (static_cast<uint32_t>(red * 255.0f) << 24U) |
+           (static_cast<uint32_t>(green * 255.0f) << 16U) |
+           (static_cast<uint32_t>(blue * 255.0f) << 8U) | static_cast<uint32_t>(alpha * 255.0f);
+  }
 
-    /// Common color constants
-    static constexpr color black() { return color{0.0f, 0.0f, 0.0f, 1.0f}; }
-    static constexpr color white() { return color{1.0f, 1.0f, 1.0f, 1.0f}; }
-    static constexpr color red() { return color{1.0f, 0.0f, 0.0f, 1.0f}; }
-    static constexpr color green() { return color{0.0f, 1.0f, 0.0f, 1.0f}; }
-    static constexpr color blue() { return color{0.0f, 0.0f, 1.0f, 1.0f}; }
-    static constexpr color transparent() { return color{0.0f, 0.0f, 0.0f, 0.0f}; }
+  bool operator==(color const &) const = default;
+
+  static constexpr auto black() -> color { return {0.0f, 0.0f, 0.0f, 1.0f}; }
+  static constexpr auto white() -> color { return {1.0f, 1.0f, 1.0f, 1.0f}; }
+  static constexpr auto red_color() -> color { return {1.0f, 0.0f, 0.0f, 1.0f}; }
+  static constexpr auto green_color() -> color { return {0.0f, 1.0f, 0.0f, 1.0f}; }
+  static constexpr auto blue_color() -> color { return {0.0f, 0.0f, 1.0f, 1.0f}; }
+  static constexpr auto transparent() -> color { return {0.0f, 0.0f, 0.0f, 0.0f}; }
 };
 
-}  // namespace stdui
+} // namespace stdui

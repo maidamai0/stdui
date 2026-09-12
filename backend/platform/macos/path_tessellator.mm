@@ -64,7 +64,7 @@ std::vector<path_tessellator::triangle> path_tessellator::create_stroke(
         simd_float2 v2 = {static_cast<float>(p1.x + nx), static_cast<float>(p1.y + ny)};
         simd_float2 v3 = {static_cast<float>(p1.x - nx), static_cast<float>(p1.y - ny)};
 
-        simd_float4 color_vec = {stroke_color.r, stroke_color.g, stroke_color.b, stroke_color.a};
+        simd_float4 color_vec = {stroke_color.red, stroke_color.green, stroke_color.blue, stroke_color.alpha};
 
         // First triangle
         triangles.push_back({v0, v1, v2, color_vec});
@@ -85,7 +85,7 @@ void path_tessellator::triangulate_polygon(
         return;
     }
 
-    simd_float4 color_vec = {fill_color.r, fill_color.g, fill_color.b, fill_color.a};
+    simd_float4 color_vec = {fill_color.red, fill_color.green, fill_color.blue, fill_color.alpha};
 
     // Fan triangulation from first vertex
     for (size_t i = 1; i < vertices.size() - 1; ++i) {

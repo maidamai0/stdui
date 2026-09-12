@@ -10,8 +10,9 @@
 #include <variant>
 #include <vector>
 
-#include "stdui/geometry.hpp"
 #include "stdui/color.hpp"
+#include "stdui/effects.hpp"
+#include "stdui/geometry.hpp"
 
 namespace stdui::rendering {
 
@@ -84,35 +85,11 @@ enum class effect_type {
     clip,
 };
 
-/// Blur effect parameters
-struct blur_effect {
-    float radius;  // Blur radius in pixels
-};
-
-/// Shadow effect parameters
-struct shadow_effect {
-    vec2 offset;
-    float blur_radius;
-    color shadow_color;
-};
-
-/// Opacity effect parameters
-struct opacity_effect {
-    float opacity;  // 0.0 - 1.0
-};
-
-/// Clip effect parameters
-struct clip_effect {
-    rect clip_rect;
-};
-
-/// Effect union
-using effect_params = std::variant<
-    blur_effect,
-    shadow_effect,
-    opacity_effect,
-    clip_effect
->;
+using stdui::blur_effect;
+using stdui::clip_effect;
+using stdui::opacity_effect;
+using stdui::shadow_effect;
+using effect_params = stdui::visual_effect;
 
 /// Render node - represents a single drawable element
 class render_node {

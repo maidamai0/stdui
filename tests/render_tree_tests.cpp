@@ -143,6 +143,9 @@ TEST_CASE("render_node - basic properties") {
 
         node.properties().stroke_width = 4.0f;
         REQUIRE(node.properties().stroke_width == 4.0f);
+
+        const path_node const_node(props);
+        REQUIRE(const_node.properties().commands.size() == 3);
     }
 
     SUBCASE("Image node") {
@@ -158,6 +161,9 @@ TEST_CASE("render_node - basic properties") {
 
         node.properties().opacity = 0.75f;
         REQUIRE(node.properties().opacity == 0.75f);
+
+        const image_node const_node(props);
+        REQUIRE(const_node.properties().texture_id == 42);
     }
 
     SUBCASE("Group node") {

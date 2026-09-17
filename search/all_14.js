@@ -1,13 +1,13 @@
 var searchData=
 [
-  ['kawase_20blur_20production_20quality_0',['5.2 Dual-Kawase Blur (Production Quality)',['../md_docs_2phase4-rendering.html#autotoc_md321',1,'']]],
+  ['kawase_20blur_20production_20quality_0',['5.2 Dual-Kawase Blur (Production Quality)',['../md_docs_2phase4-rendering.html#autotoc_md335',1,'']]],
   ['key_1',['key',['../structstdui_1_1keyboard__event.html#ab76377098dd3ef791f3ef222d35b7a27',1,'stdui::keyboard_event']]],
-  ['key_20architectural_20decisions_2',['Key Architectural Decisions',['../md_docs_2phase4-rendering.html#autotoc_md350',1,'']]],
-  ['key_20takeaways_3',['key takeaways',['../tutorials.html#autotoc_md426',1,'Key Takeaways'],['../tutorials.html#autotoc_md437',1,'Key Takeaways'],['../tutorials.html#autotoc_md446',1,'Key Takeaways']]],
-  ['keyboard_20navigation_4',['Step 7.3.2: Keyboard navigation',['../md_docs_2DETAILED__PLAN.html#autotoc_md146',1,'']]],
+  ['key_20architectural_20decisions_2',['Key Architectural Decisions',['../md_docs_2phase4-rendering.html#autotoc_md364',1,'']]],
+  ['key_20takeaways_3',['key takeaways',['../tutorials.html#autotoc_md460',1,'Key Takeaways'],['../tutorials.html#autotoc_md451',1,'Key Takeaways'],['../tutorials.html#autotoc_md440',1,'Key Takeaways']]],
+  ['keyboard_20navigation_4',['Step 7.3.2: Keyboard navigation',['../md_docs_2DETAILED__PLAN.html#autotoc_md150',1,'']]],
   ['keyboard_5fevent_5',['keyboard_event',['../structstdui_1_1keyboard__event.html',1,'stdui']]],
   ['keyboard_5fmodifiers_6',['keyboard_modifiers',['../structstdui_1_1keyboard__modifiers.html',1,'stdui']]],
-  ['kind_7',['kind',['../structstdui_1_1inspection__node.html#aa343ae18dca3d6019d1004bd8efce5aa',1,'stdui::inspection_node::kind'],['../structstdui_1_1layout__box.html#a7ec323a97519a047508b053d0ff695d5',1,'stdui::layout_box::kind'],['../structstdui_1_1layout__node.html#ab0574c6f30df73b6552b70168b444d4d',1,'stdui::layout_node::kind'],['../structstdui_1_1state__key.html#a9b99ce9943c71463a4f58873a78e686d',1,'stdui::state_key::kind']]],
-  ['known_20limitations_20deferred_20features_8',['Known Limitations &amp; Deferred Features',['../md_docs_2phase4-completion.html#autotoc_md277',1,'']]],
-  ['known_20risks_20to_20investigate_9',['Known risks to investigate',['../design_decisions.html#autotoc_md34',1,'']]]
+  ['kind_7',['kind',['../structstdui_1_1state__key.html#a9b99ce9943c71463a4f58873a78e686d',1,'stdui::state_key::kind'],['../structstdui_1_1render__target__descriptor.html#a13459f693305f6ad3bd3e99df1a6c810',1,'stdui::render_target_descriptor::kind'],['../structstdui_1_1layout__node.html#ab0574c6f30df73b6552b70168b444d4d',1,'stdui::layout_node::kind'],['../structstdui_1_1layout__box.html#a7ec323a97519a047508b053d0ff695d5',1,'stdui::layout_box::kind'],['../structstdui_1_1inspection__node.html#aa343ae18dca3d6019d1004bd8efce5aa',1,'stdui::inspection_node::kind'],['../structstdui_1_1animation__curve.html#accbed44228812bed64f63eacb8452fe0',1,'stdui::animation_curve::kind']]],
+  ['known_20limitations_20deferred_20features_8',['Known Limitations &amp; Deferred Features',['../md_docs_2phase4-completion.html#autotoc_md291',1,'']]],
+  ['known_20risks_20to_20investigate_9',['Known risks to investigate',['../design_decisions.html#autotoc_md38',1,'']]]
 ];

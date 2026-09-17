@@ -1,7 +1,5 @@
 var namespacestdui_1_1rendering =
 [
-    [ "blur_effect", "structstdui_1_1rendering_1_1blur__effect.html", "structstdui_1_1rendering_1_1blur__effect" ],
-    [ "clip_effect", "structstdui_1_1rendering_1_1clip__effect.html", "structstdui_1_1rendering_1_1clip__effect" ],
     [ "effect_node", "classstdui_1_1rendering_1_1effect__node.html", "classstdui_1_1rendering_1_1effect__node" ],
     [ "frustum_culler", "classstdui_1_1rendering_1_1frustum__culler.html", "classstdui_1_1rendering_1_1frustum__culler" ],
     [ "glyph_atlas", "classstdui_1_1rendering_1_1glyph__atlas.html", "classstdui_1_1rendering_1_1glyph__atlas" ],
@@ -11,7 +9,6 @@ var namespacestdui_1_1rendering =
     [ "image_node", "classstdui_1_1rendering_1_1image__node.html", "classstdui_1_1rendering_1_1image__node" ],
     [ "image_properties", "structstdui_1_1rendering_1_1image__properties.html", "structstdui_1_1rendering_1_1image__properties" ],
     [ "mat3", "structstdui_1_1rendering_1_1mat3.html", "structstdui_1_1rendering_1_1mat3" ],
-    [ "opacity_effect", "structstdui_1_1rendering_1_1opacity__effect.html", "structstdui_1_1rendering_1_1opacity__effect" ],
     [ "path_node", "classstdui_1_1rendering_1_1path__node.html", "classstdui_1_1rendering_1_1path__node" ],
     [ "path_properties", "structstdui_1_1rendering_1_1path__properties.html", "structstdui_1_1rendering_1_1path__properties" ],
     [ "rectangle_node", "classstdui_1_1rendering_1_1rectangle__node.html", "classstdui_1_1rendering_1_1rectangle__node" ],
@@ -22,11 +19,10 @@ var namespacestdui_1_1rendering =
     [ "renderer", "classstdui_1_1rendering_1_1renderer.html", "classstdui_1_1rendering_1_1renderer" ],
     [ "renderer_factory", "classstdui_1_1rendering_1_1renderer__factory.html", "classstdui_1_1rendering_1_1renderer__factory" ],
     [ "scene_view_node", "classstdui_1_1rendering_1_1scene__view__node.html", "classstdui_1_1rendering_1_1scene__view__node" ],
-    [ "shadow_effect", "structstdui_1_1rendering_1_1shadow__effect.html", "structstdui_1_1rendering_1_1shadow__effect" ],
     [ "text_node", "classstdui_1_1rendering_1_1text__node.html", "classstdui_1_1rendering_1_1text__node" ],
     [ "text_properties", "structstdui_1_1rendering_1_1text__properties.html", "structstdui_1_1rendering_1_1text__properties" ],
     [ "vec2", "structstdui_1_1rendering_1_1vec2.html", "structstdui_1_1rendering_1_1vec2" ],
-    [ "effect_params", "namespacestdui_1_1rendering.html#a43ef27b4ccffaa5c16685787817e393d", null ],
+    [ "effect_params", "namespacestdui_1_1rendering.html#a06e291d5f8accd5d2ebd496ed7499e29", null ],
     [ "effect_type", "namespacestdui_1_1rendering.html#a1079a16ae8df5dca72b7ef943f7e36cd", [
       [ "blur", "namespacestdui_1_1rendering.html#a1079a16ae8df5dca72b7ef943f7e36cdaaefcd320422617869da103b5eed7041c", null ],
       [ "shadow", "namespacestdui_1_1rendering.html#a1079a16ae8df5dca72b7ef943f7e36cda3bf1114a986ba87ed28fc1b5884fc2f8", null ],

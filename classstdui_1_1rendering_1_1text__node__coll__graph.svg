@@ -77,7 +77,7 @@
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="structstdui_1_1color.html" target="_top" xlink:title="RGBA color representation.">
+<g id="a_Node000005"><a xlink:href="structstdui_1_1color.html" target="_top" xlink:title="Logical RGBA color with channels in the range [0, 1].">
 <polygon fill="white" stroke="#666666" points="318.5,-162 247.5,-162 247.5,-143 318.5,-143 318.5,-162"/>
 <text text-anchor="middle" x="283" y="-150" font-family="Helvetica,sans-Serif" font-size="10.00">stdui::color</text>
 </a>

@@ -2,6 +2,6 @@
 <area shape="rect" id="Node000001" title="Text rendering properties." alt="" coords="32,93,191,133"/>
 <area shape="rect" id="Node000002" href="$structstdui_1_1point.html" title="Logical two&#45;dimensional position in device&#45;independent units." alt="" coords="5,5,100,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="69,41,102,92,97,95,65,43"/>
-<area shape="rect" id="Node000003" href="$structstdui_1_1color.html" title="RGBA color representation." alt="" coords="124,5,219,31"/>
+<area shape="rect" id="Node000003" href="$structstdui_1_1color.html" title="Logical RGBA color with channels in the range [0, 1]." alt="" coords="124,5,219,31"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="160,44,144,71,128,95,123,92,140,68,156,42"/>
 </map>

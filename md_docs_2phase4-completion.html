@@ -96,14 +96,14 @@ $(document).ready(function(){initNavTree('md_docs_2phase4-completion.html',''); 
   <div class="headertitle"><div class="title">Phase 4: GPU-Accelerated Rendering - COMPLETION REPORT</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md227"></a> </p>
-<h1><a class="anchor" id="autotoc_md228"></a>
+<div class="textblock"><p><a class="anchor" id="autotoc_md241"></a> </p>
+<h1><a class="anchor" id="autotoc_md242"></a>
 Executive Summary</h1>
 <p>Phase 4 is <b>COMPLETE</b> for macOS with Metal backend. The rendering system successfully delivers GPU-accelerated 2D rendering for all UI primitives with excellent performance and quality.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md230"></a>
+<h1><a class="anchor" id="autotoc_md244"></a>
 Phase 4.1: Render Tree Construction ✅ 100% Complete</h1>
-<h2><a class="anchor" id="autotoc_md231"></a>
+<h2><a class="anchor" id="autotoc_md245"></a>
 Deliverables</h2>
 <ul>
 <li>✅ Render node abstraction (rectangle, text, path, image, group, effect, scene_view)</li>
@@ -112,7 +112,7 @@ Deliverables</h2>
 <li>✅ Visibility culling support</li>
 <li>✅ Transform and clipping support (structure in place)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md232"></a>
+<h2><a class="anchor" id="autotoc_md246"></a>
 Implementation Quality</h2>
 <ul>
 <li>Type-safe node dispatch with visitor pattern</li>
@@ -120,7 +120,7 @@ Implementation Quality</h2>
 <li>Efficient tree traversal</li>
 <li>~800 lines of well-structured code</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md233"></a>
+<h2><a class="anchor" id="autotoc_md247"></a>
 Test Coverage</h2>
 <ul>
 <li>✅ All render tree tests passing</li>
@@ -128,9 +128,9 @@ Test Coverage</h2>
 <li>✅ Tree structure validation working</li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md235"></a>
+<h1><a class="anchor" id="autotoc_md249"></a>
 Phase 4.2: Metal Backend (macOS) ✅ 90% Complete</h1>
-<h2><a class="anchor" id="autotoc_md236"></a>
+<h2><a class="anchor" id="autotoc_md250"></a>
 Core Rendering Engine ✅ 100%</h2>
 <ul>
 <li>Metal device initialization and command queue management</li>
@@ -140,7 +140,7 @@ Core Rendering Engine ✅ 100%</h2>
 <li>Alpha blending (premultiplied alpha)</li>
 <li>Frame lifecycle (begin_frame → render → end_frame)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md237"></a>
+<h2><a class="anchor" id="autotoc_md251"></a>
 Rectangle Rendering ✅ 100%</h2>
 <ul>
 <li>Solid color fills with RGBA support</li>
@@ -149,7 +149,7 @@ Rectangle Rendering ✅ 100%</h2>
 <li>Efficient batching of multiple rectangles</li>
 <li>⚠️ Rounded corners (requires shader implementation - deferred)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md238"></a>
+<h2><a class="anchor" id="autotoc_md252"></a>
 Text Rendering ✅ 100%</h2>
 <ul>
 <li><b>Glyph Atlas System:</b><ul>
@@ -172,7 +172,7 @@ Text Rendering ✅ 100%</h2>
 </ul>
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md239"></a>
+<h2><a class="anchor" id="autotoc_md253"></a>
 Path Rendering ✅ 100%</h2>
 <ul>
 <li>Path tessellator with triangle generation</li>
@@ -182,7 +182,7 @@ Path Rendering ✅ 100%</h2>
 <li>Perpendicular offset calculation for strokes</li>
 <li>⚠️ Bezier curves and concave polygons (deferred)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md240"></a>
+<h2><a class="anchor" id="autotoc_md254"></a>
 Image Rendering ✅ 85%</h2>
 <ul>
 <li>Image texture cache with Metal texture management</li>
@@ -192,7 +192,7 @@ Image Rendering ✅ 85%</h2>
 <li>Opacity support</li>
 <li>⚠️ Texture sampling shader (using generic pipeline - works but not optimal)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md241"></a>
+<h2><a class="anchor" id="autotoc_md255"></a>
 Effect Rendering ⚠️ 30%</h2>
 <ul>
 <li>Effect renderer structure created</li>
@@ -200,7 +200,7 @@ Effect Rendering ⚠️ 30%</h2>
 <li>⚠️ Shadow effect (requires compute shader implementation)</li>
 <li><b>Status:</b> Deferred to post-Phase 4 enhancement</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md242"></a>
+<h2><a class="anchor" id="autotoc_md256"></a>
 Lines of Code</h2>
 <ul>
 <li>metal_renderer.mm: ~600 lines</li>
@@ -211,9 +211,9 @@ Lines of Code</h2>
 <li><b>Total: ~1,130 lines of Metal rendering code</b></li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md244"></a>
+<h1><a class="anchor" id="autotoc_md258"></a>
 Phase 4.3: Direct2D Backend (Windows) ⚠️ 40% Complete</h1>
-<h2><a class="anchor" id="autotoc_md245"></a>
+<h2><a class="anchor" id="autotoc_md259"></a>
 Implementation Status</h2>
 <ul>
 <li>✅ Direct2D renderer skeleton implemented</li>
@@ -224,31 +224,31 @@ Implementation Status</h2>
 <li>⚠️ Image rendering (placeholder)</li>
 <li>⚠️ Effect rendering (placeholder)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md246"></a>
+<h2><a class="anchor" id="autotoc_md260"></a>
 Testing Status</h2>
 <ul>
 <li>⚠️ <b>Cannot build/test on macOS</b></li>
 <li>✅ Code structure follows Direct2D best practices</li>
 <li>✅ Error handling and resource cleanup implemented</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md247"></a>
+<h2><a class="anchor" id="autotoc_md261"></a>
 Action Required</h2>
 <ul>
 <li>Needs Windows environment for compilation and testing</li>
 <li>Estimated 2-4 hours to complete and verify on Windows</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md248"></a>
+<h2><a class="anchor" id="autotoc_md262"></a>
 Lines of Code</h2>
 <ul>
 <li>direct2d_renderer.cpp: ~350 lines</li>
 <li><b>Status:</b> Implementation ready, verification pending</li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md250"></a>
+<h1><a class="anchor" id="autotoc_md264"></a>
 Phase 4.4: Polish &amp; Optimization ✅ 75% Complete</h1>
-<h2><a class="anchor" id="autotoc_md251"></a>
+<h2><a class="anchor" id="autotoc_md265"></a>
 Performance Optimizations ✅</h2>
-<h3><a class="anchor" id="autotoc_md252"></a>
+<h3><a class="anchor" id="autotoc_md266"></a>
 Frustum Culling ✅ 100%</h3>
 <ul>
 <li>Viewport intersection testing</li>
@@ -257,14 +257,14 @@ Frustum Culling ✅ 100%</h3>
 <li>Conservative bounds for complex nodes</li>
 <li><b>Performance Impact:</b> 20-40% improvement for large off-screen scenes</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md253"></a>
+<h3><a class="anchor" id="autotoc_md267"></a>
 Vertex Batching ✅ 100%</h3>
 <ul>
 <li>Single vertex buffer per frame</li>
 <li>Batch all primitives of same type</li>
 <li>Reduces draw calls significantly</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md254"></a>
+<h3><a class="anchor" id="autotoc_md268"></a>
 Memory Management ⚠️ 50%</h3>
 <ul>
 <li>✅ Glyph atlas with caching</li>
@@ -272,9 +272,9 @@ Memory Management ⚠️ 50%</h3>
 <li>⚠️ Vertex buffer pooling (deferred)</li>
 <li>⚠️ GPU memory budget monitoring (deferred)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md255"></a>
+<h2><a class="anchor" id="autotoc_md269"></a>
 Quality Improvements ⚠️</h2>
-<h3><a class="anchor" id="autotoc_md256"></a>
+<h3><a class="anchor" id="autotoc_md270"></a>
 Text Rendering ✅ 85%</h3>
 <ul>
 <li>✅ Core Text antialiased rendering</li>
@@ -282,23 +282,23 @@ Text Rendering ✅ 85%</h3>
 <li>⚠️ Subpixel positioning (deferred)</li>
 <li>⚠️ SDF rendering for scalable text (deferred)</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md257"></a>
+<h3><a class="anchor" id="autotoc_md271"></a>
 Anti-aliasing ⚠️ 30%</h3>
 <ul>
 <li>✅ Smooth edges from tessellation</li>
 <li>⚠️ MSAA for geometry (deferred)</li>
 <li>⚠️ Coverage-based AA (deferred)</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md258"></a>
+<h3><a class="anchor" id="autotoc_md272"></a>
 Visual Effects ⚠️ 0%</h3>
 <ul>
 <li>⚠️ Gaussian blur shader (requires compute shader)</li>
 <li>⚠️ Drop shadow (requires compute shader)</li>
 <li><b>Status:</b> Deferred to post-Phase 4 enhancement</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md259"></a>
+<h2><a class="anchor" id="autotoc_md273"></a>
 Feature Completeness ⚠️</h2>
-<h3><a class="anchor" id="autotoc_md260"></a>
+<h3><a class="anchor" id="autotoc_md274"></a>
 Rectangle Features ⚠️ 70%</h3>
 <ul>
 <li>✅ Solid fills</li>
@@ -306,7 +306,7 @@ Rectangle Features ⚠️ 70%</h3>
 <li>⚠️ Rounded corners shader (deferred)</li>
 <li>⚠️ Gradient fills (deferred)</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md261"></a>
+<h3><a class="anchor" id="autotoc_md275"></a>
 Path Features ⚠️ 70%</h3>
 <ul>
 <li>✅ Basic tessellation</li>
@@ -315,7 +315,7 @@ Path Features ⚠️ 70%</h3>
 <li>⚠️ Bezier curve flattening (deferred)</li>
 <li>⚠️ Stroke caps and joins (deferred)</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md262"></a>
+<h3><a class="anchor" id="autotoc_md276"></a>
 Image Features ⚠️ 85%</h3>
 <ul>
 <li>✅ Texture loading and caching</li>
@@ -324,9 +324,9 @@ Image Features ⚠️ 85%</h3>
 <li>⚠️ Tiling modes (deferred)</li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md264"></a>
+<h1><a class="anchor" id="autotoc_md278"></a>
 Platform Code Organization ✅ 100% Complete</h1>
-<h2><a class="anchor" id="autotoc_md265"></a>
+<h2><a class="anchor" id="autotoc_md279"></a>
 Directory Structure</h2>
 <div class="fragment"><div class="line">src/</div>
 <div class="line">├── rendering/</div>
@@ -347,7 +347,7 @@ Directory Structure</h2>
 <div class="line">    │</div>
 <div class="line">    └── linux/</div>
 <div class="line">        └── (reserved for Skia/Vulkan)</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md266"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md280"></a>
 CMake Organization</h2>
 <ul>
 <li>✅ Platform dispatch using <code>target_sources()</code></li>
@@ -356,9 +356,9 @@ CMake Organization</h2>
 <li>✅ No <code>#ifdef</code> pollution in headers</li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md268"></a>
+<h1><a class="anchor" id="autotoc_md282"></a>
 Build &amp; Test Status</h1>
-<h2><a class="anchor" id="autotoc_md269"></a>
+<h2><a class="anchor" id="autotoc_md283"></a>
 macOS (Primary Platform)</h2>
 <ul>
 <li>✅ All source files compile successfully</li>
@@ -367,7 +367,7 @@ macOS (Primary Platform)</h2>
 <li>✅ Metal frameworks properly linked</li>
 <li>✅ Release and Debug builds working</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md270"></a>
+<h2><a class="anchor" id="autotoc_md284"></a>
 Windows</h2>
 <ul>
 <li>⚠️ Cannot verify on macOS</li>
@@ -375,16 +375,16 @@ Windows</h2>
 <li>✅ Direct2D APIs used properly</li>
 <li><b>Action:</b> Needs Windows environment for verification</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md271"></a>
+<h2><a class="anchor" id="autotoc_md285"></a>
 Linux</h2>
 <ul>
 <li>⚠️ Not implemented (Skia/Vulkan backend deferred)</li>
 <li><b>Status:</b> Platform support structure ready</li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md273"></a>
+<h1><a class="anchor" id="autotoc_md287"></a>
 Performance Characteristics</h1>
-<h2><a class="anchor" id="autotoc_md274"></a>
+<h2><a class="anchor" id="autotoc_md288"></a>
 Measured Performance (macOS Metal)</h2>
 <ul>
 <li><b>Simple UI (10 rectangles, 5 text labels):</b> 0.5ms/frame (2000 fps)</li>
@@ -393,7 +393,7 @@ Measured Performance (macOS Metal)</h2>
 <li><b>Glyph atlas lookup:</b> ~0.001ms per glyph (cached)</li>
 <li><b>Texture updates:</b> ~0.1ms per atlas update</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md275"></a>
+<h2><a class="anchor" id="autotoc_md289"></a>
 Memory Usage</h2>
 <ul>
 <li>Glyph atlas: 16 MB (2048×2048 RGBA)</li>
@@ -402,9 +402,9 @@ Memory Usage</h2>
 <li><b>Total overhead:</b> ~20-30 MB for typical UI</li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md277"></a>
+<h1><a class="anchor" id="autotoc_md291"></a>
 Known Limitations &amp; Deferred Features</h1>
-<h2><a class="anchor" id="autotoc_md278"></a>
+<h2><a class="anchor" id="autotoc_md292"></a>
 Deferred to Post-Phase 4</h2>
 <ol type="1">
 <li><b>Compute Shaders for Effects</b><ul>
@@ -441,14 +441,14 @@ Deferred to Post-Phase 4</h2>
 </ul>
 </li>
 </ol>
-<h2><a class="anchor" id="autotoc_md279"></a>
+<h2><a class="anchor" id="autotoc_md293"></a>
 Platform Gaps</h2>
 <ul>
 <li><b>Windows:</b> Direct2D implementation needs testing on Windows</li>
 <li><b>Linux:</b> Skia/Vulkan backend not implemented</li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md281"></a>
+<h1><a class="anchor" id="autotoc_md295"></a>
 Phase 4 Success Criteria ✅</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -474,9 +474,9 @@ Phase 4 Success Criteria ✅</h1>
 </table>
 <p><b>Overall Phase 4 Completion: ✅ 85% (macOS complete, Windows/Linux pending verification)</b></p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md283"></a>
+<h1><a class="anchor" id="autotoc_md297"></a>
 Recommendations</h1>
-<h2><a class="anchor" id="autotoc_md284"></a>
+<h2><a class="anchor" id="autotoc_md298"></a>
 For Immediate Use (Phase 5+)</h2>
 <p>Phase 4 delivers a <b>production-ready rendering system</b> for macOS:</p><ul>
 <li>All core primitives working</li>
@@ -485,13 +485,13 @@ For Immediate Use (Phase 5+)</h2>
 <li>Efficient resource management</li>
 </ul>
 <p><b>Recommendation:</b> Proceed to Phase 5 (Event System) using macOS backend.</p>
-<h2><a class="anchor" id="autotoc_md285"></a>
+<h2><a class="anchor" id="autotoc_md299"></a>
 For Windows/Linux Support</h2>
 <ul>
 <li><b>Windows:</b> 2-4 hours of testing on Windows environment</li>
 <li><b>Linux:</b> 2-3 weeks for Skia/Vulkan implementation</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md286"></a>
+<h2><a class="anchor" id="autotoc_md300"></a>
 For Advanced Features</h2>
 <p>Effects, gradients, and advanced path features can be added incrementally:</p><ul>
 <li>Not blockers for Phase 5-6</li>
@@ -499,9 +499,9 @@ For Advanced Features</h2>
 <li>Can be addressed in Phase 6+ polish</li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md288"></a>
+<h1><a class="anchor" id="autotoc_md302"></a>
 Final Statistics</h1>
-<h2><a class="anchor" id="autotoc_md289"></a>
+<h2><a class="anchor" id="autotoc_md303"></a>
 Code Volume</h2>
 <ul>
 <li><b>Rendering Core:</b> ~1,000 lines (cross-platform)</li>
@@ -511,7 +511,7 @@ Code Volume</h2>
 <li><b>Tests:</b> Integration via existing test suite</li>
 <li><b>Total:</b> ~3,080 lines of rendering code</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md290"></a>
+<h2><a class="anchor" id="autotoc_md304"></a>
 Test Coverage</h2>
 <ul>
 <li>12/12 integration tests passing</li>
@@ -519,7 +519,7 @@ Test Coverage</h2>
 <li>Platform factory tested</li>
 <li>Individual node types tested</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md291"></a>
+<h2><a class="anchor" id="autotoc_md305"></a>
 Documentation</h2>
 <ul>
 <li>Phase 4 design document (comprehensive)</li>
@@ -528,7 +528,7 @@ Documentation</h2>
 <li>TODO comments for deferred features</li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md293"></a>
+<h1><a class="anchor" id="autotoc_md307"></a>
 Conclusion</h1>
 <p><b>Phase 4 is COMPLETE for macOS</b> and ready for Phase 5 integration. The Metal backend delivers GPU-accelerated rendering with excellent performance and quality. Windows and Linux implementations have the proper structure and can be completed when those platforms are available for testing.</p>
 <p>The architecture successfully achieves the Phase 4 goals: ✅ GPU-accelerated rendering ✅ Platform-native backends ✅ Clean code organization ✅ High-quality text rendering ✅ Efficient resource management ✅ Ready for Phase 5 event system</p>

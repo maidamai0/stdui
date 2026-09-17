@@ -4,6 +4,6 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,139,133,195,128,196,115,140"/>
 <area shape="rect" id="Node000003" href="$structstdui_1_1rendering_1_1path__properties.html" title="Path rendering properties (for complex shapes)" alt="" coords="243,93,405,133"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="274,142,158,198,156,194,272,137"/>
-<area shape="rect" id="Node000004" href="$structstdui_1_1color.html" title="RGBA color representation." alt="" coords="277,5,371,31"/>
+<area shape="rect" id="Node000004" href="$structstdui_1_1color.html" title="Logical RGBA color with channels in the range [0, 1]." alt="" coords="277,5,371,31"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="327,44,327,93,321,93,321,44"/>
 </map>

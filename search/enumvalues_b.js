@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['path_0',['path',['../namespacestdui_1_1rendering.html#a292f38ed9fecb029935bd3487657ededad6fe1d0be6347b8ef2427fa629c04485',1,'stdui::rendering']]]
+  ['normal_0',['normal',['../structstdui_1_1font__descriptor.html#abc36bac704e8ac62728871f8c004c3a4afea087517c26fadd409bd4b9dc642555',1,'stdui::font_descriptor']]]
 ];

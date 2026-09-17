@@ -1,13 +1,10 @@
 var render__node_8hpp =
 [
-    [ "stdui::rendering::blur_effect", "structstdui_1_1rendering_1_1blur__effect.html", "structstdui_1_1rendering_1_1blur__effect" ],
-    [ "stdui::rendering::clip_effect", "structstdui_1_1rendering_1_1clip__effect.html", "structstdui_1_1rendering_1_1clip__effect" ],
     [ "stdui::rendering::effect_node", "classstdui_1_1rendering_1_1effect__node.html", "classstdui_1_1rendering_1_1effect__node" ],
     [ "stdui::rendering::group_node", "classstdui_1_1rendering_1_1group__node.html", "classstdui_1_1rendering_1_1group__node" ],
     [ "stdui::rendering::image_node", "classstdui_1_1rendering_1_1image__node.html", "classstdui_1_1rendering_1_1image__node" ],
     [ "stdui::rendering::image_properties", "structstdui_1_1rendering_1_1image__properties.html", "structstdui_1_1rendering_1_1image__properties" ],
     [ "stdui::rendering::mat3", "structstdui_1_1rendering_1_1mat3.html", "structstdui_1_1rendering_1_1mat3" ],
-    [ "stdui::rendering::opacity_effect", "structstdui_1_1rendering_1_1opacity__effect.html", "structstdui_1_1rendering_1_1opacity__effect" ],
     [ "stdui::rendering::path_node", "classstdui_1_1rendering_1_1path__node.html", "classstdui_1_1rendering_1_1path__node" ],
     [ "stdui::rendering::path_properties", "structstdui_1_1rendering_1_1path__properties.html", "structstdui_1_1rendering_1_1path__properties" ],
     [ "stdui::rendering::rectangle_node", "classstdui_1_1rendering_1_1rectangle__node.html", "classstdui_1_1rendering_1_1rectangle__node" ],
@@ -15,11 +12,10 @@ var render__node_8hpp =
     [ "stdui::rendering::render_node", "classstdui_1_1rendering_1_1render__node.html", "classstdui_1_1rendering_1_1render__node" ],
     [ "stdui::rendering::render_tree", "classstdui_1_1rendering_1_1render__tree.html", "classstdui_1_1rendering_1_1render__tree" ],
     [ "stdui::rendering::scene_view_node", "classstdui_1_1rendering_1_1scene__view__node.html", "classstdui_1_1rendering_1_1scene__view__node" ],
-    [ "stdui::rendering::shadow_effect", "structstdui_1_1rendering_1_1shadow__effect.html", "structstdui_1_1rendering_1_1shadow__effect" ],
     [ "stdui::rendering::text_node", "classstdui_1_1rendering_1_1text__node.html", "classstdui_1_1rendering_1_1text__node" ],
     [ "stdui::rendering::text_properties", "structstdui_1_1rendering_1_1text__properties.html", "structstdui_1_1rendering_1_1text__properties" ],
     [ "stdui::rendering::vec2", "structstdui_1_1rendering_1_1vec2.html", "structstdui_1_1rendering_1_1vec2" ],
-    [ "effect_params", "render__node_8hpp.html#a43ef27b4ccffaa5c16685787817e393d", null ],
+    [ "effect_params", "render__node_8hpp.html#a06e291d5f8accd5d2ebd496ed7499e29", null ],
     [ "effect_type", "render__node_8hpp.html#a1079a16ae8df5dca72b7ef943f7e36cd", [
       [ "blur", "render__node_8hpp.html#a1079a16ae8df5dca72b7ef943f7e36cdaaefcd320422617869da103b5eed7041c", null ],
       [ "shadow", "render__node_8hpp.html#a1079a16ae8df5dca72b7ef943f7e36cda3bf1114a986ba87ed28fc1b5884fc2f8", null ],

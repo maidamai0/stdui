@@ -1,0 +1,7 @@
+<map id="stdui::shadow_effect" name="stdui::shadow_effect">
+<area shape="rect" id="Node000001" title="Shadow request. The renderer chooses the compositing technique." alt="" coords="33,93,189,119"/>
+<area shape="rect" id="Node000002" href="$structstdui_1_1point.html" title="Logical two&#45;dimensional position in device&#45;independent units." alt="" coords="5,5,100,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="71,41,105,91,101,94,66,44"/>
+<area shape="rect" id="Node000003" href="$structstdui_1_1color.html" title="Logical RGBA color with channels in the range [0, 1]." alt="" coords="124,5,219,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="157,44,122,94,118,91,153,41"/>
+</map>

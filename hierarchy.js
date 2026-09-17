@@ -1,10 +1,13 @@
 var hierarchy =
 [
+    [ "stdui::animation_curve", "structstdui_1_1animation__curve.html", null ],
+    [ "stdui::animation_spec", "structstdui_1_1animation__spec.html", null ],
+    [ "stdui::animation_transition< T >", "structstdui_1_1animation__transition.html", null ],
     [ "stdui::app_config", "structstdui_1_1app__config.html", null ],
     [ "stdui::application", "classstdui_1_1application.html", null ],
     [ "stdui::arranged_layout", "structstdui_1_1arranged__layout.html", null ],
-    [ "stdui::rendering::blur_effect", "structstdui_1_1rendering_1_1blur__effect.html", null ],
-    [ "stdui::rendering::clip_effect", "structstdui_1_1rendering_1_1clip__effect.html", null ],
+    [ "stdui::blur_effect", "structstdui_1_1blur__effect.html", null ],
+    [ "stdui::clip_effect", "structstdui_1_1clip__effect.html", null ],
     [ "stdui::color", "structstdui_1_1color.html", null ],
     [ "stdui::component_base", "classstdui_1_1component__base.html", [
       [ "stdui::typed_component< Derived >", "classstdui_1_1typed__component.html", null ]
@@ -20,10 +23,14 @@ var hierarchy =
     [ "stdui::event_dispatcher", "classstdui_1_1event__dispatcher.html", [
       [ "stdui::simple_event_dispatcher", "classstdui_1_1simple__event__dispatcher.html", null ]
     ] ],
+    [ "stdui::event_source", "classstdui_1_1event__source.html", [
+      [ "stdui::queued_event_source", "classstdui_1_1queued__event__source.html", null ]
+    ] ],
     [ "stdui::flex_policy", "structstdui_1_1flex__policy.html", null ],
     [ "stdui::font_descriptor", "structstdui_1_1font__descriptor.html", null ],
     [ "stdui::rendering::glyph_atlas::font_key", "structstdui_1_1rendering_1_1glyph__atlas_1_1font__key.html", null ],
     [ "stdui::rendering::glyph_atlas::font_key_hash", "structstdui_1_1rendering_1_1glyph__atlas_1_1font__key__hash.html", null ],
+    [ "stdui::frame_scheduler", "classstdui_1_1frame__scheduler.html", null ],
     [ "stdui::rendering::frustum_culler", "classstdui_1_1rendering_1_1frustum__culler.html", null ],
     [ "stdui::rendering::glyph_atlas", "classstdui_1_1rendering_1_1glyph__atlas.html", null ],
     [ "stdui::rendering::glyph_info", "structstdui_1_1rendering_1_1glyph__info.html", null ],
@@ -45,7 +52,7 @@ var hierarchy =
     [ "stdui::layout_result", "structstdui_1_1layout__result.html", null ],
     [ "stdui::rendering::mat3", "structstdui_1_1rendering_1_1mat3.html", null ],
     [ "stdui::mouse_event", "structstdui_1_1mouse__event.html", null ],
-    [ "stdui::rendering::opacity_effect", "structstdui_1_1rendering_1_1opacity__effect.html", null ],
+    [ "stdui::opacity_effect", "structstdui_1_1opacity__effect.html", null ],
     [ "stdui::overlay_expression< T >", "structstdui_1_1overlay__expression.html", null ],
     [ "stdui::overlay_options", "structstdui_1_1overlay__options.html", null ],
     [ "stdui::rendering::path_properties", "structstdui_1_1rendering_1_1path__properties.html", null ],
@@ -68,6 +75,8 @@ var hierarchy =
       [ "stdui::rendering::scene_view_node", "classstdui_1_1rendering_1_1scene__view__node.html", null ],
       [ "stdui::rendering::text_node", "classstdui_1_1rendering_1_1text__node.html", null ]
     ] ],
+    [ "stdui::render_target", "classstdui_1_1render__target.html", null ],
+    [ "stdui::render_target_descriptor", "structstdui_1_1render__target__descriptor.html", null ],
     [ "stdui::rendering::render_tree", "classstdui_1_1rendering_1_1render__tree.html", null ],
     [ "stdui::rendering::render_tree_builder", "classstdui_1_1rendering_1_1render__tree__builder.html", null ],
     [ "stdui::renderer", "classstdui_1_1renderer.html", [
@@ -78,7 +87,12 @@ var hierarchy =
     [ "stdui::rendering::renderer_factory", "classstdui_1_1rendering_1_1renderer__factory.html", null ],
     [ "stdui::resize_event", "structstdui_1_1resize__event.html", null ],
     [ "stdui::runtime", "classstdui_1_1runtime.html", null ],
-    [ "stdui::rendering::shadow_effect", "structstdui_1_1rendering_1_1shadow__effect.html", null ],
+    [ "stdui::runtime_clock", "classstdui_1_1runtime__clock.html", [
+      [ "stdui::manual_clock", "classstdui_1_1manual__clock.html", null ]
+    ] ],
+    [ "stdui::semantic_node", "structstdui_1_1semantic__node.html", null ],
+    [ "stdui::semantic_state", "structstdui_1_1semantic__state.html", null ],
+    [ "stdui::shadow_effect", "structstdui_1_1shadow__effect.html", null ],
     [ "stdui::size", "structstdui_1_1size.html", null ],
     [ "stdui::size_constraint", "structstdui_1_1size__constraint.html", null ],
     [ "stdui::stack_options", "structstdui_1_1stack__options.html", null ],

@@ -2,7 +2,7 @@ var searchData=
 [
   ['reconcile_0',['reconcile',['../classstdui_1_1runtime.html#a26fe642b108824b003e0515bee36e7da',1,'stdui::runtime']]],
   ['rectangle_5fnode_1',['rectangle_node',['../classstdui_1_1rendering_1_1rectangle__node.html#a1f5902bfcf565096e9af351f87ed7f82',1,'stdui::rendering::rectangle_node::rectangle_node()'],['../classstdui_1_1rendering_1_1rectangle__node.html#a0aca0bc306ba8f7b4df7e0ddad1cdf35',1,'stdui::rendering::rectangle_node::rectangle_node(const rectangle_properties &amp;props)']]],
-  ['red_2',['red',['../structstdui_1_1color.html#a7ccdabbb2eed622be4afed043f2742f4',1,'stdui::color']]],
+  ['red_5fcolor_2',['red_color',['../structstdui_1_1color.html#aa7c077ea120ca5fbe7dc908da8a38315',1,'stdui::color']]],
   ['registry_3',['registry',['../classstdui_1_1application.html#a14f8598102ed37306f6082d0f6ab365f',1,'stdui::application']]],
   ['remember_5fchild_5fpath_4',['remember_child_path',['../classstdui_1_1runtime.html#a70df40cbc7e9f5a57f7e2915e2eadf7d',1,'stdui::runtime']]],
   ['remove_5fhandler_5',['remove_handler',['../classstdui_1_1event__dispatcher.html#a109f17035f4ed08fae5fd24300ae716a',1,'stdui::event_dispatcher::remove_handler()'],['../classstdui_1_1simple__event__dispatcher.html#ae0a783700d9ef002356b4c97be9f8b0b',1,'stdui::simple_event_dispatcher::remove_handler()']]],
@@ -13,13 +13,14 @@ var searchData=
   ['render_5ftree_10',['render_tree',['../classstdui_1_1rendering_1_1render__tree.html#aac5f6368531ae28d0c1a5b91a51f3903',1,'stdui::rendering::render_tree']]],
   ['render_5ftree_5fbuilder_11',['render_tree_builder',['../classstdui_1_1rendering_1_1render__tree__builder.html#a7370b72f034bf7a9935688fcbc963db7',1,'stdui::rendering::render_tree_builder']]],
   ['renderer_12',['renderer',['../classstdui_1_1platform__window.html#a852297ff09b8b40e39acd75c05e44b0f',1,'stdui::platform_window::renderer()'],['../classstdui_1_1null__window.html#a58b6115b71e00eda6a6804d933d07c3f',1,'stdui::null_window::renderer()']]],
-  ['request_5fredraw_13',['request_redraw',['../classstdui_1_1platform__window.html#ad47f854c2dff7557470deca4b98e82af',1,'stdui::platform_window::request_redraw()'],['../classstdui_1_1null__window.html#a4a564179f2381f15e50ca53287df96ba',1,'stdui::null_window::request_redraw()']]],
-  ['reset_14',['reset',['../classstdui_1_1state__storage.html#ae761ddaac7b62e3dcafc185abed82483',1,'stdui::state_storage']]],
-  ['reset_5fslot_5fcounter_15',['reset_slot_counter',['../classstdui_1_1component__context.html#ac5fd9fe1fcd572e784584598c9075b64',1,'stdui::component_context']]],
-  ['resize_16',['resize',['../classstdui_1_1rendering_1_1renderer.html#a4f3c90c15c9382731f98f1030455ba7d',1,'stdui::rendering::renderer']]],
-  ['restore_17',['restore',['../classstdui_1_1renderer.html#a93797b11a11d2ffbbf502cd7e4985b6e',1,'stdui::renderer::restore()'],['../classstdui_1_1null__renderer.html#aaf25f48791007879909e8781de474104',1,'stdui::null_renderer::restore()']]],
-  ['root_18',['root',['../classstdui_1_1rendering_1_1render__tree.html#a5060ad03f24d7f4adea246a1d08eb17d',1,'stdui::rendering::render_tree']]],
-  ['run_19',['run',['../classstdui_1_1application.html#adffa27ca0675a9d27a46fc30887580b7',1,'stdui::application']]],
-  ['run_5fapp_20',['run_app',['../namespacestdui.html#a726a01eb7cdbc85fe4767720389c271c',1,'stdui']]],
-  ['run_5fevent_5floop_21',['run_event_loop',['../classstdui_1_1platform.html#ad0984c152c8814038984341be6bd3598',1,'stdui::platform::run_event_loop()'],['../classstdui_1_1null__platform.html#a6369c597a4a3393df5b3b75380e2053b',1,'stdui::null_platform::run_event_loop()']]]
+  ['request_5fframe_13',['request_frame',['../classstdui_1_1frame__scheduler.html#acb27b468cd07334d31a3184cde080aea',1,'stdui::frame_scheduler']]],
+  ['request_5fredraw_14',['request_redraw',['../classstdui_1_1platform__window.html#ad47f854c2dff7557470deca4b98e82af',1,'stdui::platform_window::request_redraw()'],['../classstdui_1_1null__window.html#a4a564179f2381f15e50ca53287df96ba',1,'stdui::null_window::request_redraw()']]],
+  ['reset_15',['reset',['../classstdui_1_1state__storage.html#ae761ddaac7b62e3dcafc185abed82483',1,'stdui::state_storage']]],
+  ['reset_5fslot_5fcounter_16',['reset_slot_counter',['../classstdui_1_1component__context.html#ac5fd9fe1fcd572e784584598c9075b64',1,'stdui::component_context']]],
+  ['resize_17',['resize',['../classstdui_1_1rendering_1_1renderer.html#a4f3c90c15c9382731f98f1030455ba7d',1,'stdui::rendering::renderer']]],
+  ['restore_18',['restore',['../classstdui_1_1renderer.html#a93797b11a11d2ffbbf502cd7e4985b6e',1,'stdui::renderer::restore()'],['../classstdui_1_1null__renderer.html#aaf25f48791007879909e8781de474104',1,'stdui::null_renderer::restore()']]],
+  ['root_19',['root',['../classstdui_1_1rendering_1_1render__tree.html#a5060ad03f24d7f4adea246a1d08eb17d',1,'stdui::rendering::render_tree']]],
+  ['run_20',['run',['../classstdui_1_1application.html#adffa27ca0675a9d27a46fc30887580b7',1,'stdui::application']]],
+  ['run_5fapp_21',['run_app',['../namespacestdui.html#a726a01eb7cdbc85fe4767720389c271c',1,'stdui']]],
+  ['run_5fevent_5floop_22',['run_event_loop',['../classstdui_1_1platform.html#ad0984c152c8814038984341be6bd3598',1,'stdui::platform::run_event_loop()'],['../classstdui_1_1null__platform.html#a6369c597a4a3393df5b3b75380e2053b',1,'stdui::null_platform::run_event_loop()']]]
 ];

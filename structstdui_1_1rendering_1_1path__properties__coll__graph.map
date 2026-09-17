@@ -1,5 +1,5 @@
 <map id="stdui::rendering::path_properties" name="stdui::rendering::path_properties">
 <area shape="rect" id="Node000001" title="Path rendering properties (for complex shapes)" alt="" coords="5,93,167,133"/>
-<area shape="rect" id="Node000002" href="$structstdui_1_1color.html" title="RGBA color representation." alt="" coords="39,5,133,31"/>
+<area shape="rect" id="Node000002" href="$structstdui_1_1color.html" title="Logical RGBA color with channels in the range [0, 1]." alt="" coords="39,5,133,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,44,89,93,83,93,83,44"/>
 </map>

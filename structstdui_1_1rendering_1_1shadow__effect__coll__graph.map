@@ -1,7 +1,0 @@
-<map id="stdui::rendering::shadow_effect" name="stdui::rendering::shadow_effect">
-<area shape="rect" id="Node000001" title="Shadow effect parameters." alt="" coords="71,93,254,133"/>
-<area shape="rect" id="Node000002" href="$structstdui_1_1rendering_1_1vec2.html" title="2D vector for offsets" alt="" coords="5,5,168,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,39,149,91,145,95,102,43"/>
-<area shape="rect" id="Node000003" href="$structstdui_1_1color.html" title="RGBA color representation." alt="" coords="193,5,287,31"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="224,43,180,95,176,91,220,39"/>
-</map>

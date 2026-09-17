@@ -107,14 +107,15 @@ $(document).ready(function(){initNavTree('render__node_8hpp.html',''); initResiz
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;variant&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
-<code>#include &quot;<a class="el" href="geometry_8hpp_source.html">stdui/geometry.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="color_8hpp_source.html">stdui/color.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="effects_8hpp_source.html">stdui/effects.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="geometry_8hpp_source.html">stdui/geometry.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for render_node.hpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="render__node_8hpp__incl.svg" width="787" height="198"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="render__node_8hpp__incl.svg" width="724" height="271"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
@@ -128,12 +129,6 @@ $(document).ready(function(){initNavTree('render__node_8hpp.html',''); initResiz
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1rendering_1_1blur__effect.html">stdui::rendering::blur_effect</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blur effect parameters.  <a href="structstdui_1_1rendering_1_1blur__effect.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1rendering_1_1clip__effect.html">stdui::rendering::clip_effect</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clip effect parameters.  <a href="structstdui_1_1rendering_1_1clip__effect.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstdui_1_1rendering_1_1effect__node.html">stdui::rendering::effect_node</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Effect node - applies an effect to its child.  <a href="classstdui_1_1rendering_1_1effect__node.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -148,9 +143,6 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1rendering_1_1mat3.html">stdui::rendering::mat3</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">3x3 transformation matrix (for 2D transforms)  <a href="structstdui_1_1rendering_1_1mat3.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1rendering_1_1opacity__effect.html">stdui::rendering::opacity_effect</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opacity effect parameters.  <a href="structstdui_1_1rendering_1_1opacity__effect.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstdui_1_1rendering_1_1path__node.html">stdui::rendering::path_node</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Path render node.  <a href="classstdui_1_1rendering_1_1path__node.html#details">More...</a><br /></td></tr>
@@ -173,9 +165,6 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstdui_1_1rendering_1_1scene__view__node.html">stdui::rendering::scene_view_node</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scene view node - placeholder for user's 3D rendering.  <a href="classstdui_1_1rendering_1_1scene__view__node.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1rendering_1_1shadow__effect.html">stdui::rendering::shadow_effect</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shadow effect parameters.  <a href="structstdui_1_1rendering_1_1shadow__effect.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstdui_1_1rendering_1_1text__node.html">stdui::rendering::text_node</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Text render node.  <a href="classstdui_1_1rendering_1_1text__node.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -195,9 +184,8 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a43ef27b4ccffaa5c16685787817e393d" id="r_a43ef27b4ccffaa5c16685787817e393d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestdui_1_1rendering.html#a43ef27b4ccffaa5c16685787817e393d">stdui::rendering::effect_params</a> = std::variant&lt; <a class="el" href="structstdui_1_1rendering_1_1blur__effect.html">blur_effect</a>, <a class="el" href="structstdui_1_1rendering_1_1shadow__effect.html">shadow_effect</a>, <a class="el" href="structstdui_1_1rendering_1_1opacity__effect.html">opacity_effect</a>, <a class="el" href="structstdui_1_1rendering_1_1clip__effect.html">clip_effect</a> &gt;</td></tr>
-<tr class="memdesc:a43ef27b4ccffaa5c16685787817e393d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Effect union.  <br /></td></tr>
-<tr class="separator:a43ef27b4ccffaa5c16685787817e393d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06e291d5f8accd5d2ebd496ed7499e29" id="r_a06e291d5f8accd5d2ebd496ed7499e29"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestdui_1_1rendering.html#a06e291d5f8accd5d2ebd496ed7499e29">stdui::rendering::effect_params</a> = <a class="el" href="namespacestdui.html#a2002321c6cf7dd0c31fa0b4e9c89b251">stdui::visual_effect</a></td></tr>
+<tr class="separator:a06e291d5f8accd5d2ebd496ed7499e29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>

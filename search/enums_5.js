@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['stack_5faxis_0',['stack_axis',['../namespacestdui_1_1detail.html#a2c656a5144593849ec8c745e0ccc3819',1,'stdui::detail']]],
-  ['style_5ft_1',['style_t',['../structstdui_1_1font__descriptor.html#abc36bac704e8ac62728871f8c004c3a4',1,'stdui::font_descriptor']]]
+  ['render_5fnode_5ftype_0',['render_node_type',['../namespacestdui_1_1rendering.html#a292f38ed9fecb029935bd3487657eded',1,'stdui::rendering']]],
+  ['render_5ftarget_5fkind_1',['render_target_kind',['../namespacestdui.html#a422e1d5fdfc05919841b567fe427f63c',1,'stdui']]]
 ];

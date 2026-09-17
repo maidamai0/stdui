@@ -102,7 +102,7 @@ $(document).ready(function(){initNavTree('structstdui_1_1color.html',''); initRe
 </div><!--header-->
 <div class="contents">
 
-<p>RGBA color representation.  
+<p>Logical RGBA color with channels in the range [0, 1].  
  <a href="structstdui_1_1color.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="color_8hpp_source.html">color.hpp</a>&gt;</code></p>
@@ -111,61 +111,45 @@ $(document).ready(function(){initNavTree('structstdui_1_1color.html',''); initRe
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a6c5bfbc54101ff0a5843780c80ab9e46" id="r_a6c5bfbc54101ff0a5843780c80ab9e46"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#a6c5bfbc54101ff0a5843780c80ab9e46">color</a> ()=default</td></tr>
 <tr class="separator:a6c5bfbc54101ff0a5843780c80ab9e46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d0b9901614fff117dfb9935b64d1d59" id="r_a0d0b9901614fff117dfb9935b64d1d59"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#a0d0b9901614fff117dfb9935b64d1d59">color</a> (float <a class="el" href="structstdui_1_1color.html#a9d9f9ce81fb024d3f25ffd2737eaeebe">red</a>, float <a class="el" href="structstdui_1_1color.html#aee4efe9d13dd61e2ed0c3b0419f0b99c">green</a>, float <a class="el" href="structstdui_1_1color.html#a814700a4615917ffeff64849d5970965">blue</a>, float <a class="el" href="structstdui_1_1color.html#a067c9cbfefc8738d5d8bbaac39b4f799">alpha</a>=1.0f)</td></tr>
-<tr class="separator:a0d0b9901614fff117dfb9935b64d1d59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7de628acfa786106b96db43df682c3c" id="r_ac7de628acfa786106b96db43df682c3c"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#ac7de628acfa786106b96db43df682c3c">color</a> (float red_value, float green_value, float blue_value, float alpha_value=1.0f)</td></tr>
+<tr class="separator:ac7de628acfa786106b96db43df682c3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46ca6b4098195f99c41dbfa965d4b3aa" id="r_a46ca6b4098195f99c41dbfa965d4b3aa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#a46ca6b4098195f99c41dbfa965d4b3aa">operator==</a> (<a class="el" href="structstdui_1_1color.html">color</a> const &amp;) const =default</td></tr>
 <tr class="separator:a46ca6b4098195f99c41dbfa965d4b3aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94d032f1ab509b0e9d4a57a2bc7a5315" id="r_a94d032f1ab509b0e9d4a57a2bc7a5315"><td class="memItemLeft" align="right" valign="top">constexpr uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#a94d032f1ab509b0e9d4a57a2bc7a5315">to_rgba</a> () const</td></tr>
-<tr class="memdesc:a94d032f1ab509b0e9d4a57a2bc7a5315"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert to 32-bit RGBA (0xRRGGBBAA)  <br /></td></tr>
-<tr class="separator:a94d032f1ab509b0e9d4a57a2bc7a5315"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8041103299ac5018e011b53da0442bbb" id="r_a8041103299ac5018e011b53da0442bbb"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#a8041103299ac5018e011b53da0442bbb">to_rgba</a> () const -&gt; uint32_t</td></tr>
+<tr class="memdesc:a8041103299ac5018e011b53da0442bbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Packs the color as 0xRRGGBBAA.  <br /></td></tr>
+<tr class="separator:a8041103299ac5018e011b53da0442bbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ac976991b184dd7aab25f730808546417" id="r_ac976991b184dd7aab25f730808546417"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structstdui_1_1color.html">color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#ac976991b184dd7aab25f730808546417">black</a> ()</td></tr>
-<tr class="memdesc:ac976991b184dd7aab25f730808546417"><td class="mdescLeft">&#160;</td><td class="mdescRight">Common color constants.  <br /></td></tr>
-<tr class="separator:ac976991b184dd7aab25f730808546417"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3b606fb73670fb486694828a0ad1bae" id="r_ad3b606fb73670fb486694828a0ad1bae"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#ad3b606fb73670fb486694828a0ad1bae">black</a> () -&gt; <a class="el" href="structstdui_1_1color.html">color</a></td></tr>
-<tr class="separator:ad3b606fb73670fb486694828a0ad1bae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5a07b4eae498b762706bc90b74e6792" id="r_ad5a07b4eae498b762706bc90b74e6792"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structstdui_1_1color.html">color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#ad5a07b4eae498b762706bc90b74e6792">blue</a> ()</td></tr>
-<tr class="separator:ad5a07b4eae498b762706bc90b74e6792"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cb2cd5e9be0bce4d8a0ce397f25ea26" id="r_a4cb2cd5e9be0bce4d8a0ce397f25ea26"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structstdui_1_1color.html">color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#a4cb2cd5e9be0bce4d8a0ce397f25ea26">from_rgb</a> (uint8_t <a class="el" href="structstdui_1_1color.html#a9d9f9ce81fb024d3f25ffd2737eaeebe">red</a>, uint8_t <a class="el" href="structstdui_1_1color.html#aee4efe9d13dd61e2ed0c3b0419f0b99c">green</a>, uint8_t <a class="el" href="structstdui_1_1color.html#a814700a4615917ffeff64849d5970965">blue</a>, uint8_t <a class="el" href="structstdui_1_1color.html#a067c9cbfefc8738d5d8bbaac39b4f799">alpha</a>=255)</td></tr>
-<tr class="memdesc:a4cb2cd5e9be0bce4d8a0ce397f25ea26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create color from 8-bit RGB values.  <br /></td></tr>
-<tr class="separator:a4cb2cd5e9be0bce4d8a0ce397f25ea26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a7144366f7e6f6568450e6c8a9f91a2" id="r_a9a7144366f7e6f6568450e6c8a9f91a2"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structstdui_1_1color.html">color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#a9a7144366f7e6f6568450e6c8a9f91a2">green</a> ()</td></tr>
-<tr class="separator:a9a7144366f7e6f6568450e6c8a9f91a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ccdabbb2eed622be4afed043f2742f4" id="r_a7ccdabbb2eed622be4afed043f2742f4"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structstdui_1_1color.html">color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#a7ccdabbb2eed622be4afed043f2742f4">red</a> ()</td></tr>
-<tr class="separator:a7ccdabbb2eed622be4afed043f2742f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa60a9a2d7d4940160a683113b54b8da4" id="r_aa60a9a2d7d4940160a683113b54b8da4"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structstdui_1_1color.html">color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#aa60a9a2d7d4940160a683113b54b8da4">transparent</a> ()</td></tr>
-<tr class="separator:aa60a9a2d7d4940160a683113b54b8da4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83270f3e5cbe013d10d1acad8fcff237" id="r_a83270f3e5cbe013d10d1acad8fcff237"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#a83270f3e5cbe013d10d1acad8fcff237">transparent</a> () -&gt; <a class="el" href="structstdui_1_1color.html">color</a></td></tr>
-<tr class="separator:a83270f3e5cbe013d10d1acad8fcff237"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8a7435136475243de82460621c0fa00" id="r_ad8a7435136475243de82460621c0fa00"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structstdui_1_1color.html">color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#ad8a7435136475243de82460621c0fa00">white</a> ()</td></tr>
-<tr class="separator:ad8a7435136475243de82460621c0fa00"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13c58059097a1b33879554ecea2d72f7" id="r_a13c58059097a1b33879554ecea2d72f7"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#a13c58059097a1b33879554ecea2d72f7">white</a> () -&gt; <a class="el" href="structstdui_1_1color.html">color</a></td></tr>
-<tr class="separator:a13c58059097a1b33879554ecea2d72f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af98d4bc5d13a691e2f76ab4264f0db5c" id="r_af98d4bc5d13a691e2f76ab4264f0db5c"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#af98d4bc5d13a691e2f76ab4264f0db5c">black</a> () -&gt; <a class="el" href="structstdui_1_1color.html">color</a></td></tr>
+<tr class="separator:af98d4bc5d13a691e2f76ab4264f0db5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add9f3bbcc214e99f14515b3fa2549bfc" id="r_add9f3bbcc214e99f14515b3fa2549bfc"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#add9f3bbcc214e99f14515b3fa2549bfc">blue_color</a> () -&gt; <a class="el" href="structstdui_1_1color.html">color</a></td></tr>
+<tr class="separator:add9f3bbcc214e99f14515b3fa2549bfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a942351de0927d2b0a5037087178ce58b" id="r_a942351de0927d2b0a5037087178ce58b"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#a942351de0927d2b0a5037087178ce58b">from_rgb</a> (uint8_t red_value, uint8_t green_value, uint8_t blue_value, uint8_t alpha_value=255) -&gt; <a class="el" href="structstdui_1_1color.html">color</a></td></tr>
+<tr class="memdesc:a942351de0927d2b0a5037087178ce58b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a color from 8-bit channels.  <br /></td></tr>
+<tr class="separator:a942351de0927d2b0a5037087178ce58b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dfeda6b8c8acf88557e9265ccff19b4" id="r_a9dfeda6b8c8acf88557e9265ccff19b4"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#a9dfeda6b8c8acf88557e9265ccff19b4">green_color</a> () -&gt; <a class="el" href="structstdui_1_1color.html">color</a></td></tr>
+<tr class="separator:a9dfeda6b8c8acf88557e9265ccff19b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7c077ea120ca5fbe7dc908da8a38315" id="r_aa7c077ea120ca5fbe7dc908da8a38315"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#aa7c077ea120ca5fbe7dc908da8a38315">red_color</a> () -&gt; <a class="el" href="structstdui_1_1color.html">color</a></td></tr>
+<tr class="separator:aa7c077ea120ca5fbe7dc908da8a38315"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a786156c66e50c654c01878de6f56b407" id="r_a786156c66e50c654c01878de6f56b407"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#a786156c66e50c654c01878de6f56b407">transparent</a> () -&gt; <a class="el" href="structstdui_1_1color.html">color</a></td></tr>
+<tr class="separator:a786156c66e50c654c01878de6f56b407"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04b32d67504ba92e4f3c10473642ff3b" id="r_a04b32d67504ba92e4f3c10473642ff3b"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#a04b32d67504ba92e4f3c10473642ff3b">white</a> () -&gt; <a class="el" href="structstdui_1_1color.html">color</a></td></tr>
+<tr class="separator:a04b32d67504ba92e4f3c10473642ff3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:aa317c86a2428731865ec4f07a6daa504" id="r_aa317c86a2428731865ec4f07a6daa504"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#aa317c86a2428731865ec4f07a6daa504">a</a> = 1.0f</td></tr>
-<tr class="separator:aa317c86a2428731865ec4f07a6daa504"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a067c9cbfefc8738d5d8bbaac39b4f799" id="r_a067c9cbfefc8738d5d8bbaac39b4f799"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#a067c9cbfefc8738d5d8bbaac39b4f799">alpha</a> = 1.0</td></tr>
-<tr class="separator:a067c9cbfefc8738d5d8bbaac39b4f799"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4271021bf8238d06575580c932f1af66" id="r_a4271021bf8238d06575580c932f1af66"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#a4271021bf8238d06575580c932f1af66">b</a> = 0.0f</td></tr>
-<tr class="separator:a4271021bf8238d06575580c932f1af66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a814700a4615917ffeff64849d5970965" id="r_a814700a4615917ffeff64849d5970965"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#a814700a4615917ffeff64849d5970965">blue</a> = 0.0</td></tr>
-<tr class="separator:a814700a4615917ffeff64849d5970965"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0adce21efa703a9a8c96a42512a65968" id="r_a0adce21efa703a9a8c96a42512a65968"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#a0adce21efa703a9a8c96a42512a65968">g</a> = 0.0f</td></tr>
-<tr class="separator:a0adce21efa703a9a8c96a42512a65968"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee4efe9d13dd61e2ed0c3b0419f0b99c" id="r_aee4efe9d13dd61e2ed0c3b0419f0b99c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#aee4efe9d13dd61e2ed0c3b0419f0b99c">green</a> = 0.0</td></tr>
-<tr class="separator:aee4efe9d13dd61e2ed0c3b0419f0b99c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e23d09a2e59db7316a84674ec732814" id="r_a8e23d09a2e59db7316a84674ec732814"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#a8e23d09a2e59db7316a84674ec732814">r</a> = 0.0f</td></tr>
-<tr class="separator:a8e23d09a2e59db7316a84674ec732814"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d9f9ce81fb024d3f25ffd2737eaeebe" id="r_a9d9f9ce81fb024d3f25ffd2737eaeebe"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#a9d9f9ce81fb024d3f25ffd2737eaeebe">red</a> = 0.0</td></tr>
-<tr class="separator:a9d9f9ce81fb024d3f25ffd2737eaeebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af642f940e6ffaefd46eef3923f134c24" id="r_af642f940e6ffaefd46eef3923f134c24"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#af642f940e6ffaefd46eef3923f134c24">alpha</a> = 1.0f</td></tr>
+<tr class="separator:af642f940e6ffaefd46eef3923f134c24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad26c626eb8b9a6d6d43f0e31e524be6c" id="r_ad26c626eb8b9a6d6d43f0e31e524be6c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#ad26c626eb8b9a6d6d43f0e31e524be6c">blue</a> = 0.0f</td></tr>
+<tr class="separator:ad26c626eb8b9a6d6d43f0e31e524be6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34631a9d40fec23f369911613feb51b4" id="r_a34631a9d40fec23f369911613feb51b4"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#a34631a9d40fec23f369911613feb51b4">green</a> = 0.0f</td></tr>
+<tr class="separator:a34631a9d40fec23f369911613feb51b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49c2a17745fa9c127cfc581c5233e4c0" id="r_a49c2a17745fa9c127cfc581c5233e4c0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html#a49c2a17745fa9c127cfc581c5233e4c0">red</a> = 0.0f</td></tr>
+<tr class="separator:a49c2a17745fa9c127cfc581c5233e4c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>RGBA color representation. </p>
-<p>RGBA color representation (0.0 to 1.0 per channel). </p>
+<div class="textblock"><p>Logical RGBA color with channels in the range [0, 1]. </p>
 
 <p class="definition">Definition at line <a class="el" href="color_8hpp_source.html#l00011">11</a> of file <a class="el" href="color_8hpp_source.html">color.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -194,8 +178,8 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a0d0b9901614fff117dfb9935b64d1d59" name="a0d0b9901614fff117dfb9935b64d1d59"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d0b9901614fff117dfb9935b64d1d59">&#9670;&#160;</a></span>color() <span class="overload">[2/2]</span></h2>
+<a id="ac7de628acfa786106b96db43df682c3c" name="ac7de628acfa786106b96db43df682c3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7de628acfa786106b96db43df682c3c">&#9670;&#160;</a></span>color() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -207,25 +191,25 @@ Public Attributes</h2></td></tr>
           <td class="memname">constexpr stdui::color::color </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>red</em>, </td>
+          <td class="paramname"><em>red_value</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>green</em>, </td>
+          <td class="paramname"><em>green_value</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>blue</em>, </td>
+          <td class="paramname"><em>blue_value</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>alpha</em> = <code>1.0f</code>&#160;</td>
+          <td class="paramname"><em>alpha_value</em> = <code>1.0f</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -241,21 +225,17 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="color_8hpp_source.html#l00018">18</a> of file <a class="el" href="color_8hpp_source.html">color.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   19</span>        : <a class="code hl_variable" href="structstdui_1_1color.html#a8e23d09a2e59db7316a84674ec732814">r</a>(<a class="code hl_variable" href="structstdui_1_1color.html#a9d9f9ce81fb024d3f25ffd2737eaeebe">red</a>), <a class="code hl_variable" href="structstdui_1_1color.html#a0adce21efa703a9a8c96a42512a65968">g</a>(<a class="code hl_variable" href="structstdui_1_1color.html#aee4efe9d13dd61e2ed0c3b0419f0b99c">green</a>), <a class="code hl_variable" href="structstdui_1_1color.html#a4271021bf8238d06575580c932f1af66">b</a>(<a class="code hl_variable" href="structstdui_1_1color.html#a814700a4615917ffeff64849d5970965">blue</a>), <a class="code hl_variable" href="structstdui_1_1color.html#aa317c86a2428731865ec4f07a6daa504">a</a>(<a class="code hl_variable" href="structstdui_1_1color.html#a067c9cbfefc8738d5d8bbaac39b4f799">alpha</a>) {}</div>
-<div class="ttc" id="astructstdui_1_1color_html_a067c9cbfefc8738d5d8bbaac39b4f799"><div class="ttname"><a href="structstdui_1_1color.html#a067c9cbfefc8738d5d8bbaac39b4f799">stdui::color::alpha</a></div><div class="ttdeci">double alpha</div><div class="ttdef"><b>Definition</b> <a href="rendering_8hpp_source.html#l00017">rendering.hpp:17</a></div></div>
-<div class="ttc" id="astructstdui_1_1color_html_a0adce21efa703a9a8c96a42512a65968"><div class="ttname"><a href="structstdui_1_1color.html#a0adce21efa703a9a8c96a42512a65968">stdui::color::g</a></div><div class="ttdeci">float g</div><div class="ttdef"><b>Definition</b> <a href="color_8hpp_source.html#l00013">color.hpp:13</a></div></div>
-<div class="ttc" id="astructstdui_1_1color_html_a4271021bf8238d06575580c932f1af66"><div class="ttname"><a href="structstdui_1_1color.html#a4271021bf8238d06575580c932f1af66">stdui::color::b</a></div><div class="ttdeci">float b</div><div class="ttdef"><b>Definition</b> <a href="color_8hpp_source.html#l00014">color.hpp:14</a></div></div>
-<div class="ttc" id="astructstdui_1_1color_html_a814700a4615917ffeff64849d5970965"><div class="ttname"><a href="structstdui_1_1color.html#a814700a4615917ffeff64849d5970965">stdui::color::blue</a></div><div class="ttdeci">double blue</div><div class="ttdef"><b>Definition</b> <a href="rendering_8hpp_source.html#l00016">rendering.hpp:16</a></div></div>
-<div class="ttc" id="astructstdui_1_1color_html_a8e23d09a2e59db7316a84674ec732814"><div class="ttname"><a href="structstdui_1_1color.html#a8e23d09a2e59db7316a84674ec732814">stdui::color::r</a></div><div class="ttdeci">float r</div><div class="ttdef"><b>Definition</b> <a href="color_8hpp_source.html#l00012">color.hpp:12</a></div></div>
-<div class="ttc" id="astructstdui_1_1color_html_a9d9f9ce81fb024d3f25ffd2737eaeebe"><div class="ttname"><a href="structstdui_1_1color.html#a9d9f9ce81fb024d3f25ffd2737eaeebe">stdui::color::red</a></div><div class="ttdeci">double red</div><div class="ttdef"><b>Definition</b> <a href="rendering_8hpp_source.html#l00014">rendering.hpp:14</a></div></div>
-<div class="ttc" id="astructstdui_1_1color_html_aa317c86a2428731865ec4f07a6daa504"><div class="ttname"><a href="structstdui_1_1color.html#aa317c86a2428731865ec4f07a6daa504">stdui::color::a</a></div><div class="ttdeci">float a</div><div class="ttdef"><b>Definition</b> <a href="color_8hpp_source.html#l00015">color.hpp:15</a></div></div>
-<div class="ttc" id="astructstdui_1_1color_html_aee4efe9d13dd61e2ed0c3b0419f0b99c"><div class="ttname"><a href="structstdui_1_1color.html#aee4efe9d13dd61e2ed0c3b0419f0b99c">stdui::color::green</a></div><div class="ttdeci">double green</div><div class="ttdef"><b>Definition</b> <a href="rendering_8hpp_source.html#l00015">rendering.hpp:15</a></div></div>
+<div class="fragment"><div class="line"><span class="lineno">   19</span>      : <a class="code hl_variable" href="structstdui_1_1color.html#a49c2a17745fa9c127cfc581c5233e4c0">red</a>(red_value), <a class="code hl_variable" href="structstdui_1_1color.html#a34631a9d40fec23f369911613feb51b4">green</a>(green_value), <a class="code hl_variable" href="structstdui_1_1color.html#ad26c626eb8b9a6d6d43f0e31e524be6c">blue</a>(blue_value), <a class="code hl_variable" href="structstdui_1_1color.html#af642f940e6ffaefd46eef3923f134c24">alpha</a>(alpha_value) {}</div>
+<div class="ttc" id="astructstdui_1_1color_html_a34631a9d40fec23f369911613feb51b4"><div class="ttname"><a href="structstdui_1_1color.html#a34631a9d40fec23f369911613feb51b4">stdui::color::green</a></div><div class="ttdeci">float green</div><div class="ttdef"><b>Definition</b> <a href="color_8hpp_source.html#l00013">color.hpp:13</a></div></div>
+<div class="ttc" id="astructstdui_1_1color_html_a49c2a17745fa9c127cfc581c5233e4c0"><div class="ttname"><a href="structstdui_1_1color.html#a49c2a17745fa9c127cfc581c5233e4c0">stdui::color::red</a></div><div class="ttdeci">float red</div><div class="ttdef"><b>Definition</b> <a href="color_8hpp_source.html#l00012">color.hpp:12</a></div></div>
+<div class="ttc" id="astructstdui_1_1color_html_ad26c626eb8b9a6d6d43f0e31e524be6c"><div class="ttname"><a href="structstdui_1_1color.html#ad26c626eb8b9a6d6d43f0e31e524be6c">stdui::color::blue</a></div><div class="ttdeci">float blue</div><div class="ttdef"><b>Definition</b> <a href="color_8hpp_source.html#l00014">color.hpp:14</a></div></div>
+<div class="ttc" id="astructstdui_1_1color_html_af642f940e6ffaefd46eef3923f134c24"><div class="ttname"><a href="structstdui_1_1color.html#af642f940e6ffaefd46eef3923f134c24">stdui::color::alpha</a></div><div class="ttdeci">float alpha</div><div class="ttdef"><b>Definition</b> <a href="color_8hpp_source.html#l00015">color.hpp:15</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ac976991b184dd7aab25f730808546417" name="ac976991b184dd7aab25f730808546417"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac976991b184dd7aab25f730808546417">&#9670;&#160;</a></span>black() <span class="overload">[1/2]</span></h2>
+<a id="af98d4bc5d13a691e2f76ab4264f0db5c" name="af98d4bc5d13a691e2f76ab4264f0db5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af98d4bc5d13a691e2f76ab4264f0db5c">&#9670;&#160;</a></span>black()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -264,47 +244,7 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static constexpr <a class="el" href="structstdui_1_1color.html">color</a> stdui::color::black </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Common color constants. </p>
-
-<p class="definition">Definition at line <a class="el" href="color_8hpp_source.html#l00040">40</a> of file <a class="el" href="color_8hpp_source.html">color.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   40</span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="structstdui_1_1color.html#a6c5bfbc54101ff0a5843780c80ab9e46">color</a>{0.0f, 0.0f, 0.0f, 1.0f}; }</div>
-<div class="ttc" id="astructstdui_1_1color_html_a6c5bfbc54101ff0a5843780c80ab9e46"><div class="ttname"><a href="structstdui_1_1color.html#a6c5bfbc54101ff0a5843780c80ab9e46">stdui::color::color</a></div><div class="ttdeci">constexpr color()=default</div></div>
-</div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="application_8hpp_source.html#l00126">stdui::application::render_box()</a>.</p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structstdui_1_1color_ac976991b184dd7aab25f730808546417_icgraph.svg" width="696" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="ad3b606fb73670fb486694828a0ad1bae" name="ad3b606fb73670fb486694828a0ad1bae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3b606fb73670fb486694828a0ad1bae">&#9670;&#160;</a></span>black() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static auto stdui::color::black </td>
+          <td class="memname">static constexpr auto stdui::color::black </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> -&gt; <a class="el" href="structstdui_1_1color.html">color</a> </td>
@@ -312,18 +252,27 @@ Public Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="rendering_8hpp_source.html#l00019">19</a> of file <a class="el" href="rendering_8hpp_source.html">rendering.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   19</span>{ <span class="keywordflow">return</span> {0.0, 0.0, 0.0, 1.0}; }</div>
+<p class="definition">Definition at line <a class="el" href="color_8hpp_source.html#l00036">36</a> of file <a class="el" href="color_8hpp_source.html">color.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   36</span>{ <span class="keywordflow">return</span> {0.0f, 0.0f, 0.0f, 1.0f}; }</div>
 </div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="application_8hpp_source.html#l00126">stdui::application::render_box()</a>.</p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structstdui_1_1color_af98d4bc5d13a691e2f76ab4264f0db5c_icgraph.svg" width="696" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
 </div>
 </div>
-<a id="ad5a07b4eae498b762706bc90b74e6792" name="ad5a07b4eae498b762706bc90b74e6792"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5a07b4eae498b762706bc90b74e6792">&#9670;&#160;</a></span>blue()</h2>
+<a id="add9f3bbcc214e99f14515b3fa2549bfc" name="add9f3bbcc214e99f14515b3fa2549bfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add9f3bbcc214e99f14515b3fa2549bfc">&#9670;&#160;</a></span>blue_color()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -332,10 +281,10 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static constexpr <a class="el" href="structstdui_1_1color.html">color</a> stdui::color::blue </td>
+          <td class="memname">static constexpr auto stdui::color::blue_color </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> -&gt; <a class="el" href="structstdui_1_1color.html">color</a> </td>
         </tr>
       </table>
   </td>
@@ -345,13 +294,13 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="color_8hpp_source.html#l00044">44</a> of file <a class="el" href="color_8hpp_source.html">color.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   44</span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="structstdui_1_1color.html#a6c5bfbc54101ff0a5843780c80ab9e46">color</a>{0.0f, 0.0f, 1.0f, 1.0f}; }</div>
+<p class="definition">Definition at line <a class="el" href="color_8hpp_source.html#l00040">40</a> of file <a class="el" href="color_8hpp_source.html">color.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>{ <span class="keywordflow">return</span> {0.0f, 0.0f, 1.0f, 1.0f}; }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a4cb2cd5e9be0bce4d8a0ce397f25ea26" name="a4cb2cd5e9be0bce4d8a0ce397f25ea26"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4cb2cd5e9be0bce4d8a0ce397f25ea26">&#9670;&#160;</a></span>from_rgb()</h2>
+<a id="a942351de0927d2b0a5037087178ce58b" name="a942351de0927d2b0a5037087178ce58b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a942351de0927d2b0a5037087178ce58b">&#9670;&#160;</a></span>from_rgb()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -360,33 +309,33 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static constexpr <a class="el" href="structstdui_1_1color.html">color</a> stdui::color::from_rgb </td>
+          <td class="memname">static constexpr auto stdui::color::from_rgb </td>
           <td>(</td>
           <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>red</em>, </td>
+          <td class="paramname"><em>red_value</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>green</em>, </td>
+          <td class="paramname"><em>green_value</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>blue</em>, </td>
+          <td class="paramname"><em>blue_value</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>alpha</em> = <code>255</code>&#160;</td>
+          <td class="paramname"><em>alpha_value</em> = <code>255</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> -&gt; <a class="el" href="structstdui_1_1color.html">color</a> </td>
         </tr>
       </table>
   </td>
@@ -396,24 +345,17 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Create color from 8-bit RGB values. </p>
+<p>Creates a color from 8-bit channels. </p>
 
 <p class="definition">Definition at line <a class="el" href="color_8hpp_source.html#l00022">22</a> of file <a class="el" href="color_8hpp_source.html">color.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   22</span>                                                                                                   {</div>
-<div class="line"><span class="lineno">   23</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="structstdui_1_1color.html#a6c5bfbc54101ff0a5843780c80ab9e46">color</a>{</div>
-<div class="line"><span class="lineno">   24</span>            <a class="code hl_variable" href="structstdui_1_1color.html#a9d9f9ce81fb024d3f25ffd2737eaeebe">red</a> / 255.0f,</div>
-<div class="line"><span class="lineno">   25</span>            <a class="code hl_variable" href="structstdui_1_1color.html#aee4efe9d13dd61e2ed0c3b0419f0b99c">green</a> / 255.0f,</div>
-<div class="line"><span class="lineno">   26</span>            <a class="code hl_variable" href="structstdui_1_1color.html#a814700a4615917ffeff64849d5970965">blue</a> / 255.0f,</div>
-<div class="line"><span class="lineno">   27</span>            <a class="code hl_variable" href="structstdui_1_1color.html#a067c9cbfefc8738d5d8bbaac39b4f799">alpha</a> / 255.0f</div>
-<div class="line"><span class="lineno">   28</span>        };</div>
-<div class="line"><span class="lineno">   29</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">   23</span>                                                                     {</div>
+<div class="line"><span class="lineno">   24</span>    <span class="keywordflow">return</span> {red_value / 255.0f, green_value / 255.0f, blue_value / 255.0f, alpha_value / 255.0f};</div>
+<div class="line"><span class="lineno">   25</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="rendering_8hpp_source.html#l00017">alpha</a>, <a class="el" href="rendering_8hpp_source.html#l00016">blue</a>, <a class="el" href="rendering_8hpp_source.html#l00015">green</a>, and <a class="el" href="rendering_8hpp_source.html#l00014">red</a>.</p>
-
 </div>
 </div>
-<a id="a9a7144366f7e6f6568450e6c8a9f91a2" name="a9a7144366f7e6f6568450e6c8a9f91a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a7144366f7e6f6568450e6c8a9f91a2">&#9670;&#160;</a></span>green()</h2>
+<a id="a9dfeda6b8c8acf88557e9265ccff19b4" name="a9dfeda6b8c8acf88557e9265ccff19b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9dfeda6b8c8acf88557e9265ccff19b4">&#9670;&#160;</a></span>green_color()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -422,10 +364,10 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static constexpr <a class="el" href="structstdui_1_1color.html">color</a> stdui::color::green </td>
+          <td class="memname">static constexpr auto stdui::color::green_color </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> -&gt; <a class="el" href="structstdui_1_1color.html">color</a> </td>
         </tr>
       </table>
   </td>
@@ -435,8 +377,8 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="color_8hpp_source.html#l00043">43</a> of file <a class="el" href="color_8hpp_source.html">color.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   43</span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="structstdui_1_1color.html#a6c5bfbc54101ff0a5843780c80ab9e46">color</a>{0.0f, 1.0f, 0.0f, 1.0f}; }</div>
+<p class="definition">Definition at line <a class="el" href="color_8hpp_source.html#l00039">39</a> of file <a class="el" href="color_8hpp_source.html">color.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>{ <span class="keywordflow">return</span> {0.0f, 1.0f, 0.0f, 1.0f}; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -466,8 +408,8 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a7ccdabbb2eed622be4afed043f2742f4" name="a7ccdabbb2eed622be4afed043f2742f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ccdabbb2eed622be4afed043f2742f4">&#9670;&#160;</a></span>red()</h2>
+<a id="aa7c077ea120ca5fbe7dc908da8a38315" name="aa7c077ea120ca5fbe7dc908da8a38315"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7c077ea120ca5fbe7dc908da8a38315">&#9670;&#160;</a></span>red_color()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -476,10 +418,10 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static constexpr <a class="el" href="structstdui_1_1color.html">color</a> stdui::color::red </td>
+          <td class="memname">static constexpr auto stdui::color::red_color </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> -&gt; <a class="el" href="structstdui_1_1color.html">color</a> </td>
         </tr>
       </table>
   </td>
@@ -489,13 +431,13 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="color_8hpp_source.html#l00042">42</a> of file <a class="el" href="color_8hpp_source.html">color.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   42</span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="structstdui_1_1color.html#a6c5bfbc54101ff0a5843780c80ab9e46">color</a>{1.0f, 0.0f, 0.0f, 1.0f}; }</div>
+<p class="definition">Definition at line <a class="el" href="color_8hpp_source.html#l00038">38</a> of file <a class="el" href="color_8hpp_source.html">color.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   38</span>{ <span class="keywordflow">return</span> {1.0f, 0.0f, 0.0f, 1.0f}; }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a94d032f1ab509b0e9d4a57a2bc7a5315" name="a94d032f1ab509b0e9d4a57a2bc7a5315"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94d032f1ab509b0e9d4a57a2bc7a5315">&#9670;&#160;</a></span>to_rgba()</h2>
+<a id="a8041103299ac5018e011b53da0442bbb" name="a8041103299ac5018e011b53da0442bbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8041103299ac5018e011b53da0442bbb">&#9670;&#160;</a></span>to_rgba()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -504,10 +446,10 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr uint32_t stdui::color::to_rgba </td>
+          <td class="memname">constexpr auto stdui::color::to_rgba </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; uint32_t </td>
         </tr>
       </table>
   </td>
@@ -517,22 +459,21 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Convert to 32-bit RGBA (0xRRGGBBAA) </p>
+<p>Packs the color as 0xRRGGBBAA. </p>
 
-<p class="definition">Definition at line <a class="el" href="color_8hpp_source.html#l00032">32</a> of file <a class="el" href="color_8hpp_source.html">color.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   32</span>                                       {</div>
-<div class="line"><span class="lineno">   33</span>        <span class="keywordflow">return</span> (<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(<a class="code hl_variable" href="structstdui_1_1color.html#a8e23d09a2e59db7316a84674ec732814">r</a> * 255) &lt;&lt; 24) |</div>
-<div class="line"><span class="lineno">   34</span>               (<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(<a class="code hl_variable" href="structstdui_1_1color.html#a0adce21efa703a9a8c96a42512a65968">g</a> * 255) &lt;&lt; 16) |</div>
-<div class="line"><span class="lineno">   35</span>               (<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(<a class="code hl_variable" href="structstdui_1_1color.html#a4271021bf8238d06575580c932f1af66">b</a> * 255) &lt;&lt; 8) |</div>
-<div class="line"><span class="lineno">   36</span>               <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(<a class="code hl_variable" href="structstdui_1_1color.html#aa317c86a2428731865ec4f07a6daa504">a</a> * 255);</div>
-<div class="line"><span class="lineno">   37</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="color_8hpp_source.html#l00028">28</a> of file <a class="el" href="color_8hpp_source.html">color.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   28</span>                                             {</div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">return</span> (<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(<a class="code hl_variable" href="structstdui_1_1color.html#a49c2a17745fa9c127cfc581c5233e4c0">red</a> * 255.0f) &lt;&lt; 24U) |</div>
+<div class="line"><span class="lineno">   30</span>           (<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(<a class="code hl_variable" href="structstdui_1_1color.html#a34631a9d40fec23f369911613feb51b4">green</a> * 255.0f) &lt;&lt; 16U) |</div>
+<div class="line"><span class="lineno">   31</span>           (<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(<a class="code hl_variable" href="structstdui_1_1color.html#ad26c626eb8b9a6d6d43f0e31e524be6c">blue</a> * 255.0f) &lt;&lt; 8U) | <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(<a class="code hl_variable" href="structstdui_1_1color.html#af642f940e6ffaefd46eef3923f134c24">alpha</a> * 255.0f);</div>
+<div class="line"><span class="lineno">   32</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="color_8hpp_source.html#l00015">a</a>, <a class="el" href="color_8hpp_source.html#l00014">b</a>, <a class="el" href="color_8hpp_source.html#l00013">g</a>, and <a class="el" href="color_8hpp_source.html#l00012">r</a>.</p>
+<p class="reference">References <a class="el" href="color_8hpp_source.html#l00015">alpha</a>, <a class="el" href="color_8hpp_source.html#l00014">blue</a>, <a class="el" href="color_8hpp_source.html#l00013">green</a>, and <a class="el" href="color_8hpp_source.html#l00012">red</a>.</p>
 
 </div>
 </div>
-<a id="aa60a9a2d7d4940160a683113b54b8da4" name="aa60a9a2d7d4940160a683113b54b8da4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa60a9a2d7d4940160a683113b54b8da4">&#9670;&#160;</a></span>transparent() <span class="overload">[1/2]</span></h2>
+<a id="a786156c66e50c654c01878de6f56b407" name="a786156c66e50c654c01878de6f56b407"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a786156c66e50c654c01878de6f56b407">&#9670;&#160;</a></span>transparent()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -541,66 +482,10 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static constexpr <a class="el" href="structstdui_1_1color.html">color</a> stdui::color::transparent </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="color_8hpp_source.html#l00045">45</a> of file <a class="el" href="color_8hpp_source.html">color.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   45</span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="structstdui_1_1color.html#a6c5bfbc54101ff0a5843780c80ab9e46">color</a>{0.0f, 0.0f, 0.0f, 0.0f}; }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a83270f3e5cbe013d10d1acad8fcff237" name="a83270f3e5cbe013d10d1acad8fcff237"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83270f3e5cbe013d10d1acad8fcff237">&#9670;&#160;</a></span>transparent() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static auto stdui::color::transparent </td>
+          <td class="memname">static constexpr auto stdui::color::transparent </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> -&gt; <a class="el" href="structstdui_1_1color.html">color</a> </td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="rendering_8hpp_source.html#l00021">21</a> of file <a class="el" href="rendering_8hpp_source.html">rendering.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   21</span>{ <span class="keywordflow">return</span> {0.0, 0.0, 0.0, 0.0}; }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="ad8a7435136475243de82460621c0fa00" name="ad8a7435136475243de82460621c0fa00"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8a7435136475243de82460621c0fa00">&#9670;&#160;</a></span>white() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static constexpr <a class="el" href="structstdui_1_1color.html">color</a> stdui::color::white </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
         </tr>
       </table>
   </td>
@@ -611,12 +496,12 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="color_8hpp_source.html#l00041">41</a> of file <a class="el" href="color_8hpp_source.html">color.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   41</span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="structstdui_1_1color.html#a6c5bfbc54101ff0a5843780c80ab9e46">color</a>{1.0f, 1.0f, 1.0f, 1.0f}; }</div>
+<div class="fragment"><div class="line"><span class="lineno">   41</span>{ <span class="keywordflow">return</span> {0.0f, 0.0f, 0.0f, 0.0f}; }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a13c58059097a1b33879554ecea2d72f7" name="a13c58059097a1b33879554ecea2d72f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a13c58059097a1b33879554ecea2d72f7">&#9670;&#160;</a></span>white() <span class="overload">[2/2]</span></h2>
+<a id="a04b32d67504ba92e4f3c10473642ff3b" name="a04b32d67504ba92e4f3c10473642ff3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04b32d67504ba92e4f3c10473642ff3b">&#9670;&#160;</a></span>white()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -625,7 +510,7 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static auto stdui::color::white </td>
+          <td class="memname">static constexpr auto stdui::color::white </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> -&gt; <a class="el" href="structstdui_1_1color.html">color</a> </td>
@@ -633,164 +518,91 @@ Public Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="rendering_8hpp_source.html#l00020">20</a> of file <a class="el" href="rendering_8hpp_source.html">rendering.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   20</span>{ <span class="keywordflow">return</span> {1.0, 1.0, 1.0, 1.0}; }</div>
+<p class="definition">Definition at line <a class="el" href="color_8hpp_source.html#l00037">37</a> of file <a class="el" href="color_8hpp_source.html">color.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   37</span>{ <span class="keywordflow">return</span> {1.0f, 1.0f, 1.0f, 1.0f}; }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="aa317c86a2428731865ec4f07a6daa504" name="aa317c86a2428731865ec4f07a6daa504"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa317c86a2428731865ec4f07a6daa504">&#9670;&#160;</a></span>a</h2>
+<a id="af642f940e6ffaefd46eef3923f134c24" name="af642f940e6ffaefd46eef3923f134c24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af642f940e6ffaefd46eef3923f134c24">&#9670;&#160;</a></span>alpha</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float stdui::color::a = 1.0f</td>
+          <td class="memname">float stdui::color::alpha = 1.0f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="color_8hpp_source.html#l00015">15</a> of file <a class="el" href="color_8hpp_source.html">color.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="color_8hpp_source.html#l00032">to_rgba()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="color_8hpp_source.html#l00028">to_rgba()</a>.</p>
 
 </div>
 </div>
-<a id="a067c9cbfefc8738d5d8bbaac39b4f799" name="a067c9cbfefc8738d5d8bbaac39b4f799"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a067c9cbfefc8738d5d8bbaac39b4f799">&#9670;&#160;</a></span>alpha</h2>
+<a id="ad26c626eb8b9a6d6d43f0e31e524be6c" name="ad26c626eb8b9a6d6d43f0e31e524be6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad26c626eb8b9a6d6d43f0e31e524be6c">&#9670;&#160;</a></span>blue</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double stdui::color::alpha = 1.0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="rendering_8hpp_source.html#l00017">17</a> of file <a class="el" href="rendering_8hpp_source.html">rendering.hpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="color_8hpp_source.html#l00022">from_rgb()</a>.</p>
-
-</div>
-</div>
-<a id="a4271021bf8238d06575580c932f1af66" name="a4271021bf8238d06575580c932f1af66"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4271021bf8238d06575580c932f1af66">&#9670;&#160;</a></span>b</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float stdui::color::b = 0.0f</td>
+          <td class="memname">float stdui::color::blue = 0.0f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="color_8hpp_source.html#l00014">14</a> of file <a class="el" href="color_8hpp_source.html">color.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="color_8hpp_source.html#l00032">to_rgba()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="color_8hpp_source.html#l00028">to_rgba()</a>.</p>
 
 </div>
 </div>
-<a id="a814700a4615917ffeff64849d5970965" name="a814700a4615917ffeff64849d5970965"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a814700a4615917ffeff64849d5970965">&#9670;&#160;</a></span>blue</h2>
+<a id="a34631a9d40fec23f369911613feb51b4" name="a34631a9d40fec23f369911613feb51b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34631a9d40fec23f369911613feb51b4">&#9670;&#160;</a></span>green</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double stdui::color::blue = 0.0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="rendering_8hpp_source.html#l00016">16</a> of file <a class="el" href="rendering_8hpp_source.html">rendering.hpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="color_8hpp_source.html#l00022">from_rgb()</a>.</p>
-
-</div>
-</div>
-<a id="a0adce21efa703a9a8c96a42512a65968" name="a0adce21efa703a9a8c96a42512a65968"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0adce21efa703a9a8c96a42512a65968">&#9670;&#160;</a></span>g</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float stdui::color::g = 0.0f</td>
+          <td class="memname">float stdui::color::green = 0.0f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="color_8hpp_source.html#l00013">13</a> of file <a class="el" href="color_8hpp_source.html">color.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="color_8hpp_source.html#l00032">to_rgba()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="color_8hpp_source.html#l00028">to_rgba()</a>.</p>
 
 </div>
 </div>
-<a id="aee4efe9d13dd61e2ed0c3b0419f0b99c" name="aee4efe9d13dd61e2ed0c3b0419f0b99c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee4efe9d13dd61e2ed0c3b0419f0b99c">&#9670;&#160;</a></span>green</h2>
+<a id="a49c2a17745fa9c127cfc581c5233e4c0" name="a49c2a17745fa9c127cfc581c5233e4c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49c2a17745fa9c127cfc581c5233e4c0">&#9670;&#160;</a></span>red</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double stdui::color::green = 0.0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="rendering_8hpp_source.html#l00015">15</a> of file <a class="el" href="rendering_8hpp_source.html">rendering.hpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="color_8hpp_source.html#l00022">from_rgb()</a>.</p>
-
-</div>
-</div>
-<a id="a8e23d09a2e59db7316a84674ec732814" name="a8e23d09a2e59db7316a84674ec732814"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e23d09a2e59db7316a84674ec732814">&#9670;&#160;</a></span>r</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float stdui::color::r = 0.0f</td>
+          <td class="memname">float stdui::color::red = 0.0f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="color_8hpp_source.html#l00012">12</a> of file <a class="el" href="color_8hpp_source.html">color.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="color_8hpp_source.html#l00032">to_rgba()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="color_8hpp_source.html#l00028">to_rgba()</a>.</p>
 
 </div>
 </div>
-<a id="a9d9f9ce81fb024d3f25ffd2737eaeebe" name="a9d9f9ce81fb024d3f25ffd2737eaeebe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d9f9ce81fb024d3f25ffd2737eaeebe">&#9670;&#160;</a></span>red</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double stdui::color::red = 0.0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="rendering_8hpp_source.html#l00014">14</a> of file <a class="el" href="rendering_8hpp_source.html">rendering.hpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="color_8hpp_source.html#l00022">from_rgb()</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following files:<ul>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>include/stdui/<a class="el" href="color_8hpp_source.html">color.hpp</a></li>
-<li>include/stdui/<a class="el" href="rendering_8hpp_source.html">rendering.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

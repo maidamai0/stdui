@@ -96,13 +96,13 @@ $(document).ready(function(){initNavTree('md_docs_2phase4_84-plan.html',''); ini
   <div class="headertitle"><div class="title">Phase 4.4: Polish and Optimization - Implementation Plan</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md387"></a> </p>
-<h1><a class="anchor" id="autotoc_md388"></a>
+<div class="textblock"><p><a class="anchor" id="autotoc_md401"></a> </p>
+<h1><a class="anchor" id="autotoc_md402"></a>
 Overview</h1>
 <p>Final polish phase for the rendering system, focusing on performance, quality, and completeness.</p>
-<h1><a class="anchor" id="autotoc_md389"></a>
+<h1><a class="anchor" id="autotoc_md403"></a>
 4.4.1 Performance Optimizations</h1>
-<h2><a class="anchor" id="autotoc_md390"></a>
+<h2><a class="anchor" id="autotoc_md404"></a>
 Vertex Batching Improvements</h2>
 <ul>
 <li>✅ Basic batching already implemented</li>
@@ -110,23 +110,23 @@ Vertex Batching Improvements</h2>
 <li>TODO: Sort draw calls by texture/material</li>
 <li>TODO: Instanced rendering for repeated elements</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md391"></a>
+<h2><a class="anchor" id="autotoc_md405"></a>
 Memory Management</h2>
 <ul>
 <li>TODO: Vertex buffer pooling</li>
 <li>TODO: Texture atlas compaction</li>
 <li>TODO: GPU memory budget monitoring</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md392"></a>
+<h2><a class="anchor" id="autotoc_md406"></a>
 Render Tree Optimization</h2>
 <ul>
 <li>TODO: Frustum culling for off-screen nodes</li>
 <li>TODO: Dirty rectangle tracking for partial updates</li>
 <li>TODO: Layer caching for static content</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md393"></a>
+<h1><a class="anchor" id="autotoc_md407"></a>
 4.4.2 Quality Improvements</h1>
-<h2><a class="anchor" id="autotoc_md394"></a>
+<h2><a class="anchor" id="autotoc_md408"></a>
 Text Rendering</h2>
 <ul>
 <li>✅ Core Text glyph rasterization</li>
@@ -134,14 +134,14 @@ Text Rendering</h2>
 <li>TODO: Hinting support for small sizes</li>
 <li>TODO: Emoji and fallback font support</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md395"></a>
+<h2><a class="anchor" id="autotoc_md409"></a>
 Anti-aliasing</h2>
 <ul>
 <li>TODO: MSAA for geometry edges</li>
 <li>TODO: Signed distance field (SDF) for scalable text</li>
 <li>TODO: Coverage-based anti-aliasing</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md396"></a>
+<h2><a class="anchor" id="autotoc_md410"></a>
 Visual Effects</h2>
 <ul>
 <li>TODO: Gaussian blur shader (compute)</li>
@@ -149,9 +149,9 @@ Visual Effects</h2>
 <li>TODO: Inner shadow effect</li>
 <li>TODO: Gradient fills</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md397"></a>
+<h1><a class="anchor" id="autotoc_md411"></a>
 4.4.3 Feature Completeness</h1>
-<h2><a class="anchor" id="autotoc_md398"></a>
+<h2><a class="anchor" id="autotoc_md412"></a>
 Rectangle Rendering</h2>
 <ul>
 <li>✅ Solid fills</li>
@@ -159,7 +159,7 @@ Rectangle Rendering</h2>
 <li>TODO: Border rendering (separate from stroke)</li>
 <li>TODO: Gradient fills (linear, radial)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md399"></a>
+<h2><a class="anchor" id="autotoc_md413"></a>
 Path Rendering</h2>
 <ul>
 <li>✅ Basic tessellation</li>
@@ -167,7 +167,7 @@ Path Rendering</h2>
 <li>TODO: Bezier curve flattening</li>
 <li>TODO: Stroke caps and joins (round, square, bevel, miter)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md400"></a>
+<h2><a class="anchor" id="autotoc_md414"></a>
 Image Rendering</h2>
 <ul>
 <li>✅ Basic texture mapping</li>
@@ -175,28 +175,28 @@ Image Rendering</h2>
 <li>TODO: Texture tiling modes (repeat, clamp, mirror)</li>
 <li>TODO: Image effects (tint, saturation, brightness)</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md401"></a>
+<h1><a class="anchor" id="autotoc_md415"></a>
 4.4.4 Platform Completeness</h1>
-<h2><a class="anchor" id="autotoc_md402"></a>
+<h2><a class="anchor" id="autotoc_md416"></a>
 macOS (Current Focus)</h2>
 <ul>
 <li>Metal backend: ~90% complete</li>
 <li>Missing: Effects shaders, advanced features</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md403"></a>
+<h2><a class="anchor" id="autotoc_md417"></a>
 Windows (Future)</h2>
 <ul>
 <li>Direct2D backend: Skeleton implemented</li>
 <li>Status: Untested, needs Windows environment</li>
 <li>Action: Mark as "implementation ready, verification pending"</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md404"></a>
+<h2><a class="anchor" id="autotoc_md418"></a>
 Linux (Future)</h2>
 <ul>
 <li>Skia/Vulkan backend: Not started</li>
 <li>Action: Document API surface, defer implementation</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md405"></a>
+<h1><a class="anchor" id="autotoc_md419"></a>
 Priority Order</h1>
 <ol type="1">
 <li><b>High Priority</b> (Block Phase 4 completion)<ul>
@@ -218,7 +218,7 @@ Priority Order</h1>
 </ul>
 </li>
 </ol>
-<h1><a class="anchor" id="autotoc_md406"></a>
+<h1><a class="anchor" id="autotoc_md420"></a>
 Implementation Strategy</h1>
 <p>Since we're on macOS:</p><ol type="1">
 <li>Complete high-priority macOS features</li>
@@ -226,10 +226,10 @@ Implementation Strategy</h1>
 <li>Mark Windows/Linux as "implementation ready, requires platform testing"</li>
 <li>Create integration tests that work on macOS</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md407"></a>
+<h1><a class="anchor" id="autotoc_md421"></a>
 Success Criteria for Phase 4 Completion</h1>
 <p>✅ Render tree construction fully working ✅ Metal backend renders all primitive types ✅ Text rendering with Core Text working ✅ Path rendering with tessellation working ✅ Image rendering with texture cache working ✅ Platform code properly organized ✅ All tests passing on macOS ✅ Windows/Linux implementation documented ✅ Performance acceptable for typical UIs (60fps)</p>
-<h1><a class="anchor" id="autotoc_md408"></a>
+<h1><a class="anchor" id="autotoc_md422"></a>
 Estimated Work Remaining</h1>
 <ul>
 <li>Rounded rectangle shader: 2-3 hours</li>

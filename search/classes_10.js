@@ -1,18 +1,16 @@
 var searchData=
 [
-  ['scene_5fview_5fnode_0',['scene_view_node',['../classstdui_1_1rendering_1_1scene__view__node.html',1,'stdui::rendering']]],
-  ['shadow_5feffect_1',['shadow_effect',['../structstdui_1_1rendering_1_1shadow__effect.html',1,'stdui::rendering']]],
-  ['simple_5fevent_5fdispatcher_2',['simple_event_dispatcher',['../classstdui_1_1simple__event__dispatcher.html',1,'stdui']]],
-  ['size_3',['size',['../structstdui_1_1size.html',1,'stdui']]],
-  ['size_5fconstraint_4',['size_constraint',['../structstdui_1_1size__constraint.html',1,'stdui']]],
-  ['stack_5foptions_5',['stack_options',['../structstdui_1_1stack__options.html',1,'stdui']]],
-  ['stack_5ftraits_6',['stack_traits',['../structstdui_1_1detail_1_1stack__traits.html',1,'stdui::detail']]],
-  ['stack_5ftraits_3c_20stack_5faxis_3a_3ahorizontal_20_3e_7',['stack_traits&lt; stack_axis::horizontal &gt;',['../structstdui_1_1detail_1_1stack__traits_3_01stack__axis_1_1horizontal_01_4.html',1,'stdui::detail']]],
-  ['stack_5ftraits_3c_20stack_5faxis_3a_3avertical_20_3e_8',['stack_traits&lt; stack_axis::vertical &gt;',['../structstdui_1_1detail_1_1stack__traits_3_01stack__axis_1_1vertical_01_4.html',1,'stdui::detail']]],
-  ['state_9',['state',['../classstdui_1_1state.html',1,'stdui']]],
-  ['state_5fhandle_10',['state_handle',['../classstdui_1_1state__handle.html',1,'stdui']]],
-  ['state_5fkey_11',['state_key',['../structstdui_1_1state__key.html',1,'stdui']]],
-  ['state_5fkey_5fhash_12',['state_key_hash',['../structstdui_1_1state__key__hash.html',1,'stdui']]],
-  ['state_5fstorage_13',['state_storage',['../classstdui_1_1state__storage.html',1,'stdui']]],
-  ['stroke_5fstyle_14',['stroke_style',['../structstdui_1_1stroke__style.html',1,'stdui']]]
+  ['rect_0',['rect',['../structstdui_1_1rect.html',1,'stdui']]],
+  ['rectangle_5fnode_1',['rectangle_node',['../classstdui_1_1rendering_1_1rectangle__node.html',1,'stdui::rendering']]],
+  ['rectangle_5fproperties_2',['rectangle_properties',['../structstdui_1_1rendering_1_1rectangle__properties.html',1,'stdui::rendering']]],
+  ['render_5fnode_3',['render_node',['../classstdui_1_1rendering_1_1render__node.html',1,'stdui::rendering']]],
+  ['render_5ftarget_4',['render_target',['../classstdui_1_1render__target.html',1,'stdui']]],
+  ['render_5ftarget_5fdescriptor_5',['render_target_descriptor',['../structstdui_1_1render__target__descriptor.html',1,'stdui']]],
+  ['render_5ftree_6',['render_tree',['../classstdui_1_1rendering_1_1render__tree.html',1,'stdui::rendering']]],
+  ['render_5ftree_5fbuilder_7',['render_tree_builder',['../classstdui_1_1rendering_1_1render__tree__builder.html',1,'stdui::rendering']]],
+  ['renderer_8',['renderer',['../classstdui_1_1renderer.html',1,'stdui::renderer'],['../classstdui_1_1rendering_1_1renderer.html',1,'stdui::rendering::renderer']]],
+  ['renderer_5ffactory_9',['renderer_factory',['../classstdui_1_1renderer__factory.html',1,'stdui::renderer_factory'],['../classstdui_1_1rendering_1_1renderer__factory.html',1,'stdui::rendering::renderer_factory']]],
+  ['resize_5fevent_10',['resize_event',['../structstdui_1_1resize__event.html',1,'stdui']]],
+  ['runtime_11',['runtime',['../classstdui_1_1runtime.html',1,'stdui']]],
+  ['runtime_5fclock_12',['runtime_clock',['../classstdui_1_1runtime__clock.html',1,'stdui']]]
 ];

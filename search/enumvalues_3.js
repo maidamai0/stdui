@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['effect_0',['effect',['../namespacestdui_1_1rendering.html#a292f38ed9fecb029935bd3487657ededabf5b17fac5c60d745a593b5920372235',1,'stdui::rendering']]],
-  ['end_1',['end',['../namespacestdui.html#a7526688f87a6f52cb6e3fe5a60d0f046a7f021a1415b86f2d013b2618fb31ae53',1,'stdui']]]
+  ['decrement_0',['decrement',['../namespacestdui.html#a0778e0af0f8bf7e13a66e65c71e0ed29afc05f9565a0d3be36cba41084eb987c1',1,'stdui']]],
+  ['dialog_1',['dialog',['../namespacestdui.html#aa913e1c23a59b1ee2c14cc67af5ffb24a91c7ec8d1c8bb75e853f70fee324a43b',1,'stdui']]],
+  ['dismiss_2',['dismiss',['../namespacestdui.html#a0778e0af0f8bf7e13a66e65c71e0ed29a2b899981cd65625d08f85c4940182694',1,'stdui']]],
+  ['dynamic_5flist_3',['dynamic_list',['../namespacestdui.html#a62d98f56870e76b778b429b8ef8f2702a0fe0435fadf4eb10b999275290726116',1,'stdui']]]
 ];

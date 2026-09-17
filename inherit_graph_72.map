@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$structstdui_1_1state__key__hash.html" title="Hash support for state_key." alt="" coords="5,5,168,31"/>
+<area shape="rect" id="Node000000" href="$classstdui_1_1runtime__clock.html" title="Clock abstraction. Platform hosts provide the real clock; tests use manual time." alt="" coords="5,5,160,31"/>
+<area shape="rect" id="Node000001" href="$classstdui_1_1manual__clock.html" title="Deterministic clock for runtime tests." alt="" coords="208,5,360,31"/>
+<area shape="poly" id="edge14_Node000000_Node000001" title=" " alt="" coords="174,15,208,15,208,21,174,21"/>
 </map>

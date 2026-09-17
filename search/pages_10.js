@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['with_20stdui_0',['Getting Started with stdui',['../getting_started.html',1,'index']]]
+  ['ui_20framework_20in_20c_0',['Detailed Step-by-Step Plan: Building stdui - A Modern UI Framework in C++',['../md_docs_2DETAILED__PLAN.html',1,'']]]
 ];

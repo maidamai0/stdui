@@ -1,6 +1,5 @@
 var rendering_8hpp =
 [
-    [ "stdui::color", "structstdui_1_1color.html", "structstdui_1_1color" ],
     [ "stdui::null_renderer", "classstdui_1_1null__renderer.html", "classstdui_1_1null__renderer" ],
     [ "stdui::renderer", "classstdui_1_1renderer.html", "classstdui_1_1renderer" ],
     [ "stdui::renderer_factory", "classstdui_1_1renderer__factory.html", "classstdui_1_1renderer__factory" ],

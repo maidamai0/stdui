@@ -1,0 +1,5 @@
+<map id="stdui::render_target_descriptor" name="stdui::render_target_descriptor">
+<area shape="rect" id="Node000001" title="Logical and physical properties of a rendering destination." alt="" coords="5,93,156,133"/>
+<area shape="rect" id="Node000002" href="$structstdui_1_1size.html" title="Logical two&#45;dimensional size in device&#45;independent units." alt="" coords="37,5,125,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,44,83,93,78,93,78,44"/>
+</map>

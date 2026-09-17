@@ -131,7 +131,7 @@ TEST_CASE("render_node - basic properties") {
         path_properties props;
         props.commands = {1, 2, 3};
         props.points = {point{0, 0}, point{10, 0}, point{0, 10}};
-        props.fill_color = color::green_color();
+        props.fill_color = color{0.0f, 1.0f, 0.0f, 1.0f};
         props.stroke_color = color::black();
         props.stroke_width = 2.0f;
 

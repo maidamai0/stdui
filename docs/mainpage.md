@@ -21,7 +21,7 @@ rendering, interaction, semantics, and text as specialized subsystems.
 - Expression DSL and components: @ref stdui::component
 - Reconciliation and local state: @ref stdui::runtime
 - Generic layout primitives: @ref stdui::layout_hstack, @ref stdui::layout_vstack,
-  @ref stdui::layout_grid, @ref stdui::layout_overlay
+  @ref stdui::layout_grid, @ref stdui::layout_zstack
 - Logical geometry: @ref stdui::rect
 
 ## Quick Links

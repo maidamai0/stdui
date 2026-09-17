@@ -78,7 +78,7 @@ stdui provides three fundamental layout primitives:
 
 - **VStack** - Vertical stack (top to bottom)
 - **HStack** - Horizontal stack (left to right)
-- **Overlay** - Z-axis layering (back to front)
+- **ZStack** - Z-axis layering (back to front)
 - **Grid** - Fixed-column grid layout
 
 ### 4. Components
@@ -204,7 +204,7 @@ Key boundaries:
 **✅ Implemented (Phase 1-3):**
 - Typed view expressions
 - Component system with state management
-- Layout primitives (stacks, grids, overlays)
+- Layout primitives (stacks, grids, z-stacks)
 - Reconciliation and identity tracking
 - Geometry and measurement system
 - Event handling foundation

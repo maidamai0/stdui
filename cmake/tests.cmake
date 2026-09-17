@@ -20,7 +20,7 @@ set(STDUI_CORE_TEST_NAMES
     grid_tests
     layout_tests
     layout_tree_tests
-    overlay_tests
+    zstack_tests
     state_tests
     text_measurement_tests)
 

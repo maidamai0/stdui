@@ -353,15 +353,15 @@ TEST_CASE("application: different component types") {
   CHECK(app.layout_tree() != nullptr);
 }
 
-TEST_CASE("application: overlay component") {
-  class overlay_component : public stdui::typed_component<overlay_component> {
+TEST_CASE("application: zstack component") {
+  class zstack_component : public stdui::typed_component<zstack_component> {
   public:
     auto body(stdui::component_context &ctx) const -> stdui::inspection_node override {
-      return stdui::inspect(stdui::overlay(stdui::text("Back"), stdui::text("Front")));
+      return stdui::inspect(stdui::zstack(stdui::text("Back"), stdui::text("Front")));
     }
   };
 
-  auto root = std::make_shared<overlay_component>();
+  auto root = std::make_shared<zstack_component>();
   stdui::application app(root);
 
   stdui::null_platform platform;
@@ -369,7 +369,7 @@ TEST_CASE("application: overlay component") {
 
   auto *tree = app.layout_tree();
   REQUIRE(tree != nullptr);
-  CHECK(tree->kind == stdui::layout_kind::overlay);
+  CHECK(tree->kind == stdui::layout_kind::zstack);
 }
 
 TEST_CASE("application: component with multiple state slots") {

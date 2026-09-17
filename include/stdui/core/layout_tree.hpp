@@ -3,7 +3,7 @@
 #include <stdui/core/geometry.hpp>
 #include <stdui/core/inspection.hpp>
 #include <stdui/core/layout.hpp>
-#include <stdui/core/overlay.hpp>
+#include <stdui/core/zstack.hpp>
 
 #include <algorithm>
 #include <functional>
@@ -26,7 +26,7 @@ enum class layout_kind {
   text,
   hstack,
   vstack,
-  overlay,
+  zstack,
   dynamic_list,
 };
 
@@ -38,8 +38,8 @@ inline auto to_string(layout_kind kind) -> std::string {
     return "hstack";
   case layout_kind::vstack:
     return "vstack";
-  case layout_kind::overlay:
-    return "overlay";
+  case layout_kind::zstack:
+    return "zstack";
   case layout_kind::dynamic_list:
     return "dynamic_list";
   }
@@ -55,8 +55,8 @@ inline auto to_layout_kind(std::string_view kind) -> std::optional<layout_kind> 
   if (kind == "vstack") {
     return layout_kind::vstack;
   }
-  if (kind == "overlay") {
-    return layout_kind::overlay;
+  if (kind == "zstack") {
+    return layout_kind::zstack;
   }
   if (kind == "dynamic_list") {
     return layout_kind::dynamic_list;
@@ -88,7 +88,7 @@ struct layout_node {
   std::shared_ptr<text_measure_fn const> text_measure;
   flex_policy policy{};
   stack_options stack;
-  overlay_options overlay;
+  zstack_options zstack;
 
   auto flex() const -> stdui::flex_policy { return policy; }
 
@@ -96,8 +96,8 @@ struct layout_node {
     if (kind == layout_kind::text) {
       return measure_text(proposal);
     }
-    if (kind == layout_kind::overlay) {
-      return clamp_size(measure_overlay(children, proposal).extent, proposal);
+    if (kind == layout_kind::zstack) {
+      return clamp_size(measure_zstack(children, proposal).extent, proposal);
     }
     auto axis =
         kind == layout_kind::hstack ? detail::stack_axis::horizontal : detail::stack_axis::vertical;
@@ -152,8 +152,8 @@ private:
     if (kind == layout_kind::hstack) {
       return layout_hstack(children, bounds, stack).frames;
     }
-    if (kind == layout_kind::overlay) {
-      return layout_overlay(children, bounds, overlay).frames;
+    if (kind == layout_kind::zstack) {
+      return layout_zstack(children, bounds, zstack).frames;
     }
     return layout_vstack(children, bounds, stack).frames;
   }

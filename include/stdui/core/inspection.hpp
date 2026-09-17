@@ -36,9 +36,9 @@ template <class... T> auto inspect(hstack_expression<T...> const &x) {
   return n;
 }
 
-/// Converts an overlay and its children into an inspection tree.
-template <class... T> auto inspect(overlay_expression<T...> const &x) {
-  inspection_node n{"overlay", {}, {}};
+/// Converts a zstack and its children into an inspection tree.
+template <class... T> auto inspect(zstack_expression<T...> const &x) {
+  inspection_node n{"zstack", {}, {}};
   std::apply([&](auto const &...c) { (n.children.push_back(inspect(c)), ...); }, x.children);
   return n;
 }

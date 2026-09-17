@@ -26,7 +26,7 @@ Demonstrates basic layout primitives:
 - Text elements
 - VStack (vertical stack)
 - HStack (horizontal stack)
-- Overlay (z-axis layering)
+- ZStack (z-axis layering)
 - Simple composition patterns
 
 **Concepts:** View expressions, composition, layout primitives

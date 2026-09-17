@@ -15,7 +15,7 @@ namespace stdui {
 /// Measures overlapping children as a single composite extent.
 template <std::ranges::input_range Range>
   requires layout_element<std::ranges::range_value_t<Range>>
-auto measure_overlay(Range const &children, proposal const &proposal) -> layout_result {
+auto measure_zstack(Range const &children, proposal const &proposal) -> layout_result {
   layout_result result;
 
   for (auto &&child : children) {
@@ -30,8 +30,8 @@ auto measure_overlay(Range const &children, proposal const &proposal) -> layout_
 }
 
 /// Places measured children within the same bounds.
-inline auto arrange_overlay(std::span<size const> child_sizes, rect const &bounds,
-                            overlay_options const &options) -> std::vector<rect> {
+inline auto arrange_zstack(std::span<size const> child_sizes, rect const &bounds,
+                            zstack_options const &options) -> std::vector<rect> {
   std::vector<rect> frames;
   frames.reserve(child_sizes.size());
 
@@ -56,14 +56,14 @@ inline auto arrange_overlay(std::span<size const> child_sizes, rect const &bound
   return frames;
 }
 
-/// Measures and arranges children in one overlay pass.
+/// Measures and arranges children in one z-stack pass.
 template <std::ranges::input_range Range>
   requires layout_element<std::ranges::range_value_t<Range>>
-auto layout_overlay(Range const &children, rect const &bounds, overlay_options const &options)
+auto layout_zstack(Range const &children, rect const &bounds, zstack_options const &options)
     -> arranged_layout {
   auto measurement =
-      measure_overlay(children, proposal::bounded(bounds.extent.width, bounds.extent.height));
-  auto frames = arrange_overlay(measurement.children, bounds, options);
+      measure_zstack(children, proposal::bounded(bounds.extent.width, bounds.extent.height));
+  auto frames = arrange_zstack(measurement.children, bounds, options);
   return {std::move(measurement), std::move(frames)};
 }
 

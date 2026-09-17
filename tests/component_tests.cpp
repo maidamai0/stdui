@@ -336,11 +336,11 @@ TEST_CASE("component: hstack container") {
   CHECK(snapshot.children.size() == 3);
 }
 
-TEST_CASE("component: overlay container") {
-  class overlay_component : public stdui::typed_component<overlay_component> {
+TEST_CASE("component: zstack container") {
+  class zstack_component : public stdui::typed_component<zstack_component> {
   public:
     auto body(stdui::component_context &ctx) const -> stdui::inspection_node override {
-      return stdui::inspect(stdui::overlay(
+      return stdui::inspect(stdui::zstack(
           stdui::text("Background"),
           stdui::text("Foreground")
       ));
@@ -350,10 +350,10 @@ TEST_CASE("component: overlay container") {
   stdui::component_registry registry;
   stdui::component_evaluator evaluator(registry);
 
-  overlay_component comp;
+  zstack_component comp;
   auto snapshot = evaluator.evaluate(comp, [] {});
 
-  CHECK(snapshot.kind == "overlay");
+  CHECK(snapshot.kind == "zstack");
   CHECK(snapshot.children.size() == 2);
 }
 

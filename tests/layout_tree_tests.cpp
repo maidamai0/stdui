@@ -50,31 +50,31 @@ TEST_CASE("container boxes report the union of their arranged children") {
   CHECK(frame.children[1].bounds == stdui::rect{{0.0, 16.0}, {24.0, 16.0}});
 }
 
-TEST_CASE("layout tree materializes overlay nodes") {
-  auto snapshot = stdui::inspect(stdui::overlay(stdui::text("A"), stdui::text("BB")));
+TEST_CASE("layout tree materializes zstack nodes") {
+  auto snapshot = stdui::inspect(stdui::zstack(stdui::text("A"), stdui::text("BB")));
   auto tree = stdui::materialize_layout(snapshot, measured_text);
 
-  CHECK(tree.kind == stdui::layout_kind::overlay);
+  CHECK(tree.kind == stdui::layout_kind::zstack);
   CHECK(tree.measure(stdui::proposal::unbounded()) == stdui::size{16.0, 16.0});
 }
 
-TEST_CASE("overlay alignment positions children within the shared frame") {
-  auto snapshot = stdui::inspect(stdui::overlay(stdui::text("A"), stdui::text("B")));
+TEST_CASE("zstack alignment positions children within the shared frame") {
+  auto snapshot = stdui::inspect(stdui::zstack(stdui::text("A"), stdui::text("B")));
   auto tree = stdui::materialize_layout(snapshot, measured_text);
   auto bounds = stdui::rect{{0.0, 0.0}, {100.0, 100.0}};
 
   auto started = tree.arrange(bounds);
   CHECK(started.children[0].bounds == stdui::rect{{0.0, 0.0}, {8.0, 16.0}});
 
-  tree.overlay.alignment = stdui::layout_alignment::center;
+  tree.zstack.alignment = stdui::layout_alignment::center;
   auto centered = tree.arrange(bounds);
   CHECK(centered.children[0].bounds.origin == stdui::point{46.0, 42.0});
 
-  tree.overlay.alignment = stdui::layout_alignment::end;
+  tree.zstack.alignment = stdui::layout_alignment::end;
   auto ended = tree.arrange(bounds);
   CHECK(ended.children[0].bounds.origin == stdui::point{92.0, 84.0});
 
-  tree.overlay.alignment = stdui::layout_alignment::stretch;
+  tree.zstack.alignment = stdui::layout_alignment::stretch;
   auto stretched = tree.arrange(bounds);
   CHECK(stretched.children[0].bounds == stdui::rect{{0.0, 0.0}, {8.0, 16.0}});
 }
@@ -214,15 +214,15 @@ TEST_CASE("layout tree: hstack with spacing") {
   CHECK(frame.children[1].bounds.origin.x == 18.0); // 8 + 10
 }
 
-TEST_CASE("layout tree: overlay with multiple children") {
-  auto snapshot = stdui::inspect(stdui::overlay(
+TEST_CASE("layout tree: zstack with multiple children") {
+  auto snapshot = stdui::inspect(stdui::zstack(
       stdui::text("A"),
       stdui::text("BB"),
       stdui::text("CCC")
   ));
   auto tree = stdui::materialize_layout(snapshot, measured_text);
 
-  CHECK(tree.kind == stdui::layout_kind::overlay);
+  CHECK(tree.kind == stdui::layout_kind::zstack);
   CHECK(tree.children.size() == 3);
   CHECK(tree.measure(stdui::proposal::unbounded()) == stdui::size{24.0, 16.0}); // Max width
 }
@@ -303,10 +303,10 @@ TEST_CASE("layout tree: flex grow distributes space") {
   CHECK(frame.children[1].bounds.extent.width >= 8.0);
 }
 
-TEST_CASE("layout tree: overlay start alignment") {
-  auto snapshot = stdui::inspect(stdui::overlay(stdui::text("A")));
+TEST_CASE("layout tree: zstack start alignment") {
+  auto snapshot = stdui::inspect(stdui::zstack(stdui::text("A")));
   auto tree = stdui::materialize_layout(snapshot, measured_text);
-  tree.overlay.alignment = stdui::layout_alignment::start;
+  tree.zstack.alignment = stdui::layout_alignment::start;
 
   auto frame = tree.arrange({{0.0, 0.0}, {100.0, 100.0}});
   CHECK(frame.children[0].bounds.origin == stdui::point{0.0, 0.0});

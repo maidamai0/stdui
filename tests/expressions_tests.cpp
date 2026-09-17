@@ -104,11 +104,11 @@ TEST_CASE("headless inspection preserves composed child order") {
   CHECK(tree.children[1].children[1].content == "Ada Yoon");
 }
 
-TEST_CASE("headless inspection preserves overlay child order") {
+TEST_CASE("headless inspection preserves zstack child order") {
   auto tree = stdui::inspect(
-      stdui::overlay(stdui::text("Back"), stdui::vstack(stdui::text("Front"), stdui::text("Top"))));
+      stdui::zstack(stdui::text("Back"), stdui::vstack(stdui::text("Front"), stdui::text("Top"))));
 
-  REQUIRE(tree.kind == "overlay");
+  REQUIRE(tree.kind == "zstack");
   REQUIRE(tree.children.size() == 2);
   CHECK(tree.children[0].content == "Back");
   CHECK(tree.children[1].kind == "vstack");
@@ -323,15 +323,15 @@ TEST_CASE("hstack with many children") {
   CHECK(tree.children.size() == 5);
 }
 
-TEST_CASE("overlay with no children") {
-  auto tree = stdui::inspect(stdui::overlay());
-  CHECK(tree.kind == "overlay");
+TEST_CASE("zstack with no children") {
+  auto tree = stdui::inspect(stdui::zstack());
+  CHECK(tree.kind == "zstack");
   CHECK(tree.children.size() == 0);
 }
 
-TEST_CASE("overlay with single child") {
-  auto tree = stdui::inspect(stdui::overlay(stdui::text("Only")));
-  CHECK(tree.kind == "overlay");
+TEST_CASE("zstack with single child") {
+  auto tree = stdui::inspect(stdui::zstack(stdui::text("Only")));
+  CHECK(tree.kind == "zstack");
   CHECK(tree.children.size() == 1);
 }
 
@@ -339,7 +339,7 @@ TEST_CASE("deeply nested structures") {
   auto tree = stdui::inspect(
       stdui::vstack(
           stdui::hstack(
-              stdui::overlay(
+              stdui::zstack(
                   stdui::vstack(
                       stdui::text("Deep")
                   )
@@ -349,7 +349,7 @@ TEST_CASE("deeply nested structures") {
   );
   CHECK(tree.kind == "vstack");
   CHECK(tree.children[0].kind == "hstack");
-  CHECK(tree.children[0].children[0].kind == "overlay");
+  CHECK(tree.children[0].children[0].kind == "zstack");
   CHECK(tree.children[0].children[0].children[0].kind == "vstack");
   CHECK(tree.children[0].children[0].children[0].children[0].content == "Deep");
 }
@@ -360,7 +360,7 @@ TEST_CASE("mixed container types") {
           stdui::text("Header"),
           stdui::hstack(
               stdui::text("Left"),
-              stdui::overlay(
+              stdui::zstack(
                   stdui::text("Back"),
                   stdui::text("Front")
               ),

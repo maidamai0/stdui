@@ -154,9 +154,9 @@ private:
   }
 
   template <class... T>
-  auto evaluate(overlay_expression<T...> const &expression, std::string path,
+  auto evaluate(zstack_expression<T...> const &expression, std::string path,
                 evaluation_context &context) {
-    return evaluate_stack("overlay", expression.children, std::move(path), context);
+    return evaluate_stack("zstack", expression.children, std::move(path), context);
   }
 
   template <class Id, class Expression>

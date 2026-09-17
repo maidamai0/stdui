@@ -9,7 +9,7 @@ tracks the items on this roadmap.
 
 - typed view expressions and headless reconciliation;
 - persistent local state with structural and explicit identity;
-- generic layout primitives for stacks, grids, and overlays;
+- generic layout primitives for stacks, grids, and z-stacks;
 - persistent layout tree materialized from reconciled expressions;
 - package installation and CMake `find_package` consumption;
 - initial GitHub release and deployed API docs.

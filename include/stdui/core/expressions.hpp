@@ -67,15 +67,15 @@ template <view_expression... T> auto hstack(T &&...x) {
 }
 
 /// Stacks children in z-order without imposing a main axis.
-template <view_expression... T> struct overlay_expression {
+template <view_expression... T> struct zstack_expression {
   using is_stdui_expression = void;
 
   std::tuple<T...> children;
 };
 
 /// Creates a value expression owning overlapping children in their written order.
-template <view_expression... T> auto overlay(T &&...x) {
-  return overlay_expression<std::decay_t<T>...>{{std::forward<T>(x)...}};
+template <view_expression... T> auto zstack(T &&...x) {
+  return zstack_expression<std::decay_t<T>...>{{std::forward<T>(x)...}};
 }
 
 /// Selects a stable storage type for an explicit identity.

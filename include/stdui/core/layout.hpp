@@ -233,17 +233,17 @@ auto measure_vstack(Range const &children, proposal const &proposal, double spac
 
 /// Places measured horizontal children according to direction and alignment.
 inline auto arrange_hstack(std::span<size const> child_sizes, rect const &bounds,
-                           layout_direction direction = layout_direction::left_to_right,
+                           layout_direction direction = layout_direction::forward,
                            layout_alignment alignment = layout_alignment::start,
                            double spacing = 0.0) -> std::vector<rect> {
   std::vector<rect> frames;
   frames.reserve(child_sizes.size());
 
-  double x = direction == layout_direction::left_to_right ? bounds.origin.x
-                                                          : bounds.origin.x + bounds.extent.width;
+  double x = direction == layout_direction::forward ? bounds.origin.x
+                                                    : bounds.origin.x + bounds.extent.width;
 
   for (auto child_size : child_sizes) {
-    if (direction == layout_direction::right_to_left) {
+    if (direction == layout_direction::reverse) {
       x -= child_size.width;
     }
 
@@ -258,7 +258,7 @@ inline auto arrange_hstack(std::span<size const> child_sizes, rect const &bounds
 
     frames.push_back({{x, y}, child_size});
 
-    if (direction == layout_direction::left_to_right) {
+    if (direction == layout_direction::forward) {
       x += child_size.width + spacing;
     } else {
       x -= spacing;
@@ -271,12 +271,19 @@ inline auto arrange_hstack(std::span<size const> child_sizes, rect const &bounds
 /// Places measured vertical children according to cross-axis alignment.
 inline auto arrange_vstack(std::span<size const> child_sizes, rect const &bounds,
                            layout_alignment alignment = layout_alignment::start,
-                           double spacing = 0.0) -> std::vector<rect> {
+                           double spacing = 0.0,
+                           layout_direction direction = layout_direction::forward)
+    -> std::vector<rect> {
   std::vector<rect> frames;
   frames.reserve(child_sizes.size());
 
-  double y = bounds.origin.y;
+  double y = direction == layout_direction::forward ? bounds.origin.y
+                                                    : bounds.origin.y + bounds.extent.height;
   for (auto child_size : child_sizes) {
+    if (direction == layout_direction::reverse) {
+      y -= child_size.height;
+    }
+
     double x = bounds.origin.x;
     if (alignment == layout_alignment::center) {
       x += (bounds.extent.width - child_size.width) * 0.5;
@@ -287,7 +294,12 @@ inline auto arrange_vstack(std::span<size const> child_sizes, rect const &bounds
     }
 
     frames.push_back({{x, y}, child_size});
-    y += child_size.height + spacing;
+
+    if (direction == layout_direction::forward) {
+      y += child_size.height + spacing;
+    } else {
+      y -= spacing;
+    }
   }
 
   return frames;
@@ -297,7 +309,7 @@ inline auto arrange_vstack(std::span<size const> child_sizes, rect const &bounds
 template <std::ranges::input_range Range>
   requires layout_element<std::ranges::range_value_t<Range>>
 auto layout_hstack(Range const &children, rect const &bounds,
-                   layout_direction direction = layout_direction::left_to_right,
+                   layout_direction direction = layout_direction::forward,
                    layout_alignment alignment = layout_alignment::start, double spacing = 0.0)
     -> arranged_layout {
   auto measurement = measure_hstack(
@@ -310,11 +322,12 @@ auto layout_hstack(Range const &children, rect const &bounds,
 template <std::ranges::input_range Range>
   requires layout_element<std::ranges::range_value_t<Range>>
 auto layout_vstack(Range const &children, rect const &bounds,
-                   layout_alignment alignment = layout_alignment::start, double spacing = 0.0)
+                   layout_alignment alignment = layout_alignment::start, double spacing = 0.0,
+                   layout_direction direction = layout_direction::forward)
     -> arranged_layout {
   auto measurement = measure_vstack(
       children, proposal::bounded(bounds.extent.width, bounds.extent.height), spacing);
-  auto frames = arrange_vstack(measurement.children, bounds, alignment, spacing);
+  auto frames = arrange_vstack(measurement.children, bounds, alignment, spacing, direction);
   return {std::move(measurement), std::move(frames)};
 }
 
@@ -339,7 +352,8 @@ auto layout_vstack(Range const &children, rect const &bounds, stack_options cons
   auto content = inset_rect(bounds, options.padding);
   auto measurement = measure_vstack(
       children, proposal::bounded(content.extent.width, content.extent.height), options.spacing);
-  auto frames = arrange_vstack(measurement.children, content, options.alignment, options.spacing);
+  auto frames = arrange_vstack(measurement.children, content, options.alignment, options.spacing,
+                               options.direction);
   return {std::move(measurement), std::move(frames)};
 }
 

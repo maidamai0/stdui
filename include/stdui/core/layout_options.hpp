@@ -4,10 +4,10 @@
 
 namespace stdui {
 
-/// Horizontal or vertical layout direction.
+/// Order in which children are arranged along a stack's main axis.
 enum class layout_direction {
-  left_to_right,
-  right_to_left,
+  forward,
+  reverse,
 };
 
 /// Cross-axis alignment for stack children.
@@ -34,14 +34,15 @@ struct edge_insets {
 
 /// Configuration for stack layouts.
 struct stack_options {
-  layout_direction direction = layout_direction::left_to_right;
+  /// Forward means left-to-right for hstack and top-to-bottom for vstack.
+  layout_direction direction = layout_direction::forward;
   layout_alignment alignment = layout_alignment::start;
   double spacing = 0.0;
   edge_insets padding;
 };
 
-/// Configuration for overlay layouts.
-struct overlay_options {
+/// Configuration for zstack layouts.
+struct zstack_options {
   layout_alignment alignment = layout_alignment::start;
 };
 

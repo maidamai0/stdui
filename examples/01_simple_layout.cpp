@@ -1,7 +1,7 @@
 /**
  * Example 1: Simple Layout
  *
- * Demonstrates basic layout primitives: text, vstack, hstack, and overlay.
+ * Demonstrates basic layout primitives: text, vstack, hstack, and zstack.
  * This is a headless example showing the DSL API.
  */
 
@@ -40,8 +40,8 @@ auto make_contact_card() {
 }
 
 auto make_status_badge(std::string status) {
-    // Overlay demonstration: status text over background indicator
-    return stdui::overlay(
+    // ZStack demonstration: status text over background indicator
+    return stdui::zstack(
         stdui::text("[ " + status + " ]"),
         stdui::text("●")  // Status indicator
     );
@@ -67,9 +67,9 @@ int main() {
     auto proposal = stdui::proposal::bounded(400.0, 300.0);
     std::cout << "Layout proposal: 400x300 logical units\n";
 
-    // Example: Create a status overlay
+    // Example: Create a status badge using ZStack
     auto status = make_status_badge("Online");
-    std::cout << "\nStatus badge created with overlay primitive.\n";
+    std::cout << "\nStatus badge created with the ZStack primitive.\n";
 
     return 0;
 }

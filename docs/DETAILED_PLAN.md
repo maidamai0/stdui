@@ -22,10 +22,10 @@ This plan builds upon your existing Phase 1 foundation (typed expressions, recon
 **Goal:** Validate the core architectural boundaries before adding rendering/backend complexity.
 
 ### ✅ Completed Items
-- [x] Typed view expression DSL (`text`, `vstack`, `hstack`, `overlay`, `flex`, `grow`, `fill`)
+- [x] Typed view expression DSL (`text`, `vstack`, `hstack`, `zstack`, `flex`, `grow`, `fill`)
 - [x] Expression concepts and composition (`view_expression`, `layout_element`)
 - [x] Persistent layout tree materialization
-- [x] Generic layout algorithms (stacks, grids, overlays)
+- [x] Generic layout algorithms (stacks, grids, z-stacks)
 - [x] Proposal-based layout system (bounded/unbounded constraints)
 - [x] Structural and explicit identity (`identified`, `dynamic_list`)
 - [x] Component model with deferred evaluation

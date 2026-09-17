@@ -11,6 +11,7 @@ ExternalProject_Add(doctest
 ExternalProject_Get_Property(doctest SOURCE_DIR)
 
 set(STDUI_CORE_TEST_NAMES
+    color_stabilization_tests
     component_tests
     core_contracts_tests
     expressions_tests
@@ -20,7 +21,8 @@ set(STDUI_CORE_TEST_NAMES
     layout_tests
     layout_tree_tests
     overlay_tests
-    state_tests)
+    state_tests
+    text_measurement_tests)
 
 set(STDUI_RUNTIME_TEST_NAMES
     application_tests

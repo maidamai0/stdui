@@ -1,7 +1,7 @@
 #pragma once
 
-#include <stdui/geometry.hpp>
-#include <stdui/layout.hpp>
+#include <stdui/core/geometry.hpp>
+#include <stdui/core/layout.hpp>
 
 #include <algorithm>
 #include <concepts>

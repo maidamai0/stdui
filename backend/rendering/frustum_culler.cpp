@@ -1,7 +1,7 @@
 // Copyright (c) 2026 stdui
 // SPDX-License-Identifier: MIT
 
-#include "stdui/rendering/frustum_culler.hpp"
+#include "stdui/render/frustum_culler.hpp"
 
 namespace stdui::rendering {
 

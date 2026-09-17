@@ -1,8 +1,8 @@
 #pragma once
 
-#include <stdui/color.hpp>
-#include <stdui/geometry.hpp>
-#include <stdui/text_measurement.hpp>
+#include <stdui/core/color.hpp>
+#include <stdui/core/geometry.hpp>
+#include <stdui/core/text_measurement.hpp>
 
 #include <cstdint>
 #include <memory>

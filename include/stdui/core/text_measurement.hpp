@@ -1,6 +1,6 @@
 #pragma once
 
-#include <stdui/geometry.hpp>
+#include <stdui/core/geometry.hpp>
 
 #include <memory>
 #include <string>

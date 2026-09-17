@@ -916,8 +916,8 @@ void render_scene(stdui::scene_context& ctx) {
 #include <stdui/scene_view_metal.hpp>   // macOS Metal (platform-specific)
 #include <stdui/scene_view_vulkan.hpp>  // Linux Vulkan (platform-specific)
 #include <stdui/scene_view_d3d12.hpp>   // Windows D3D12 (platform-specific)
-#include <stdui/effects.hpp>            // Blur, shadows, gradients
-#include <stdui/animation.hpp>          // Phase 5 (future)
+#include <stdui/core/effects.hpp>            // Blur, shadows, gradients
+#include <stdui/core/animation.hpp>          // Phase 5 (future)
 ```
 
 ---

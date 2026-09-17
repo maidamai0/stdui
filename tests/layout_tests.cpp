@@ -1,7 +1,7 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include <doctest/doctest.h>
 
-#include <stdui/layout.hpp>
+#include <stdui/core/layout.hpp>
 
 #include <vector>
 

@@ -5,9 +5,9 @@
  * Shows how state persists across view expression evaluations.
  */
 
-#include <stdui/component.hpp>
-#include <stdui/expressions.hpp>
-#include <stdui/state.hpp>
+#include <stdui/core/component.hpp>
+#include <stdui/core/expressions.hpp>
+#include <stdui/core/state.hpp>
 
 #include <iostream>
 #include <string>

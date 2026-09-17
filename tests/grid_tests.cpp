@@ -1,7 +1,7 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include <doctest/doctest.h>
 
-#include <stdui/grid.hpp>
+#include <stdui/core/grid.hpp>
 
 #include <vector>
 

@@ -1,7 +1,7 @@
 // Copyright (c) 2026 stdui
 // SPDX-License-Identifier: MIT
 
-#include "stdui/rendering/renderer.hpp"
+#include "stdui/render/backend_renderer.hpp"
 
 #ifdef __APPLE__
 // Forward declare Metal renderer to avoid including Objective-C++ headers

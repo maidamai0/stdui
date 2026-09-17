@@ -3,7 +3,7 @@
 
 #ifdef __APPLE__
 
-#include "stdui/rendering/image_cache.hpp"
+#include "stdui/render/image_cache.hpp"
 #include <unordered_map>
 #include <vector>
 

@@ -3,7 +3,7 @@
 
 #ifdef __APPLE__
 
-#include "stdui/rendering/glyph_atlas.hpp"
+#include "stdui/render/glyph_atlas.hpp"
 #include <vector>
 #include <CoreGraphics/CoreGraphics.h>
 #include <CoreFoundation/CoreFoundation.h>

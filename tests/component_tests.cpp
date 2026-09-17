@@ -1,7 +1,7 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include <doctest/doctest.h>
 
-#include <stdui/component.hpp>
+#include <stdui/core/component.hpp>
 
 // Simple test component
 class counter_component : public stdui::typed_component<counter_component> {

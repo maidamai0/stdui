@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: MIT
 
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-#include "stdui/rendering/frustum_culler.hpp"
+#include "stdui/render/frustum_culler.hpp"
 #include <doctest/doctest.h>
 
 using namespace stdui;

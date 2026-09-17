@@ -1,11 +1,11 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include <doctest/doctest.h>
 
-#include <stdui/animation.hpp>
-#include <stdui/effects.hpp>
-#include <stdui/render_target.hpp>
-#include <stdui/semantics.hpp>
-#include <stdui/text_measurement.hpp>
+#include <stdui/core/animation.hpp>
+#include <stdui/core/effects.hpp>
+#include <stdui/render/target.hpp>
+#include <stdui/core/semantics.hpp>
+#include <stdui/core/text_measurement.hpp>
 
 #include <memory>
 #include <variant>

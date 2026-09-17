@@ -3,7 +3,7 @@
 
 #ifdef __APPLE__
 
-#include "stdui/rendering/effect_renderer.hpp"
+#include "stdui/render/effect_renderer.hpp"
 #include <Metal/Metal.h>
 
 namespace stdui::rendering {

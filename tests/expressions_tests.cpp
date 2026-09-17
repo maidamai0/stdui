@@ -1,8 +1,8 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include <doctest/doctest.h>
 
-#include <stdui/inspection.hpp>
-#include <stdui/runtime.hpp>
+#include <stdui/core/inspection.hpp>
+#include <stdui/runtime/runtime.hpp>
 
 #include <stdexcept>
 

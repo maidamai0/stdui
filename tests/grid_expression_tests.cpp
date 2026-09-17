@@ -1,7 +1,7 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include <doctest/doctest.h>
 
-#include <stdui/expressions.hpp>
+#include <stdui/core/expressions.hpp>
 
 TEST_CASE("grid_expression: can be created with default options") {
   auto expr = stdui::grid(stdui::text("A"), stdui::text("B"), stdui::text("C"));

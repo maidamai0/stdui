@@ -40,13 +40,13 @@ This plan builds upon your existing Phase 1 foundation (typed expressions, recon
 - [ ] **1.2:** Add grid expressions to DSL
   - **Implementation:** Create `grid_expression<T...>` wrapper
   - **Test:** `grid({.columns=3}, item1, item2, ...item9)` lays out 3x3 grid
-  - **File:** `include/stdui/expressions.hpp` (add grid types)
+  - **File:** `include/stdui/core/expressions.hpp` (add grid types)
 
 - [ ] **1.3:** Framework-managed local state
   - **Implementation:** `state<T>` handle with persistent storage keyed by component identity
   - **API:** `auto count = ctx.state(0); count.set(count.get() + 1);`
   - **Test:** Counter component maintains state across expression re-evaluation
-  - **Files:** New `include/stdui/state.hpp`, extend `runtime.hpp`
+  - **Files:** New `include/stdui/core/state.hpp`, extend `runtime.hpp`
 
 ### Deliverable: Phase 1 Completion
 - **Release:** v0.1.0 - "Headless Foundation"
@@ -170,7 +170,7 @@ This plan builds upon your existing Phase 1 foundation (typed expressions, recon
 **Testable Milestone:** Events propagate and trigger handlers
 
 #### Step 3.2.1: Event types and representation
-- **File:** `include/stdui/events.hpp`
+- **File:** `include/stdui/core/events.hpp`
 - **Events:** pointer_down, pointer_up, pointer_move, key_down, key_up, scroll
 - **Data:** position, button/key, modifiers, timestamp
 - **Test:** Create and inspect event objects
@@ -297,7 +297,7 @@ This plan builds upon your existing Phase 1 foundation (typed expressions, recon
 - **Test:** Mock backend records calls
 
 #### Step 4.2.2: Color and image representation
-- **File:** `include/stdui/color.hpp`, `include/stdui/image.hpp`
+- **File:** `include/stdui/core/color.hpp`, `include/stdui/image.hpp`
 - **Color:** RGBA float or sRGB byte representation
 - **Image:** Handle + metadata (size, format)
 - **Test:** Create colors, verify RGBA values
@@ -444,7 +444,7 @@ This plan builds upon your existing Phase 1 foundation (typed expressions, recon
 ### 5.6: Semantics and Accessibility (Month 16)
 
 #### Step 5.6.1: Semantic node tree
-- **File:** `include/stdui/semantics.hpp`
+- **File:** `include/stdui/core/semantics.hpp`
 - **Attributes:** role, label, value, actions
 - **Generation:** Parallel to render tree
 - **Test:** Generate semantic tree for button, verify role="button"
@@ -467,7 +467,7 @@ This plan builds upon your existing Phase 1 foundation (typed expressions, recon
 ### 6.1: Animation Primitives (Month 17)
 
 #### Step 6.1.1: Animatable value types
-- **File:** `include/stdui/animation.hpp`
+- **File:** `include/stdui/core/animation.hpp`
 - **Types:** double, color, point, size, transform
 - **Interpolation:** Linear, ease-in/out, spring
 - **Test:** Interpolate 0→100 over 1 second, sample at 0.5s = 50
@@ -543,7 +543,7 @@ This plan builds upon your existing Phase 1 foundation (typed expressions, recon
 ### 7.2: Application Lifecycle (Month 20)
 
 #### Step 7.2.1: Application object
-- **File:** `include/stdui/application.hpp`
+- **File:** `include/stdui/runtime/application.hpp`
 - **API:**
   ```cpp
   int main() {

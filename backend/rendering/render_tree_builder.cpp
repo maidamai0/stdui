@@ -1,7 +1,7 @@
 // Copyright (c) 2026 stdui
 // SPDX-License-Identifier: MIT
 
-#include "stdui/rendering/render_tree_builder.hpp"
+#include "stdui/render/tree_builder.hpp"
 
 namespace stdui::rendering {
 

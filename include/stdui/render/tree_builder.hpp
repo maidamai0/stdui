@@ -6,8 +6,8 @@
 #include <memory>
 #include <optional>
 
-#include "stdui/layout_tree.hpp"
-#include "stdui/rendering/render_node.hpp"
+#include "stdui/core/layout_tree.hpp"
+#include "stdui/render/node.hpp"
 
 namespace stdui::rendering {
 

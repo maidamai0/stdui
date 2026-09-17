@@ -1,9 +1,9 @@
 #pragma once
 
-#include <stdui/component.hpp>
-#include <stdui/inspection.hpp>
-#include <stdui/layout_tree.hpp>
-#include <stdui/platform.hpp>
+#include <stdui/core/component.hpp>
+#include <stdui/core/inspection.hpp>
+#include <stdui/core/layout_tree.hpp>
+#include <stdui/platform/platform.hpp>
 
 #include <functional>
 #include <memory>

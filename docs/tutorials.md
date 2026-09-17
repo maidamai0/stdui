@@ -15,9 +15,9 @@ This tutorial walks through creating a simple application layout using stdui's c
 ### Step 1: Include Headers
 
 ```cpp
-#include <stdui/expressions.hpp>
-#include <stdui/layout.hpp>
-#include <stdui/geometry.hpp>
+#include <stdui/core/expressions.hpp>
+#include <stdui/core/layout.hpp>
+#include <stdui/core/geometry.hpp>
 #include <string>
 ```
 
@@ -167,8 +167,8 @@ Framework state persists across view expression evaluations.
 ### Step 1: Define a Stateful Component
 
 ```cpp
-#include <stdui/component.hpp>
-#include <stdui/state.hpp>
+#include <stdui/core/component.hpp>
+#include <stdui/core/state.hpp>
 
 struct counter_tag {};  // Unique type for component identity
 

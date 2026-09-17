@@ -10,9 +10,9 @@
  * with UI controls in side panels.
  */
 
-#include <stdui/expressions.hpp>
-#include <stdui/layout.hpp>
-#include <stdui/geometry.hpp>
+#include <stdui/core/expressions.hpp>
+#include <stdui/core/layout.hpp>
+#include <stdui/core/geometry.hpp>
 
 #include <iostream>
 #include <string>

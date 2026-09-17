@@ -1,7 +1,7 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include <doctest/doctest.h>
 
-#include <stdui/platform.hpp>
+#include <stdui/platform/platform.hpp>
 
 TEST_CASE("null_platform: can be initialized and shut down") {
   stdui::null_platform platform;

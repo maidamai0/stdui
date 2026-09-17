@@ -4,9 +4,9 @@
 
 #include <doctest/doctest.h>
 
-#include "stdui/rendering/render_tree_builder.hpp"
-#include "stdui/rendering/render_node.hpp"
-#include "stdui/layout_tree.hpp"
+#include "stdui/render/tree_builder.hpp"
+#include "stdui/render/node.hpp"
+#include "stdui/core/layout_tree.hpp"
 
 #include <variant>
 

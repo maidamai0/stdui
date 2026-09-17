@@ -1,9 +1,9 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include <doctest/doctest.h>
 
-#include <stdui/application.hpp>
-#include <stdui/component.hpp>
-#include <stdui/platform.hpp>
+#include <stdui/runtime/application.hpp>
+#include <stdui/core/component.hpp>
+#include <stdui/platform/platform.hpp>
 
 // Simple test component for application tests
 class hello_component : public stdui::typed_component<hello_component> {

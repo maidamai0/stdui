@@ -3,7 +3,7 @@
 
 #ifdef __APPLE__
 
-#include "stdui/rendering/path_tessellator.hpp"
+#include "stdui/render/path_tessellator.hpp"
 #include <algorithm>
 #include <cmath>
 

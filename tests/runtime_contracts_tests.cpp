@@ -1,7 +1,7 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include <doctest/doctest.h>
 
-#include <stdui/runtime_contracts.hpp>
+#include <stdui/runtime/runtime_contracts.hpp>
 
 #include <chrono>
 #include <memory>

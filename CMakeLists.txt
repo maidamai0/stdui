@@ -4,6 +4,10 @@ project(stdui VERSION 0.1.0 LANGUAGES CXX)
 
 include(GNUInstallDirs)
 
+if(APPLE)
+    enable_language(OBJCXX)
+endif()
+
 option(STDUI_ENABLE_COVERAGE "Enable llvm-cov coverage instrumentation and reporting" OFF)
 set(STDUI_COVERAGE_THRESHOLD 90 CACHE STRING "Minimum required line coverage percentage")
 
@@ -14,6 +18,9 @@ target_include_directories(stdui INTERFACE
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
 target_compile_features(stdui INTERFACE cxx_std_20)
+
+# Platform-specific rendering (dispatched to separate file)
+include(cmake/rendering.cmake)
 
 include(CTest)
 if(BUILD_TESTING)

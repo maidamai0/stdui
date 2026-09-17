@@ -84,10 +84,6 @@ public:
 private:
   /// Evaluates the component tree and materializes layout.
   void update() {
-    if (!needs_update_) {
-      return;
-    }
-
     // Evaluate root component with state context
     component_evaluator evaluator(registry_);
     auto snapshot = evaluator.evaluate(*root_component_, [this] { invalidate(); });

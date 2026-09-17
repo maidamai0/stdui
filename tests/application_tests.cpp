@@ -26,15 +26,37 @@ public:
 class layout_component : public stdui::typed_component<layout_component> {
 public:
   auto body(stdui::component_context &ctx) const -> stdui::inspection_node override {
-    return stdui::inspect(stdui::vstack(
-        stdui::text("Header"),
-        stdui::hstack(
-            stdui::text("Left"),
-            stdui::text("Right")
-        ),
-        stdui::text("Footer")
-    ));
+    return stdui::inspect(stdui::vstack(stdui::text("Header"),
+                                        stdui::hstack(stdui::text("Left"), stdui::text("Right")),
+                                        stdui::text("Footer")));
   }
+};
+
+class eager_redraw_window : public stdui::null_window {
+public:
+  eager_redraw_window(stdui::size size, std::string title,
+                      std::unique_ptr<stdui::renderer> renderer)
+      : null_window(size, std::move(title), std::move(renderer)) {}
+
+  void set_redraw_callback(std::function<void()> callback) override {
+    null_window::set_redraw_callback(std::move(callback));
+    request_redraw();
+  }
+};
+
+class recording_platform : public stdui::null_platform {
+public:
+  auto create_window(stdui::size size, std::string const &title)
+      -> std::unique_ptr<stdui::platform_window> override {
+    auto measurer = text_measurer_factory().create();
+    auto renderer = std::make_unique<stdui::null_renderer>(std::move(measurer));
+    auto window =
+        std::make_unique<eager_redraw_window>(size, title, std::move(renderer));
+    last_window = window.get();
+    return window;
+  }
+
+  stdui::platform_window *last_window = nullptr;
 };
 
 TEST_CASE("app_config: default values") {
@@ -64,6 +86,21 @@ TEST_CASE("application: creates with root component") {
   CHECK(app.registry().component_count() == 0); // Not yet initialized
 }
 
+TEST_CASE("application: run before initialization throws") {
+  auto root = std::make_shared<hello_component>();
+  stdui::application app(root);
+
+  CHECK_THROWS_AS(app.run(), std::runtime_error);
+}
+
+TEST_CASE("application: invalidate before initialization is safe") {
+  auto root = std::make_shared<hello_component>();
+  stdui::application app(root);
+
+  CHECK_NOTHROW(app.invalidate());
+  CHECK(app.layout_tree() == nullptr);
+}
+
 TEST_CASE("application: initializes with platform") {
   auto root = std::make_shared<hello_component>();
   stdui::application app(root);
@@ -74,6 +111,36 @@ TEST_CASE("application: initializes with platform") {
   // After initialization, component should be evaluated
   CHECK(app.registry().component_count() >= 1);
   CHECK(app.layout_tree() != nullptr);
+}
+
+TEST_CASE("application: redraw callback renders initialized tree") {
+  auto root = std::make_shared<hello_component>();
+  stdui::application app(root);
+  recording_platform platform;
+
+  app.initialize(platform);
+
+  REQUIRE(platform.last_window != nullptr);
+  CHECK_NOTHROW(platform.last_window->request_redraw());
+}
+
+TEST_CASE("application: dispatches window events") {
+  auto root = std::make_shared<hello_component>();
+  stdui::application app(root);
+  recording_platform platform;
+
+  app.initialize(platform);
+  REQUIRE(platform.last_window != nullptr);
+
+  bool later_handler_called = false;
+  platform.last_window->event_dispatcher().add_handler(
+      [&](stdui::platform_event const &) {
+        later_handler_called = true;
+        return false;
+      });
+
+  platform.last_window->event_dispatcher().dispatch(stdui::mouse_event{{1.0, 2.0}});
+  CHECK_FALSE(later_handler_called);
 }
 
 TEST_CASE("application: uses custom config") {
@@ -159,10 +226,10 @@ TEST_CASE("application: multiple components share registry") {
 
 TEST_CASE("app_config: various background colors") {
   stdui::app_config config1{.background_color = stdui::color{1.0, 0.0, 0.0, 1.0}};
-  CHECK(config1.background_color.red == 1.0);
+  CHECK(config1.background_color.red == doctest::Approx(1.0f));
 
   stdui::app_config config2{.background_color = stdui::color{0.5, 0.5, 0.5, 0.8}};
-  CHECK(config2.background_color.alpha == 0.8);
+  CHECK(config2.background_color.alpha == doctest::Approx(0.8f));
 }
 
 TEST_CASE("app_config: various window sizes") {
@@ -290,10 +357,7 @@ TEST_CASE("application: overlay component") {
   class overlay_component : public stdui::typed_component<overlay_component> {
   public:
     auto body(stdui::component_context &ctx) const -> stdui::inspection_node override {
-      return stdui::inspect(stdui::overlay(
-          stdui::text("Back"),
-          stdui::text("Front")
-      ));
+      return stdui::inspect(stdui::overlay(stdui::text("Back"), stdui::text("Front")));
     }
   };
 
@@ -439,4 +503,3 @@ TEST_CASE("application: registry same throughout") {
   auto &reg2 = app.registry();
   CHECK(&reg1 == &reg2);
 }
-

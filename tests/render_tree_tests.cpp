@@ -1,12 +1,14 @@
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 // Copyright (c) 2026 stdui
 // SPDX-License-Identifier: MIT
 
-#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include <doctest/doctest.h>
 
 #include "stdui/rendering/render_tree_builder.hpp"
 #include "stdui/rendering/render_node.hpp"
 #include "stdui/layout_tree.hpp"
+
+#include <variant>
 
 using namespace stdui;
 using namespace stdui::rendering;
@@ -72,6 +74,21 @@ TEST_CASE("render_tree_builder - children") {
 }
 
 TEST_CASE("render_node - basic properties") {
+    SUBCASE("Default node constructors") {
+        REQUIRE(rectangle_node{}.type() == render_node_type::rectangle);
+        REQUIRE(text_node{}.type() == render_node_type::text);
+        REQUIRE(path_node{}.type() == render_node_type::path);
+        REQUIRE(image_node{}.type() == render_node_type::image);
+        REQUIRE(group_node{}.type() == render_node_type::group);
+        REQUIRE(effect_node{}.type() == render_node_type::effect);
+        REQUIRE(scene_view_node{}.type() == render_node_type::scene_view);
+
+        mat3 identity = mat3::identity();
+        REQUIRE(identity.m[0] == 1.0f);
+        REQUIRE(identity.m[4] == 1.0f);
+        REQUIRE(identity.m[8] == 1.0f);
+    }
+
     SUBCASE("Rectangle node") {
         auto node = std::make_shared<rectangle_node>();
 
@@ -110,6 +127,45 @@ TEST_CASE("render_node - basic properties") {
         REQUIRE(node->properties().font_size == 16.0f);
     }
 
+    SUBCASE("Path node") {
+        path_properties props;
+        props.commands = {1, 2, 3};
+        props.points = {point{0, 0}, point{10, 0}, point{0, 10}};
+        props.fill_color = color::green_color();
+        props.stroke_color = color::black();
+        props.stroke_width = 2.0f;
+
+        path_node node(props);
+        REQUIRE(node.type() == render_node_type::path);
+        REQUIRE(node.properties().commands.size() == 3);
+        REQUIRE(node.properties().points.size() == 3);
+        REQUIRE(node.properties().stroke_width == 2.0f);
+
+        node.properties().stroke_width = 4.0f;
+        REQUIRE(node.properties().stroke_width == 4.0f);
+
+        const path_node const_node(props);
+        REQUIRE(const_node.properties().commands.size() == 3);
+    }
+
+    SUBCASE("Image node") {
+        image_properties props;
+        props.bounds = rect{{10, 20}, {30, 40}};
+        props.texture_id = 42;
+        props.opacity = 0.5f;
+
+        image_node node(props);
+        REQUIRE(node.type() == render_node_type::image);
+        REQUIRE(node.properties().texture_id == 42);
+        REQUIRE(node.properties().opacity == 0.5f);
+
+        node.properties().opacity = 0.75f;
+        REQUIRE(node.properties().opacity == 0.75f);
+
+        const image_node const_node(props);
+        REQUIRE(const_node.properties().texture_id == 42);
+    }
+
     SUBCASE("Group node") {
         auto group = std::make_shared<group_node>();
 
@@ -137,6 +193,8 @@ TEST_CASE("render_node - basic properties") {
         auto child = std::make_shared<rectangle_node>();
         effect->set_child(child);
 
+        REQUIRE(effect->effect() == effect_type::blur);
+        REQUIRE(std::holds_alternative<blur_effect>(effect->parameters()));
         REQUIRE(effect->child() != nullptr);
     }
 

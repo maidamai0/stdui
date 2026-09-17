@@ -34,10 +34,16 @@ set(STDUI_RENDER_TEST_NAMES
 set(STDUI_PLATFORM_TEST_NAMES
     platform_tests)
 
+set(STDUI_TEST_FILE_PATTERNS
+    "${CMAKE_CURRENT_LIST_DIR}/../tests/*_tests.cpp")
+if(APPLE)
+    list(APPEND STDUI_TEST_FILE_PATTERNS
+        "${CMAKE_CURRENT_LIST_DIR}/../tests/*_tests.mm")
+endif()
+
 file(GLOB STDUI_TEST_SOURCES
     CONFIGURE_DEPENDS
-    "${CMAKE_CURRENT_LIST_DIR}/../tests/*_tests.cpp"
-    "${CMAKE_CURRENT_LIST_DIR}/../tests/*_tests.mm")
+    ${STDUI_TEST_FILE_PATTERNS})
 
 foreach(test_source IN LISTS STDUI_TEST_SOURCES)
     get_filename_component(test_name "${test_source}" NAME_WE)

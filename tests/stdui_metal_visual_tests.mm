@@ -5,8 +5,8 @@
 
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "metal_test_helpers.hpp"
-#include "stdui/rendering/metal_renderer.hpp"
-#include "stdui/rendering/render_node.hpp"
+#include "stdui/render/metal_renderer.hpp"
+#include "stdui/render/node.hpp"
 #include <doctest/doctest.h>
 #include <filesystem>
 

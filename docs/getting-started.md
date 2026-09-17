@@ -52,7 +52,7 @@ target_link_libraries(your_target PRIVATE stdui::stdui)
 View expressions describe UI structure. They are temporary descriptions, not the persistent UI itself:
 
 ```cpp
-#include <stdui/expressions.hpp>
+#include <stdui/core/expressions.hpp>
 
 auto greeting = stdui::text("Hello, World!");
 ```
@@ -142,9 +142,9 @@ stdui::dynamic_list(
 Here's a minimal example showing the core concepts:
 
 ```cpp
-#include <stdui/expressions.hpp>
-#include <stdui/layout.hpp>
-#include <stdui/geometry.hpp>
+#include <stdui/core/expressions.hpp>
+#include <stdui/core/layout.hpp>
+#include <stdui/core/geometry.hpp>
 
 int main() {
     // 1. Create a view expression

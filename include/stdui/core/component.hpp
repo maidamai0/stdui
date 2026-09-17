@@ -1,8 +1,8 @@
 #pragma once
 
-#include <stdui/expressions.hpp>
-#include <stdui/inspection.hpp>
-#include <stdui/state.hpp>
+#include <stdui/core/expressions.hpp>
+#include <stdui/core/inspection.hpp>
+#include <stdui/core/state.hpp>
 
 #include <cstddef>
 #include <functional>

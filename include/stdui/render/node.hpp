@@ -10,9 +10,9 @@
 #include <variant>
 #include <vector>
 
-#include "stdui/color.hpp"
-#include "stdui/effects.hpp"
-#include "stdui/geometry.hpp"
+#include "stdui/core/color.hpp"
+#include "stdui/core/effects.hpp"
+#include "stdui/core/geometry.hpp"
 
 namespace stdui::rendering {
 

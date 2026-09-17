@@ -1,9 +1,9 @@
 #pragma once
 
-#include <stdui/geometry.hpp>
-#include <stdui/inspection.hpp>
-#include <stdui/layout.hpp>
-#include <stdui/overlay.hpp>
+#include <stdui/core/geometry.hpp>
+#include <stdui/core/inspection.hpp>
+#include <stdui/core/layout.hpp>
+#include <stdui/core/overlay.hpp>
 
 #include <algorithm>
 #include <functional>

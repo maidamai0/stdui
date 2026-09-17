@@ -1,6 +1,6 @@
 #pragma once
 
-#include <stdui/layout_options.hpp>
+#include <stdui/core/layout_options.hpp>
 
 #include <concepts>
 #include <string>

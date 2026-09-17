@@ -3,7 +3,7 @@
 
 #ifdef _WIN32
 
-#include "stdui/rendering/direct2d_renderer.hpp"
+#include "stdui/render/direct2d_renderer.hpp"
 #include <d2d1_1.h>
 #include <dwrite.h>
 #include <wincodec.h>

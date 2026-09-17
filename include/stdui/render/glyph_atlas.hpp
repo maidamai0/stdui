@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "stdui/geometry.hpp"
+#include "stdui/core/geometry.hpp"
 #include <cstdint>
 #include <string>
 #include <unordered_map>

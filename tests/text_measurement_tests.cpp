@@ -1,7 +1,7 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include <doctest/doctest.h>
 
-#include <stdui/text_measurement.hpp>
+#include <stdui/core/text_measurement.hpp>
 
 #include <memory>
 

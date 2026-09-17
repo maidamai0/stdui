@@ -1,9 +1,9 @@
 #pragma once
 
-#include <stdui/events.hpp>
-#include <stdui/geometry.hpp>
-#include <stdui/rendering.hpp>
-#include <stdui/text_measurement.hpp>
+#include <stdui/core/events.hpp>
+#include <stdui/core/geometry.hpp>
+#include <stdui/render/renderer.hpp>
+#include <stdui/core/text_measurement.hpp>
 
 #include <functional>
 #include <memory>

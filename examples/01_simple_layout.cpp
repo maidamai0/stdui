@@ -5,9 +5,9 @@
  * This is a headless example showing the DSL API.
  */
 
-#include <stdui/expressions.hpp>
-#include <stdui/layout.hpp>
-#include <stdui/geometry.hpp>
+#include <stdui/core/expressions.hpp>
+#include <stdui/core/layout.hpp>
+#include <stdui/core/geometry.hpp>
 
 #include <iostream>
 #include <string>

@@ -3,23 +3,24 @@
 
 #pragma once
 
-#include "stdui/rendering/renderer.hpp"
+#include "stdui/render/backend_renderer.hpp"
 
-#ifdef __APPLE__
+#ifdef _WIN32
 
-#include <Metal/Metal.h>
-#include <QuartzCore/CAMetalLayer.h>
+#include <d2d1.h>
+#include <dwrite.h>
+#include <memory>
 
 namespace stdui::rendering {
 
-/// Metal-based renderer for macOS/iOS
-class metal_renderer : public renderer {
+/// Direct2D-based renderer for Windows
+class direct2d_renderer : public renderer {
 public:
-    /// Create Metal renderer
+    /// Create Direct2D renderer
     /// @param viewport_size Initial viewport dimensions
-    /// @param metal_layer CAMetalLayer for rendering target
-    metal_renderer(size viewport_size, CAMetalLayer* metal_layer);
-    ~metal_renderer() override;
+    /// @param hwnd Window handle for rendering target
+    direct2d_renderer(size viewport_size, void* hwnd);
+    ~direct2d_renderer() override;
 
     void begin_frame() override;
     void render(const render_tree& tree) override;
@@ -44,4 +45,4 @@ private:
 
 }  // namespace stdui::rendering
 
-#endif  // __APPLE__
+#endif  // _WIN32

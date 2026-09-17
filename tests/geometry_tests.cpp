@@ -1,7 +1,7 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include <doctest/doctest.h>
 
-#include <stdui/geometry.hpp>
+#include <stdui/core/geometry.hpp>
 
 TEST_CASE("geometry value types are default constructed at the origin") {
   stdui::point point;

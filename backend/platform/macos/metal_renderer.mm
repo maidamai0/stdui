@@ -3,11 +3,11 @@
 
 #ifdef __APPLE__
 
-#include "stdui/rendering/metal_renderer.hpp"
-#include "stdui/rendering/glyph_atlas.hpp"
-#include "stdui/rendering/path_tessellator.hpp"
-#include "stdui/rendering/image_cache.hpp"
-#include "stdui/rendering/frustum_culler.hpp"
+#include "stdui/render/metal_renderer.hpp"
+#include "stdui/render/glyph_atlas.hpp"
+#include "stdui/render/path_tessellator.hpp"
+#include "stdui/render/image_cache.hpp"
+#include "stdui/render/frustum_culler.hpp"
 #include <simd/simd.h>
 #include <vector>
 

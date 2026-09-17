@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "stdui/geometry.hpp"
-#include "stdui/rendering/render_node.hpp"
+#include "stdui/core/geometry.hpp"
+#include "stdui/render/node.hpp"
 
 namespace stdui::rendering {
 

@@ -1,7 +1,7 @@
 #pragma once
 
-#include <stdui/expressions.hpp>
-#include <stdui/inspection.hpp>
+#include <stdui/core/expressions.hpp>
+#include <stdui/core/inspection.hpp>
 
 #include <any>
 #include <cstddef>

@@ -3,9 +3,9 @@
 
 #pragma once
 
-#include "stdui/rendering/render_node.hpp"
-#include "stdui/rendering/render_tree_builder.hpp"
-#include "stdui/geometry.hpp"
+#include "stdui/render/node.hpp"
+#include "stdui/render/tree_builder.hpp"
+#include "stdui/core/geometry.hpp"
 
 #include <memory>
 #include <cstdint>

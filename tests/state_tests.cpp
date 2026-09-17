@@ -1,8 +1,8 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include <doctest/doctest.h>
 
-#include <stdui/expressions.hpp>
-#include <stdui/state.hpp>
+#include <stdui/core/expressions.hpp>
+#include <stdui/core/state.hpp>
 
 TEST_CASE("state_storage: can allocate and retrieve values") {
   stdui::state_storage storage;

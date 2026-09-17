@@ -1,6 +1,6 @@
 #pragma once
 
-#include <stdui/events.hpp>
+#include <stdui/core/events.hpp>
 
 #include <chrono>
 #include <cstddef>

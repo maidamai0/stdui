@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "stdui/rendering/render_node.hpp"
-#include "stdui/geometry.hpp"
+#include "stdui/render/node.hpp"
+#include "stdui/core/geometry.hpp"
 #include <vector>
 
 #ifdef __APPLE__

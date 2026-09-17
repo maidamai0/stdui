@@ -5,8 +5,8 @@
  * Shows how to build lists from runtime data.
  */
 
-#include <stdui/expressions.hpp>
-#include <stdui/component.hpp>
+#include <stdui/core/expressions.hpp>
+#include <stdui/core/component.hpp>
 
 #include <iostream>
 #include <string>

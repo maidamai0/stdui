@@ -1,7 +1,7 @@
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 // Copyright (c) 2026 stdui
 // SPDX-License-Identifier: MIT
 
-#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include <doctest/doctest.h>
 
 #include "stdui/rendering/render_tree_builder.hpp"
@@ -108,6 +108,39 @@ TEST_CASE("render_node - basic properties") {
 
         REQUIRE(node->properties().content == "Hello, World!");
         REQUIRE(node->properties().font_size == 16.0f);
+    }
+
+    SUBCASE("Path node") {
+        path_properties props;
+        props.commands = {1, 2, 3};
+        props.points = {point{0, 0}, point{10, 0}, point{0, 10}};
+        props.fill_color = color::green_color();
+        props.stroke_color = color::black();
+        props.stroke_width = 2.0f;
+
+        path_node node(props);
+        REQUIRE(node.type() == render_node_type::path);
+        REQUIRE(node.properties().commands.size() == 3);
+        REQUIRE(node.properties().points.size() == 3);
+        REQUIRE(node.properties().stroke_width == 2.0f);
+
+        node.properties().stroke_width = 4.0f;
+        REQUIRE(node.properties().stroke_width == 4.0f);
+    }
+
+    SUBCASE("Image node") {
+        image_properties props;
+        props.bounds = rect{{10, 20}, {30, 40}};
+        props.texture_id = 42;
+        props.opacity = 0.5f;
+
+        image_node node(props);
+        REQUIRE(node.type() == render_node_type::image);
+        REQUIRE(node.properties().texture_id == 42);
+        REQUIRE(node.properties().opacity == 0.5f);
+
+        node.properties().opacity = 0.75f;
+        REQUIRE(node.properties().opacity == 0.75f);
     }
 
     SUBCASE("Group node") {

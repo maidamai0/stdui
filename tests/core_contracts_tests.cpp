@@ -17,6 +17,25 @@ TEST_CASE("core color exposes logical channels") {
   CHECK(value.alpha == doctest::Approx(0.4f));
 }
 
+TEST_CASE("core color supplies standard values") {
+  CHECK(stdui::color::black() == stdui::color{0.0f, 0.0f, 0.0f, 1.0f});
+  CHECK(stdui::color::white() == stdui::color{1.0f, 1.0f, 1.0f, 1.0f});
+  CHECK(stdui::color::red_color() == stdui::color{1.0f, 0.0f, 0.0f, 1.0f});
+  CHECK(stdui::color::green_color() == stdui::color{0.0f, 1.0f, 0.0f, 1.0f});
+  CHECK(stdui::color::blue_color() == stdui::color{0.0f, 0.0f, 1.0f, 1.0f});
+  CHECK(stdui::color::transparent() == stdui::color{0.0f, 0.0f, 0.0f, 0.0f});
+}
+
+TEST_CASE("core color converts between byte and packed representations") {
+  auto color = stdui::color::from_rgb(255, 128, 0, 64);
+
+  CHECK(color.red == doctest::Approx(1.0f));
+  CHECK(color.green == doctest::Approx(128.0f / 255.0f));
+  CHECK(color.blue == doctest::Approx(0.0f));
+  CHECK(color.alpha == doctest::Approx(64.0f / 255.0f));
+  CHECK(color.to_rgba() == 0xFF800040U);
+}
+
 TEST_CASE("core effects describe requested behavior") {
   stdui::visual_effect effect = stdui::shadow_effect{
       .offset = {2.0, 3.0},

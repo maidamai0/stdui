@@ -8,6 +8,8 @@
 #include "stdui/rendering/render_node.hpp"
 #include "stdui/layout_tree.hpp"
 
+#include <variant>
+
 using namespace stdui;
 using namespace stdui::rendering;
 
@@ -72,6 +74,21 @@ TEST_CASE("render_tree_builder - children") {
 }
 
 TEST_CASE("render_node - basic properties") {
+    SUBCASE("Default node constructors") {
+        REQUIRE(rectangle_node{}.type() == render_node_type::rectangle);
+        REQUIRE(text_node{}.type() == render_node_type::text);
+        REQUIRE(path_node{}.type() == render_node_type::path);
+        REQUIRE(image_node{}.type() == render_node_type::image);
+        REQUIRE(group_node{}.type() == render_node_type::group);
+        REQUIRE(effect_node{}.type() == render_node_type::effect);
+        REQUIRE(scene_view_node{}.type() == render_node_type::scene_view);
+
+        mat3 identity = mat3::identity();
+        REQUIRE(identity.m[0] == 1.0f);
+        REQUIRE(identity.m[4] == 1.0f);
+        REQUIRE(identity.m[8] == 1.0f);
+    }
+
     SUBCASE("Rectangle node") {
         auto node = std::make_shared<rectangle_node>();
 
@@ -170,6 +187,8 @@ TEST_CASE("render_node - basic properties") {
         auto child = std::make_shared<rectangle_node>();
         effect->set_child(child);
 
+        REQUIRE(effect->effect() == effect_type::blur);
+        REQUIRE(std::holds_alternative<blur_effect>(effect->parameters()));
         REQUIRE(effect->child() != nullptr);
     }
 

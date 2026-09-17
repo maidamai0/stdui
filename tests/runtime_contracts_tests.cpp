@@ -4,6 +4,7 @@
 #include <stdui/runtime_contracts.hpp>
 
 #include <chrono>
+#include <memory>
 
 namespace {
 
@@ -51,4 +52,15 @@ TEST_CASE("frame scheduler requests frames without platform dependencies") {
   scheduler.request_frame();
 
   CHECK(scheduler.frame_requests == 2);
+}
+
+TEST_CASE("runtime contracts support polymorphic ownership") {
+  std::unique_ptr<stdui::runtime_clock> clock = std::make_unique<stdui::manual_clock>();
+  std::unique_ptr<stdui::event_source> source = std::make_unique<stdui::queued_event_source>();
+  std::unique_ptr<stdui::frame_scheduler> scheduler =
+      std::make_unique<manual_frame_scheduler>();
+
+  CHECK(clock->now() == stdui::runtime_time::zero());
+  CHECK_FALSE(source->poll().has_value());
+  CHECK_NOTHROW(scheduler->request_frame());
 }

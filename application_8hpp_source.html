@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Standard UI: include/stdui/application.hpp Source File</title>
+<title>Standard UI: include/stdui/runtime/application.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -103,10 +103,10 @@ $(document).ready(function(){initNavTree('application_8hpp_source.html',''); ini
 <div class="contents">
 <a href="application_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;<a class="code" href="component_8hpp.html">stdui/component.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;<a class="code" href="inspection_8hpp.html">stdui/inspection.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;<a class="code" href="layout__tree_8hpp.html">stdui/layout_tree.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;<a class="code" href="platform_8hpp.html">stdui/platform.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;<a class="code" href="component_8hpp.html">stdui/core/component.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;<a class="code" href="inspection_8hpp.html">stdui/core/inspection.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;<a class="code" href="layout__tree_8hpp.html">stdui/core/layout_tree.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;<a class="code" href="platform_8hpp.html">stdui/platform/platform.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
@@ -282,7 +282,7 @@ $(document).ready(function(){initNavTree('application_8hpp_source.html',''); ini
 <div class="ttc" id="aclassstdui_1_1platform_html_a497152f0dec92d5a4156b48e0d221e7d"><div class="ttname"><a href="classstdui_1_1platform.html#a497152f0dec92d5a4156b48e0d221e7d">stdui::platform::create_window</a></div><div class="ttdeci">virtual auto create_window(stdui::size size, std::string const &amp;title) -&gt; std::unique_ptr&lt; platform_window &gt;=0</div><div class="ttdoc">Creates a new window with the specified size and title.</div></div>
 <div class="ttc" id="aclassstdui_1_1platform_html_a85320b66fefafd293a3e1e52c0ed30e0"><div class="ttname"><a href="classstdui_1_1platform.html#a85320b66fefafd293a3e1e52c0ed30e0">stdui::platform::initialize</a></div><div class="ttdeci">virtual void initialize()=0</div><div class="ttdoc">Initializes the platform backend. Must be called before creating windows.</div></div>
 <div class="ttc" id="aclassstdui_1_1platform_html_ad0984c152c8814038984341be6bd3598"><div class="ttname"><a href="classstdui_1_1platform.html#ad0984c152c8814038984341be6bd3598">stdui::platform::run_event_loop</a></div><div class="ttdeci">virtual void run_event_loop()=0</div><div class="ttdoc">Runs the platform event loop (blocks until all windows are closed).</div></div>
-<div class="ttc" id="aclassstdui_1_1renderer_html"><div class="ttname"><a href="classstdui_1_1renderer.html">stdui::renderer</a></div><div class="ttdoc">Platform-agnostic rendering interface.</div><div class="ttdef"><b>Definition</b> <a href="rendering_8hpp_source.html#l00035">rendering.hpp:35</a></div></div>
+<div class="ttc" id="aclassstdui_1_1renderer_html"><div class="ttname"><a href="classstdui_1_1renderer.html">stdui::renderer</a></div><div class="ttdoc">Platform-agnostic rendering interface.</div><div class="ttdef"><b>Definition</b> <a href="renderer_8hpp_source.html#l00035">renderer.hpp:35</a></div></div>
 <div class="ttc" id="aclassstdui_1_1renderer_html_a159facff6b39c63fbc5453660d0e3aa2"><div class="ttname"><a href="classstdui_1_1renderer.html#a159facff6b39c63fbc5453660d0e3aa2">stdui::renderer::end_frame</a></div><div class="ttdeci">virtual void end_frame()=0</div><div class="ttdoc">Ends the current rendering frame and presents to the display.</div></div>
 <div class="ttc" id="aclassstdui_1_1renderer_html_a40f31d996b95a3ac7b3acd96a115c480"><div class="ttname"><a href="classstdui_1_1renderer.html#a40f31d996b95a3ac7b3acd96a115c480">stdui::renderer::begin_frame</a></div><div class="ttdeci">virtual void begin_frame()=0</div><div class="ttdoc">Begins a new rendering frame. Must be called before any draw operations.</div></div>
 <div class="ttc" id="aclassstdui_1_1renderer_html_a7dc43dcb34594c23b9951fe72f1fa6d5"><div class="ttname"><a href="classstdui_1_1renderer.html#a7dc43dcb34594c23b9951fe72f1fa6d5">stdui::renderer::draw_text</a></div><div class="ttdeci">virtual void draw_text(std::string_view text, point const &amp;position, font_descriptor const &amp;font, color const &amp;text_color)=0</div><div class="ttdoc">Draws text at the specified position.</div></div>
@@ -319,7 +319,7 @@ $(document).ready(function(){initNavTree('application_8hpp_source.html',''); ini
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_6022ca169143dfd2dedcc1052b0bd7aa.html">stdui</a></li><li class="navelem"><a class="el" href="application_8hpp.html">application.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_6022ca169143dfd2dedcc1052b0bd7aa.html">stdui</a></li><li class="navelem"><a class="el" href="dir_1bce9c8b58ab52a23e54c67ea92194c2.html">runtime</a></li><li class="navelem"><a class="el" href="application_8hpp.html">application.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

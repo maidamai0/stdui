@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Standard UI: include/stdui/component.hpp Source File</title>
+<title>Standard UI: include/stdui/core/component.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -103,9 +103,9 @@ $(document).ready(function(){initNavTree('component_8hpp_source.html',''); initR
 <div class="contents">
 <a href="component_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;<a class="code" href="expressions_8hpp.html">stdui/expressions.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;<a class="code" href="inspection_8hpp.html">stdui/inspection.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;<a class="code" href="state_8hpp.html">stdui/state.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;<a class="code" href="expressions_8hpp.html">stdui/core/expressions.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;<a class="code" href="inspection_8hpp.html">stdui/core/inspection.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;<a class="code" href="state_8hpp.html">stdui/core/state.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
@@ -221,7 +221,7 @@ $(document).ready(function(){initNavTree('component_8hpp_source.html',''); initR
 <div class="ttc" id="aclassstdui_1_1component__base_html_a84fdb1f54ed11a98131a3c6bfa961941"><div class="ttname"><a href="classstdui_1_1component__base.html#a84fdb1f54ed11a98131a3c6bfa961941">stdui::component_base::instance_id</a></div><div class="ttdeci">virtual auto instance_id() const -&gt; std::size_t</div><div class="ttdoc">Returns a unique instance ID for this component (default: based on address).</div><div class="ttdef"><b>Definition</b> <a href="component_8hpp_source.html#l00060">component.hpp:60</a></div></div>
 <div class="ttc" id="aclassstdui_1_1component__base_html_ab3a706e89f724173903c79019d9adf7e"><div class="ttname"><a href="classstdui_1_1component__base.html#ab3a706e89f724173903c79019d9adf7e">stdui::component_base::type_id</a></div><div class="ttdeci">virtual auto type_id() const -&gt; std::type_index=0</div><div class="ttdoc">Returns the component's type index for identity tracking.</div></div>
 <div class="ttc" id="aclassstdui_1_1component__base_html_ad59dfc0b8543588e024c8ae2629d2fdf"><div class="ttname"><a href="classstdui_1_1component__base.html#ad59dfc0b8543588e024c8ae2629d2fdf">stdui::component_base::~component_base</a></div><div class="ttdeci">virtual ~component_base()=default</div></div>
-<div class="ttc" id="aclassstdui_1_1component__context_html"><div class="ttname"><a href="classstdui_1_1component__context.html">stdui::component_context</a></div><div class="ttdoc">Runtime services available while evaluating one component body.</div><div class="ttdef"><b>Definition</b> <a href="runtime_8hpp_source.html#l00068">runtime.hpp:68</a></div></div>
+<div class="ttc" id="aclassstdui_1_1component__context_html"><div class="ttname"><a href="classstdui_1_1component__context.html">stdui::component_context</a></div><div class="ttdoc">Context provided to component bodies during evaluation.</div><div class="ttdef"><b>Definition</b> <a href="state_8hpp_source.html#l00118">state.hpp:118</a></div></div>
 <div class="ttc" id="aclassstdui_1_1component__evaluator_html"><div class="ttname"><a href="classstdui_1_1component__evaluator.html">stdui::component_evaluator</a></div><div class="ttdoc">Component evaluator.</div><div class="ttdef"><b>Definition</b> <a href="component_8hpp_source.html#l00106">component.hpp:106</a></div></div>
 <div class="ttc" id="aclassstdui_1_1component__evaluator_html_a3e39ef453d04cb2617c6f93f990c0e60"><div class="ttname"><a href="classstdui_1_1component__evaluator.html#a3e39ef453d04cb2617c6f93f990c0e60">stdui::component_evaluator::component_evaluator</a></div><div class="ttdeci">component_evaluator(component_registry &amp;registry)</div><div class="ttdef"><b>Definition</b> <a href="component_8hpp_source.html#l00108">component.hpp:108</a></div></div>
 <div class="ttc" id="aclassstdui_1_1component__evaluator_html_a6ad14948ed056d3c9ac2bb8cd9f45fb7"><div class="ttname"><a href="classstdui_1_1component__evaluator.html#a6ad14948ed056d3c9ac2bb8cd9f45fb7">stdui::component_evaluator::registry_</a></div><div class="ttdeci">component_registry &amp; registry_</div><div class="ttdef"><b>Definition</b> <a href="component_8hpp_source.html#l00121">component.hpp:121</a></div></div>
@@ -253,7 +253,7 @@ $(document).ready(function(){initNavTree('component_8hpp_source.html',''); initR
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_6022ca169143dfd2dedcc1052b0bd7aa.html">stdui</a></li><li class="navelem"><a class="el" href="component_8hpp.html">component.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_6022ca169143dfd2dedcc1052b0bd7aa.html">stdui</a></li><li class="navelem"><a class="el" href="dir_d8b4bea323be8bbd05e557889b77a210.html">core</a></li><li class="navelem"><a class="el" href="component_8hpp.html">component.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

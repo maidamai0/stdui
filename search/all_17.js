@@ -15,13 +15,14 @@ var searchData=
   ['no_20mandatory_20component_20base_20class_12',['D008 — Components are primarily functions/expressions; no mandatory Component base class',['../design_decisions.html#autotoc_md26',1,'']]],
   ['node_20tree_13',['Step 5.6.1: Semantic node tree',['../md_docs_2DETAILED__PLAN.html#autotoc_md123',1,'']]],
   ['node_20type_20support_14',['Node Type Support',['../md_docs_2phase4_82-status.html#autotoc_md389',1,'']]],
-  ['normal_15',['normal',['../structstdui_1_1font__descriptor.html#abc36bac704e8ac62728871f8c004c3a4afea087517c26fadd409bd4b9dc642555',1,'stdui::font_descriptor']]],
-  ['not_20fixed_20yet_16',['15. What is deliberately not fixed yet',['../architecture.html#autotoc_md16',1,'']]],
-  ['not_20started_2010_20of_20phase_17',['not started 10 of phase',['../md_docs_2phase4_82-final-status.html#autotoc_md378',1,'Advanced Features (Not Started - 10% of phase)'],['../md_docs_2phase4_82-final-status.html#autotoc_md376',1,'Image Rendering (Not Started - 10% of phase)']]],
-  ['not_20started_2015_20of_20phase_18',['Effect Rendering (Not Started - 15% of phase)',['../md_docs_2phase4_82-final-status.html#autotoc_md377',1,'']]],
-  ['now_19',['now',['../classstdui_1_1manual__clock.html#adc4e798be039f3461cc657e711462c10',1,'stdui::manual_clock::now()'],['../classstdui_1_1runtime__clock.html#ac1730accd7016cd52d2aabe55d7e81bf',1,'stdui::runtime_clock::now()']]],
-  ['now_5f_20',['now_',['../classstdui_1_1manual__clock.html#afd12d900aa10844188ad70ae233cd808',1,'stdui::manual_clock']]],
-  ['null_5fplatform_21',['null_platform',['../classstdui_1_1null__platform.html',1,'stdui']]],
-  ['null_5frenderer_22',['null_renderer',['../classstdui_1_1null__renderer.html#aa3ac07e744ab0cea3f848a9fb40b0b6a',1,'stdui::null_renderer::null_renderer()'],['../classstdui_1_1null__renderer.html',1,'stdui::null_renderer']]],
-  ['null_5fwindow_23',['null_window',['../classstdui_1_1null__window.html#af112c7052a6f7e7f3d087bdca7b96649',1,'stdui::null_window::null_window()'],['../classstdui_1_1null__window.html',1,'stdui::null_window']]]
+  ['node_2ehpp_15',['node.hpp',['../node_8hpp.html',1,'']]],
+  ['normal_16',['normal',['../structstdui_1_1font__descriptor.html#abc36bac704e8ac62728871f8c004c3a4afea087517c26fadd409bd4b9dc642555',1,'stdui::font_descriptor']]],
+  ['not_20fixed_20yet_17',['15. What is deliberately not fixed yet',['../architecture.html#autotoc_md16',1,'']]],
+  ['not_20started_2010_20of_20phase_18',['not started 10 of phase',['../md_docs_2phase4_82-final-status.html#autotoc_md378',1,'Advanced Features (Not Started - 10% of phase)'],['../md_docs_2phase4_82-final-status.html#autotoc_md376',1,'Image Rendering (Not Started - 10% of phase)']]],
+  ['not_20started_2015_20of_20phase_19',['Effect Rendering (Not Started - 15% of phase)',['../md_docs_2phase4_82-final-status.html#autotoc_md377',1,'']]],
+  ['now_20',['now',['../classstdui_1_1manual__clock.html#adc4e798be039f3461cc657e711462c10',1,'stdui::manual_clock::now()'],['../classstdui_1_1runtime__clock.html#ac1730accd7016cd52d2aabe55d7e81bf',1,'stdui::runtime_clock::now()']]],
+  ['now_5f_21',['now_',['../classstdui_1_1manual__clock.html#afd12d900aa10844188ad70ae233cd808',1,'stdui::manual_clock']]],
+  ['null_5fplatform_22',['null_platform',['../classstdui_1_1null__platform.html',1,'stdui']]],
+  ['null_5frenderer_23',['null_renderer',['../classstdui_1_1null__renderer.html#aa3ac07e744ab0cea3f848a9fb40b0b6a',1,'stdui::null_renderer::null_renderer()'],['../classstdui_1_1null__renderer.html',1,'stdui::null_renderer']]],
+  ['null_5fwindow_24',['null_window',['../classstdui_1_1null__window.html',1,'stdui::null_window'],['../classstdui_1_1null__window.html#af112c7052a6f7e7f3d087bdca7b96649',1,'stdui::null_window::null_window()']]]
 ];

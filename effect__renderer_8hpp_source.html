@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Standard UI: include/stdui/rendering/effect_renderer.hpp Source File</title>
+<title>Standard UI: include/stdui/render/effect_renderer.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,15 +106,14 @@ $(document).ready(function(){initNavTree('effect__renderer_8hpp_source.html','')
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="render__node_8hpp.html">stdui/rendering/render_node.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="geometry_8hpp.html">stdui/geometry.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="node_8hpp.html">stdui/render/node.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="geometry_8hpp.html">stdui/core/geometry.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifdef __APPLE__</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;Metal/Metal.h&gt;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="namespacestdui_1_1rendering.html">   13</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacestdui_1_1rendering.html">stdui::rendering</a> {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacestdui_1_1rendering.html">stdui::rendering</a> {</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#ifdef __APPLE__</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
@@ -132,9 +131,9 @@ $(document).ready(function(){initNavTree('effect__renderer_8hpp_source.html','')
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    id&lt;MTLTexture&gt; apply_shadow(</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        id&lt;MTLCommandBuffer&gt; command_buffer,</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        id&lt;MTLTexture&gt; source_texture,</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <a class="code hl_struct" href="structstdui_1_1rendering_1_1vec2.html">vec2</a> offset,</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        vec2 offset,</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordtype">float</span> blur_radius,</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <a class="code hl_struct" href="structstdui_1_1color.html">color</a> shadow_color</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        color shadow_color</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    );</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">private</span>:</div>
@@ -145,18 +144,15 @@ $(document).ready(function(){initNavTree('effect__renderer_8hpp_source.html','')
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#endif  </span><span class="comment">// __APPLE__</span></div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}  <span class="comment">// namespace stdui::rendering</span></div>
-</div>
 <div class="ttc" id="ageometry_8hpp_html"><div class="ttname"><a href="geometry_8hpp.html">geometry.hpp</a></div></div>
-<div class="ttc" id="anamespacestdui_1_1rendering_html"><div class="ttname"><a href="namespacestdui_1_1rendering.html">stdui::rendering</a></div><div class="ttdef"><b>Definition</b> <a href="effect__renderer_8hpp_source.html#l00013">effect_renderer.hpp:13</a></div></div>
-<div class="ttc" id="arender__node_8hpp_html"><div class="ttname"><a href="render__node_8hpp.html">render_node.hpp</a></div></div>
-<div class="ttc" id="astructstdui_1_1color_html"><div class="ttname"><a href="structstdui_1_1color.html">stdui::color</a></div><div class="ttdoc">Logical RGBA color with channels in the range [0, 1].</div><div class="ttdef"><b>Definition</b> <a href="color_8hpp_source.html#l00011">color.hpp:11</a></div></div>
-<div class="ttc" id="astructstdui_1_1rendering_1_1vec2_html"><div class="ttname"><a href="structstdui_1_1rendering_1_1vec2.html">stdui::rendering::vec2</a></div><div class="ttdoc">2D vector for offsets</div><div class="ttdef"><b>Definition</b> <a href="render__node_8hpp_source.html#l00020">render_node.hpp:20</a></div></div>
+<div class="ttc" id="anamespacestdui_1_1rendering_html"><div class="ttname"><a href="namespacestdui_1_1rendering.html">stdui::rendering</a></div><div class="ttdef"><b>Definition</b> <a href="backend__renderer_8hpp_source.html#l00013">backend_renderer.hpp:13</a></div></div>
+<div class="ttc" id="anode_8hpp_html"><div class="ttname"><a href="node_8hpp.html">node.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_6022ca169143dfd2dedcc1052b0bd7aa.html">stdui</a></li><li class="navelem"><a class="el" href="dir_68528bb82b63d788b3ce54a4829ed6e3.html">rendering</a></li><li class="navelem"><a class="el" href="effect__renderer_8hpp.html">effect_renderer.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_6022ca169143dfd2dedcc1052b0bd7aa.html">stdui</a></li><li class="navelem"><a class="el" href="dir_2b282e14bff065e1a5ef00ada784c368.html">render</a></li><li class="navelem"><a class="el" href="effect__renderer_8hpp.html">effect_renderer.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

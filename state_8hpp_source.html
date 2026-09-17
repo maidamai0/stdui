@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Standard UI: include/stdui/state.hpp Source File</title>
+<title>Standard UI: include/stdui/core/state.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -204,7 +204,8 @@ $(document).ready(function(){initNavTree('state_8hpp_source.html',''); initResiz
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>};</div>
 </div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="keyword">class </span><a class="code hl_class" href="classstdui_1_1component__context.html">component_context</a> {</div>
+<div class="foldopen" id="foldopen00118" data-start="{" data-end="};">
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="classstdui_1_1component__context.html">  118</a></span><span class="keyword">class </span><a class="code hl_class" href="classstdui_1_1component__context.html">component_context</a> {</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="classstdui_1_1component__context.html#a90f96b8c233d210b5c5895fa40027c35">  120</a></span>  <a class="code hl_function" href="classstdui_1_1component__context.html#a90f96b8c233d210b5c5895fa40027c35">component_context</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
@@ -237,9 +238,10 @@ $(document).ready(function(){initNavTree('state_8hpp_source.html',''); initResiz
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="classstdui_1_1component__context.html#ab02d7dafb9d93b45858ffed4e0ecfd83">  151</a></span>  std::function&lt;void()&gt; <a class="code hl_variable" href="classstdui_1_1component__context.html#ab02d7dafb9d93b45858ffed4e0ecfd83">on_state_change_</a>;</div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="classstdui_1_1component__context.html#a0175a6f2fb915b2f054f860161d78749">  152</a></span>  std::size_t <a class="code hl_variable" href="classstdui_1_1component__context.html#a0175a6f2fb915b2f054f860161d78749">current_slot_</a> = 0;</div>
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>};</div>
+</div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>} <span class="comment">// namespace stdui</span></div>
-<div class="ttc" id="aclassstdui_1_1component__context_html"><div class="ttname"><a href="classstdui_1_1component__context.html">stdui::component_context</a></div><div class="ttdoc">Runtime services available while evaluating one component body.</div><div class="ttdef"><b>Definition</b> <a href="runtime_8hpp_source.html#l00068">runtime.hpp:68</a></div></div>
+<div class="ttc" id="aclassstdui_1_1component__context_html"><div class="ttname"><a href="classstdui_1_1component__context.html">stdui::component_context</a></div><div class="ttdoc">Context provided to component bodies during evaluation.</div><div class="ttdef"><b>Definition</b> <a href="state_8hpp_source.html#l00118">state.hpp:118</a></div></div>
 <div class="ttc" id="aclassstdui_1_1component__context_html_a0175a6f2fb915b2f054f860161d78749"><div class="ttname"><a href="classstdui_1_1component__context.html#a0175a6f2fb915b2f054f860161d78749">stdui::component_context::current_slot_</a></div><div class="ttdeci">std::size_t current_slot_</div><div class="ttdef"><b>Definition</b> <a href="state_8hpp_source.html#l00152">state.hpp:152</a></div></div>
 <div class="ttc" id="aclassstdui_1_1component__context_html_a287b2aa6c5d88117d70e6223393418cb"><div class="ttname"><a href="classstdui_1_1component__context.html#a287b2aa6c5d88117d70e6223393418cb">stdui::component_context::storage_</a></div><div class="ttdeci">state_storage * storage_</div><div class="ttdef"><b>Definition</b> <a href="state_8hpp_source.html#l00150">state.hpp:150</a></div></div>
 <div class="ttc" id="aclassstdui_1_1component__context_html_a66eac219020461914d987efe959c9fba"><div class="ttname"><a href="classstdui_1_1component__context.html#a66eac219020461914d987efe959c9fba">stdui::component_context::component_context</a></div><div class="ttdeci">component_context(state_storage *storage, std::function&lt; void()&gt; on_state_change)</div><div class="ttdef"><b>Definition</b> <a href="state_8hpp_source.html#l00122">state.hpp:122</a></div></div>
@@ -271,7 +273,7 @@ $(document).ready(function(){initNavTree('state_8hpp_source.html',''); initResiz
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_6022ca169143dfd2dedcc1052b0bd7aa.html">stdui</a></li><li class="navelem"><a class="el" href="state_8hpp.html">state.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_6022ca169143dfd2dedcc1052b0bd7aa.html">stdui</a></li><li class="navelem"><a class="el" href="dir_d8b4bea323be8bbd05e557889b77a210.html">core</a></li><li class="navelem"><a class="el" href="state_8hpp.html">state.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

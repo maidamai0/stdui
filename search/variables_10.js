@@ -3,7 +3,7 @@ var searchData=
   ['radius_0',['radius',['../structstdui_1_1blur__effect.html#aab76bd1053ab3e93cb8a677dd21d84fb',1,'stdui::blur_effect']]],
   ['red_1',['red',['../structstdui_1_1color.html#a49c2a17745fa9c127cfc581c5233e4c0',1,'stdui::color']]],
   ['redraw_5fcallback_5f_2',['redraw_callback_',['../classstdui_1_1null__window.html#a7fef7bd3e321e1f0f78739ac6b1065c1',1,'stdui::null_window']]],
-  ['registry_5f_3',['registry_',['../classstdui_1_1application.html#a6ae75e3a53f31b349f6a3a13a805d61f',1,'stdui::application::registry_'],['../classstdui_1_1component__evaluator.html#a6ad14948ed056d3c9ac2bb8cd9f45fb7',1,'stdui::component_evaluator::registry_']]],
+  ['registry_5f_3',['registry_',['../classstdui_1_1component__evaluator.html#a6ad14948ed056d3c9ac2bb8cd9f45fb7',1,'stdui::component_evaluator::registry_'],['../classstdui_1_1application.html#a6ae75e3a53f31b349f6a3a13a805d61f',1,'stdui::application::registry_']]],
   ['renderer_5f_4',['renderer_',['../classstdui_1_1null__window.html#ac24c078abcea2c0bca1e076848dcd56e',1,'stdui::null_window']]],
   ['repeat_5',['repeat',['../structstdui_1_1animation__spec.html#a1ca1cf606cfaafa61f30dd0b6bf0efe5',1,'stdui::animation_spec']]],
   ['right_6',['right',['../structstdui_1_1edge__insets.html#aa27708387e1ddb2f4a98a241a715f1c4',1,'stdui::edge_insets']]],

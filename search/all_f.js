@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['family_0',['family',['../structstdui_1_1font__descriptor.html#afc55f4753e7a5b1367b0f88f28f97c9f',1,'stdui::font_descriptor::family'],['../structstdui_1_1rendering_1_1glyph__atlas_1_1font__key.html#a78faaffccf7eef3a839cee4cb1489ea8',1,'stdui::rendering::glyph_atlas::font_key::family']]],
+  ['family_0',['family',['../structstdui_1_1rendering_1_1glyph__atlas_1_1font__key.html#a78faaffccf7eef3a839cee4cb1489ea8',1,'stdui::rendering::glyph_atlas::font_key::family'],['../structstdui_1_1font__descriptor.html#afc55f4753e7a5b1367b0f88f28f97c9f',1,'stdui::font_descriptor::family']]],
   ['feature_20completeness_1',['4.4.3 Feature Completeness',['../md_docs_2phase4_84-plan.html#autotoc_md411',1,'']]],
   ['feature_20completeness_20⚠️_2',['Feature Completeness ⚠️',['../md_docs_2phase4-completion.html#autotoc_md273',1,'']]],
   ['features_3',['features',['../md_docs_2phase4-completion.html#autotoc_md300',1,'For Advanced Features'],['../md_docs_2phase4-completion.html#autotoc_md291',1,'Known Limitations &amp; Deferred Features']]],

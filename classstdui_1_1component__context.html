@@ -101,10 +101,10 @@ $(document).ready(function(){initNavTree('classstdui_1_1component__context.html'
 </div><!--header-->
 <div class="contents">
 
-<p>Runtime services available while evaluating one component body.  
+<p>Context provided to component bodies during evaluation.  
  <a href="classstdui_1_1component__context.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="runtime_8hpp_source.html">runtime.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="state_8hpp_source.html">state.hpp</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for stdui::component_context:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -156,14 +156,81 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a287b2aa6c5d88117d70e6223393418cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Runtime services available while evaluating one component body. </p>
-<p>Context provided to component bodies during evaluation.</p>
+<div class="textblock"><p>Context provided to component bodies during evaluation. </p>
+<p>Runtime services available while evaluating one component body.</p>
 <p>Provides access to framework-managed state and other contextual services. </p>
 
-<p class="definition">Definition at line <a class="el" href="runtime_8hpp_source.html#l00068">68</a> of file <a class="el" href="runtime_8hpp_source.html">runtime.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="state_8hpp_source.html#l00118">118</a> of file <a class="el" href="state_8hpp_source.html">state.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a90f96b8c233d210b5c5895fa40027c35" name="a90f96b8c233d210b5c5895fa40027c35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90f96b8c233d210b5c5895fa40027c35">&#9670;&#160;</a></span>component_context() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">stdui::component_context::component_context </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a66eac219020461914d987efe959c9fba" name="a66eac219020461914d987efe959c9fba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66eac219020461914d987efe959c9fba">&#9670;&#160;</a></span>component_context() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">stdui::component_context::component_context </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classstdui_1_1state__storage.html">state_storage</a> *&#160;</td>
+          <td class="paramname"><em>storage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; void()&gt;&#160;</td>
+          <td class="paramname"><em>on_state_change</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="state_8hpp_source.html#l00122">122</a> of file <a class="el" href="state_8hpp_source.html">state.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  123</span>      : <a class="code hl_variable" href="classstdui_1_1component__context.html#a287b2aa6c5d88117d70e6223393418cb">storage_</a>(storage), <a class="code hl_variable" href="classstdui_1_1component__context.html#ab02d7dafb9d93b45858ffed4e0ecfd83">on_state_change_</a>(std::move(on_state_change)), <a class="code hl_variable" href="classstdui_1_1component__context.html#a0175a6f2fb915b2f054f860161d78749">current_slot_</a>(0) {}</div>
+<div class="ttc" id="aclassstdui_1_1component__context_html_a0175a6f2fb915b2f054f860161d78749"><div class="ttname"><a href="classstdui_1_1component__context.html#a0175a6f2fb915b2f054f860161d78749">stdui::component_context::current_slot_</a></div><div class="ttdeci">std::size_t current_slot_</div><div class="ttdef"><b>Definition</b> <a href="state_8hpp_source.html#l00152">state.hpp:152</a></div></div>
+<div class="ttc" id="aclassstdui_1_1component__context_html_a287b2aa6c5d88117d70e6223393418cb"><div class="ttname"><a href="classstdui_1_1component__context.html#a287b2aa6c5d88117d70e6223393418cb">stdui::component_context::storage_</a></div><div class="ttdeci">state_storage * storage_</div><div class="ttdef"><b>Definition</b> <a href="state_8hpp_source.html#l00150">state.hpp:150</a></div></div>
+<div class="ttc" id="aclassstdui_1_1component__context_html_ab02d7dafb9d93b45858ffed4e0ecfd83"><div class="ttname"><a href="classstdui_1_1component__context.html#ab02d7dafb9d93b45858ffed4e0ecfd83">stdui::component_context::on_state_change_</a></div><div class="ttdeci">std::function&lt; void()&gt; on_state_change_</div><div class="ttdef"><b>Definition</b> <a href="state_8hpp_source.html#l00151">state.hpp:151</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a70b9d218a50d535b790ea3344d4e7609" name="a70b9d218a50d535b790ea3344d4e7609"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a70b9d218a50d535b790ea3344d4e7609">&#9670;&#160;</a></span>component_context() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a70b9d218a50d535b790ea3344d4e7609">&#9670;&#160;</a></span>component_context() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -215,73 +282,6 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aclassstdui_1_1component__context_html_a331ab9654218bcf4abafb15ad796638e"><div class="ttname"><a href="classstdui_1_1component__context.html#a331ab9654218bcf4abafb15ad796638e">stdui::component_context::context_</a></div><div class="ttdeci">evaluation_context &amp; context_</div><div class="ttdef"><b>Definition</b> <a href="runtime_8hpp_source.html#l00087">runtime.hpp:87</a></div></div>
 <div class="ttc" id="aclassstdui_1_1component__context_html_aca678f7980914eb3077b1260209362fc"><div class="ttname"><a href="classstdui_1_1component__context.html#aca678f7980914eb3077b1260209362fc">stdui::component_context::component_path_</a></div><div class="ttdeci">std::string component_path_</div><div class="ttdef"><b>Definition</b> <a href="runtime_8hpp_source.html#l00085">runtime.hpp:85</a></div></div>
 <div class="ttc" id="aclassstdui_1_1component__context_html_ad7955b0cb0fc706d6fd35def1df87b81"><div class="ttname"><a href="classstdui_1_1component__context.html#ad7955b0cb0fc706d6fd35def1df87b81">stdui::component_context::owner_</a></div><div class="ttdeci">runtime &amp; owner_</div><div class="ttdef"><b>Definition</b> <a href="runtime_8hpp_source.html#l00084">runtime.hpp:84</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a90f96b8c233d210b5c5895fa40027c35" name="a90f96b8c233d210b5c5895fa40027c35"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90f96b8c233d210b5c5895fa40027c35">&#9670;&#160;</a></span>component_context() <span class="overload">[2/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">stdui::component_context::component_context </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a66eac219020461914d987efe959c9fba" name="a66eac219020461914d987efe959c9fba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66eac219020461914d987efe959c9fba">&#9670;&#160;</a></span>component_context() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">stdui::component_context::component_context </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classstdui_1_1state__storage.html">state_storage</a> *&#160;</td>
-          <td class="paramname"><em>storage</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::function&lt; void()&gt;&#160;</td>
-          <td class="paramname"><em>on_state_change</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="state_8hpp_source.html#l00122">122</a> of file <a class="el" href="state_8hpp_source.html">state.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  123</span>      : <a class="code hl_variable" href="classstdui_1_1component__context.html#a287b2aa6c5d88117d70e6223393418cb">storage_</a>(storage), <a class="code hl_variable" href="classstdui_1_1component__context.html#ab02d7dafb9d93b45858ffed4e0ecfd83">on_state_change_</a>(std::move(on_state_change)), <a class="code hl_variable" href="classstdui_1_1component__context.html#a0175a6f2fb915b2f054f860161d78749">current_slot_</a>(0) {}</div>
-<div class="ttc" id="aclassstdui_1_1component__context_html_a0175a6f2fb915b2f054f860161d78749"><div class="ttname"><a href="classstdui_1_1component__context.html#a0175a6f2fb915b2f054f860161d78749">stdui::component_context::current_slot_</a></div><div class="ttdeci">std::size_t current_slot_</div><div class="ttdef"><b>Definition</b> <a href="state_8hpp_source.html#l00152">state.hpp:152</a></div></div>
-<div class="ttc" id="aclassstdui_1_1component__context_html_a287b2aa6c5d88117d70e6223393418cb"><div class="ttname"><a href="classstdui_1_1component__context.html#a287b2aa6c5d88117d70e6223393418cb">stdui::component_context::storage_</a></div><div class="ttdeci">state_storage * storage_</div><div class="ttdef"><b>Definition</b> <a href="state_8hpp_source.html#l00150">state.hpp:150</a></div></div>
-<div class="ttc" id="aclassstdui_1_1component__context_html_ab02d7dafb9d93b45858ffed4e0ecfd83"><div class="ttname"><a href="classstdui_1_1component__context.html#ab02d7dafb9d93b45858ffed4e0ecfd83">stdui::component_context::on_state_change_</a></div><div class="ttdeci">std::function&lt; void()&gt; on_state_change_</div><div class="ttdef"><b>Definition</b> <a href="state_8hpp_source.html#l00151">state.hpp:151</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -670,8 +670,8 @@ template&lt;class T &gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>include/stdui/<a class="el" href="runtime_8hpp_source.html">runtime.hpp</a></li>
-<li>include/stdui/<a class="el" href="state_8hpp_source.html">state.hpp</a></li>
+<li>include/stdui/core/<a class="el" href="state_8hpp_source.html">state.hpp</a></li>
+<li>include/stdui/runtime/<a class="el" href="runtime_8hpp_source.html">runtime.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

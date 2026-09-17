@@ -1,5 +1,10 @@
 var NAVTREEINDEX4 =
 {
+"md_docs_2DETAILED__PLAN.html#autotoc_md174":[1,9,0],
+"md_docs_2DETAILED__PLAN.html#autotoc_md175":[1,9,1],
+"md_docs_2DETAILED__PLAN.html#autotoc_md176":[1,9,2],
+"md_docs_2DETAILED__PLAN.html#autotoc_md178":[1,10],
+"md_docs_2DETAILED__PLAN.html#autotoc_md179":[1,10,0],
 "md_docs_2DETAILED__PLAN.html#autotoc_md180":[1,10,1],
 "md_docs_2DETAILED__PLAN.html#autotoc_md181":[1,10,2],
 "md_docs_2DETAILED__PLAN.html#autotoc_md182":[1,10,3],
@@ -235,8 +240,8 @@ var NAVTREEINDEX4 =
 "md_docs_2phase4_84-plan.html#autotoc_md420":[7,6],
 "md_docs_2phase4_84-plan.html#autotoc_md421":[7,7],
 "md_docs_2phase4_84-plan.html#autotoc_md422":[7,8],
-"metal__renderer_8hpp.html":[11,0,1,0,0,5],
-"metal__renderer_8hpp_source.html":[11,0,1,0,0,5],
+"metal__renderer_8hpp.html":[11,0,1,0,2,6],
+"metal__renderer_8hpp_source.html":[11,0,1,0,2,6],
 "namespacemembers.html":[8,1,0],
 "namespacemembers_enum.html":[8,1,3],
 "namespacemembers_func.html":[8,1,1],
@@ -244,10 +249,5 @@ var NAVTREEINDEX4 =
 "namespaces.html":[8,0],
 "namespacestd.html":[8,0,0],
 "namespacestdui.html":[8,0,1],
-"namespacestdui.html#a003ae783c60292ba4e2902838708632c":[8,0,1,129],
-"namespacestdui.html#a00de523937a109fda1db1ba08e6bd151":[8,0,1,113],
-"namespacestdui.html#a072d1995896773753468fbd235914909":[8,0,1,116],
-"namespacestdui.html#a0778e0af0f8bf7e13a66e65c71e0ed29":[8,0,1,95],
-"namespacestdui.html#a0778e0af0f8bf7e13a66e65c71e0ed29a104827712279d9ce937fb0c4f46766b1":[8,0,1,95,3],
-"namespacestdui.html#a0778e0af0f8bf7e13a66e65c71e0ed29a1818d506396d77b3d035f719885c4cd1":[8,0,1,95,4]
+"namespacestdui.html#a003ae783c60292ba4e2902838708632c":[8,0,1,129]
 };

@@ -5,7 +5,7 @@ var searchData=
   ['selected_2',['selected',['../structstdui_1_1semantic__state.html#a8305e5d7999062da19ad62ac1b283a90',1,'stdui::semantic_state']]],
   ['shadow_5fcolor_3',['shadow_color',['../structstdui_1_1shadow__effect.html#a1c33c9d16bbf251639bdbaf903e1cbc6',1,'stdui::shadow_effect']]],
   ['shift_4',['shift',['../structstdui_1_1keyboard__modifiers.html#abf5c75753fac9880a6eb544b0039feb6',1,'stdui::keyboard_modifiers']]],
-  ['size_5',['size',['../structstdui_1_1rendering_1_1glyph__atlas_1_1font__key.html#a807424b72a30cccf69910f061cfe6d71',1,'stdui::rendering::glyph_atlas::font_key::size'],['../structstdui_1_1font__descriptor.html#a577d1fe0ff995a328fde40bfa47645ec',1,'stdui::font_descriptor::size']]],
+  ['size_5',['size',['../structstdui_1_1font__descriptor.html#a577d1fe0ff995a328fde40bfa47645ec',1,'stdui::font_descriptor::size'],['../structstdui_1_1rendering_1_1glyph__atlas_1_1font__key.html#a807424b72a30cccf69910f061cfe6d71',1,'stdui::rendering::glyph_atlas::font_key::size']]],
   ['size_5f_6',['size_',['../classstdui_1_1null__window.html#a7a548cf1a3aff3bd97736420c7f43e0e',1,'stdui::null_window']]],
   ['slots_5f_7',['slots_',['../classstdui_1_1state__storage.html#ac0ec85d3494416149320a7747d398f55',1,'stdui::state_storage']]],
   ['spacing_8',['spacing',['../structstdui_1_1stack__options.html#a66fe900c7dcabebd735dd8ccbde0db24',1,'stdui::stack_options']]],

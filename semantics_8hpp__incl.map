@@ -1,7 +1,7 @@
-<map id="include/stdui/semantics.hpp" name="include/stdui/semantics.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,209,31"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="35,79,94,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,32,81,68,76,66,98,30"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="119,79,181,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="117,30,138,66,134,68,112,32"/>
+<map id="include/stdui/core/semantics.hpp" name="include/stdui/core/semantics.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="9,5,146,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,64,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="69,47,50,83,45,80,65,44"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="89,93,151,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="90,44,110,80,105,83,85,47"/>
 </map>

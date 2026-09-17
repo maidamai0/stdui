@@ -1,5 +1,5 @@
-<map id="include/stdui/color.hpp" name="include/stdui/color.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,173,31"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="56,79,123,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,31,92,65,87,65,87,31"/>
+<map id="include/stdui/core/color.hpp" name="include/stdui/core/color.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,143,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="41,93,107,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="77,46,77,79,71,79,71,46"/>
 </map>

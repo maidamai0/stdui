@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Standard UI: include/stdui/runtime.hpp Source File</title>
+<title>Standard UI: include/stdui/runtime/runtime.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -103,8 +103,8 @@ $(document).ready(function(){initNavTree('runtime_8hpp_source.html',''); initRes
 <div class="contents">
 <a href="runtime_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;<a class="code" href="expressions_8hpp.html">stdui/expressions.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;<a class="code" href="inspection_8hpp.html">stdui/inspection.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;<a class="code" href="expressions_8hpp.html">stdui/core/expressions.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;<a class="code" href="inspection_8hpp.html">stdui/core/inspection.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;any&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
@@ -169,8 +169,7 @@ $(document).ready(function(){initNavTree('runtime_8hpp_source.html',''); initRes
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>};</div>
 </div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="foldopen" id="foldopen00068" data-start="{" data-end="};">
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="classstdui_1_1component__context.html">   68</a></span><span class="keyword">class </span><a class="code hl_class" href="classstdui_1_1component__context.html">component_context</a> {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="keyword">class </span><a class="code hl_class" href="classstdui_1_1component__context.html">component_context</a> {</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="keyword">public</span>:</div>
 <div class="foldopen" id="foldopen00070" data-start="{" data-end="}">
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classstdui_1_1component__context.html#a70b9d218a50d535b790ea3344d4e7609">   70</a></span>  <a class="code hl_function" href="classstdui_1_1component__context.html#a70b9d218a50d535b790ea3344d4e7609">component_context</a>(<a class="code hl_class" href="classstdui_1_1runtime.html">runtime</a> &amp;owner, std::string component_path, std::type_index component_kind,</div>
@@ -188,7 +187,6 @@ $(document).ready(function(){initNavTree('runtime_8hpp_source.html',''); initRes
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="classstdui_1_1component__context.html#a331ab9654218bcf4abafb15ad796638e">   87</a></span>  <a class="code hl_struct" href="structstdui_1_1evaluation__context.html">evaluation_context</a> &amp;<a class="code hl_variable" href="classstdui_1_1component__context.html#a331ab9654218bcf4abafb15ad796638e">context_</a>;</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="classstdui_1_1component__context.html#aa3db2219f300c31bf76c460475838ac0">   88</a></span>  std::unordered_set&lt;std::string&gt; <a class="code hl_variable" href="classstdui_1_1component__context.html#aa3db2219f300c31bf76c460475838ac0">state_names_</a>;</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>};</div>
-</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
 <div class="foldopen" id="foldopen00092" data-start="{" data-end="};">
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="classstdui_1_1runtime.html">   92</a></span><span class="keyword">class </span><a class="code hl_class" href="classstdui_1_1runtime.html">runtime</a> {</div>
@@ -396,7 +394,7 @@ $(document).ready(function(){initNavTree('runtime_8hpp_source.html',''); initRes
 </div>
 <div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
 <div class="foldopen" id="foldopen00271" data-start="{" data-end="}">
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno"><a class="line" href="classstdui_1_1component__context.html#a438b73990881efbe084bab06c66fc0bf">  271</a></span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; <a class="code hl_class" href="classstdui_1_1state__handle.html">state_handle&lt;T&gt;</a> <a class="code hl_function" href="classstdui_1_1component__context.html#a438b73990881efbe084bab06c66fc0bf">component_context::state</a>(std::string name, T initial_value) {</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno"><a class="line" href="classstdui_1_1component__context.html#a438b73990881efbe084bab06c66fc0bf">  271</a></span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; <a class="code hl_class" href="classstdui_1_1state__handle.html">state_handle&lt;T&gt;</a> <a class="code hl_function" href="classstdui_1_1component__context.html#af294858e21b90e5b0a4beb1f0bf723b2">component_context::state</a>(std::string name, T initial_value) {</div>
 <div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classstdui_1_1component__context.html#aa3db2219f300c31bf76c460475838ac0">state_names_</a>.insert(name).second) {</div>
 <div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;duplicate component state name&quot;</span>);</div>
 <div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>  }</div>
@@ -406,14 +404,14 @@ $(document).ready(function(){initNavTree('runtime_8hpp_source.html',''); initRes
 </div>
 <div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> </div>
 <div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>} <span class="comment">// namespace stdui</span></div>
-<div class="ttc" id="aclassstdui_1_1component__context_html"><div class="ttname"><a href="classstdui_1_1component__context.html">stdui::component_context</a></div><div class="ttdoc">Runtime services available while evaluating one component body.</div><div class="ttdef"><b>Definition</b> <a href="runtime_8hpp_source.html#l00068">runtime.hpp:68</a></div></div>
+<div class="ttc" id="aclassstdui_1_1component__context_html"><div class="ttname"><a href="classstdui_1_1component__context.html">stdui::component_context</a></div><div class="ttdoc">Context provided to component bodies during evaluation.</div><div class="ttdef"><b>Definition</b> <a href="state_8hpp_source.html#l00118">state.hpp:118</a></div></div>
 <div class="ttc" id="aclassstdui_1_1component__context_html_a27bc2c34c637779fee18bed6fc7e9492"><div class="ttname"><a href="classstdui_1_1component__context.html#a27bc2c34c637779fee18bed6fc7e9492">stdui::component_context::component_kind_</a></div><div class="ttdeci">std::type_index component_kind_</div><div class="ttdef"><b>Definition</b> <a href="runtime_8hpp_source.html#l00086">runtime.hpp:86</a></div></div>
 <div class="ttc" id="aclassstdui_1_1component__context_html_a331ab9654218bcf4abafb15ad796638e"><div class="ttname"><a href="classstdui_1_1component__context.html#a331ab9654218bcf4abafb15ad796638e">stdui::component_context::context_</a></div><div class="ttdeci">evaluation_context &amp; context_</div><div class="ttdef"><b>Definition</b> <a href="runtime_8hpp_source.html#l00087">runtime.hpp:87</a></div></div>
-<div class="ttc" id="aclassstdui_1_1component__context_html_a438b73990881efbe084bab06c66fc0bf"><div class="ttname"><a href="classstdui_1_1component__context.html#a438b73990881efbe084bab06c66fc0bf">stdui::component_context::state</a></div><div class="ttdeci">state_handle&lt; T &gt; state(std::string name, T initial_value=T{})</div><div class="ttdoc">Obtains or reuses a named component-local state object.</div><div class="ttdef"><b>Definition</b> <a href="runtime_8hpp_source.html#l00271">runtime.hpp:271</a></div></div>
 <div class="ttc" id="aclassstdui_1_1component__context_html_a70b9d218a50d535b790ea3344d4e7609"><div class="ttname"><a href="classstdui_1_1component__context.html#a70b9d218a50d535b790ea3344d4e7609">stdui::component_context::component_context</a></div><div class="ttdeci">component_context(runtime &amp;owner, std::string component_path, std::type_index component_kind, evaluation_context &amp;context)</div><div class="ttdef"><b>Definition</b> <a href="runtime_8hpp_source.html#l00070">runtime.hpp:70</a></div></div>
 <div class="ttc" id="aclassstdui_1_1component__context_html_aa3db2219f300c31bf76c460475838ac0"><div class="ttname"><a href="classstdui_1_1component__context.html#aa3db2219f300c31bf76c460475838ac0">stdui::component_context::state_names_</a></div><div class="ttdeci">std::unordered_set&lt; std::string &gt; state_names_</div><div class="ttdef"><b>Definition</b> <a href="runtime_8hpp_source.html#l00088">runtime.hpp:88</a></div></div>
 <div class="ttc" id="aclassstdui_1_1component__context_html_aca678f7980914eb3077b1260209362fc"><div class="ttname"><a href="classstdui_1_1component__context.html#aca678f7980914eb3077b1260209362fc">stdui::component_context::component_path_</a></div><div class="ttdeci">std::string component_path_</div><div class="ttdef"><b>Definition</b> <a href="runtime_8hpp_source.html#l00085">runtime.hpp:85</a></div></div>
 <div class="ttc" id="aclassstdui_1_1component__context_html_ad7955b0cb0fc706d6fd35def1df87b81"><div class="ttname"><a href="classstdui_1_1component__context.html#ad7955b0cb0fc706d6fd35def1df87b81">stdui::component_context::owner_</a></div><div class="ttdeci">runtime &amp; owner_</div><div class="ttdef"><b>Definition</b> <a href="runtime_8hpp_source.html#l00084">runtime.hpp:84</a></div></div>
+<div class="ttc" id="aclassstdui_1_1component__context_html_af294858e21b90e5b0a4beb1f0bf723b2"><div class="ttname"><a href="classstdui_1_1component__context.html#af294858e21b90e5b0a4beb1f0bf723b2">stdui::component_context::state</a></div><div class="ttdeci">auto state(T initial_value) -&gt; state&lt; T &gt;</div><div class="ttdoc">Creates or retrieves a persistent state handle.</div><div class="ttdef"><b>Definition</b> <a href="state_8hpp_source.html#l00131">state.hpp:131</a></div></div>
 <div class="ttc" id="aclassstdui_1_1runtime_html"><div class="ttname"><a href="classstdui_1_1runtime.html">stdui::runtime</a></div><div class="ttdoc">Owns persistent component state and reconciles expression updates.</div><div class="ttdef"><b>Definition</b> <a href="runtime_8hpp_source.html#l00092">runtime.hpp:92</a></div></div>
 <div class="ttc" id="aclassstdui_1_1runtime_html_a0cb1c701ae26b4b08ac6d244459f549f"><div class="ttname"><a href="classstdui_1_1runtime.html#a0cb1c701ae26b4b08ac6d244459f549f">stdui::runtime::evaluate_child</a></div><div class="ttdeci">auto evaluate_child(Child const &amp;child, std::string path, evaluation_context &amp;context)</div><div class="ttdef"><b>Definition</b> <a href="runtime_8hpp_source.html#l00233">runtime.hpp:233</a></div></div>
 <div class="ttc" id="aclassstdui_1_1runtime_html_a26fe642b108824b003e0515bee36e7da"><div class="ttname"><a href="classstdui_1_1runtime.html#a26fe642b108824b003e0515bee36e7da">stdui::runtime::reconcile</a></div><div class="ttdeci">inspection_node reconcile(Expression const &amp;expression)</div><div class="ttdoc">Evaluates a root expression and atomically commits its resulting state.</div><div class="ttdef"><b>Definition</b> <a href="runtime_8hpp_source.html#l00100">runtime.hpp:100</a></div></div>
@@ -481,7 +479,7 @@ $(document).ready(function(){initNavTree('runtime_8hpp_source.html',''); initRes
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_6022ca169143dfd2dedcc1052b0bd7aa.html">stdui</a></li><li class="navelem"><a class="el" href="runtime_8hpp.html">runtime.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_6022ca169143dfd2dedcc1052b0bd7aa.html">stdui</a></li><li class="navelem"><a class="el" href="dir_1bce9c8b58ab52a23e54c67ea92194c2.html">runtime</a></li><li class="navelem"><a class="el" href="runtime_8hpp.html">runtime.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

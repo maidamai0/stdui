@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Standard UI: include/stdui/rendering/frustum_culler.hpp Source File</title>
+<title>Standard UI: include/stdui/render/frustum_culler.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,8 +106,8 @@ $(document).ready(function(){initNavTree('frustum__culler_8hpp_source.html','');
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="geometry_8hpp.html">stdui/geometry.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="render__node_8hpp.html">stdui/rendering/render_node.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="geometry_8hpp.html">stdui/core/geometry.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="node_8hpp.html">stdui/render/node.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacestdui_1_1rendering.html">stdui::rendering</a> {</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
@@ -131,17 +131,17 @@ $(document).ready(function(){initNavTree('frustum__culler_8hpp_source.html','');
 <div class="ttc" id="aclassstdui_1_1rendering_1_1frustum__culler_html_a69d8a9a457190119698dd6cb8ea483bf"><div class="ttname"><a href="classstdui_1_1rendering_1_1frustum__culler.html#a69d8a9a457190119698dd6cb8ea483bf">stdui::rendering::frustum_culler::viewport_</a></div><div class="ttdeci">rect viewport_</div><div class="ttdef"><b>Definition</b> <a href="frustum__culler_8hpp_source.html#l00024">frustum_culler.hpp:24</a></div></div>
 <div class="ttc" id="aclassstdui_1_1rendering_1_1frustum__culler_html_a96c14881ab0e6ae1dbfafd022eb55dde"><div class="ttname"><a href="classstdui_1_1rendering_1_1frustum__culler.html#a96c14881ab0e6ae1dbfafd022eb55dde">stdui::rendering::frustum_culler::set_viewport</a></div><div class="ttdeci">void set_viewport(const rect &amp;viewport_rect)</div><div class="ttdoc">Set the visible viewport rectangle.</div></div>
 <div class="ttc" id="aclassstdui_1_1rendering_1_1frustum__culler_html_ad26e935380bd3b3adc917225274bbf5b"><div class="ttname"><a href="classstdui_1_1rendering_1_1frustum__culler.html#ad26e935380bd3b3adc917225274bbf5b">stdui::rendering::frustum_culler::should_render</a></div><div class="ttdeci">bool should_render(const render_node &amp;node) const</div><div class="ttdoc">Check if a node should be rendered (visibility + culling)</div></div>
-<div class="ttc" id="aclassstdui_1_1rendering_1_1render__node_html"><div class="ttname"><a href="classstdui_1_1rendering_1_1render__node.html">stdui::rendering::render_node</a></div><div class="ttdoc">Render node - represents a single drawable element.</div><div class="ttdef"><b>Definition</b> <a href="render__node_8hpp_source.html#l00095">render_node.hpp:95</a></div></div>
+<div class="ttc" id="aclassstdui_1_1rendering_1_1render__node_html"><div class="ttname"><a href="classstdui_1_1rendering_1_1render__node.html">stdui::rendering::render_node</a></div><div class="ttdoc">Render node - represents a single drawable element.</div><div class="ttdef"><b>Definition</b> <a href="node_8hpp_source.html#l00095">node.hpp:95</a></div></div>
 <div class="ttc" id="ageometry_8hpp_html"><div class="ttname"><a href="geometry_8hpp.html">geometry.hpp</a></div></div>
-<div class="ttc" id="anamespacestdui_1_1rendering_html"><div class="ttname"><a href="namespacestdui_1_1rendering.html">stdui::rendering</a></div><div class="ttdef"><b>Definition</b> <a href="effect__renderer_8hpp_source.html#l00013">effect_renderer.hpp:13</a></div></div>
-<div class="ttc" id="arender__node_8hpp_html"><div class="ttname"><a href="render__node_8hpp.html">render_node.hpp</a></div></div>
+<div class="ttc" id="anamespacestdui_1_1rendering_html"><div class="ttname"><a href="namespacestdui_1_1rendering.html">stdui::rendering</a></div><div class="ttdef"><b>Definition</b> <a href="backend__renderer_8hpp_source.html#l00013">backend_renderer.hpp:13</a></div></div>
+<div class="ttc" id="anode_8hpp_html"><div class="ttname"><a href="node_8hpp.html">node.hpp</a></div></div>
 <div class="ttc" id="astructstdui_1_1rect_html"><div class="ttname"><a href="structstdui_1_1rect.html">stdui::rect</a></div><div class="ttdoc">Axis-aligned logical rectangle defined by an origin and extent.</div><div class="ttdef"><b>Definition</b> <a href="geometry_8hpp_source.html#l00022">geometry.hpp:22</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_6022ca169143dfd2dedcc1052b0bd7aa.html">stdui</a></li><li class="navelem"><a class="el" href="dir_68528bb82b63d788b3ce54a4829ed6e3.html">rendering</a></li><li class="navelem"><a class="el" href="frustum__culler_8hpp.html">frustum_culler.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_6022ca169143dfd2dedcc1052b0bd7aa.html">stdui</a></li><li class="navelem"><a class="el" href="dir_2b282e14bff065e1a5ef00ada784c368.html">render</a></li><li class="navelem"><a class="el" href="frustum__culler_8hpp.html">frustum_culler.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

@@ -13,7 +13,7 @@ var searchData=
   ['white_10',['white',['../structstdui_1_1color.html#a04b32d67504ba92e4f3c10473642ff3b',1,'stdui::color']]],
   ['why_20gpu_20based_20ui_11',['1.2 Why GPU-Based UI?',['../md_docs_2phase4-rendering.html#autotoc_md315',1,'']]],
   ['widget_12',['D005 — Specialized subsystem model rather than a monolithic Widget',['../design_decisions.html#autotoc_md23',1,'']]],
-  ['width_13',['width',['../structstdui_1_1size.html#aefaabd4835c66390fe61fa92050094a9',1,'stdui::size::width'],['../structstdui_1_1proposal.html#a050b687d26b2d8ff9e3581e749ad5a42',1,'stdui::proposal::width'],['../structstdui_1_1stroke__style.html#a633b4477b71f6c095202a5b70c64e03f',1,'stdui::stroke_style::width'],['../structstdui_1_1rendering_1_1image__data.html#a2e9e451e6aa73912ceeff33d5f799942',1,'stdui::rendering::image_data::width']]],
+  ['width_13',['width',['../structstdui_1_1size.html#aefaabd4835c66390fe61fa92050094a9',1,'stdui::size::width'],['../structstdui_1_1proposal.html#a050b687d26b2d8ff9e3581e749ad5a42',1,'stdui::proposal::width'],['../structstdui_1_1rendering_1_1image__data.html#a2e9e451e6aa73912ceeff33d5f799942',1,'stdui::rendering::image_data::width'],['../structstdui_1_1stroke__style.html#a633b4477b71f6c095202a5b70c64e03f',1,'stdui::stroke_style::width']]],
   ['width_5f_14',['width_',['../classstdui_1_1rendering_1_1glyph__atlas.html#aea36c98acb99d8e9d307c55215a31169',1,'stdui::rendering::glyph_atlas']]],
   ['window_20abstraction_15',['Step 7.1.1: Platform window abstraction',['../md_docs_2DETAILED__PLAN.html#autotoc_md142',1,'']]],
   ['window_20events_16',['Step 7.1.2: Window events',['../md_docs_2DETAILED__PLAN.html#autotoc_md143',1,'']]],

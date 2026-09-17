@@ -22,7 +22,7 @@ var searchData=
   ['elements_20vertically_19',['Step 3: Stack Elements Vertically',['../tutorials.html#autotoc_md435',1,'']]],
   ['empty_20',['empty',['../classstdui_1_1queued__event__source.html#aa91c9b6ed02042a5f2c18e42b9fd76cd',1,'stdui::queued_event_source']]],
   ['end_21',['end',['../namespacestdui.html#a7526688f87a6f52cb6e3fe5a60d0f046a7f021a1415b86f2d013b2618fb31ae53',1,'stdui']]],
-  ['end_5fframe_22',['end_frame',['../classstdui_1_1renderer.html#a159facff6b39c63fbc5453660d0e3aa2',1,'stdui::renderer::end_frame()'],['../classstdui_1_1null__renderer.html#a8db37f457b2a8406a7887bf5c3326d85',1,'stdui::null_renderer::end_frame()'],['../classstdui_1_1rendering_1_1renderer.html#a22696d1b1b537e985b401815ad556d0c',1,'stdui::rendering::renderer::end_frame()']]],
+  ['end_5fframe_22',['end_frame',['../classstdui_1_1rendering_1_1renderer.html#a22696d1b1b537e985b401815ad556d0c',1,'stdui::rendering::renderer::end_frame()'],['../classstdui_1_1renderer.html#a159facff6b39c63fbc5453660d0e3aa2',1,'stdui::renderer::end_frame()'],['../classstdui_1_1null__renderer.html#a8db37f457b2a8406a7887bf5c3326d85',1,'stdui::null_renderer::end_frame()']]],
   ['engine_23',['D018 — Runtime is a system-independent event and timing engine',['../design_decisions.html#autotoc_md36',1,'']]],
   ['engine_20✅_20100_24',['Core Rendering Engine ✅ 100%',['../md_docs_2phase4-completion.html#autotoc_md250',1,'']]],
   ['engine_20100_20complete_25',['Core Rendering Engine (100% Complete)',['../md_docs_2phase4_82-final-status.html#autotoc_md370',1,'']]],

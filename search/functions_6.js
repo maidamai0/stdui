@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['get_0',['get',['../classstdui_1_1state__handle.html#a08acf71e8396440193c0df20fe9aa402',1,'stdui::state_handle::get()'],['../classstdui_1_1state.html#a36dee2b515d126fae8a84f31dfa6d3d9',1,'stdui::state::get()']]],
+  ['get_0',['get',['../classstdui_1_1state.html#a36dee2b515d126fae8a84f31dfa6d3d9',1,'stdui::state::get()'],['../classstdui_1_1state__handle.html#a08acf71e8396440193c0df20fe9aa402',1,'stdui::state_handle::get()']]],
   ['get_5fglyph_1',['get_glyph',['../classstdui_1_1rendering_1_1glyph__atlas.html#aa68b3b8761ba0f9ab28924e1a44fade8',1,'stdui::rendering::glyph_atlas']]],
   ['get_5for_5fcreate_2',['get_or_create',['../classstdui_1_1state__storage.html#a2eaf014059e4c5615e57915046a774d0',1,'stdui::state_storage']]],
   ['get_5for_5fcreate_5fstorage_3',['get_or_create_storage',['../classstdui_1_1component__registry.html#a6515cd4970915d3a0f1eec756c79c988',1,'stdui::component_registry']]],

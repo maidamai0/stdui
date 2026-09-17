@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['color_2ehpp_0',['color.hpp',['../color_8hpp.html',1,'']]],
-  ['component_2ehpp_1',['component.hpp',['../component_8hpp.html',1,'']]]
+  ['backend_5frenderer_2ehpp_0',['backend_renderer.hpp',['../backend__renderer_8hpp.html',1,'']]]
 ];

@@ -1,0 +1,9 @@
+<map id="include/stdui/render/tree_builder.hpp" name="include/stdui/render/tree_builder.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="106,5,257,45"/>
+<area shape="rect" id="Node000002" href="$backend__renderer_8hpp.html" title=" " alt="" coords="97,93,266,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,59,184,93,179,93,179,59"/>
+<area shape="rect" id="Node000003" href="$direct2d__renderer_8hpp.html" title=" " alt="" coords="5,181,173,221"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="153,145,112,183,108,179,149,141"/>
+<area shape="rect" id="Node000004" href="$metal__renderer_8hpp.html" title=" " alt="" coords="198,181,351,221"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="214,141,256,179,252,183,210,145"/>
+</map>

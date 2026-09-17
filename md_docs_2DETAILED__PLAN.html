@@ -137,14 +137,14 @@ Phase 1: Foundation (Current - Completing)</h1>
 <li>[ ] <b>1.2:</b> Add grid expressions to DSL<ul>
 <li><b>Implementation:</b> Create <code>grid_expression&lt;T...&gt;</code> wrapper</li>
 <li><b>Test:</b> <code>grid({.columns=3}, item1, item2, ...item9)</code> lays out 3x3 grid</li>
-<li><b>File:</b> <code><a class="el" href="expressions_8hpp.html">include/stdui/expressions.hpp</a></code> (add grid types)</li>
+<li><b>File:</b> <code><a class="el" href="expressions_8hpp.html">include/stdui/core/expressions.hpp</a></code> (add grid types)</li>
 </ul>
 </li>
 <li>[ ] <b>1.3:</b> Framework-managed local state<ul>
 <li><b>Implementation:</b> <code>state&lt;T&gt;</code> handle with persistent storage keyed by component identity</li>
 <li><b>API:</b> <code>auto count = ctx.state(0); count.set(count.get() + 1);</code></li>
 <li><b>Test:</b> Counter component maintains state across expression re-evaluation</li>
-<li><b>Files:</b> New <code><a class="el" href="state_8hpp.html">include/stdui/state.hpp</a></code>, extend <code><a class="el" href="runtime_8hpp.html">runtime.hpp</a></code></li>
+<li><b>Files:</b> New <code><a class="el" href="state_8hpp.html">include/stdui/core/state.hpp</a></code>, extend <code><a class="el" href="runtime_8hpp.html">runtime.hpp</a></code></li>
 </ul>
 </li>
 </ul>
@@ -300,7 +300,7 @@ Step 3.1.3: Hit test metadata</h3>
 <h3><a class="anchor" id="autotoc_md70"></a>
 Step 3.2.1: Event types and representation</h3>
 <ul>
-<li><b>File:</b> <code><a class="el" href="events_8hpp.html">include/stdui/events.hpp</a></code></li>
+<li><b>File:</b> <code><a class="el" href="events_8hpp.html">include/stdui/core/events.hpp</a></code></li>
 <li><b>Events:</b> pointer_down, pointer_up, pointer_move, key_down, key_up, scroll</li>
 <li><b>Data:</b> position, button/key, modifiers, timestamp</li>
 <li><b>Test:</b> Create and inspect event objects</li>
@@ -411,12 +411,12 @@ Step 4.1.1: Backend-independent rendering primitives</h3>
 <div class="line"><span class="keyword">struct </span>stroke_rect { rect bounds; color stroke; <span class="keywordtype">double</span> width; };</div>
 <div class="line"><span class="keyword">struct </span>fill_path { path_data <a class="code hl_enumvalue" href="namespacestdui_1_1rendering.html#a292f38ed9fecb029935bd3487657ededad6fe1d0be6347b8ef2427fa629c04485">path</a>; color fill; };</div>
 <div class="line"><span class="keyword">struct </span>draw_text { point origin; glyph_run glyphs; color fill; };</div>
-<div class="line"><span class="keyword">struct </span>draw_image { rect bounds; image_handle <a class="code hl_enumvalue" href="namespacestdui.html#a422e1d5fdfc05919841b567fe427f63ca78805a221a988e79ef3f42d7c5bfd418">image</a>; };</div>
+<div class="line"><span class="keyword">struct </span>draw_image { rect bounds; image_handle <a class="code hl_enumvalue" href="namespacestdui.html#aa913e1c23a59b1ee2c14cc67af5ffb24a78805a221a988e79ef3f42d7c5bfd418">image</a>; };</div>
 <div class="line"><span class="keyword">struct </span><a class="code hl_enumvalue" href="namespacestdui_1_1rendering.html#a1079a16ae8df5dca72b7ef943f7e36cdaf6d8b886335927d46fad323c60335d09">clip</a> { rect bounds; render_list children; };</div>
 <div class="line"><span class="keyword">struct </span>transform { affine_transform matrix; render_list children; };</div>
 <div class="ttc" id="anamespacestdui_1_1rendering_html_a1079a16ae8df5dca72b7ef943f7e36cdaf6d8b886335927d46fad323c60335d09"><div class="ttname"><a href="namespacestdui_1_1rendering.html#a1079a16ae8df5dca72b7ef943f7e36cdaf6d8b886335927d46fad323c60335d09">stdui::rendering::effect_type::clip</a></div><div class="ttdeci">@ clip</div></div>
 <div class="ttc" id="anamespacestdui_1_1rendering_html_a292f38ed9fecb029935bd3487657ededad6fe1d0be6347b8ef2427fa629c04485"><div class="ttname"><a href="namespacestdui_1_1rendering.html#a292f38ed9fecb029935bd3487657ededad6fe1d0be6347b8ef2427fa629c04485">stdui::rendering::render_node_type::path</a></div><div class="ttdeci">@ path</div></div>
-<div class="ttc" id="anamespacestdui_html_a422e1d5fdfc05919841b567fe427f63ca78805a221a988e79ef3f42d7c5bfd418"><div class="ttname"><a href="namespacestdui.html#a422e1d5fdfc05919841b567fe427f63ca78805a221a988e79ef3f42d7c5bfd418">stdui::render_target_kind::image</a></div><div class="ttdeci">@ image</div></div>
+<div class="ttc" id="anamespacestdui_html_aa913e1c23a59b1ee2c14cc67af5ffb24a78805a221a988e79ef3f42d7c5bfd418"><div class="ttname"><a href="namespacestdui.html#aa913e1c23a59b1ee2c14cc67af5ffb24a78805a221a988e79ef3f42d7c5bfd418">stdui::semantic_role::image</a></div><div class="ttdeci">@ image</div></div>
 </div><!-- fragment --></li>
 <li><b>Test:</b> Construct render primitives programmatically</li>
 </ul>
@@ -456,7 +456,7 @@ Step 4.2.1: Backend interface definition</h3>
 <h3><a class="anchor" id="autotoc_md92"></a>
 Step 4.2.2: Color and image representation</h3>
 <ul>
-<li><b>File:</b> <code><a class="el" href="color_8hpp.html">include/stdui/color.hpp</a></code>, <code>include/stdui/image.hpp</code></li>
+<li><b>File:</b> <code><a class="el" href="color_8hpp.html">include/stdui/core/color.hpp</a></code>, <code>include/stdui/image.hpp</code></li>
 <li><b>Color:</b> RGBA float or sRGB byte representation</li>
 <li><b>Image:</b> Handle + metadata (size, format)</li>
 <li><b>Test:</b> Create colors, verify RGBA values</li>
@@ -639,7 +639,7 @@ Step 5.5.2: Table</h3>
 <h3><a class="anchor" id="autotoc_md123"></a>
 Step 5.6.1: Semantic node tree</h3>
 <ul>
-<li><b>File:</b> <code><a class="el" href="semantics_8hpp.html">include/stdui/semantics.hpp</a></code></li>
+<li><b>File:</b> <code><a class="el" href="semantics_8hpp.html">include/stdui/core/semantics.hpp</a></code></li>
 <li><b>Attributes:</b> role, label, value, actions</li>
 <li><b>Generation:</b> Parallel to render tree</li>
 <li><b>Test:</b> Generate semantic tree for button, verify role="button"</li>
@@ -666,7 +666,7 @@ Phase 6: Animation &amp; Transitions (Months 17-18)</h1>
 <h3><a class="anchor" id="autotoc_md129"></a>
 Step 6.1.1: Animatable value types</h3>
 <ul>
-<li><b>File:</b> <code><a class="el" href="animation_8hpp.html">include/stdui/animation.hpp</a></code></li>
+<li><b>File:</b> <code><a class="el" href="animation_8hpp.html">include/stdui/core/animation.hpp</a></code></li>
 <li><b>Types:</b> double, color, point, size, transform</li>
 <li><b>Interpolation:</b> Linear, ease-in/out, spring</li>
 <li><b>Test:</b> Interpolate 0→100 over 1 second, sample at 0.5s = 50</li>
@@ -758,7 +758,7 @@ Step 7.1.3: Multi-window support</h3>
 <h3><a class="anchor" id="autotoc_md146"></a>
 Step 7.2.1: Application object</h3>
 <ul>
-<li><b>File:</b> <code><a class="el" href="application_8hpp.html">include/stdui/application.hpp</a></code></li>
+<li><b>File:</b> <code><a class="el" href="application_8hpp.html">include/stdui/runtime/application.hpp</a></code></li>
 <li><b>API:</b> <div class="fragment"><div class="line"><span class="keywordtype">int</span> main() {</div>
 <div class="line">  application app;</div>
 <div class="line">  app.set_root(make_root_view());</div>

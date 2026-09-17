@@ -126,7 +126,7 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class Kind, component_body Body&gt;<br />
 struct stdui::component_expression&lt; Kind, Body &gt;</div><p>A deferred component body plus its nominal component identity. </p>
-<p><code>Kind</code> is a marker type used as compile-time component identity; it is not stored or instantiated. <code>Body</code> must be callable with a <code><a class="el" href="classstdui_1_1component__context.html" title="Runtime services available while evaluating one component body.">component_context</a>&amp;</code> and return another view expression. The runtime invokes <code>body</code> during reconciliation, after establishing the component identity and state scope. </p>
+<p><code>Kind</code> is a marker type used as compile-time component identity; it is not stored or instantiated. <code>Body</code> must be callable with a <code><a class="el" href="classstdui_1_1component__context.html" title="Context provided to component bodies during evaluation.">component_context</a>&amp;</code> and return another view expression. The runtime invokes <code>body</code> during reconciliation, after establishing the component identity and state scope. </p>
 
 <p class="definition">Definition at line <a class="el" href="expressions_8hpp_source.html#l00145">145</a> of file <a class="el" href="expressions_8hpp_source.html">expressions.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
@@ -170,7 +170,7 @@ template&lt;class Kind , component_body Body&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>include/stdui/<a class="el" href="expressions_8hpp_source.html">expressions.hpp</a></li>
+<li>include/stdui/core/<a class="el" href="expressions_8hpp_source.html">expressions.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

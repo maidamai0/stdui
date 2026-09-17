@@ -461,14 +461,14 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "animation_8hpp.html",
-"classstdui_1_1platform.html#a85320b66fefafd293a3e1e52c0ed30e0",
-"classstdui_1_1rendering_1_1render__tree__builder.html#ae096d627b08cb57abdd0911c5537b38a",
-"functions_f.html",
-"md_docs_2DETAILED__PLAN.html#autotoc_md180",
-"namespacestdui.html#a0778e0af0f8bf7e13a66e65c71e0ed29a2b899981cd65625d08f85c4940182694",
-"structstdui_1_1animation__transition.html#a29206b4b3754452b4cab166d5458f9bc",
-"structstdui_1_1layout__node.html#aad9fbae17bda5ad9442619abcf81cfcd",
-"structstdui_1_1state__key.html#a9b99ce9943c71463a4f58873a78e686d"
+"classstdui_1_1platform.html#a497152f0dec92d5a4156b48e0d221e7d",
+"classstdui_1_1rendering_1_1render__tree__builder.html#aafe9eb4d118b738a0f95224f9edb94b0",
+"functions_b.html",
+"md_docs_2DETAILED__PLAN.html#autotoc_md174",
+"namespacestdui.html#a00de523937a109fda1db1ba08e6bd151",
+"structstdui_1_1app__config.html#a2a485c21eb4577884cdc1c48a953e788",
+"structstdui_1_1layout__node.html#ab2c6e7d37f0986d2483ebaca7f19ffd5",
+"structstdui_1_1state__key__hash.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

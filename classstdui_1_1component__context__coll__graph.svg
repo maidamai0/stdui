@@ -5,13 +5,13 @@
  -->
 <!-- Title: stdui::component_context Pages: 1 -->
 <svg width="383pt" height="93pt"
- viewBox="0.00 0.00 383.00 93.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ viewBox="0.00 0.00 382.50 93.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 89)">
 <title>stdui::component_context</title>
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Runtime services available while evaluating one component body.">
+<g id="a_Node000001"><a xlink:title="Context provided to component bodies during evaluation.">
 <polygon fill="#999999" stroke="#666666" points="245,-19 102,-19 102,0 245,0 245,-19"/>
 <text text-anchor="middle" x="173.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">stdui::component_context</text>
 </a>
@@ -20,9 +20,9 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="classstdui_1_1runtime.html" target="_top" xlink:title="Owns persistent component state and reconciles expression updates.">
-<polygon fill="white" stroke="#666666" points="85,-85 0,-85 0,-66 85,-66 85,-85"/>
-<text text-anchor="middle" x="42.5" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">stdui::runtime</text>
+<g id="a_Node000002"><a xlink:href="classstdui_1_1state__storage.html" target="_top" xlink:title="Storage for persistent component state.">
+<polygon fill="white" stroke="#666666" points="113,-85 0,-85 0,-66 113,-66 113,-85"/>
+<text text-anchor="middle" x="56.5" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">stdui::state_storage</text>
 </a>
 </g>
 </g>
@@ -30,18 +30,18 @@
 <g id="edge1_Node000001_Node000002" class="edge">
 <title>Node2&#45;&gt;Node1</title>
 <g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M69.39,-61.36C95.2,-48.75 133.46,-30.06 155.69,-19.2"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="67.62,-58.33 60.17,-65.87 70.69,-64.62 67.62,-58.33"/>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M80.64,-60.81C93.35,-53.65 109.23,-44.77 123.5,-37 134.54,-30.98 147.04,-24.36 156.78,-19.24"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="78.6,-57.95 71.61,-65.91 82.04,-64.04 78.6,-57.95"/>
 </a>
 </g>
-<text text-anchor="middle" x="136" y="-40" font-family="Helvetica,sans-Serif" font-size="10.00" fill="grey"> owner_</text>
+<text text-anchor="middle" x="146.5" y="-40" font-family="Helvetica,sans-Serif" font-size="10.00" fill="grey"> storage_</text>
 </g>
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="structstdui_1_1evaluation__context.html" target="_top" xlink:title="Explicit state staging area for one evaluation.">
-<polygon fill="white" stroke="#666666" points="243.5,-85 103.5,-85 103.5,-66 243.5,-66 243.5,-85"/>
-<text text-anchor="middle" x="173.5" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">stdui::evaluation_context</text>
+<g id="a_Node000003"><a xlink:href="classstdui_1_1runtime.html" target="_top" xlink:title="Owns persistent component state and reconciles expression updates.">
+<polygon fill="white" stroke="#666666" points="216,-85 131,-85 131,-66 216,-66 216,-85"/>
+<text text-anchor="middle" x="173.5" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">stdui::runtime</text>
 </a>
 </g>
 </g>
@@ -53,14 +53,14 @@
 <polygon fill="#9a32cd" stroke="#9a32cd" points="170,-55.87 173.5,-65.87 177,-55.87 170,-55.87"/>
 </a>
 </g>
-<text text-anchor="middle" x="196.5" y="-40" font-family="Helvetica,sans-Serif" font-size="10.00" fill="grey"> context_</text>
+<text text-anchor="middle" x="193" y="-40" font-family="Helvetica,sans-Serif" font-size="10.00" fill="grey"> owner_</text>
 </g>
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="classstdui_1_1state__storage.html" target="_top" xlink:title="Storage for persistent component state.">
-<polygon fill="white" stroke="#666666" points="375,-85 262,-85 262,-66 375,-66 375,-85"/>
-<text text-anchor="middle" x="318.5" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">stdui::state_storage</text>
+<g id="a_Node000004"><a xlink:href="structstdui_1_1evaluation__context.html" target="_top" xlink:title="Explicit state staging area for one evaluation.">
+<polygon fill="white" stroke="#666666" points="374.5,-85 234.5,-85 234.5,-66 374.5,-66 374.5,-85"/>
+<text text-anchor="middle" x="304.5" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">stdui::evaluation_context</text>
 </a>
 </g>
 </g>
@@ -68,11 +68,11 @@
 <g id="edge3_Node000001_Node000004" class="edge">
 <title>Node4&#45;&gt;Node1</title>
 <g id="a_edge3_Node000001_Node000004"><a xlink:title=" ">
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M289.49,-61.69C260.91,-49.08 218.04,-30.16 193.21,-19.2"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="288.38,-65.03 298.94,-65.87 291.21,-58.63 288.38,-65.03"/>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M277.61,-61.36C251.8,-48.75 213.54,-30.06 191.31,-19.2"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="276.31,-64.62 286.83,-65.87 279.38,-58.33 276.31,-64.62"/>
 </a>
 </g>
-<text text-anchor="middle" x="277.5" y="-40" font-family="Helvetica,sans-Serif" font-size="10.00" fill="grey"> storage_</text>
+<text text-anchor="middle" x="269.5" y="-40" font-family="Helvetica,sans-Serif" font-size="10.00" fill="grey"> context_</text>
 </g>
 </g>
 </svg>

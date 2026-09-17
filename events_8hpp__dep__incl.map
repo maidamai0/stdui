@@ -1,9 +1,9 @@
-<map id="include/stdui/events.hpp" name="include/stdui/events.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="119,5,301,31"/>
-<area shape="rect" id="Node000002" href="$platform_8hpp.html" title=" " alt="" coords="13,86,207,111"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,41,126,88,123,84,183,37"/>
-<area shape="rect" id="Node000004" href="$runtime__contracts_8hpp.html" title=" " alt="" coords="231,79,391,119"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="237,37,289,76,285,81,234,41"/>
-<area shape="rect" id="Node000003" href="$application_8hpp.html" title=" " alt="" coords="5,167,215,192"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="113,125,113,166,107,166,107,125"/>
+<map id="include/stdui/core/events.hpp" name="include/stdui/core/events.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="115,5,253,45"/>
+<area shape="rect" id="Node000002" href="$platform_8hpp.html" title=" " alt="" coords="5,93,171,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,57,111,95,107,91,151,53"/>
+<area shape="rect" id="Node000004" href="$runtime__contracts_8hpp.html" title=" " alt="" coords="195,93,367,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="217,52,262,91,258,95,214,56"/>
+<area shape="rect" id="Node000003" href="$application_8hpp.html" title=" " alt="" coords="8,181,168,221"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="91,147,91,181,85,181,85,147"/>
 </map>

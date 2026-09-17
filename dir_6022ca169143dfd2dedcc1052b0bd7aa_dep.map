@@ -1,5 +1,18 @@
 <map id="include/stdui" name="include/stdui">
-<area shape="rect" id="node2" href="dir_68528bb82b63d788b3ce54a4829ed6e3.html" title="rendering" alt="" coords="38,63,122,88"/>
-<area shape="rect" id="clust2" href="dir_6022ca169143dfd2dedcc1052b0bd7aa.html" alt="" coords="27,52,212,99"/>
-<area shape="rect" id="clust1" href="dir_d44c64559bbebec7f509842c48db8b23.html" title="include" alt="" coords="16,16,223,109"/>
+<area shape="rect" id="node2" href="dir_d8b4bea323be8bbd05e557889b77a210.html" title="core" alt="" coords="57,283,108,308"/>
+<area shape="rect" id="node3" href="dir_7f09a061861622a4525de34c8568de7f.html" title="platform" alt="" coords="82,136,161,161"/>
+<area shape="poly" id="edge2" href="dir_000003_000000.html" alt="" coords="118,163,99,210,88,269,82,268,93,209,113,161"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000003_000000.html" title="3" alt="" coords="89,258,99,272"/>
+<area shape="rect" id="node4" href="dir_2b282e14bff065e1a5ef00ada784c368.html" title="render" alt="" coords="108,209,172,235"/>
+<area shape="poly" id="edge1" href="dir_000003_000004.html" alt="" coords="127,161,136,196,131,197,122,162"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000003_000004.html" title="1" alt="" coords="136,182,145,197"/>
+<area shape="poly" id="edge3" href="dir_000004_000000.html" alt="" coords="133,237,103,274,99,270,128,233"/>
+<area shape="rect" id="edge3-headlabel" href="dir_000004_000000.html" title="14" alt="" coords="101,266,119,281"/>
+<area shape="rect" id="node5" href="dir_1bce9c8b58ab52a23e54c67ea92194c2.html" title="runtime" alt="" coords="38,63,111,88"/>
+<area shape="poly" id="edge5" href="dir_000005_000000.html" alt="" coords="76,88,72,136,74,209,81,269,76,270,69,209,67,136,71,88"/>
+<area shape="rect" id="edge5-headlabel" href="dir_000005_000000.html" title="6" alt="" coords="82,256,91,271"/>
+<area shape="poly" id="edge4" href="dir_000005_000003.html" alt="" coords="85,87,108,123,104,126,80,90"/>
+<area shape="rect" id="edge4-headlabel" href="dir_000005_000003.html" title="1" alt="" coords="106,109,116,123"/>
+<area shape="rect" id="clust2" href="dir_6022ca169143dfd2dedcc1052b0bd7aa.html" alt="" coords="27,52,201,319"/>
+<area shape="rect" id="clust1" href="dir_d44c64559bbebec7f509842c48db8b23.html" title="include" alt="" coords="16,16,212,329"/>
 </map>

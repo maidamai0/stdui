@@ -1,20 +1,20 @@
-<map id="include/stdui/layout.hpp" name="include/stdui/layout.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="116,5,295,31"/>
-<area shape="rect" id="Node000002" href="$grid_8hpp.html" title=" " alt="" coords="5,79,168,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,40,107,81,105,76,173,35"/>
-<area shape="rect" id="Node000003" href="$layout__tree_8hpp.html" title=" " alt="" coords="194,152,345,192"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="214,44,233,103,259,150,254,153,228,105,209,45"/>
-<area shape="rect" id="Node000009" href="$overlay_8hpp.html" title=" " alt="" coords="243,79,427,104"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="240,35,315,76,312,81,237,40"/>
-<area shape="rect" id="Node000004" href="$application_8hpp.html" title=" " alt="" coords="55,247,265,273"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="236,203,177,249,173,245,233,198"/>
-<area shape="rect" id="Node000005" href="$render__tree__builder_8hpp.html" title=" " alt="" coords="289,240,469,280"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="306,199,356,238,353,242,303,203"/>
-<area shape="rect" id="Node000006" href="$renderer_8hpp.html" title=" " alt="" coords="293,328,464,368"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="381,294,381,328,376,328,376,294"/>
-<area shape="rect" id="Node000007" href="$direct2d__renderer_8hpp.html" title=" " alt="" coords="196,416,367,456"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="349,379,305,418,301,414,345,375"/>
-<area shape="rect" id="Node000008" href="$metal__renderer_8hpp.html" title=" " alt="" coords="391,416,561,456"/>
-<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="412,375,456,414,453,418,409,379"/>
-<area shape="poly" id="edge9_Node000009_Node000003" title=" " alt="" coords="318,116,287,154,283,150,314,113"/>
+<map id="include/stdui/core/layout.hpp" name="include/stdui/core/layout.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="149,5,286,45"/>
+<area shape="rect" id="Node000002" href="$grid_8hpp.html" title=" " alt="" coords="42,93,179,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,56,136,95,133,91,181,52"/>
+<area shape="rect" id="Node000003" href="$layout__tree_8hpp.html" title=" " alt="" coords="202,181,339,221"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="227,58,247,133,265,180,260,182,241,134,222,60"/>
+<area shape="rect" id="Node000009" href="$overlay_8hpp.html" title=" " alt="" coords="255,93,393,133"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="253,52,302,91,299,95,250,56"/>
+<area shape="rect" id="Node000004" href="$tree__builder_8hpp.html" title=" " alt="" coords="106,269,257,309"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="243,233,203,271,199,267,239,229"/>
+<area shape="rect" id="Node000008" href="$application_8hpp.html" title=" " alt="" coords="281,269,441,309"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="302,229,343,267,339,271,299,233"/>
+<area shape="rect" id="Node000005" href="$backend__renderer_8hpp.html" title=" " alt="" coords="97,357,266,397"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="184,323,184,357,179,357,179,323"/>
+<area shape="rect" id="Node000006" href="$direct2d__renderer_8hpp.html" title=" " alt="" coords="5,445,173,485"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="153,409,112,447,108,443,149,405"/>
+<area shape="rect" id="Node000007" href="$metal__renderer_8hpp.html" title=" " alt="" coords="198,445,351,485"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="214,405,256,443,252,447,210,409"/>
+<area shape="poly" id="edge9_Node000009_Node000003" title=" " alt="" coords="307,146,285,183,280,180,303,144"/>
 </map>

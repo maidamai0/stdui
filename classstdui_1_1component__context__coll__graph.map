@@ -1,9 +1,9 @@
 <map id="stdui::component_context" name="stdui::component_context">
-<area shape="rect" id="Node000001" title="Runtime services available while evaluating one component body." alt="" coords="141,93,332,119"/>
-<area shape="rect" id="Node000002" href="$classstdui_1_1runtime.html" title="Owns persistent component state and reconciles expression updates." alt="" coords="5,5,119,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,34,214,91,212,95,97,39"/>
-<area shape="rect" id="Node000003" href="$structstdui_1_1evaluation__context.html" title="Explicit state staging area for one evaluation." alt="" coords="143,5,330,31"/>
+<area shape="rect" id="Node000001" title="Context provided to component bodies during evaluation." alt="" coords="141,93,332,119"/>
+<area shape="rect" id="Node000002" href="$classstdui_1_1state__storage.html" title="Storage for persistent component state." alt="" coords="5,5,156,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,35,171,67,216,91,213,95,169,72,112,40"/>
+<area shape="rect" id="Node000003" href="$classstdui_1_1runtime.html" title="Owns persistent component state and reconciles expression updates." alt="" coords="180,5,293,31"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="239,45,239,93,234,93,234,45"/>
-<area shape="rect" id="Node000004" href="$classstdui_1_1state__storage.html" title="Storage for persistent component state." alt="" coords="355,5,505,31"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="392,39,264,96,262,91,390,34"/>
+<area shape="rect" id="Node000004" href="$structstdui_1_1evaluation__context.html" title="Explicit state staging area for one evaluation." alt="" coords="318,5,505,31"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="377,39,262,95,259,91,374,34"/>
 </map>

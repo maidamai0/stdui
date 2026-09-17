@@ -1,5 +1,6 @@
 #pragma once
 
+#include <stdui/color.hpp>
 #include <stdui/geometry.hpp>
 #include <stdui/text_measurement.hpp>
 
@@ -8,20 +9,6 @@
 #include <string_view>
 
 namespace stdui {
-
-/// RGBA color representation (0.0 to 1.0 per channel).
-struct color {
-  double red = 0.0;
-  double green = 0.0;
-  double blue = 0.0;
-  double alpha = 1.0;
-
-  static auto black() -> color { return {0.0, 0.0, 0.0, 1.0}; }
-  static auto white() -> color { return {1.0, 1.0, 1.0, 1.0}; }
-  static auto transparent() -> color { return {0.0, 0.0, 0.0, 0.0}; }
-
-  bool operator==(color const &) const = default;
-};
 
 /// Line cap styles for stroked paths.
 enum class line_cap { butt, round, square };
@@ -78,8 +65,8 @@ public:
                            stroke_style const &style) = 0;
 
   /// Draws text at the specified position.
-  virtual void draw_text(std::string_view text, point const &position,
-                         font_descriptor const &font, color const &text_color) = 0;
+  virtual void draw_text(std::string_view text, point const &position, font_descriptor const &font,
+                         color const &text_color) = 0;
 
   /// Returns the text measurer associated with this renderer.
   virtual auto get_text_measurer() const -> stdui::text_measurer const & = 0;
@@ -119,8 +106,8 @@ public:
   void clip_rect(rect const &) override {}
   void fill_rect(rect const &, color const &) override {}
   void stroke_rect(rect const &, color const &, stroke_style const &) override {}
-  void draw_text(std::string_view, point const &, font_descriptor const &,
-                 color const &) override {}
+  void draw_text(std::string_view, point const &, font_descriptor const &, color const &) override {
+  }
 
   auto get_text_measurer() const -> stdui::text_measurer const & override { return *measurer_; }
 

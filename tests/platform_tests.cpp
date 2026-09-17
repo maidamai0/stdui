@@ -96,8 +96,8 @@ TEST_CASE("null_renderer: supports drawing operations") {
   CHECK_NOTHROW(renderer.fill_rect({{10.0, 10.0}, {50.0, 50.0}}, stdui::color::black()));
   CHECK_NOTHROW(renderer.stroke_rect({{20.0, 20.0}, {30.0, 30.0}}, stdui::color::white(),
                                      stdui::stroke_style{}));
-  CHECK_NOTHROW(renderer.draw_text("Hello", {100.0, 100.0}, stdui::font_descriptor{},
-                                   stdui::color::black()));
+  CHECK_NOTHROW(
+      renderer.draw_text("Hello", {100.0, 100.0}, stdui::font_descriptor{}, stdui::color::black()));
   renderer.end_frame();
 }
 
@@ -111,7 +111,7 @@ TEST_CASE("null_text_measurer: provides heuristic measurements") {
   CHECK(size.height == 16.0); // Fixed height
 
   auto wrapped = measurer->measure_wrapped("Hello World", stdui::font_descriptor{}, 50.0);
-  CHECK(wrapped.width == 50.0); // Clamped to max_width
+  CHECK(wrapped.width == 50.0);  // Clamped to max_width
   CHECK(wrapped.height == 32.0); // 2 lines * 16 pixels
 }
 
@@ -365,10 +365,10 @@ TEST_CASE("simple_event_dispatcher: handler order") {
 
 TEST_CASE("color: custom RGBA values") {
   stdui::color c1{0.5, 0.6, 0.7, 0.8};
-  CHECK(c1.red == 0.5);
-  CHECK(c1.green == 0.6);
-  CHECK(c1.blue == 0.7);
-  CHECK(c1.alpha == 0.8);
+  CHECK(c1.red == doctest::Approx(0.5f));
+  CHECK(c1.green == doctest::Approx(0.6f));
+  CHECK(c1.blue == doctest::Approx(0.7f));
+  CHECK(c1.alpha == doctest::Approx(0.8f));
 }
 
 TEST_CASE("color: equality comparisons") {
@@ -381,12 +381,10 @@ TEST_CASE("color: equality comparisons") {
 }
 
 TEST_CASE("font_descriptor: custom values") {
-  stdui::font_descriptor font{
-      .family = "Arial",
-      .size = 20.0,
-      .weight = stdui::font_descriptor::weight_t::bold,
-      .style = stdui::font_descriptor::style_t::italic
-  };
+  stdui::font_descriptor font{.family = "Arial",
+                              .size = 20.0,
+                              .weight = stdui::font_descriptor::weight_t::bold,
+                              .style = stdui::font_descriptor::style_t::italic};
 
   CHECK(font.family == "Arial");
   CHECK(font.size == 20.0);

@@ -236,7 +236,7 @@ struct metal_renderer::impl {
         float w = static_cast<float>(bounds.extent.width);
         float h = static_cast<float>(bounds.extent.height);
 
-        simd_float4 color_vec = simd_make_float4(fill_color.r, fill_color.g, fill_color.b, fill_color.a);
+        simd_float4 color_vec = simd_make_float4(fill_color.red, fill_color.green, fill_color.blue, fill_color.alpha);
 
         // Two triangles for rectangle
         vertices.push_back({{x, y}, color_vec, {0, 0}});
@@ -405,10 +405,10 @@ void metal_renderer::render_text(const text_node& node) {
         float v1 = (glyph->atlas_rect.origin.y + gh) / atlas_size.height;
 
         simd_float4 color_vec = simd_make_float4(
-            props.text_color.r,
-            props.text_color.g,
-            props.text_color.b,
-            props.text_color.a
+            props.text_color.red,
+            props.text_color.green,
+            props.text_color.blue,
+            props.text_color.alpha
         );
 
         // Two triangles for glyph quad

@@ -69,20 +69,25 @@ foreach(test_executable IN LISTS TEST_EXECUTABLES)
         set(FILE_NAME_VAR "STDUI_COVERAGE_${FILE_KEY}_NAME")
         set(FILE_COUNT_VAR "STDUI_COVERAGE_${FILE_KEY}_COUNT")
         set(FILE_COVERED_VAR "STDUI_COVERAGE_${FILE_KEY}_COVERED")
+        set(FILE_PERCENT_VAR "STDUI_COVERAGE_${FILE_KEY}_PERCENT")
 
         if(NOT DEFINED ${FILE_COUNT_VAR})
             list(APPEND STDUI_COVERAGE_FILE_KEYS "${FILE_KEY}")
             set(${FILE_NAME_VAR} "${FILE_NAME}")
             set(${FILE_COUNT_VAR} 0)
             set(${FILE_COVERED_VAR} 0)
+            set(${FILE_PERCENT_VAR} -1)
         endif()
 
-        if(FILE_LINE_COUNT GREATER ${${FILE_COUNT_VAR}})
-            set(${FILE_COUNT_VAR} ${FILE_LINE_COUNT})
-            set(${FILE_COVERED_VAR} ${FILE_LINE_COVERED})
-        elseif(FILE_LINE_COUNT EQUAL ${${FILE_COUNT_VAR}}
-               AND FILE_LINE_COVERED GREATER ${${FILE_COVERED_VAR}})
-            set(${FILE_COVERED_VAR} ${FILE_LINE_COVERED})
+        if(FILE_LINE_COUNT GREATER 0)
+            math(EXPR FILE_LINE_PERCENT
+                "100 * ${FILE_LINE_COVERED} / ${FILE_LINE_COUNT}")
+
+            if(FILE_LINE_PERCENT GREATER ${${FILE_PERCENT_VAR}})
+                set(${FILE_COUNT_VAR} ${FILE_LINE_COUNT})
+                set(${FILE_COVERED_VAR} ${FILE_LINE_COVERED})
+                set(${FILE_PERCENT_VAR} ${FILE_LINE_PERCENT})
+            endif()
         endif()
 
         math(EXPR FILE_INDEX "${FILE_INDEX} + 1")
@@ -109,22 +114,19 @@ foreach(FILE_KEY IN LISTS STDUI_COVERAGE_FILE_KEYS)
     set(FILE_NAME_VAR "STDUI_COVERAGE_${FILE_KEY}_NAME")
     set(FILE_COUNT_VAR "STDUI_COVERAGE_${FILE_KEY}_COUNT")
     set(FILE_COVERED_VAR "STDUI_COVERAGE_${FILE_KEY}_COVERED")
+    set(FILE_PERCENT_VAR "STDUI_COVERAGE_${FILE_KEY}_PERCENT")
     set(FILE_LINE_COUNT ${${FILE_COUNT_VAR}})
     set(FILE_LINE_COVERED ${${FILE_COVERED_VAR}})
+    set(FILE_LINE_PERCENT ${${FILE_PERCENT_VAR}})
     get_filename_component(FILE_BASENAME "${${FILE_NAME_VAR}}" NAME)
 
-    if(FILE_LINE_COUNT GREATER 0)
-        math(EXPR FILE_LINE_PERCENT
-            "100 * ${FILE_LINE_COVERED} / ${FILE_LINE_COUNT}")
-
-        if(FILE_LINE_PERCENT LESS THRESHOLD)
-            message(FATAL_ERROR
-                "${FILE_BASENAME} line coverage ${FILE_LINE_PERCENT}% is below ${THRESHOLD}%")
-        endif()
-
-        math(EXPR TOTAL_LINES "${TOTAL_LINES} + ${FILE_LINE_COUNT}")
-        math(EXPR TOTAL_COVERED "${TOTAL_COVERED} + ${FILE_LINE_COVERED}")
+    if(FILE_LINE_PERCENT LESS THRESHOLD)
+        message(FATAL_ERROR
+            "${FILE_BASENAME} line coverage ${FILE_LINE_PERCENT}% is below ${THRESHOLD}%")
     endif()
+
+    math(EXPR TOTAL_LINES "${TOTAL_LINES} + ${FILE_LINE_COUNT}")
+    math(EXPR TOTAL_COVERED "${TOTAL_COVERED} + ${FILE_LINE_COVERED}")
 endforeach()
 
 if(TOTAL_LINES EQUAL 0)

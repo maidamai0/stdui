@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['null_5fplatform_0',['null_platform',['../classstdui_1_1null__platform.html',1,'stdui']]],
-  ['null_5frenderer_1',['null_renderer',['../classstdui_1_1null__renderer.html',1,'stdui']]],
-  ['null_5fwindow_2',['null_window',['../classstdui_1_1null__window.html',1,'stdui']]]
+  ['mat3_0',['mat3',['../structstdui_1_1rendering_1_1mat3.html',1,'stdui::rendering']]],
+  ['mouse_5fevent_1',['mouse_event',['../structstdui_1_1mouse__event.html',1,'stdui']]]
 ];

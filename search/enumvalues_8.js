@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['normal_0',['normal',['../structstdui_1_1font__descriptor.html#abc36bac704e8ac62728871f8c004c3a4afea087517c26fadd409bd4b9dc642555',1,'stdui::font_descriptor']]]
+  ['middle_0',['middle',['../namespacestdui.html#aff82f69357b8cadab2ff6789ce158114a4a548addbfb239bbd12f5afe11a4b6dc',1,'stdui']]],
+  ['miter_1',['miter',['../namespacestdui.html#a9fa4993b0884e5c18ca34677126e2132a6cc7e566f616d69616110891eae4a495',1,'stdui']]]
 ];

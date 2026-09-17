@@ -1,0 +1,5 @@
+<map id="stdui::rendering::group_node" name="stdui::rendering::group_node">
+<area shape="rect" id="Node000001" title="Group node &#45; contains child nodes." alt="" coords="8,79,216,104"/>
+<area shape="rect" id="Node000002" href="$classstdui_1_1rendering_1_1render__node.html" title="Render node &#45; represents a single drawable element." alt="" coords="5,5,219,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,44,115,79,109,79,109,44"/>
+</map>

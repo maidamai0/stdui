@@ -3,6 +3,8 @@ var hierarchy =
     [ "stdui::app_config", "structstdui_1_1app__config.html", null ],
     [ "stdui::application", "classstdui_1_1application.html", null ],
     [ "stdui::arranged_layout", "structstdui_1_1arranged__layout.html", null ],
+    [ "stdui::rendering::blur_effect", "structstdui_1_1rendering_1_1blur__effect.html", null ],
+    [ "stdui::rendering::clip_effect", "structstdui_1_1rendering_1_1clip__effect.html", null ],
     [ "stdui::color", "structstdui_1_1color.html", null ],
     [ "stdui::component_base", "classstdui_1_1component__base.html", [
       [ "stdui::typed_component< Derived >", "classstdui_1_1typed__component.html", null ]
@@ -20,6 +22,11 @@ var hierarchy =
     ] ],
     [ "stdui::flex_policy", "structstdui_1_1flex__policy.html", null ],
     [ "stdui::font_descriptor", "structstdui_1_1font__descriptor.html", null ],
+    [ "stdui::rendering::glyph_atlas::font_key", "structstdui_1_1rendering_1_1glyph__atlas_1_1font__key.html", null ],
+    [ "stdui::rendering::glyph_atlas::font_key_hash", "structstdui_1_1rendering_1_1glyph__atlas_1_1font__key__hash.html", null ],
+    [ "stdui::rendering::frustum_culler", "classstdui_1_1rendering_1_1frustum__culler.html", null ],
+    [ "stdui::rendering::glyph_atlas", "classstdui_1_1rendering_1_1glyph__atlas.html", null ],
+    [ "stdui::rendering::glyph_info", "structstdui_1_1rendering_1_1glyph__info.html", null ],
     [ "stdui::grid_expression< T >", "structstdui_1_1grid__expression.html", null ],
     [ "stdui::grid_options", "structstdui_1_1grid__options.html", null ],
     [ "std::hash< stdui::component_id >", "structstd_1_1hash_3_01stdui_1_1component__id_01_4.html", null ],
@@ -28,15 +35,20 @@ var hierarchy =
     [ "stdui::id_storage< std::decay_t< Id > >", "structstdui_1_1id__storage.html", null ],
     [ "stdui::id_storage< std::string_view >", "structstdui_1_1id__storage_3_01std_1_1string__view_01_4.html", null ],
     [ "stdui::identified_expression< Id, Expression >", "structstdui_1_1identified__expression.html", null ],
+    [ "stdui::rendering::image_data", "structstdui_1_1rendering_1_1image__data.html", null ],
+    [ "stdui::rendering::image_properties", "structstdui_1_1rendering_1_1image__properties.html", null ],
     [ "stdui::inspection_node", "structstdui_1_1inspection__node.html", null ],
     [ "stdui::keyboard_event", "structstdui_1_1keyboard__event.html", null ],
     [ "stdui::keyboard_modifiers", "structstdui_1_1keyboard__modifiers.html", null ],
     [ "stdui::layout_box", "structstdui_1_1layout__box.html", null ],
     [ "stdui::layout_node", "structstdui_1_1layout__node.html", null ],
     [ "stdui::layout_result", "structstdui_1_1layout__result.html", null ],
+    [ "stdui::rendering::mat3", "structstdui_1_1rendering_1_1mat3.html", null ],
     [ "stdui::mouse_event", "structstdui_1_1mouse__event.html", null ],
+    [ "stdui::rendering::opacity_effect", "structstdui_1_1rendering_1_1opacity__effect.html", null ],
     [ "stdui::overlay_expression< T >", "structstdui_1_1overlay__expression.html", null ],
     [ "stdui::overlay_options", "structstdui_1_1overlay__options.html", null ],
+    [ "stdui::rendering::path_properties", "structstdui_1_1rendering_1_1path__properties.html", null ],
     [ "stdui::platform", "classstdui_1_1platform.html", [
       [ "stdui::null_platform", "classstdui_1_1null__platform.html", null ]
     ] ],
@@ -46,12 +58,27 @@ var hierarchy =
     [ "stdui::point", "structstdui_1_1point.html", null ],
     [ "stdui::proposal", "structstdui_1_1proposal.html", null ],
     [ "stdui::rect", "structstdui_1_1rect.html", null ],
+    [ "stdui::rendering::rectangle_properties", "structstdui_1_1rendering_1_1rectangle__properties.html", null ],
+    [ "stdui::rendering::render_node", "classstdui_1_1rendering_1_1render__node.html", [
+      [ "stdui::rendering::effect_node", "classstdui_1_1rendering_1_1effect__node.html", null ],
+      [ "stdui::rendering::group_node", "classstdui_1_1rendering_1_1group__node.html", null ],
+      [ "stdui::rendering::image_node", "classstdui_1_1rendering_1_1image__node.html", null ],
+      [ "stdui::rendering::path_node", "classstdui_1_1rendering_1_1path__node.html", null ],
+      [ "stdui::rendering::rectangle_node", "classstdui_1_1rendering_1_1rectangle__node.html", null ],
+      [ "stdui::rendering::scene_view_node", "classstdui_1_1rendering_1_1scene__view__node.html", null ],
+      [ "stdui::rendering::text_node", "classstdui_1_1rendering_1_1text__node.html", null ]
+    ] ],
+    [ "stdui::rendering::render_tree", "classstdui_1_1rendering_1_1render__tree.html", null ],
+    [ "stdui::rendering::render_tree_builder", "classstdui_1_1rendering_1_1render__tree__builder.html", null ],
     [ "stdui::renderer", "classstdui_1_1renderer.html", [
       [ "stdui::null_renderer", "classstdui_1_1null__renderer.html", null ]
     ] ],
+    [ "stdui::rendering::renderer", "classstdui_1_1rendering_1_1renderer.html", null ],
     [ "stdui::renderer_factory", "classstdui_1_1renderer__factory.html", null ],
+    [ "stdui::rendering::renderer_factory", "classstdui_1_1rendering_1_1renderer__factory.html", null ],
     [ "stdui::resize_event", "structstdui_1_1resize__event.html", null ],
     [ "stdui::runtime", "classstdui_1_1runtime.html", null ],
+    [ "stdui::rendering::shadow_effect", "structstdui_1_1rendering_1_1shadow__effect.html", null ],
     [ "stdui::size", "structstdui_1_1size.html", null ],
     [ "stdui::size_constraint", "structstdui_1_1size__constraint.html", null ],
     [ "stdui::stack_options", "structstdui_1_1stack__options.html", null ],
@@ -69,5 +96,7 @@ var hierarchy =
       [ "stdui::cached_text_measurer", "classstdui_1_1cached__text__measurer.html", null ]
     ] ],
     [ "stdui::text_measurer_factory", "classstdui_1_1text__measurer__factory.html", null ],
+    [ "stdui::rendering::text_properties", "structstdui_1_1rendering_1_1text__properties.html", null ],
+    [ "stdui::rendering::vec2", "structstdui_1_1rendering_1_1vec2.html", null ],
     [ "stdui::vstack_expression< T >", "structstdui_1_1vstack__expression.html", null ]
 ];

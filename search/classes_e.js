@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['rect_0',['rect',['../structstdui_1_1rect.html',1,'stdui']]],
-  ['renderer_1',['renderer',['../classstdui_1_1renderer.html',1,'stdui']]],
-  ['renderer_5ffactory_2',['renderer_factory',['../classstdui_1_1renderer__factory.html',1,'stdui']]],
-  ['resize_5fevent_3',['resize_event',['../structstdui_1_1resize__event.html',1,'stdui']]],
-  ['runtime_4',['runtime',['../classstdui_1_1runtime.html',1,'stdui']]]
+  ['path_5fnode_0',['path_node',['../classstdui_1_1rendering_1_1path__node.html',1,'stdui::rendering']]],
+  ['path_5fproperties_1',['path_properties',['../structstdui_1_1rendering_1_1path__properties.html',1,'stdui::rendering']]],
+  ['platform_2',['platform',['../classstdui_1_1platform.html',1,'stdui']]],
+  ['platform_5fwindow_3',['platform_window',['../classstdui_1_1platform__window.html',1,'stdui']]],
+  ['point_4',['point',['../structstdui_1_1point.html',1,'stdui']]],
+  ['proposal_5',['proposal',['../structstdui_1_1proposal.html',1,'stdui']]]
 ];

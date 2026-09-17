@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['overlay_5fexpression_0',['overlay_expression',['../structstdui_1_1overlay__expression.html',1,'stdui']]],
-  ['overlay_5foptions_1',['overlay_options',['../structstdui_1_1overlay__options.html',1,'stdui']]]
+  ['null_5fplatform_0',['null_platform',['../classstdui_1_1null__platform.html',1,'stdui']]],
+  ['null_5frenderer_1',['null_renderer',['../classstdui_1_1null__renderer.html',1,'stdui']]],
+  ['null_5fwindow_2',['null_window',['../classstdui_1_1null__window.html',1,'stdui']]]
 ];

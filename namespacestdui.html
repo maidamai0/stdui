@@ -108,6 +108,8 @@ $(document).ready(function(){initNavTree('namespacestdui.html',''); initResizabl
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacestdui_1_1detail" id="r_namespacestdui_1_1detail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestdui_1_1detail.html">detail</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacestdui_1_1rendering" id="r_namespacestdui_1_1rendering"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestdui_1_1rendering.html">rendering</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -124,7 +126,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience wrapper that caches font metrics.  <a href="classstdui_1_1cached__text__measurer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdui_1_1color.html">color</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">RGBA color representation (0.0 to 1.0 per channel).  <a href="structstdui_1_1color.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">RGBA color representation.  <a href="structstdui_1_1color.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstdui_1_1component__base.html">component_base</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for all components.  <a href="classstdui_1_1component__base.html#details">More...</a><br /></td></tr>
@@ -2743,12 +2745,12 @@ template&lt;view_expression... T&gt; </div>
 <p>Convenience function to create and run an application. </p>
 <p>Example: auto root = std::make_shared&lt;my_component&gt;(); stdui::run_app(root, stdui::get_platform()); </p>
 
-<p class="definition">Definition at line <a class="el" href="application_8hpp_source.html#l00163">163</a> of file <a class="el" href="application_8hpp_source.html">application.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  164</span>                                        {}) {</div>
-<div class="line"><span class="lineno">  165</span>  application app(std::move(root), std::move(config));</div>
-<div class="line"><span class="lineno">  166</span>  app.initialize(plat);</div>
-<div class="line"><span class="lineno">  167</span>  app.run();</div>
-<div class="line"><span class="lineno">  168</span>}</div>
+<p class="definition">Definition at line <a class="el" href="application_8hpp_source.html#l00159">159</a> of file <a class="el" href="application_8hpp_source.html">application.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  160</span>                                        {}) {</div>
+<div class="line"><span class="lineno">  161</span>  application app(std::move(root), std::move(config));</div>
+<div class="line"><span class="lineno">  162</span>  app.initialize(plat);</div>
+<div class="line"><span class="lineno">  163</span>  app.run();</div>
+<div class="line"><span class="lineno">  164</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>

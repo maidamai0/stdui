@@ -1,6 +1,7 @@
 var namespacestdui =
 [
     [ "detail", "namespacestdui_1_1detail.html", "namespacestdui_1_1detail" ],
+    [ "rendering", "namespacestdui_1_1rendering.html", "namespacestdui_1_1rendering" ],
     [ "app_config", "structstdui_1_1app__config.html", "structstdui_1_1app__config" ],
     [ "application", "classstdui_1_1application.html", "classstdui_1_1application" ],
     [ "arranged_layout", "structstdui_1_1arranged__layout.html", "structstdui_1_1arranged__layout" ],

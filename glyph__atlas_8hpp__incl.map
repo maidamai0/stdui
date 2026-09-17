@@ -1,0 +1,13 @@
+<map id="include/stdui/rendering/glyph_atlas.hpp" name="include/stdui/rendering/glyph_atlas.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="211,5,381,45"/>
+<area shape="rect" id="Node000002" href="$geometry_8hpp.html" title=" " alt="" coords="5,93,152,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="245,48,124,91,123,86,243,43"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="176,93,243,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="277,48,234,86,231,82,273,44"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="267,93,325,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="299,46,299,79,293,79,293,46"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="350,93,474,119"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="326,43,385,83,382,88,323,48"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="499,93,576,119"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="355,43,490,86,488,92,353,48"/>
+</map>

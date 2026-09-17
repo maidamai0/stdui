@@ -218,8 +218,8 @@ Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="application_8hpp_source.html#l00038">38</a> of file <a class="el" href="application_8hpp_source.html">application.hpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   38</span>                                                                                       {})</div>
 <div class="line"><span class="lineno">   39</span>      : <a class="code hl_variable" href="classstdui_1_1application.html#a485d11c1d658fe4e8ef620e74b794b00">root_component_</a>(<a class="code hl_namespace" href="namespacestd.html">std</a>::move(root_comp)), <a class="code hl_variable" href="classstdui_1_1application.html#a1ae230d9592b68c852a058de70de6542">config_</a>(<a class="code hl_namespace" href="namespacestd.html">std</a>::move(cfg)) {}</div>
-<div class="ttc" id="aclassstdui_1_1application_html_a1ae230d9592b68c852a058de70de6542"><div class="ttname"><a href="classstdui_1_1application.html#a1ae230d9592b68c852a058de70de6542">stdui::application::config_</a></div><div class="ttdeci">app_config config_</div><div class="ttdef"><b>Definition</b> <a href="application_8hpp_source.html#l00148">application.hpp:148</a></div></div>
-<div class="ttc" id="aclassstdui_1_1application_html_a485d11c1d658fe4e8ef620e74b794b00"><div class="ttname"><a href="classstdui_1_1application.html#a485d11c1d658fe4e8ef620e74b794b00">stdui::application::root_component_</a></div><div class="ttdeci">std::shared_ptr&lt; component_base const  &gt; root_component_</div><div class="ttdef"><b>Definition</b> <a href="application_8hpp_source.html#l00147">application.hpp:147</a></div></div>
+<div class="ttc" id="aclassstdui_1_1application_html_a1ae230d9592b68c852a058de70de6542"><div class="ttname"><a href="classstdui_1_1application.html#a1ae230d9592b68c852a058de70de6542">stdui::application::config_</a></div><div class="ttdeci">app_config config_</div><div class="ttdef"><b>Definition</b> <a href="application_8hpp_source.html#l00144">application.hpp:144</a></div></div>
+<div class="ttc" id="aclassstdui_1_1application_html_a485d11c1d658fe4e8ef620e74b794b00"><div class="ttname"><a href="classstdui_1_1application.html#a485d11c1d658fe4e8ef620e74b794b00">stdui::application::root_component_</a></div><div class="ttdeci">std::shared_ptr&lt; component_base const  &gt; root_component_</div><div class="ttdef"><b>Definition</b> <a href="application_8hpp_source.html#l00143">application.hpp:143</a></div></div>
 <div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> <a href="component_8hpp_source.html#l00032">component.hpp:32</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -251,12 +251,12 @@ Private Attributes</h2></td></tr>
 
 <p>Handles platform events. </p>
 
-<p class="definition">Definition at line <a class="el" href="application_8hpp_source.html#l00141">141</a> of file <a class="el" href="application_8hpp_source.html">application.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  141</span>                                                 {</div>
-<div class="line"><span class="lineno">  142</span>    <span class="comment">// TODO: Implement event routing to components</span></div>
-<div class="line"><span class="lineno">  143</span>    <span class="comment">// For now, just consume all events</span></div>
-<div class="line"><span class="lineno">  144</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  145</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="application_8hpp_source.html#l00137">137</a> of file <a class="el" href="application_8hpp_source.html">application.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  137</span>                                                 {</div>
+<div class="line"><span class="lineno">  138</span>    <span class="comment">// TODO: Implement event routing to components</span></div>
+<div class="line"><span class="lineno">  139</span>    <span class="comment">// For now, just consume all events</span></div>
+<div class="line"><span class="lineno">  140</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  141</span>  }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="application_8hpp_source.html#l00042">initialize()</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -314,19 +314,19 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   57</span>    <a class="code hl_variable" href="classstdui_1_1application.html#a5c4e7a9a03b257a67e98a76e06e6f40a">needs_update_</a> = <span class="keyword">true</span>;</div>
 <div class="line"><span class="lineno">   58</span>    <a class="code hl_function" href="classstdui_1_1application.html#a3b70c80c1ece19291e8dda9913941b0a">update</a>();</div>
 <div class="line"><span class="lineno">   59</span>  }</div>
-<div class="ttc" id="aclassstdui_1_1application_html_a2d57546b748c271efc052c72af0496e6"><div class="ttname"><a href="classstdui_1_1application.html#a2d57546b748c271efc052c72af0496e6">stdui::application::render</a></div><div class="ttdeci">void render()</div><div class="ttdoc">Renders the current layout tree.</div><div class="ttdef"><b>Definition</b> <a href="application_8hpp_source.html#l00106">application.hpp:106</a></div></div>
-<div class="ttc" id="aclassstdui_1_1application_html_a36c9e78c351003a3ef4fc85774307ecd"><div class="ttname"><a href="classstdui_1_1application.html#a36c9e78c351003a3ef4fc85774307ecd">stdui::application::platform_</a></div><div class="ttdeci">platform * platform_</div><div class="ttdef"><b>Definition</b> <a href="application_8hpp_source.html#l00149">application.hpp:149</a></div></div>
+<div class="ttc" id="aclassstdui_1_1application_html_a2d57546b748c271efc052c72af0496e6"><div class="ttname"><a href="classstdui_1_1application.html#a2d57546b748c271efc052c72af0496e6">stdui::application::render</a></div><div class="ttdeci">void render()</div><div class="ttdoc">Renders the current layout tree.</div><div class="ttdef"><b>Definition</b> <a href="application_8hpp_source.html#l00102">application.hpp:102</a></div></div>
+<div class="ttc" id="aclassstdui_1_1application_html_a36c9e78c351003a3ef4fc85774307ecd"><div class="ttname"><a href="classstdui_1_1application.html#a36c9e78c351003a3ef4fc85774307ecd">stdui::application::platform_</a></div><div class="ttdeci">platform * platform_</div><div class="ttdef"><b>Definition</b> <a href="application_8hpp_source.html#l00145">application.hpp:145</a></div></div>
 <div class="ttc" id="aclassstdui_1_1application_html_a3b70c80c1ece19291e8dda9913941b0a"><div class="ttname"><a href="classstdui_1_1application.html#a3b70c80c1ece19291e8dda9913941b0a">stdui::application::update</a></div><div class="ttdeci">void update()</div><div class="ttdoc">Evaluates the component tree and materializes layout.</div><div class="ttdef"><b>Definition</b> <a href="application_8hpp_source.html#l00086">application.hpp:86</a></div></div>
-<div class="ttc" id="aclassstdui_1_1application_html_a4bbe3bd3cff61f159ccee8a97469f008"><div class="ttname"><a href="classstdui_1_1application.html#a4bbe3bd3cff61f159ccee8a97469f008">stdui::application::handle_event</a></div><div class="ttdeci">bool handle_event(platform_event const &amp;event)</div><div class="ttdoc">Handles platform events.</div><div class="ttdef"><b>Definition</b> <a href="application_8hpp_source.html#l00141">application.hpp:141</a></div></div>
-<div class="ttc" id="aclassstdui_1_1application_html_a5c4e7a9a03b257a67e98a76e06e6f40a"><div class="ttname"><a href="classstdui_1_1application.html#a5c4e7a9a03b257a67e98a76e06e6f40a">stdui::application::needs_update_</a></div><div class="ttdeci">bool needs_update_</div><div class="ttdef"><b>Definition</b> <a href="application_8hpp_source.html#l00153">application.hpp:153</a></div></div>
-<div class="ttc" id="aclassstdui_1_1application_html_af29fd0293a22aeb98cb2a31b1f81ae3c"><div class="ttname"><a href="classstdui_1_1application.html#af29fd0293a22aeb98cb2a31b1f81ae3c">stdui::application::window_</a></div><div class="ttdeci">std::unique_ptr&lt; platform_window &gt; window_</div><div class="ttdef"><b>Definition</b> <a href="application_8hpp_source.html#l00150">application.hpp:150</a></div></div>
+<div class="ttc" id="aclassstdui_1_1application_html_a4bbe3bd3cff61f159ccee8a97469f008"><div class="ttname"><a href="classstdui_1_1application.html#a4bbe3bd3cff61f159ccee8a97469f008">stdui::application::handle_event</a></div><div class="ttdeci">bool handle_event(platform_event const &amp;event)</div><div class="ttdoc">Handles platform events.</div><div class="ttdef"><b>Definition</b> <a href="application_8hpp_source.html#l00137">application.hpp:137</a></div></div>
+<div class="ttc" id="aclassstdui_1_1application_html_a5c4e7a9a03b257a67e98a76e06e6f40a"><div class="ttname"><a href="classstdui_1_1application.html#a5c4e7a9a03b257a67e98a76e06e6f40a">stdui::application::needs_update_</a></div><div class="ttdeci">bool needs_update_</div><div class="ttdef"><b>Definition</b> <a href="application_8hpp_source.html#l00149">application.hpp:149</a></div></div>
+<div class="ttc" id="aclassstdui_1_1application_html_af29fd0293a22aeb98cb2a31b1f81ae3c"><div class="ttname"><a href="classstdui_1_1application.html#af29fd0293a22aeb98cb2a31b1f81ae3c">stdui::application::window_</a></div><div class="ttdeci">std::unique_ptr&lt; platform_window &gt; window_</div><div class="ttdef"><b>Definition</b> <a href="application_8hpp_source.html#l00146">application.hpp:146</a></div></div>
 <div class="ttc" id="aclassstdui_1_1platform_html_a497152f0dec92d5a4156b48e0d221e7d"><div class="ttname"><a href="classstdui_1_1platform.html#a497152f0dec92d5a4156b48e0d221e7d">stdui::platform::create_window</a></div><div class="ttdeci">virtual auto create_window(stdui::size size, std::string const &amp;title) -&gt; std::unique_ptr&lt; platform_window &gt;=0</div><div class="ttdoc">Creates a new window with the specified size and title.</div></div>
 <div class="ttc" id="aclassstdui_1_1platform_html_a85320b66fefafd293a3e1e52c0ed30e0"><div class="ttname"><a href="classstdui_1_1platform.html#a85320b66fefafd293a3e1e52c0ed30e0">stdui::platform::initialize</a></div><div class="ttdeci">virtual void initialize()=0</div><div class="ttdoc">Initializes the platform backend. Must be called before creating windows.</div></div>
 <div class="ttc" id="anamespacestdui_html_a51f0b3bcfe57178bdca7888abc0e180a"><div class="ttname"><a href="namespacestdui.html#a51f0b3bcfe57178bdca7888abc0e180a">stdui::platform_event</a></div><div class="ttdeci">std::variant&lt; mouse_event, keyboard_event, resize_event &gt; platform_event</div><div class="ttdoc">Platform event types.</div><div class="ttdef"><b>Definition</b> <a href="events_8hpp_source.html#l00047">events.hpp:47</a></div></div>
 <div class="ttc" id="astructstdui_1_1app__config_html_a2a485c21eb4577884cdc1c48a953e788"><div class="ttname"><a href="structstdui_1_1app__config.html#a2a485c21eb4577884cdc1c48a953e788">stdui::app_config::window_size</a></div><div class="ttdeci">size window_size</div><div class="ttdef"><b>Definition</b> <a href="application_8hpp_source.html#l00021">application.hpp:21</a></div></div>
 <div class="ttc" id="astructstdui_1_1app__config_html_af3c4b6d11ce680c6858bc0d6995a51dd"><div class="ttname"><a href="structstdui_1_1app__config.html#af3c4b6d11ce680c6858bc0d6995a51dd">stdui::app_config::title</a></div><div class="ttdeci">std::string title</div><div class="ttdef"><b>Definition</b> <a href="application_8hpp_source.html#l00020">application.hpp:20</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="application_8hpp_source.html#l00148">config_</a>, <a class="el" href="classstdui_1_1platform.html#a497152f0dec92d5a4156b48e0d221e7d">stdui::platform::create_window()</a>, <a class="el" href="application_8hpp_source.html#l00141">handle_event()</a>, <a class="el" href="classstdui_1_1platform.html#a85320b66fefafd293a3e1e52c0ed30e0">stdui::platform::initialize()</a>, <a class="el" href="application_8hpp_source.html#l00153">needs_update_</a>, <a class="el" href="application_8hpp_source.html#l00149">platform_</a>, <a class="el" href="application_8hpp_source.html#l00106">render()</a>, <a class="el" href="application_8hpp_source.html#l00020">stdui::app_config::title</a>, <a class="el" href="application_8hpp_source.html#l00086">update()</a>, <a class="el" href="application_8hpp_source.html#l00150">window_</a>, and <a class="el" href="application_8hpp_source.html#l00021">stdui::app_config::window_size</a>.</p>
+<p class="reference">References <a class="el" href="application_8hpp_source.html#l00144">config_</a>, <a class="el" href="classstdui_1_1platform.html#a497152f0dec92d5a4156b48e0d221e7d">stdui::platform::create_window()</a>, <a class="el" href="application_8hpp_source.html#l00137">handle_event()</a>, <a class="el" href="classstdui_1_1platform.html#a85320b66fefafd293a3e1e52c0ed30e0">stdui::platform::initialize()</a>, <a class="el" href="application_8hpp_source.html#l00149">needs_update_</a>, <a class="el" href="application_8hpp_source.html#l00145">platform_</a>, <a class="el" href="application_8hpp_source.html#l00102">render()</a>, <a class="el" href="application_8hpp_source.html#l00020">stdui::app_config::title</a>, <a class="el" href="application_8hpp_source.html#l00086">update()</a>, <a class="el" href="application_8hpp_source.html#l00146">window_</a>, and <a class="el" href="application_8hpp_source.html#l00021">stdui::app_config::window_size</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -370,7 +370,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   75</span>    }</div>
 <div class="line"><span class="lineno">   76</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="application_8hpp_source.html#l00153">needs_update_</a>, and <a class="el" href="application_8hpp_source.html#l00150">window_</a>.</p>
+<p class="reference">References <a class="el" href="application_8hpp_source.html#l00149">needs_update_</a>, and <a class="el" href="application_8hpp_source.html#l00146">window_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="application_8hpp_source.html#l00086">update()</a>.</p>
 <div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -410,9 +410,9 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="application_8hpp_source.html#l00082">82</a> of file <a class="el" href="application_8hpp_source.html">application.hpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   82</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classstdui_1_1application.html#a4a476a14168f514c6f037ebd1e97c95f">layout_tree_</a>.get(); }</div>
-<div class="ttc" id="aclassstdui_1_1application_html_a4a476a14168f514c6f037ebd1e97c95f"><div class="ttname"><a href="classstdui_1_1application.html#a4a476a14168f514c6f037ebd1e97c95f">stdui::application::layout_tree_</a></div><div class="ttdeci">std::unique_ptr&lt; layout_node &gt; layout_tree_</div><div class="ttdef"><b>Definition</b> <a href="application_8hpp_source.html#l00152">application.hpp:152</a></div></div>
+<div class="ttc" id="aclassstdui_1_1application_html_a4a476a14168f514c6f037ebd1e97c95f"><div class="ttname"><a href="classstdui_1_1application.html#a4a476a14168f514c6f037ebd1e97c95f">stdui::application::layout_tree_</a></div><div class="ttdeci">std::unique_ptr&lt; layout_node &gt; layout_tree_</div><div class="ttdef"><b>Definition</b> <a href="application_8hpp_source.html#l00148">application.hpp:148</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="application_8hpp_source.html#l00152">layout_tree_</a>.</p>
+<p class="reference">References <a class="el" href="application_8hpp_source.html#l00148">layout_tree_</a>.</p>
 
 </div>
 </div>
@@ -443,9 +443,9 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="application_8hpp_source.html#l00079">79</a> of file <a class="el" href="application_8hpp_source.html">application.hpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   79</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classstdui_1_1application.html#a6ae75e3a53f31b349f6a3a13a805d61f">registry_</a>; }</div>
-<div class="ttc" id="aclassstdui_1_1application_html_a6ae75e3a53f31b349f6a3a13a805d61f"><div class="ttname"><a href="classstdui_1_1application.html#a6ae75e3a53f31b349f6a3a13a805d61f">stdui::application::registry_</a></div><div class="ttdeci">component_registry registry_</div><div class="ttdef"><b>Definition</b> <a href="application_8hpp_source.html#l00151">application.hpp:151</a></div></div>
+<div class="ttc" id="aclassstdui_1_1application_html_a6ae75e3a53f31b349f6a3a13a805d61f"><div class="ttname"><a href="classstdui_1_1application.html#a6ae75e3a53f31b349f6a3a13a805d61f">stdui::application::registry_</a></div><div class="ttdeci">component_registry registry_</div><div class="ttdef"><b>Definition</b> <a href="application_8hpp_source.html#l00147">application.hpp:147</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="application_8hpp_source.html#l00151">registry_</a>.</p>
+<p class="reference">References <a class="el" href="application_8hpp_source.html#l00147">registry_</a>.</p>
 
 </div>
 </div>
@@ -474,33 +474,33 @@ Private Attributes</h2></td></tr>
 
 <p>Renders the current layout tree. </p>
 
-<p class="definition">Definition at line <a class="el" href="application_8hpp_source.html#l00106">106</a> of file <a class="el" href="application_8hpp_source.html">application.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  106</span>                {</div>
-<div class="line"><span class="lineno">  107</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classstdui_1_1application.html#a5c4e7a9a03b257a67e98a76e06e6f40a">needs_update_</a>) {</div>
-<div class="line"><span class="lineno">  108</span>      <a class="code hl_function" href="classstdui_1_1application.html#a3b70c80c1ece19291e8dda9913941b0a">update</a>();</div>
+<p class="definition">Definition at line <a class="el" href="application_8hpp_source.html#l00102">102</a> of file <a class="el" href="application_8hpp_source.html">application.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  102</span>                {</div>
+<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classstdui_1_1application.html#a5c4e7a9a03b257a67e98a76e06e6f40a">needs_update_</a>) {</div>
+<div class="line"><span class="lineno">  104</span>      <a class="code hl_function" href="classstdui_1_1application.html#a3b70c80c1ece19291e8dda9913941b0a">update</a>();</div>
+<div class="line"><span class="lineno">  105</span>    }</div>
+<div class="line"><span class="lineno">  106</span> </div>
+<div class="line"><span class="lineno">  107</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classstdui_1_1application.html#af29fd0293a22aeb98cb2a31b1f81ae3c">window_</a> || !<a class="code hl_variable" href="classstdui_1_1application.html#a4a476a14168f514c6f037ebd1e97c95f">layout_tree_</a>) {</div>
+<div class="line"><span class="lineno">  108</span>      <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">  109</span>    }</div>
 <div class="line"><span class="lineno">  110</span> </div>
-<div class="line"><span class="lineno">  111</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classstdui_1_1application.html#af29fd0293a22aeb98cb2a31b1f81ae3c">window_</a> || !<a class="code hl_variable" href="classstdui_1_1application.html#a4a476a14168f514c6f037ebd1e97c95f">layout_tree_</a>) {</div>
-<div class="line"><span class="lineno">  112</span>      <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  113</span>    }</div>
+<div class="line"><span class="lineno">  111</span>    <span class="keyword">auto</span> &amp;renderer = <a class="code hl_variable" href="classstdui_1_1application.html#af29fd0293a22aeb98cb2a31b1f81ae3c">window_</a>-&gt;renderer();</div>
+<div class="line"><span class="lineno">  112</span>    renderer.begin_frame();</div>
+<div class="line"><span class="lineno">  113</span>    renderer.clear(<a class="code hl_variable" href="classstdui_1_1application.html#a1ae230d9592b68c852a058de70de6542">config_</a>.<a class="code hl_variable" href="structstdui_1_1app__config.html#afc5e394ddd10a1cdb79b1cf6e9accb65">background_color</a>);</div>
 <div class="line"><span class="lineno">  114</span> </div>
-<div class="line"><span class="lineno">  115</span>    <span class="keyword">auto</span> &amp;renderer = <a class="code hl_variable" href="classstdui_1_1application.html#af29fd0293a22aeb98cb2a31b1f81ae3c">window_</a>-&gt;renderer();</div>
-<div class="line"><span class="lineno">  116</span>    renderer.begin_frame();</div>
-<div class="line"><span class="lineno">  117</span>    renderer.clear(<a class="code hl_variable" href="classstdui_1_1application.html#a1ae230d9592b68c852a058de70de6542">config_</a>.<a class="code hl_variable" href="structstdui_1_1app__config.html#afc5e394ddd10a1cdb79b1cf6e9accb65">background_color</a>);</div>
+<div class="line"><span class="lineno">  115</span>    <span class="comment">// Arrange layout within window bounds</span></div>
+<div class="line"><span class="lineno">  116</span>    <span class="keyword">auto</span> bounds = rect{{0.0, 0.0}, <a class="code hl_variable" href="classstdui_1_1application.html#af29fd0293a22aeb98cb2a31b1f81ae3c">window_</a>-&gt;size()};</div>
+<div class="line"><span class="lineno">  117</span>    <span class="keyword">auto</span> arranged = <a class="code hl_variable" href="classstdui_1_1application.html#a4a476a14168f514c6f037ebd1e97c95f">layout_tree_</a>-&gt;arrange(bounds);</div>
 <div class="line"><span class="lineno">  118</span> </div>
-<div class="line"><span class="lineno">  119</span>    <span class="comment">// Arrange layout within window bounds</span></div>
-<div class="line"><span class="lineno">  120</span>    <span class="keyword">auto</span> bounds = rect{{0.0, 0.0}, <a class="code hl_variable" href="classstdui_1_1application.html#af29fd0293a22aeb98cb2a31b1f81ae3c">window_</a>-&gt;size()};</div>
-<div class="line"><span class="lineno">  121</span>    <span class="keyword">auto</span> arranged = <a class="code hl_variable" href="classstdui_1_1application.html#a4a476a14168f514c6f037ebd1e97c95f">layout_tree_</a>-&gt;arrange(bounds);</div>
-<div class="line"><span class="lineno">  122</span> </div>
-<div class="line"><span class="lineno">  123</span>    <span class="comment">// Render the layout tree</span></div>
-<div class="line"><span class="lineno">  124</span>    <a class="code hl_function" href="classstdui_1_1application.html#ab27b5d30f0136074ecda2911195454f6">render_box</a>(renderer, arranged);</div>
-<div class="line"><span class="lineno">  125</span> </div>
-<div class="line"><span class="lineno">  126</span>    renderer.end_frame();</div>
-<div class="line"><span class="lineno">  127</span>  }</div>
-<div class="ttc" id="aclassstdui_1_1application_html_ab27b5d30f0136074ecda2911195454f6"><div class="ttname"><a href="classstdui_1_1application.html#ab27b5d30f0136074ecda2911195454f6">stdui::application::render_box</a></div><div class="ttdeci">void render_box(renderer &amp;renderer, layout_box const &amp;box)</div><div class="ttdoc">Recursively renders a layout box and its children.</div><div class="ttdef"><b>Definition</b> <a href="application_8hpp_source.html#l00130">application.hpp:130</a></div></div>
+<div class="line"><span class="lineno">  119</span>    <span class="comment">// Render the layout tree</span></div>
+<div class="line"><span class="lineno">  120</span>    <a class="code hl_function" href="classstdui_1_1application.html#ab27b5d30f0136074ecda2911195454f6">render_box</a>(renderer, arranged);</div>
+<div class="line"><span class="lineno">  121</span> </div>
+<div class="line"><span class="lineno">  122</span>    renderer.end_frame();</div>
+<div class="line"><span class="lineno">  123</span>  }</div>
+<div class="ttc" id="aclassstdui_1_1application_html_ab27b5d30f0136074ecda2911195454f6"><div class="ttname"><a href="classstdui_1_1application.html#ab27b5d30f0136074ecda2911195454f6">stdui::application::render_box</a></div><div class="ttdeci">void render_box(renderer &amp;renderer, layout_box const &amp;box)</div><div class="ttdoc">Recursively renders a layout box and its children.</div><div class="ttdef"><b>Definition</b> <a href="application_8hpp_source.html#l00126">application.hpp:126</a></div></div>
 <div class="ttc" id="astructstdui_1_1app__config_html_afc5e394ddd10a1cdb79b1cf6e9accb65"><div class="ttname"><a href="structstdui_1_1app__config.html#afc5e394ddd10a1cdb79b1cf6e9accb65">stdui::app_config::background_color</a></div><div class="ttdeci">color background_color</div><div class="ttdef"><b>Definition</b> <a href="application_8hpp_source.html#l00022">application.hpp:22</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="application_8hpp_source.html#l00022">stdui::app_config::background_color</a>, <a class="el" href="classstdui_1_1renderer.html#a40f31d996b95a3ac7b3acd96a115c480">stdui::renderer::begin_frame()</a>, <a class="el" href="classstdui_1_1renderer.html#af97aa7fba86268dfed8b30abeceeb59d">stdui::renderer::clear()</a>, <a class="el" href="application_8hpp_source.html#l00148">config_</a>, <a class="el" href="classstdui_1_1renderer.html#a159facff6b39c63fbc5453660d0e3aa2">stdui::renderer::end_frame()</a>, <a class="el" href="application_8hpp_source.html#l00152">layout_tree_</a>, <a class="el" href="application_8hpp_source.html#l00153">needs_update_</a>, <a class="el" href="application_8hpp_source.html#l00130">render_box()</a>, <a class="el" href="application_8hpp_source.html#l00086">update()</a>, and <a class="el" href="application_8hpp_source.html#l00150">window_</a>.</p>
+<p class="reference">References <a class="el" href="application_8hpp_source.html#l00022">stdui::app_config::background_color</a>, <a class="el" href="classstdui_1_1renderer.html#a40f31d996b95a3ac7b3acd96a115c480">stdui::renderer::begin_frame()</a>, <a class="el" href="classstdui_1_1renderer.html#af97aa7fba86268dfed8b30abeceeb59d">stdui::renderer::clear()</a>, <a class="el" href="application_8hpp_source.html#l00144">config_</a>, <a class="el" href="classstdui_1_1renderer.html#a159facff6b39c63fbc5453660d0e3aa2">stdui::renderer::end_frame()</a>, <a class="el" href="application_8hpp_source.html#l00148">layout_tree_</a>, <a class="el" href="application_8hpp_source.html#l00149">needs_update_</a>, <a class="el" href="application_8hpp_source.html#l00126">render_box()</a>, <a class="el" href="application_8hpp_source.html#l00086">update()</a>, and <a class="el" href="application_8hpp_source.html#l00146">window_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="application_8hpp_source.html#l00042">initialize()</a>.</p>
 <div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -556,21 +556,21 @@ Private Attributes</h2></td></tr>
 
 <p>Recursively renders a layout box and its children. </p>
 
-<p class="definition">Definition at line <a class="el" href="application_8hpp_source.html#l00130">130</a> of file <a class="el" href="application_8hpp_source.html">application.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  130</span>                                                             {</div>
-<div class="line"><span class="lineno">  131</span>    <span class="keywordflow">if</span> (box.kind == <span class="stringliteral">&quot;text&quot;</span>) {</div>
-<div class="line"><span class="lineno">  132</span>      renderer.draw_text(box.content, box.bounds.origin, font_descriptor{}, <a class="code hl_function" href="structstdui_1_1color.html#ad3b606fb73670fb486694828a0ad1bae">color::black</a>());</div>
+<p class="definition">Definition at line <a class="el" href="application_8hpp_source.html#l00126">126</a> of file <a class="el" href="application_8hpp_source.html">application.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  126</span>                                                             {</div>
+<div class="line"><span class="lineno">  127</span>    <span class="keywordflow">if</span> (box.kind == <span class="stringliteral">&quot;text&quot;</span>) {</div>
+<div class="line"><span class="lineno">  128</span>      renderer.draw_text(box.content, box.bounds.origin, font_descriptor{}, <a class="code hl_function" href="structstdui_1_1color.html#ac976991b184dd7aab25f730808546417">color::black</a>());</div>
+<div class="line"><span class="lineno">  129</span>    }</div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;child : box.children) {</div>
+<div class="line"><span class="lineno">  132</span>      <a class="code hl_function" href="classstdui_1_1application.html#ab27b5d30f0136074ecda2911195454f6">render_box</a>(renderer, child);</div>
 <div class="line"><span class="lineno">  133</span>    }</div>
-<div class="line"><span class="lineno">  134</span> </div>
-<div class="line"><span class="lineno">  135</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;child : box.children) {</div>
-<div class="line"><span class="lineno">  136</span>      <a class="code hl_function" href="classstdui_1_1application.html#ab27b5d30f0136074ecda2911195454f6">render_box</a>(renderer, child);</div>
-<div class="line"><span class="lineno">  137</span>    }</div>
-<div class="line"><span class="lineno">  138</span>  }</div>
-<div class="ttc" id="astructstdui_1_1color_html_ad3b606fb73670fb486694828a0ad1bae"><div class="ttname"><a href="structstdui_1_1color.html#ad3b606fb73670fb486694828a0ad1bae">stdui::color::black</a></div><div class="ttdeci">static auto black() -&gt; color</div><div class="ttdef"><b>Definition</b> <a href="rendering_8hpp_source.html#l00019">rendering.hpp:19</a></div></div>
+<div class="line"><span class="lineno">  134</span>  }</div>
+<div class="ttc" id="astructstdui_1_1color_html_ac976991b184dd7aab25f730808546417"><div class="ttname"><a href="structstdui_1_1color.html#ac976991b184dd7aab25f730808546417">stdui::color::black</a></div><div class="ttdeci">static constexpr color black()</div><div class="ttdoc">Common color constants.</div><div class="ttdef"><b>Definition</b> <a href="color_8hpp_source.html#l00040">color.hpp:40</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="rendering_8hpp_source.html#l00019">stdui::color::black()</a>, <a class="el" href="layout__tree_8hpp_source.html#l00077">stdui::layout_box::bounds</a>, <a class="el" href="layout__tree_8hpp_source.html#l00078">stdui::layout_box::children</a>, <a class="el" href="layout__tree_8hpp_source.html#l00076">stdui::layout_box::content</a>, <a class="el" href="classstdui_1_1renderer.html#a7dc43dcb34594c23b9951fe72f1fa6d5">stdui::renderer::draw_text()</a>, <a class="el" href="layout__tree_8hpp_source.html#l00075">stdui::layout_box::kind</a>, <a class="el" href="geometry_8hpp_source.html#l00023">stdui::rect::origin</a>, and <a class="el" href="application_8hpp_source.html#l00130">render_box()</a>.</p>
+<p class="reference">References <a class="el" href="color_8hpp_source.html#l00040">stdui::color::black()</a>, <a class="el" href="layout__tree_8hpp_source.html#l00077">stdui::layout_box::bounds</a>, <a class="el" href="layout__tree_8hpp_source.html#l00078">stdui::layout_box::children</a>, <a class="el" href="layout__tree_8hpp_source.html#l00076">stdui::layout_box::content</a>, <a class="el" href="classstdui_1_1renderer.html#a7dc43dcb34594c23b9951fe72f1fa6d5">stdui::renderer::draw_text()</a>, <a class="el" href="layout__tree_8hpp_source.html#l00075">stdui::layout_box::kind</a>, <a class="el" href="geometry_8hpp_source.html#l00023">stdui::rect::origin</a>, and <a class="el" href="application_8hpp_source.html#l00126">render_box()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="application_8hpp_source.html#l00106">render()</a>, and <a class="el" href="application_8hpp_source.html#l00130">render_box()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="application_8hpp_source.html#l00102">render()</a>, and <a class="el" href="application_8hpp_source.html#l00126">render_box()</a>.</p>
 <div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
@@ -623,7 +623,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   68</span>  }</div>
 <div class="ttc" id="aclassstdui_1_1platform_html_ad0984c152c8814038984341be6bd3598"><div class="ttname"><a href="classstdui_1_1platform.html#ad0984c152c8814038984341be6bd3598">stdui::platform::run_event_loop</a></div><div class="ttdeci">virtual void run_event_loop()=0</div><div class="ttdoc">Runs the platform event loop (blocks until all windows are closed).</div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="application_8hpp_source.html#l00149">platform_</a>, <a class="el" href="classstdui_1_1platform.html#ad0984c152c8814038984341be6bd3598">stdui::platform::run_event_loop()</a>, and <a class="el" href="application_8hpp_source.html#l00150">window_</a>.</p>
+<p class="reference">References <a class="el" href="application_8hpp_source.html#l00145">platform_</a>, <a class="el" href="classstdui_1_1platform.html#ad0984c152c8814038984341be6bd3598">stdui::platform::run_event_loop()</a>, and <a class="el" href="application_8hpp_source.html#l00146">window_</a>.</p>
 <div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
@@ -661,30 +661,26 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="application_8hpp_source.html#l00086">86</a> of file <a class="el" href="application_8hpp_source.html">application.hpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   86</span>                {</div>
-<div class="line"><span class="lineno">   87</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classstdui_1_1application.html#a5c4e7a9a03b257a67e98a76e06e6f40a">needs_update_</a>) {</div>
-<div class="line"><span class="lineno">   88</span>      <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   89</span>    }</div>
+<div class="line"><span class="lineno">   87</span>    <span class="comment">// Evaluate root component with state context</span></div>
+<div class="line"><span class="lineno">   88</span>    component_evaluator evaluator(<a class="code hl_variable" href="classstdui_1_1application.html#a6ae75e3a53f31b349f6a3a13a805d61f">registry_</a>);</div>
+<div class="line"><span class="lineno">   89</span>    <span class="keyword">auto</span> snapshot = evaluator.evaluate(*<a class="code hl_variable" href="classstdui_1_1application.html#a485d11c1d658fe4e8ef620e74b794b00">root_component_</a>, [<span class="keyword">this</span>] { <a class="code hl_function" href="classstdui_1_1application.html#a02b7463a79285a40187aafc5a7f8f980">invalidate</a>(); });</div>
 <div class="line"><span class="lineno">   90</span> </div>
-<div class="line"><span class="lineno">   91</span>    <span class="comment">// Evaluate root component with state context</span></div>
-<div class="line"><span class="lineno">   92</span>    component_evaluator evaluator(<a class="code hl_variable" href="classstdui_1_1application.html#a6ae75e3a53f31b349f6a3a13a805d61f">registry_</a>);</div>
-<div class="line"><span class="lineno">   93</span>    <span class="keyword">auto</span> snapshot = evaluator.evaluate(*<a class="code hl_variable" href="classstdui_1_1application.html#a485d11c1d658fe4e8ef620e74b794b00">root_component_</a>, [<span class="keyword">this</span>] { <a class="code hl_function" href="classstdui_1_1application.html#a02b7463a79285a40187aafc5a7f8f980">invalidate</a>(); });</div>
-<div class="line"><span class="lineno">   94</span> </div>
-<div class="line"><span class="lineno">   95</span>    <span class="comment">// Materialize layout from inspection_node</span></div>
-<div class="line"><span class="lineno">   96</span>    <a class="code hl_variable" href="classstdui_1_1application.html#a4a476a14168f514c6f037ebd1e97c95f">layout_tree_</a> = std::make_unique&lt;layout_node&gt;(</div>
-<div class="line"><span class="lineno">   97</span>        <a class="code hl_function" href="namespacestdui.html#a8fc57a34c850af116c51fac88ddd6ae9">materialize_layout</a>(snapshot, [](std::string_view <a class="code hl_enumvalue" href="namespacestdui.html#a62d98f56870e76b778b429b8ef8f2702a1cb251ec0d568de6a929b520c4aed8d1">text</a>) -&gt; size {</div>
-<div class="line"><span class="lineno">   98</span>          <span class="comment">// TODO: Use platform text measurer</span></div>
-<div class="line"><span class="lineno">   99</span>          <span class="keywordflow">return</span> {<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="namespacestdui.html#a62d98f56870e76b778b429b8ef8f2702a1cb251ec0d568de6a929b520c4aed8d1">text</a>.length()) * 8.0, 16.0};</div>
-<div class="line"><span class="lineno">  100</span>        }));</div>
-<div class="line"><span class="lineno">  101</span> </div>
-<div class="line"><span class="lineno">  102</span>    <a class="code hl_variable" href="classstdui_1_1application.html#a5c4e7a9a03b257a67e98a76e06e6f40a">needs_update_</a> = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  103</span>  }</div>
+<div class="line"><span class="lineno">   91</span>    <span class="comment">// Materialize layout from inspection_node</span></div>
+<div class="line"><span class="lineno">   92</span>    <a class="code hl_variable" href="classstdui_1_1application.html#a4a476a14168f514c6f037ebd1e97c95f">layout_tree_</a> = std::make_unique&lt;layout_node&gt;(</div>
+<div class="line"><span class="lineno">   93</span>        <a class="code hl_function" href="namespacestdui.html#a8fc57a34c850af116c51fac88ddd6ae9">materialize_layout</a>(snapshot, [](std::string_view <a class="code hl_enumvalue" href="namespacestdui.html#a62d98f56870e76b778b429b8ef8f2702a1cb251ec0d568de6a929b520c4aed8d1">text</a>) -&gt; size {</div>
+<div class="line"><span class="lineno">   94</span>          <span class="comment">// TODO: Use platform text measurer</span></div>
+<div class="line"><span class="lineno">   95</span>          <span class="keywordflow">return</span> {<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="namespacestdui.html#a62d98f56870e76b778b429b8ef8f2702a1cb251ec0d568de6a929b520c4aed8d1">text</a>.length()) * 8.0, 16.0};</div>
+<div class="line"><span class="lineno">   96</span>        }));</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>    <a class="code hl_variable" href="classstdui_1_1application.html#a5c4e7a9a03b257a67e98a76e06e6f40a">needs_update_</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   99</span>  }</div>
 <div class="ttc" id="aclassstdui_1_1application_html_a02b7463a79285a40187aafc5a7f8f980"><div class="ttname"><a href="classstdui_1_1application.html#a02b7463a79285a40187aafc5a7f8f980">stdui::application::invalidate</a></div><div class="ttdeci">void invalidate()</div><div class="ttdoc">Requests a re-evaluation and redraw.</div><div class="ttdef"><b>Definition</b> <a href="application_8hpp_source.html#l00071">application.hpp:71</a></div></div>
 <div class="ttc" id="anamespacestdui_html_a62d98f56870e76b778b429b8ef8f2702a1cb251ec0d568de6a929b520c4aed8d1"><div class="ttname"><a href="namespacestdui.html#a62d98f56870e76b778b429b8ef8f2702a1cb251ec0d568de6a929b520c4aed8d1">stdui::layout_kind::text</a></div><div class="ttdeci">@ text</div></div>
 <div class="ttc" id="anamespacestdui_html_a8fc57a34c850af116c51fac88ddd6ae9"><div class="ttname"><a href="namespacestdui.html#a8fc57a34c850af116c51fac88ddd6ae9">stdui::materialize_layout</a></div><div class="ttdeci">auto materialize_layout(inspection_node const &amp;node, std::shared_ptr&lt; text_measure_fn const &gt; text_measure) -&gt; layout_node</div><div class="ttdoc">Creates a layout tree from a headless expression snapshot.</div><div class="ttdef"><b>Definition</b> <a href="layout__tree_8hpp_source.html#l00195">layout_tree.hpp:195</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="component_8hpp_source.html#l00111">stdui::component_evaluator::evaluate()</a>, <a class="el" href="application_8hpp_source.html#l00071">invalidate()</a>, <a class="el" href="application_8hpp_source.html#l00152">layout_tree_</a>, <a class="el" href="layout__tree_8hpp_source.html#l00195">stdui::materialize_layout()</a>, <a class="el" href="application_8hpp_source.html#l00153">needs_update_</a>, <a class="el" href="application_8hpp_source.html#l00151">registry_</a>, <a class="el" href="application_8hpp_source.html#l00147">root_component_</a>, and <a class="el" href="namespacestdui.html#a62d98f56870e76b778b429b8ef8f2702a1cb251ec0d568de6a929b520c4aed8d1">stdui::text</a>.</p>
+<p class="reference">References <a class="el" href="component_8hpp_source.html#l00111">stdui::component_evaluator::evaluate()</a>, <a class="el" href="application_8hpp_source.html#l00071">invalidate()</a>, <a class="el" href="application_8hpp_source.html#l00148">layout_tree_</a>, <a class="el" href="layout__tree_8hpp_source.html#l00195">stdui::materialize_layout()</a>, <a class="el" href="application_8hpp_source.html#l00149">needs_update_</a>, <a class="el" href="application_8hpp_source.html#l00147">registry_</a>, <a class="el" href="application_8hpp_source.html#l00143">root_component_</a>, and <a class="el" href="namespacestdui.html#a62d98f56870e76b778b429b8ef8f2702a1cb251ec0d568de6a929b520c4aed8d1">stdui::text</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="application_8hpp_source.html#l00042">initialize()</a>, and <a class="el" href="application_8hpp_source.html#l00106">render()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="application_8hpp_source.html#l00042">initialize()</a>, and <a class="el" href="application_8hpp_source.html#l00102">render()</a>.</p>
 <div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary" style="display:block;">
@@ -723,9 +719,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="application_8hpp_source.html#l00148">148</a> of file <a class="el" href="application_8hpp_source.html">application.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="application_8hpp_source.html#l00144">144</a> of file <a class="el" href="application_8hpp_source.html">application.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="application_8hpp_source.html#l00042">initialize()</a>, and <a class="el" href="application_8hpp_source.html#l00106">render()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="application_8hpp_source.html#l00042">initialize()</a>, and <a class="el" href="application_8hpp_source.html#l00102">render()</a>.</p>
 
 </div>
 </div>
@@ -749,9 +745,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="application_8hpp_source.html#l00152">152</a> of file <a class="el" href="application_8hpp_source.html">application.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="application_8hpp_source.html#l00148">148</a> of file <a class="el" href="application_8hpp_source.html">application.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="application_8hpp_source.html#l00082">layout_tree()</a>, <a class="el" href="application_8hpp_source.html#l00106">render()</a>, and <a class="el" href="application_8hpp_source.html#l00086">update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="application_8hpp_source.html#l00082">layout_tree()</a>, <a class="el" href="application_8hpp_source.html#l00102">render()</a>, and <a class="el" href="application_8hpp_source.html#l00086">update()</a>.</p>
 
 </div>
 </div>
@@ -775,9 +771,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="application_8hpp_source.html#l00153">153</a> of file <a class="el" href="application_8hpp_source.html">application.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="application_8hpp_source.html#l00149">149</a> of file <a class="el" href="application_8hpp_source.html">application.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="application_8hpp_source.html#l00042">initialize()</a>, <a class="el" href="application_8hpp_source.html#l00071">invalidate()</a>, <a class="el" href="application_8hpp_source.html#l00106">render()</a>, and <a class="el" href="application_8hpp_source.html#l00086">update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="application_8hpp_source.html#l00042">initialize()</a>, <a class="el" href="application_8hpp_source.html#l00071">invalidate()</a>, <a class="el" href="application_8hpp_source.html#l00102">render()</a>, and <a class="el" href="application_8hpp_source.html#l00086">update()</a>.</p>
 
 </div>
 </div>
@@ -801,7 +797,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="application_8hpp_source.html#l00149">149</a> of file <a class="el" href="application_8hpp_source.html">application.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="application_8hpp_source.html#l00145">145</a> of file <a class="el" href="application_8hpp_source.html">application.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="application_8hpp_source.html#l00042">initialize()</a>, and <a class="el" href="application_8hpp_source.html#l00062">run()</a>.</p>
 
@@ -827,7 +823,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="application_8hpp_source.html#l00151">151</a> of file <a class="el" href="application_8hpp_source.html">application.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="application_8hpp_source.html#l00147">147</a> of file <a class="el" href="application_8hpp_source.html">application.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="application_8hpp_source.html#l00079">registry()</a>, and <a class="el" href="application_8hpp_source.html#l00086">update()</a>.</p>
 
@@ -853,7 +849,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="application_8hpp_source.html#l00147">147</a> of file <a class="el" href="application_8hpp_source.html">application.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="application_8hpp_source.html#l00143">143</a> of file <a class="el" href="application_8hpp_source.html">application.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="application_8hpp_source.html#l00086">update()</a>.</p>
 
@@ -879,9 +875,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="application_8hpp_source.html#l00150">150</a> of file <a class="el" href="application_8hpp_source.html">application.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="application_8hpp_source.html#l00146">146</a> of file <a class="el" href="application_8hpp_source.html">application.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="application_8hpp_source.html#l00042">initialize()</a>, <a class="el" href="application_8hpp_source.html#l00071">invalidate()</a>, <a class="el" href="application_8hpp_source.html#l00106">render()</a>, and <a class="el" href="application_8hpp_source.html#l00062">run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="application_8hpp_source.html#l00042">initialize()</a>, <a class="el" href="application_8hpp_source.html#l00071">invalidate()</a>, <a class="el" href="application_8hpp_source.html#l00102">render()</a>, and <a class="el" href="application_8hpp_source.html#l00062">run()</a>.</p>
 
 </div>
 </div>

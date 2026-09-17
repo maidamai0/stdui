@@ -124,7 +124,7 @@
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="structstdui_1_1color.html#ad3b606fb73670fb486694828a0ad1bae" target="_top" xlink:title=" ">
+<g id="a_Node000006"><a xlink:href="structstdui_1_1color.html#ac976991b184dd7aab25f730808546417" target="_top" xlink:title="Common color constants.">
 <polygon fill="white" stroke="#666666" points="422,-218.5 319,-218.5 319,-199.5 422,-199.5 422,-218.5"/>
 <text text-anchor="middle" x="370.5" y="-206.5" font-family="Helvetica,sans-Serif" font-size="10.00">stdui::color::black</text>
 </a>

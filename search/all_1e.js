@@ -1,18 +1,17 @@
 var searchData=
 [
-  ['validated_0',['Phase 1 — Foundation (validated)',['../roadmap.html#autotoc_md118',1,'']]],
-  ['value_1',['value',['../structstdui_1_1text__expression.html#aa6971607613dd81b6085ad25323b0939',1,'stdui::text_expression']]],
-  ['value_5f_2',['value_',['../classstdui_1_1state__handle.html#acb8569ab5ca14506fc08e594e0212068',1,'stdui::state_handle']]],
-  ['variables_3',['Step 4: Multiple State Variables',['../tutorials.html#autotoc_md144',1,'']]],
-  ['vertical_4',['vertical',['../namespacestdui_1_1detail.html#a2c656a5144593849ec8c745e0ccc3819ae6dec152d6a941fccb0a5e8cc2579cc3',1,'stdui::detail']]],
-  ['vertically_5',['Step 3: Stack Elements Vertically',['../tutorials.html#autotoc_md130',1,'']]],
-  ['view_20expressions_6',['view expressions',['../getting_started.html#autotoc_md42',1,'1. View Expressions'],['../design_decisions.html#autotoc_md20',1,'D002 — Persistent runtime representation is separate from view expressions']]],
-  ['view_20integration_7',['6.2 Scene View Integration',['../md_docs_2phase4-rendering.html#autotoc_md91',1,'']]],
-  ['view_20integration_202_20weeks_8',['Phase 4.5: Scene View Integration (2 weeks)',['../md_docs_2phase4-rendering.html#autotoc_md105',1,'']]],
-  ['vocabulary_9',['Status vocabulary',['../design_decisions.html#autotoc_md17',1,'']]],
-  ['vs_20rendering_20primitives_10',['5. UI primitives vs rendering primitives',['../architecture.html#autotoc_md4',1,'']]],
-  ['vstack_11',['vstack',['../namespacestdui.html#afd258a7a66dbd0a8c44b74c6ef442181',1,'stdui::vstack(T &amp;&amp;...x)'],['../namespacestdui.html#a62d98f56870e76b778b429b8ef8f2702a91e181f51e63b479128db86870841b8d',1,'stdui::vstack']]],
-  ['vstack_5fexpression_12',['vstack_expression',['../structstdui_1_1vstack__expression.html',1,'stdui']]],
-  ['vulkan_20backend_20linux_203_20weeks_13',['Phase 4.4: Skia/Vulkan Backend - Linux (3 weeks)',['../md_docs_2phase4-rendering.html#autotoc_md104',1,'']]],
-  ['vulkan_20harfbuzz_14',['2.4 Linux: Skia + Vulkan + HarfBuzz',['../md_docs_2phase4-rendering.html#autotoc_md71',1,'']]]
+  ['ui_0',['1.2 Why GPU-Based UI?',['../md_docs_2phase4-rendering.html#autotoc_md301',1,'']]],
+  ['ui_20framework_20in_20c_1',['Detailed Step-by-Step Plan: Building stdui - A Modern UI Framework in C++',['../md_docs_2DETAILED__PLAN.html',1,'']]],
+  ['ui_20primitives_2',['UI primitives',['../architecture.html#autotoc_md5',1,'']]],
+  ['ui_20primitives_20and_20rendering_20primitives_20are_20separate_20layers_3',['D003 — UI primitives and rendering primitives are separate layers',['../design_decisions.html#autotoc_md21',1,'']]],
+  ['ui_20primitives_20vs_20rendering_20primitives_4',['5. UI primitives vs rendering primitives',['../architecture.html#autotoc_md4',1,'']]],
+  ['unbounded_5',['unbounded',['../structstdui_1_1proposal.html#af6ae0b808c7791afc448c29e615654b4',1,'stdui::proposal']]],
+  ['understanding_20component_20context_6',['Step 2: Understanding Component Context',['../tutorials.html#autotoc_md433',1,'']]],
+  ['understanding_20state_20in_20stdui_7',['Understanding State in stdui',['../tutorials.html#autotoc_md431',1,'']]],
+  ['update_8',['update',['../classstdui_1_1application.html#a3b70c80c1ece19291e8dda9913941b0a',1,'stdui::application']]],
+  ['usage_9',['Memory Usage',['../md_docs_2phase4-completion.html#autotoc_md275',1,'']]],
+  ['use_20overlay_20for_20layering_10',['Step 5: Use Overlay for Layering',['../tutorials.html#autotoc_md423',1,'']]],
+  ['use_20phase_205_11',['For Immediate Use (Phase 5+)',['../md_docs_2phase4-completion.html#autotoc_md284',1,'']]],
+  ['user_20components_20share_20the_20same_20composition_20machinery_12',['D004 — Framework components and user components share the same composition machinery',['../design_decisions.html#autotoc_md22',1,'']]],
+  ['using_20stdui_20in_20your_20project_13',['Using stdui in your project',['../getting_started.html#autotoc_md209',1,'']]]
 ];

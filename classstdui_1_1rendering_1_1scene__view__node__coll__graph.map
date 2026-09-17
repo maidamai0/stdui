@@ -1,0 +1,11 @@
+<map id="stdui::rendering::scene_view_node" name="stdui::rendering::scene_view_node">
+<area shape="rect" id="Node000001" title="Scene view node &#45; placeholder for user&#39;s 3D rendering." alt="" coords="48,181,219,221"/>
+<area shape="rect" id="Node000002" href="$classstdui_1_1rendering_1_1render__node.html" title="Render node &#45; represents a single drawable element." alt="" coords="5,93,219,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,131,132,181,126,182,115,133"/>
+<area shape="rect" id="Node000003" href="$structstdui_1_1rect.html" title="Axis&#45;aligned logical rectangle defined by an origin and extent." alt="" coords="243,93,330,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="258,128,166,183,163,179,255,123"/>
+<area shape="rect" id="Node000004" href="$structstdui_1_1point.html" title="Logical two&#45;dimensional position in device&#45;independent units." alt="" coords="182,5,277,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="247,41,281,91,276,94,242,44"/>
+<area shape="rect" id="Node000005" href="$structstdui_1_1size.html" title="Logical two&#45;dimensional size in device&#45;independent units." alt="" coords="301,5,389,31"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="332,44,297,94,293,91,327,41"/>
+</map>

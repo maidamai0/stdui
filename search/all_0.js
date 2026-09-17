@@ -1,25 +1,6 @@
 var searchData=
 [
-  ['1_20—_20foundation_20validated_0',['Phase 1 — Foundation (validated)',['../roadmap.html#autotoc_md118',1,'']]],
-  ['1_201_20the_20complete_20picture_1',['1.1 The Complete Picture',['../md_docs_2phase4-rendering.html#autotoc_md64',1,'']]],
-  ['1_202_20why_20gpu_20based_20ui_2',['1.2 Why GPU-Based UI?',['../md_docs_2phase4-rendering.html#autotoc_md65',1,'']]],
-  ['1_20application_20entry_20point_3',['6.1 Application Entry Point',['../md_docs_2phase4-rendering.html#autotoc_md90',1,'']]],
-  ['1_20architecture_20overview_4',['1. Architecture Overview',['../md_docs_2phase4-rendering.html#autotoc_md63',1,'']]],
-  ['1_20dynamic_20glyph_20atlas_20system_5',['3.1 Dynamic Glyph Atlas System',['../md_docs_2phase4-rendering.html#autotoc_md74',1,'']]],
-  ['1_20offscreen_20rendering_6',['5.1 Offscreen Rendering',['../md_docs_2phase4-rendering.html#autotoc_md84',1,'']]],
-  ['1_20purpose_7',['1. Purpose',['../architecture.html#autotoc_md0',1,'']]],
-  ['1_20technology_20selection_8',['2.1 Technology Selection',['../md_docs_2phase4-rendering.html#autotoc_md68',1,'']]],
-  ['1_20two_20thread_20architecture_9',['4.1 Two-Thread Architecture',['../md_docs_2phase4-rendering.html#autotoc_md79',1,'']]],
-  ['1_20view_20expressions_10',['1. View Expressions',['../getting_started.html#autotoc_md42',1,'']]],
-  ['10_20geometry_20and_20coordinates_11',['10. Geometry and coordinates',['../architecture.html#autotoc_md11',1,'']]],
-  ['10_20summary_12',['10. Summary',['../md_docs_2phase4-rendering.html#autotoc_md113',1,'']]],
-  ['11_20text_13',['11. Text',['../architecture.html#autotoc_md12',1,'']]],
-  ['12_20rendering_14',['12. Rendering',['../architecture.html#autotoc_md13',1,'']]],
-  ['13_20persistent_20representation_15',['13. Persistent representation',['../architecture.html#autotoc_md14',1,'']]],
-  ['14_20current_20architectural_20goal_16',['14. Current architectural goal',['../architecture.html#autotoc_md15',1,'']]],
-  ['15_20what_20is_20deliberately_20not_20fixed_20yet_17',['15. What is deliberately not fixed yet',['../architecture.html#autotoc_md16',1,'']]],
-  ['1_3a_20building_20your_20first_20layout_18',['Tutorial 1: Building Your First Layout',['../tutorials.html#autotoc_md125',1,'']]],
-  ['1_3a_20define_20a_20stateful_20component_19',['Step 1: Define a Stateful Component',['../tutorials.html#autotoc_md141',1,'']]],
-  ['1_3a_20include_20headers_20',['Step 1: Include Headers',['../tutorials.html#autotoc_md128',1,'']]],
-  ['1_3a_20render_20tree_20construction_202_20weeks_21',['Phase 4.1: Render Tree Construction (2 weeks)',['../md_docs_2phase4-rendering.html#autotoc_md101',1,'']]]
+  ['0_0',['0',['../md_docs_2DETAILED__PLAN.html#autotoc_md172',1,'Adoption Metrics (Post-v1.0)'],['../md_docs_2phase4-completion.html#autotoc_md258',1,'Visual Effects ⚠️ 0%']]],
+  ['0_200_20release_1',['Deliverable: v1.0.0 Release',['../md_docs_2DETAILED__PLAN.html#autotoc_md167',1,'']]],
+  ['0_20months_2023_2024_2',['Phase 8: Polish &amp; v1.0 (Months 23-24)',['../md_docs_2DETAILED__PLAN.html#autotoc_md153',1,'']]]
 ];

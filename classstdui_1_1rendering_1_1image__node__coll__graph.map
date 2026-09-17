@@ -1,0 +1,13 @@
+<map id="stdui::rendering::image_node" name="stdui::rendering::image_node">
+<area shape="rect" id="Node000001" title="Image render node." alt="" coords="27,284,239,309"/>
+<area shape="rect" id="Node000002" href="$classstdui_1_1rendering_1_1render__node.html" title="Render node &#45; represents a single drawable element." alt="" coords="5,189,219,214"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,227,133,283,128,284,115,228"/>
+<area shape="rect" id="Node000003" href="$structstdui_1_1rendering_1_1image__properties.html" title="Image rendering properties." alt="" coords="243,181,416,221"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="279,230,159,286,156,281,276,225"/>
+<area shape="rect" id="Node000004" href="$structstdui_1_1rect.html" title="Axis&#45;aligned logical rectangle defined by an origin and extent." alt="" coords="286,93,373,119"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="332,132,332,181,327,181,327,132"/>
+<area shape="rect" id="Node000005" href="$structstdui_1_1point.html" title="Logical two&#45;dimensional position in device&#45;independent units." alt="" coords="225,5,319,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="290,41,324,91,319,94,285,44"/>
+<area shape="rect" id="Node000006" href="$structstdui_1_1size.html" title="Logical two&#45;dimensional size in device&#45;independent units." alt="" coords="344,5,432,31"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="375,44,340,94,335,91,370,41"/>
+</map>

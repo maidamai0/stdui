@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['phase_204_3a_20rendering_20subsystem_20design_0',['Phase 4: Rendering Subsystem Design',['../md_docs_2phase4-rendering.html',1,'']]]
+  ['c_0',['Detailed Step-by-Step Plan: Building stdui - A Modern UI Framework in C++',['../md_docs_2DETAILED__PLAN.html',1,'']]],
+  ['completion_20report_1',['Phase 4: GPU-Accelerated Rendering - COMPLETION REPORT',['../md_docs_2phase4-completion.html',1,'']]]
 ];

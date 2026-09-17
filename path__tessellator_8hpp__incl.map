@@ -1,0 +1,24 @@
+<map id="include/stdui/rendering/path_tessellator.hpp" name="include/stdui/rendering/path_tessellator.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="491,5,661,45"/>
+<area shape="rect" id="Node000002" href="$render__node_8hpp.html" title=" " alt="" coords="315,93,482,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="538,48,451,90,449,85,536,43"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="545,181,607,207"/>
+<area shape="poly" id="edge12_Node000001_Node000008" title=" " alt="" coords="579,46,579,168,573,168,573,46"/>
+<area shape="rect" id="Node000009" href="$geometry_8hpp.html" title=" " alt="" coords="632,181,779,207"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="593,44,690,169,686,172,589,47"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,255,72,280"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="315,120,231,126,142,137,65,156,37,168,18,183,12,196,12,211,25,242,20,244,7,212,7,195,14,180,34,164,63,151,141,132,231,120,315,114"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="169,181,247,207"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="354,136,250,179,248,174,352,131"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="271,181,345,207"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="378,136,334,174,330,170,375,132"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="369,181,428,207"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="401,134,401,167,396,167,396,134"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="453,181,521,207"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="422,132,465,170,461,174,418,136"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="442,131,539,173,536,178,440,136"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="473,131,648,175,646,180,471,136"/>
+<area shape="rect" id="Node000010" href="$color_8hpp.html" title=" " alt="" coords="28,181,145,207"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="325,136,146,181,145,175,323,131"/>
+<area shape="poly" id="edge10_Node000010_Node000003" title=" " alt="" coords="81,209,56,245,52,242,77,206"/>
+</map>

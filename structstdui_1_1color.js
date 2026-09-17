@@ -1,11 +1,25 @@
 var structstdui_1_1color =
 [
+    [ "color", "structstdui_1_1color.html#a6c5bfbc54101ff0a5843780c80ab9e46", null ],
+    [ "color", "structstdui_1_1color.html#a0d0b9901614fff117dfb9935b64d1d59", null ],
+    [ "black", "structstdui_1_1color.html#ac976991b184dd7aab25f730808546417", null ],
     [ "black", "structstdui_1_1color.html#ad3b606fb73670fb486694828a0ad1bae", null ],
+    [ "blue", "structstdui_1_1color.html#ad5a07b4eae498b762706bc90b74e6792", null ],
+    [ "from_rgb", "structstdui_1_1color.html#a4cb2cd5e9be0bce4d8a0ce397f25ea26", null ],
+    [ "green", "structstdui_1_1color.html#a9a7144366f7e6f6568450e6c8a9f91a2", null ],
     [ "operator==", "structstdui_1_1color.html#a46ca6b4098195f99c41dbfa965d4b3aa", null ],
+    [ "red", "structstdui_1_1color.html#a7ccdabbb2eed622be4afed043f2742f4", null ],
+    [ "to_rgba", "structstdui_1_1color.html#a94d032f1ab509b0e9d4a57a2bc7a5315", null ],
+    [ "transparent", "structstdui_1_1color.html#aa60a9a2d7d4940160a683113b54b8da4", null ],
     [ "transparent", "structstdui_1_1color.html#a83270f3e5cbe013d10d1acad8fcff237", null ],
+    [ "white", "structstdui_1_1color.html#ad8a7435136475243de82460621c0fa00", null ],
     [ "white", "structstdui_1_1color.html#a13c58059097a1b33879554ecea2d72f7", null ],
+    [ "a", "structstdui_1_1color.html#aa317c86a2428731865ec4f07a6daa504", null ],
     [ "alpha", "structstdui_1_1color.html#a067c9cbfefc8738d5d8bbaac39b4f799", null ],
+    [ "b", "structstdui_1_1color.html#a4271021bf8238d06575580c932f1af66", null ],
     [ "blue", "structstdui_1_1color.html#a814700a4615917ffeff64849d5970965", null ],
+    [ "g", "structstdui_1_1color.html#a0adce21efa703a9a8c96a42512a65968", null ],
     [ "green", "structstdui_1_1color.html#aee4efe9d13dd61e2ed0c3b0419f0b99c", null ],
+    [ "r", "structstdui_1_1color.html#a8e23d09a2e59db7316a84674ec732814", null ],
     [ "red", "structstdui_1_1color.html#a9d9f9ce81fb024d3f25ffd2737eaeebe", null ]
 ];

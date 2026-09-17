@@ -96,15 +96,15 @@ $(document).ready(function(){initNavTree('md_docs_2phase4-rendering.html',''); i
   <div class="headertitle"><div class="title">Phase 4: Rendering Subsystem Design</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md58"></a> <b>Version:</b> v2.0 <br  />
+<div class="textblock"><p><a class="anchor" id="autotoc_md294"></a> <b>Version:</b> v2.0 <br  />
  <b>Date:</b> 2026-09-06 00:44:15 +08:00 <br  />
  <b>Status:</b> Under Review <br  />
  <b>Implementation:</b> Phase 4.1 - 4.6 (15 weeks estimated)</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md60"></a>
+<h1><a class="anchor" id="autotoc_md296"></a>
 Executive Summary</h1>
 <p>This document defines the rendering architecture for stdui Phase 4. The design enables high-quality 2D UI rendering that composes seamlessly with user-provided 3D content (Metal/Vulkan/D3D12) with zero CPU overhead.</p>
-<h2><a class="anchor" id="autotoc_md61"></a>
+<h2><a class="anchor" id="autotoc_md297"></a>
 Core Architecture</h2>
 <p><b>Two Independent Rendering Tiers:</b></p>
 <ol type="1">
@@ -119,9 +119,9 @@ Core Architecture</h2>
 <li>All modern effects (blur, shadows, gradients, rounded corners)</li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md63"></a>
+<h1><a class="anchor" id="autotoc_md299"></a>
 1. Architecture Overview</h1>
-<h2><a class="anchor" id="autotoc_md64"></a>
+<h2><a class="anchor" id="autotoc_md300"></a>
 1.1 The Complete Picture</h2>
 <div class="fragment"><div class="line">Application</div>
 <div class="line">    ↓</div>
@@ -166,7 +166,7 @@ Core Architecture</h2>
 <div class="line">        └──────────────────────┘</div>
 <div class="line">                   ↓</div>
 <div class="line">              Display</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md65"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md301"></a>
 1.2 Why GPU-Based UI?</h2>
 <p><b>The Fundamental Constraint:</b></p>
 <p>Modern displays expect GPU textures. To composite UI with 3D content without expensive CPU copies, both must be GPU-resident.</p>
@@ -187,9 +187,9 @@ Core Architecture</h2>
 <li><b>Conclusion:</b> CPU rendering violates performance requirements</li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md67"></a>
+<h1><a class="anchor" id="autotoc_md303"></a>
 2. Platform Rendering Backends</h1>
-<h2><a class="anchor" id="autotoc_md68"></a>
+<h2><a class="anchor" id="autotoc_md304"></a>
 2.1 Technology Selection</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -207,7 +207,7 @@ Core Architecture</h2>
 <li>✅ Zero dependencies on macOS/Windows (system APIs)</li>
 <li>✅ Proven production technology (Chrome, Firefox use same stack)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md69"></a>
+<h2><a class="anchor" id="autotoc_md305"></a>
 2.2 macOS: Metal + Core Text</h2>
 <p><b>Metal for 2D UI:</b> </p><div class="fragment"><div class="line">// Render UI to MTLTexture</div>
 <div class="line">let uiRenderPass = MTLRenderPassDescriptor()</div>
@@ -253,7 +253,7 @@ Core Architecture</h2>
 <li>Handles all scripts (emoji, CJK, complex scripts)</li>
 <li>System font fallback</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md70"></a>
+<h2><a class="anchor" id="autotoc_md306"></a>
 2.3 Windows: Direct2D + DirectWrite</h2>
 <p><b>Direct2D for GPU UI:</b> </p><div class="fragment"><div class="line"><span class="comment">// Create Direct2D device sharing D3D12 device</span></div>
 <div class="line">ID2D1Factory7* d2d_factory;</div>
@@ -293,7 +293,7 @@ Core Architecture</h2>
 <li>Excellent Unicode support</li>
 <li>System integration (matches Windows UI)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md71"></a>
+<h2><a class="anchor" id="autotoc_md307"></a>
 2.4 Linux: Skia + Vulkan + HarfBuzz</h2>
 <p><b>Why Skia for Linux:</b></p>
 <p>Linux has no unified system 2D API. Options:</p><ul>
@@ -349,9 +349,9 @@ Core Architecture</h2>
 <li>fontconfig for font selection</li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md73"></a>
+<h1><a class="anchor" id="autotoc_md309"></a>
 3. Text Rendering Deep Dive</h1>
-<h2><a class="anchor" id="autotoc_md74"></a>
+<h2><a class="anchor" id="autotoc_md310"></a>
 3.1 Dynamic Glyph Atlas System</h2>
 <p><b>Overview:</b></p>
 <p>Glyphs are loaded <b>on-demand</b> as text is rendered. First use of a character takes 1-3ms (rasterize + upload), subsequent uses are instant (already in GPU).</p>
@@ -361,7 +361,7 @@ Core Architecture</h2>
 <li>Strategy: Dynamic allocation, LRU eviction when full</li>
 <li>Sufficient for typical applications (including CJK)</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md75"></a>
+<h2><a class="anchor" id="autotoc_md311"></a>
 3.2 The Three-Stage Process</h2>
 <p><b>Stage 1: Shaping (CPU, per string)</b></p>
 <p>Convert text string → positioned glyphs </p><div class="fragment"><div class="line"><span class="stringliteral">&quot;Hello&quot;</span> + Font → [</div>
@@ -402,7 +402,7 @@ Core Architecture</h2>
 <div class="line">    float coverage = texture(glyph_atlas, frag_texcoord).r;</div>
 <div class="line">    fragColor = vec4(text_color.rgb, text_color.a * coverage);</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md76"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md312"></a>
 3.3 Glyph Atlas Implementation</h2>
 <p><b>Dynamic Atlas:</b> </p><div class="fragment"><div class="line"><span class="keyword">class </span>GlyphAtlas {</div>
 <div class="line">    MTLTexture* atlas_texture;  <span class="comment">// 2048×2048 RGBA</span></div>
@@ -472,9 +472,9 @@ Core Architecture</h2>
 <li>✅ One atlas sufficient for typical applications</li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md78"></a>
+<h1><a class="anchor" id="autotoc_md314"></a>
 4. Threading &amp; Synchronization</h1>
-<h2><a class="anchor" id="autotoc_md79"></a>
+<h2><a class="anchor" id="autotoc_md315"></a>
 4.1 Two-Thread Architecture</h2>
 <p><b>Why Separate Threads:</b></p>
 <div class="fragment"><div class="line">Single Thread (Sequential):</div>
@@ -493,7 +493,7 @@ Core Architecture</h2>
 <div class="line">├─ Event handling                  ├─ Animation</div>
 <div class="line">├─ UI rendering commands           ├─ 3D rendering commands</div>
 <div class="line">└─ Metal/D2D/Vulkan UI queue       └─ Metal/D3D12/Vulkan 3D queue</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md80"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md316"></a>
 4.2 GPU Command Queues</h2>
 <p><b>On macOS (Metal):</b> </p><div class="fragment"><div class="line">// Shared device</div>
 <div class="line">let device = MTLCreateSystemDefaultDevice()!</div>
@@ -524,7 +524,7 @@ Core Architecture</h2>
 <li>Faster to submit</li>
 <li>No thread blocks waiting for the other</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md81"></a>
+<h2><a class="anchor" id="autotoc_md317"></a>
 4.3 OS Compositor Integration</h2>
 <p><b>The Compositor's Job:</b></p>
 <div class="fragment"><div class="line">Without Compositor (Manual):</div>
@@ -593,9 +593,9 @@ Core Architecture</h2>
 <li>✅ OS-optimized (hardware-accelerated composition)</li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md83"></a>
+<h1><a class="anchor" id="autotoc_md319"></a>
 5. Effects Implementation</h1>
-<h2><a class="anchor" id="autotoc_md84"></a>
+<h2><a class="anchor" id="autotoc_md320"></a>
 5.1 Offscreen Rendering</h2>
 <p><b>Why Offscreen Textures:</b></p>
 <p>Can't apply effects directly to screen - need intermediate storage for multi-pass rendering.</p>
@@ -611,7 +611,7 @@ Core Architecture</h2>
 <div class="line">Pass 2: Horizontal blur A → Offscreen B  (can read A while writing B)</div>
 <div class="line">Pass 3: Vertical blur B → Offscreen C    (can read B while writing C)</div>
 <div class="line">Pass 4: Composite C → Screen</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md85"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md321"></a>
 5.2 Dual-Kawase Blur (Production Quality)</h2>
 <p><b>Better than Gaussian blur:</b></p><ul>
 <li>5× faster</li>
@@ -647,7 +647,7 @@ Core Architecture</h2>
 <li>6 passes total (3 down, 3 up)</li>
 <li>Each pass: ~0.3ms</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md86"></a>
+<h2><a class="anchor" id="autotoc_md322"></a>
 5.3 Drop Shadow</h2>
 <p><b>Complete Implementation:</b></p>
 <div class="fragment"><div class="line">// Pass 1: Render element to offscreen (RGBA)</div>
@@ -668,7 +668,7 @@ Core Architecture</h2>
 <div class="line"> </div>
 <div class="line">// Blend: shadow under, element on top</div>
 <div class="line">fragColor = mix(shadow, element, element.a);</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md87"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md323"></a>
 5.4 Rounded Corners (SDF Method)</h2>
 <p><b>Signed Distance Field for Quality:</b></p>
 <div class="fragment"><div class="line">// Compute distance to rounded rectangle</div>
@@ -706,9 +706,9 @@ Core Architecture</h2>
 <div class="line">}</div>
 <div class="line">// Reduces cost to ~0.2ms (only ~20% of pixels compute SDF)</div>
 </div><!-- fragment --><hr  />
-<h1><a class="anchor" id="autotoc_md89"></a>
+<h1><a class="anchor" id="autotoc_md325"></a>
 6. Public API Design</h1>
-<h2><a class="anchor" id="autotoc_md90"></a>
+<h2><a class="anchor" id="autotoc_md326"></a>
 6.1 Application Entry Point</h2>
 <p><b>Simple and clean:</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdui/stdui.hpp&gt;</span></div>
 <div class="line"> </div>
@@ -734,7 +734,7 @@ Core Architecture</h2>
 <div class="ttc" id="astructstdui_1_1app__config_html_a2a485c21eb4577884cdc1c48a953e788"><div class="ttname"><a href="structstdui_1_1app__config.html#a2a485c21eb4577884cdc1c48a953e788">stdui::app_config::window_size</a></div><div class="ttdeci">size window_size</div><div class="ttdef"><b>Definition</b> <a href="application_8hpp_source.html#l00021">application.hpp:21</a></div></div>
 <div class="ttc" id="astructstdui_1_1app__config_html_af3c4b6d11ce680c6858bc0d6995a51dd"><div class="ttname"><a href="structstdui_1_1app__config.html#af3c4b6d11ce680c6858bc0d6995a51dd">stdui::app_config::title</a></div><div class="ttdeci">std::string title</div><div class="ttdef"><b>Definition</b> <a href="application_8hpp_source.html#l00020">application.hpp:20</a></div></div>
 <div class="ttc" id="astructstdui_1_1app__config_html_afc5e394ddd10a1cdb79b1cf6e9accb65"><div class="ttname"><a href="structstdui_1_1app__config.html#afc5e394ddd10a1cdb79b1cf6e9accb65">stdui::app_config::background_color</a></div><div class="ttdeci">color background_color</div><div class="ttdef"><b>Definition</b> <a href="application_8hpp_source.html#l00022">application.hpp:22</a></div></div>
-<div class="ttc" id="astructstdui_1_1color_html"><div class="ttname"><a href="structstdui_1_1color.html">stdui::color</a></div><div class="ttdoc">RGBA color representation (0.0 to 1.0 per channel).</div><div class="ttdef"><b>Definition</b> <a href="rendering_8hpp_source.html#l00013">rendering.hpp:13</a></div></div>
+<div class="ttc" id="astructstdui_1_1color_html"><div class="ttname"><a href="structstdui_1_1color.html">stdui::color</a></div><div class="ttdoc">RGBA color representation.</div><div class="ttdef"><b>Definition</b> <a href="color_8hpp_source.html#l00011">color.hpp:11</a></div></div>
 </div><!-- fragment --><p><b>What <code>stdui::run()</code> does:</b></p><ol type="1">
 <li>Initialize platform (Metal/D3D/Vulkan)</li>
 <li>Create window</li>
@@ -743,7 +743,7 @@ Core Architecture</h2>
 <li>Cleanup on exit</li>
 </ol>
 <p>User never creates <code>platform</code>, <code>window</code>, or <code>application</code> objects directly.</p>
-<h2><a class="anchor" id="autotoc_md91"></a>
+<h2><a class="anchor" id="autotoc_md327"></a>
 6.2 Scene View Integration</h2>
 <p><b>Scene View = View for user-controlled 3D rendering</b></p>
 <p>Following SwiftUI's naming convention, we use <code>scene_view</code> instead of <code>canvas</code> (which is too generic and could mean 2D or 3D).</p>
@@ -784,8 +784,8 @@ Core Architecture</h2>
 <div class="line">    .frame({800, 600})              <span class="comment">// Size constraint</span></div>
 <div class="line">    .corner_radius(8.0)             <span class="comment">// Rounded corners (SDF shader)</span></div>
 <div class="line">    .shadow({0, 4}, 8.0, 0.3)       <span class="comment">// Drop shadow</span></div>
-<div class="line">    .background(<a class="code hl_function" href="structstdui_1_1color.html#ad3b606fb73670fb486694828a0ad1bae">stdui::color::black</a>())</div>
-<div class="ttc" id="astructstdui_1_1color_html_ad3b606fb73670fb486694828a0ad1bae"><div class="ttname"><a href="structstdui_1_1color.html#ad3b606fb73670fb486694828a0ad1bae">stdui::color::black</a></div><div class="ttdeci">static auto black() -&gt; color</div><div class="ttdef"><b>Definition</b> <a href="rendering_8hpp_source.html#l00019">rendering.hpp:19</a></div></div>
+<div class="line">    .background(<a class="code hl_function" href="structstdui_1_1color.html#ac976991b184dd7aab25f730808546417">stdui::color::black</a>())</div>
+<div class="ttc" id="astructstdui_1_1color_html_ac976991b184dd7aab25f730808546417"><div class="ttname"><a href="structstdui_1_1color.html#ac976991b184dd7aab25f730808546417">stdui::color::black</a></div><div class="ttdeci">static constexpr color black()</div><div class="ttdoc">Common color constants.</div><div class="ttdef"><b>Definition</b> <a href="color_8hpp_source.html#l00040">color.hpp:40</a></div></div>
 </div><!-- fragment --><p><b>Scene context API - Platform-Specific Headers:</b></p>
 <p>To avoid <code>#ifdef</code> in user code and provide type safety, each platform has its own scene context header:</p>
 <div class="fragment"><div class="line"><span class="comment">// stdui/scene_view.hpp (base interface)</span></div>
@@ -877,25 +877,25 @@ Core Architecture</h2>
 <div class="line"> </div>
 <div class="line">**Main CMakeLists.txt (clean and simple):**</div>
 </div><!-- fragment --><p> cmake cmake_minimum_required(VERSION 3.24) project(stdui VERSION 0.1.0 LANGUAGES CXX)</p>
-<h1><a class="anchor" id="autotoc_md92"></a>
+<h1><a class="anchor" id="autotoc_md328"></a>
 Core library (header-only)</h1>
 <p>add_library(stdui INTERFACE) add_library(stdui::stdui ALIAS stdui)</p>
 <p>target_include_directories(stdui INTERFACE $&lt;BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include&gt; $&lt;INSTALL_INTERFACE:include&gt; ) target_compile_features(stdui INTERFACE cxx_std_20)</p>
-<h1><a class="anchor" id="autotoc_md93"></a>
+<h1><a class="anchor" id="autotoc_md329"></a>
 Platform-specific rendering (dispatched to separate files)</h1>
 <p>include(cmake/rendering.cmake)</p>
-<h1><a class="anchor" id="autotoc_md94"></a>
+<h1><a class="anchor" id="autotoc_md330"></a>
 Testing, docs, install</h1>
 <p>include(CTest) if(BUILD_TESTING) include(cmake/tests.cmake) endif() include(cmake/docs.cmake) include(cmake/install.cmake) </p><div class="fragment"><div class="line">**cmake/rendering.cmake (platform dispatch):**</div>
 </div><!-- fragment --><p> cmake </p>
-<h1><a class="anchor" id="autotoc_md95"></a>
+<h1><a class="anchor" id="autotoc_md331"></a>
 Rendering implementation library</h1>
 <p>add_library(stdui_rendering STATIC src/rendering/render_tree.cpp src/rendering/glyph_atlas.cpp )</p>
 <p>target_link_libraries(stdui_rendering PUBLIC stdui)</p>
-<h1><a class="anchor" id="autotoc_md96"></a>
+<h1><a class="anchor" id="autotoc_md332"></a>
 Platform-specific configuration (dispatched)</h1>
 <p>if(APPLE) include(cmake/platform/macos.cmake) elseif(WIN32) include(cmake/platform/windows.cmake) elseif(UNIX) include(cmake/platform/linux.cmake) endif()</p>
-<h1><a class="anchor" id="autotoc_md97"></a>
+<h1><a class="anchor" id="autotoc_md333"></a>
 Link rendering to main target</h1>
 <p>target_link_libraries(stdui INTERFACE stdui_rendering) </p><div class="fragment"><div class="line">**cmake/platform/macos.cmake:**</div>
 </div><!-- fragment --><p> cmake target_sources(stdui_rendering PRIVATE src/platform/macos/metal_renderer.mm src/platform/macos/metal_scene_view.mm src/platform/macos/core_text_shaper.mm )</p>
@@ -910,7 +910,7 @@ Link rendering to main target</h1>
     HarfBuzz::HarfBuzz
 ) </p><div class="fragment"><div class="line">**User perspective (single target):**</div>
 </div><!-- fragment --><p> cmake find_package(stdui CONFIG REQUIRED) target_link_libraries(my_app PRIVATE stdui::stdui) </p>
-<h1><a class="anchor" id="autotoc_md98"></a>
+<h1><a class="anchor" id="autotoc_md334"></a>
 Done! Backend selected automatically by platform</h1>
 <p>```</p>
 <p><b>Key principles:</b></p><ul>
@@ -920,9 +920,9 @@ Done! Backend selected automatically by platform</h1>
 <li>✅ No <code>#ifdef</code> in source code</li>
 </ul>
 <hr  />
-<h2><a class="anchor" id="autotoc_md100"></a>
+<h2><a class="anchor" id="autotoc_md336"></a>
 8. Implementation Plan</h2>
-<h3><a class="anchor" id="autotoc_md101"></a>
+<h3><a class="anchor" id="autotoc_md337"></a>
 Phase 4.1: Render Tree Construction (2 weeks)</h3>
 <p><b>Deliverables:</b></p><ul>
 <li><code>render_node</code> structure (rectangles, text, paths, effects)</li>
@@ -931,7 +931,7 @@ Phase 4.1: Render Tree Construction (2 weeks)</h3>
 <li>Transform and clip computation</li>
 <li>Unit tests (headless)</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md102"></a>
+<h3><a class="anchor" id="autotoc_md338"></a>
 Phase 4.2: Metal Backend - macOS (3 weeks)</h3>
 <p><b>Deliverables:</b></p><ul>
 <li><code>metal_renderer</code> implementation</li>
@@ -942,7 +942,7 @@ Phase 4.2: Metal Backend - macOS (3 weeks)</h3>
 <li>Blur and shadow effects</li>
 <li>Visual regression tests</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md103"></a>
+<h3><a class="anchor" id="autotoc_md339"></a>
 Phase 4.3: Direct2D Backend - Windows (3 weeks)</h3>
 <p><b>Deliverables:</b></p><ul>
 <li><code>direct2d_renderer</code> implementation</li>
@@ -952,7 +952,7 @@ Phase 4.3: Direct2D Backend - Windows (3 weeks)</h3>
 <li>Visual parity with Metal</li>
 <li>Cross-platform test suite</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md104"></a>
+<h3><a class="anchor" id="autotoc_md340"></a>
 Phase 4.4: Skia/Vulkan Backend - Linux (3 weeks)</h3>
 <p><b>Deliverables:</b></p><ul>
 <li><code>skia_vulkan_renderer</code> implementation</li>
@@ -961,7 +961,7 @@ Phase 4.4: Skia/Vulkan Backend - Linux (3 weeks)</h3>
 <li>Visual parity tests</li>
 <li>Complete cross-platform coverage</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md105"></a>
+<h3><a class="anchor" id="autotoc_md341"></a>
 Phase 4.5: Scene View Integration (2 weeks)</h3>
 <p><b>Deliverables:</b></p><ul>
 <li><code>scene_view</code> view implementation</li>
@@ -971,7 +971,7 @@ Phase 4.5: Scene View Integration (2 weeks)</h3>
 <li>Thread management</li>
 <li>Example: Spinning cube with UI chrome</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md106"></a>
+<h3><a class="anchor" id="autotoc_md342"></a>
 Phase 4.6: Polish &amp; Performance (2 weeks)</h3>
 <p><b>Deliverables:</b></p><ul>
 <li>VSync and frame scheduling</li>
@@ -985,9 +985,9 @@ Phase 4.6: Polish &amp; Performance (2 weeks)</h3>
 </ul>
 <p><b>Total: 15 weeks (3.75 months)</b></p>
 <hr  />
-<h2><a class="anchor" id="autotoc_md108"></a>
+<h2><a class="anchor" id="autotoc_md344"></a>
 9. Success Criteria</h2>
-<h3><a class="anchor" id="autotoc_md109"></a>
+<h3><a class="anchor" id="autotoc_md345"></a>
 Functional Requirements</h3>
 <p>✅ <b>Visual Demo Application:</b></p><ul>
 <li>3D canvas (spinning mesh/scene)</li>
@@ -1007,7 +1007,7 @@ Functional Requirements</h3>
 <li>UI and canvas threads don't block</li>
 <li>Measured and verified via profiling</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md110"></a>
+<h3><a class="anchor" id="autotoc_md346"></a>
 Quality Requirements</h3>
 <p>✅ **Text Quality:**</p><ul>
 <li>Matches platform native appearance</li>
@@ -1021,7 +1021,7 @@ Quality Requirements</h3>
 <li>Sharp rounded corners with AA</li>
 <li>Production-ready visual quality</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md111"></a>
+<h3><a class="anchor" id="autotoc_md347"></a>
 Code Quality</h3>
 <p>✅ **Architecture:**</p><ul>
 <li>Platform code in separate files (no `#ifdef` pollution)</li>
@@ -1041,9 +1041,9 @@ Code Quality</h3>
 <li>Performance characteristics documented</li>
 </ul>
 <hr  />
-<h2><a class="anchor" id="autotoc_md113"></a>
+<h2><a class="anchor" id="autotoc_md349"></a>
 10. Summary</h2>
-<h3><a class="anchor" id="autotoc_md114"></a>
+<h3><a class="anchor" id="autotoc_md350"></a>
 Key Architectural Decisions</h3>
 <ol type="1">
 <li><b>GPU-based UI rendering</b> - Required for zero-copy composition</li>
@@ -1055,7 +1055,7 @@ Key Architectural Decisions</h3>
 <li><b>Dual-Kawase blur</b> - Production-quality effects</li>
 <li><b>Canvas-as-view</b> - Participates in layout like any UI element</li>
 </ol>
-<h3><a class="anchor" id="autotoc_md115"></a>
+<h3><a class="anchor" id="autotoc_md351"></a>
 What's Different from Other Frameworks</h3>
 <p><b>vs Dear ImGui:</b></p><ul>
 <li>✅ Declarative DSL (not immediate mode)</li>
@@ -1072,7 +1072,7 @@ What's Different from Other Frameworks</h3>
 <li>✅ Cross-platform</li>
 <li>✅ Integrated 3D canvas support</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md116"></a>
+<h3><a class="anchor" id="autotoc_md352"></a>
 Next Phase (Phase 5)</h3>
 <p>After Phase 4 completion:</p><ul>
 <li>Animation system (interpolation, timing, spring physics)</li>

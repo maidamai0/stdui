@@ -3,6 +3,7 @@
 
 #include <stdui/core/animation.hpp>
 #include <stdui/core/effects.hpp>
+#include <stdui/core/layout_options.hpp>
 #include <stdui/render/target.hpp>
 #include <stdui/core/semantics.hpp>
 #include <stdui/core/text_measurement.hpp>
@@ -118,6 +119,26 @@ TEST_CASE("render target separates logical and physical size") {
   };
 
   CHECK(target.physical_size() == stdui::size{800.0, 600.0});
+}
+
+TEST_CASE("layout option factories expose reusable track and inset values") {
+  auto insets = stdui::edge_insets::all(4.0);
+  CHECK(insets.left == 4.0);
+  CHECK(insets.top == 4.0);
+  CHECK(insets.right == 4.0);
+  CHECK(insets.bottom == 4.0);
+
+  auto fixed = stdui::grid_track::fixed(40.0);
+  CHECK(fixed.type == stdui::grid_track::kind::fixed);
+  CHECK(fixed.size == 40.0);
+
+  auto flexible = stdui::grid_track::flexible(10.0);
+  CHECK(flexible.type == stdui::grid_track::kind::flexible);
+  CHECK(flexible.size == 10.0);
+
+  auto tracks = stdui::repeat_track(flexible, 3);
+  REQUIRE(tracks.size() == 3);
+  CHECK(tracks[2].size == 10.0);
 }
 
 TEST_CASE("cached text measurer delegates to its backend") {

@@ -144,19 +144,57 @@ private:
   template <class... T>
   auto evaluate(vstack_expression<T...> const &expression, std::string path,
                 evaluation_context &context) {
-    return evaluate_stack("vstack", expression.children, std::move(path), context);
+    auto node = evaluate_stack("vstack", expression.children, std::move(path), context);
+    node.stack = expression.options;
+    return node;
   }
 
   template <class... T>
   auto evaluate(hstack_expression<T...> const &expression, std::string path,
                 evaluation_context &context) {
-    return evaluate_stack("hstack", expression.children, std::move(path), context);
+    auto node = evaluate_stack("hstack", expression.children, std::move(path), context);
+    node.stack = expression.options;
+    return node;
   }
 
   template <class... T>
-  auto evaluate(overlay_expression<T...> const &expression, std::string path,
+  auto evaluate(zstack_expression<T...> const &expression, std::string path,
                 evaluation_context &context) {
-    return evaluate_stack("overlay", expression.children, std::move(path), context);
+    auto node = evaluate_stack("zstack", expression.children, std::move(path), context);
+    node.zstack = expression.options;
+    return node;
+  }
+
+  template <class... T>
+  auto evaluate(grid_expression<T...> const &expression, std::string path,
+                evaluation_context &context) {
+    auto node = evaluate_stack("grid", expression.children, std::move(path), context);
+    node.grid = expression.options;
+    return node;
+  }
+
+  auto evaluate(spacer_expression const &expression, std::string, evaluation_context &) {
+    auto node = inspection_node{"spacer", {}, {}};
+    node.spacer_minimum = expression.minimum;
+    return node;
+  }
+
+  template <class Expression>
+  auto evaluate(padding_expression<Expression> const &expression, std::string path,
+                evaluation_context &context) {
+    auto node = inspection_node{"padding", {}, {}};
+    node.padding = expression.insets;
+    node.children.push_back(evaluate(expression.expression, std::move(path), context));
+    return node;
+  }
+
+  template <class Expression>
+  auto evaluate(frame_expression<Expression> const &expression, std::string path,
+                evaluation_context &context) {
+    auto node = inspection_node{"frame", {}, {}};
+    node.frame = expression.options;
+    node.children.push_back(evaluate(expression.expression, std::move(path), context));
+    return node;
   }
 
   template <class Id, class Expression>

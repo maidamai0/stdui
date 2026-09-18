@@ -1,5 +1,6 @@
 #pragma once
 
+#include <stdui/core/geometry.hpp>
 #include <stdui/core/layout_options.hpp>
 
 #include <concepts>
@@ -46,36 +47,97 @@ inline auto text(std::string value) { return text_expression{std::move(value)}; 
 template <view_expression... T> struct vstack_expression {
   using is_stdui_expression = void;
 
+  stack_options options;
   std::tuple<T...> children;
 };
 
 /// Creates a value expression owning the supplied children in their written order.
 template <view_expression... T> auto vstack(T &&...x) {
-  return vstack_expression<std::decay_t<T>...>{{std::forward<T>(x)...}};
+  return vstack_expression<std::decay_t<T>...>{{}, {std::forward<T>(x)...}};
+}
+
+/// Creates a configured vertical stack.
+template <view_expression... T> auto vstack(stack_options options, T &&...x) {
+  return vstack_expression<std::decay_t<T>...>{std::move(options), {std::forward<T>(x)...}};
 }
 
 /// Orders children horizontally as semantic structure, without producing geometry.
 template <view_expression... T> struct hstack_expression {
   using is_stdui_expression = void;
 
+  stack_options options;
   std::tuple<T...> children;
 };
 
 /// Creates a value expression owning the supplied children in their written order.
 template <view_expression... T> auto hstack(T &&...x) {
-  return hstack_expression<std::decay_t<T>...>{{std::forward<T>(x)...}};
+  return hstack_expression<std::decay_t<T>...>{{}, {std::forward<T>(x)...}};
+}
+
+/// Creates a configured horizontal stack.
+template <view_expression... T> auto hstack(stack_options options, T &&...x) {
+  return hstack_expression<std::decay_t<T>...>{std::move(options), {std::forward<T>(x)...}};
 }
 
 /// Stacks children in z-order without imposing a main axis.
-template <view_expression... T> struct overlay_expression {
+template <view_expression... T> struct zstack_expression {
   using is_stdui_expression = void;
 
+  zstack_options options;
   std::tuple<T...> children;
 };
 
 /// Creates a value expression owning overlapping children in their written order.
-template <view_expression... T> auto overlay(T &&...x) {
-  return overlay_expression<std::decay_t<T>...>{{std::forward<T>(x)...}};
+template <view_expression... T> auto zstack(T &&...x) {
+  return zstack_expression<std::decay_t<T>...>{{}, {std::forward<T>(x)...}};
+}
+
+/// Creates a configured z-order stack.
+template <view_expression... T> auto zstack(zstack_options options, T &&...x) {
+  return zstack_expression<std::decay_t<T>...>{std::move(options), {std::forward<T>(x)...}};
+}
+
+/// Flexible space with an optional minimum extent along the main axis.
+struct spacer_expression {
+  using is_stdui_expression = void;
+
+  size minimum;
+  flex_policy policy{.grow = 0.0, .fill = true};
+
+  auto flex() const -> stdui::flex_policy { return policy; }
+};
+
+inline auto spacer(double minimum = 0.0) -> spacer_expression {
+  return {.minimum = {minimum, minimum}};
+}
+
+/// Adds uniform or directional padding around a child expression.
+template <view_expression Expression> struct padding_expression {
+  using is_stdui_expression = void;
+
+  edge_insets insets;
+  Expression expression;
+};
+
+template <view_expression Expression> auto padding(edge_insets insets, Expression &&expression) {
+  return padding_expression<std::decay_t<Expression>>{insets, std::forward<Expression>(expression)};
+}
+
+template <view_expression Expression> auto padding(double amount, Expression &&expression) {
+  return padding(edge_insets::all(amount), std::forward<Expression>(expression));
+}
+
+/// Applies SwiftUI-style sizing constraints around a child expression.
+template <view_expression Expression> struct frame_expression {
+  using is_stdui_expression = void;
+
+  frame_options options;
+  Expression expression;
+};
+
+template <view_expression Expression> auto frame(frame_options options, Expression &&expression) {
+  return frame_expression<std::decay_t<Expression>>{std::move(options),
+                                                    std::forward<Expression>(expression)};
 }
 
 /// Selects a stable storage type for an explicit identity.

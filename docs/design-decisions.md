@@ -149,6 +149,35 @@ depending on an operating-system event loop. Platform adapters translate native
 events and expose surfaces. This makes runtime deterministic and testable with
 queued events, a manual clock, and frame execution on demand.
 
+### D019 — ZStack is distinct from an overlay modifier
+
+**Status:** Decided
+
+`zstack` is the layout primitive that places multiple peer children in
+z-order within shared bounds. `overlay` is reserved for a future modifier that
+composites a secondary expression over a primary expression. The two concepts
+must not share the same expression or layout API.
+
+### D020 — Stack direction is axis-neutral
+
+**Status:** Decided
+
+Stack direction uses `forward` and `reverse`, describing traversal along the
+stack's main axis. Forward means left-to-right for `hstack` and top-to-bottom
+for `vstack`; reverse means the opposite. Direction is not modeled as an
+axis-specific left/right enum.
+
+### D021 — Layout options are composed from focused core primitives
+
+**Status:** Decided
+
+Core separates semantic layout direction, stack traversal order, alignment,
+cross-axis sizing, spacing, padding, frames, and grid tracks. Padding and frame
+constraints are wrapper expressions that apply to any child. Grid columns use
+fixed or flexible tracks rather than an integer column count. Spacing is
+optional so that an explicit zero can be distinguished from an unspecified
+default.
+
 ## Important consequences
 
 These decisions intentionally imply that the framework is not a traditional retained-mode widget toolkit with a class hierarchy like:

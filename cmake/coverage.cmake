@@ -6,7 +6,7 @@ if(NOT RAW_PROFILES)
     message(FATAL_ERROR "No coverage profiles found in ${PROFILE_DIR}")
 endif()
 
-set(IGNORE_REGEX "(doctest|.*_tests.cpp|/usr/include|/Applications/Xcode)")
+set(IGNORE_REGEX "(doctest|[/\\\\]tests[/\\\\]|/usr/include|/Applications/Xcode)")
 set(STDUI_COVERAGE_FILE_KEYS)
 
 foreach(test_executable IN LISTS TEST_EXECUTABLES)

@@ -187,9 +187,9 @@ TEST_CASE("horizontal arrangement places frames left to right") {
 TEST_CASE("horizontal arrangement includes spacing") {
   std::vector<stdui::size> const child_sizes{{2.0, 4.0}, {3.0, 5.0}};
 
-  auto frames = stdui::arrange_hstack(child_sizes, {{0.0, 0.0}, {10.0, 10.0}},
-                                      stdui::layout_direction::left_to_right,
-                                      stdui::layout_alignment::start, 1.0);
+  auto frames =
+      stdui::arrange_hstack(child_sizes, {{0.0, 0.0}, {10.0, 10.0}},
+                            stdui::stack_direction::forward, stdui::layout_alignment::start, 1.0);
 
   REQUIRE(frames.size() == 2);
   CHECK(frames[0] == stdui::rect{{0.0, 0.0}, {2.0, 4.0}});
@@ -199,9 +199,9 @@ TEST_CASE("horizontal arrangement includes spacing") {
 TEST_CASE("horizontal center alignment offsets child") {
   std::vector<stdui::size> const child_sizes{{2.0, 4.0}};
 
-  auto frames = stdui::arrange_hstack(child_sizes, {{0.0, 0.0}, {10.0, 10.0}},
-                                      stdui::layout_direction::left_to_right,
-                                      stdui::layout_alignment::center);
+  auto frames =
+      stdui::arrange_hstack(child_sizes, {{0.0, 0.0}, {10.0, 10.0}},
+                            stdui::stack_direction::forward, stdui::layout_alignment::center);
 
   REQUIRE(frames.size() == 1);
   CHECK(frames[0].origin == stdui::point{0.0, 3.0});
@@ -212,7 +212,7 @@ TEST_CASE("horizontal end alignment offsets child") {
 
   auto frames =
       stdui::arrange_hstack(child_sizes, {{0.0, 0.0}, {10.0, 10.0}},
-                            stdui::layout_direction::left_to_right, stdui::layout_alignment::end);
+                            stdui::stack_direction::forward, stdui::layout_alignment::end);
 
   REQUIRE(frames.size() == 1);
   CHECK(frames[0].origin == stdui::point{0.0, 6.0});
@@ -221,31 +221,31 @@ TEST_CASE("horizontal end alignment offsets child") {
 TEST_CASE("horizontal stretch alignment fills cross axis") {
   std::vector<stdui::size> const child_sizes{{2.0, 4.0}};
 
-  auto frames = stdui::arrange_hstack(child_sizes, {{0.0, 0.0}, {10.0, 10.0}},
-                                      stdui::layout_direction::left_to_right,
-                                      stdui::layout_alignment::stretch);
+  auto frames = stdui::arrange_hstack(
+      child_sizes, {{0.0, 0.0}, {10.0, 10.0}}, stdui::stack_direction::forward,
+      stdui::layout_alignment::start, 0.0, stdui::cross_axis_sizing::stretch);
 
   REQUIRE(frames.size() == 1);
   CHECK(frames[0] == stdui::rect{{0.0, 0.0}, {2.0, 10.0}});
 }
 
-TEST_CASE("horizontal arrangement supports right-to-left direction") {
+TEST_CASE("horizontal arrangement supports reverse direction") {
   std::vector<stdui::size> const child_sizes{{2.0, 4.0}, {3.0, 5.0}};
 
   auto frames = stdui::arrange_hstack(child_sizes, {{0.0, 0.0}, {10.0, 10.0}},
-                                      stdui::layout_direction::right_to_left);
+                                      stdui::stack_direction::reverse);
 
   REQUIRE(frames.size() == 2);
   CHECK(frames[0] == stdui::rect{{8.0, 0.0}, {2.0, 4.0}});
   CHECK(frames[1] == stdui::rect{{5.0, 0.0}, {3.0, 5.0}});
 }
 
-TEST_CASE("right-to-left arrangement includes spacing") {
+TEST_CASE("reverse horizontal arrangement includes spacing") {
   std::vector<stdui::size> const child_sizes{{2.0, 4.0}, {3.0, 5.0}};
 
-  auto frames = stdui::arrange_hstack(child_sizes, {{0.0, 0.0}, {10.0, 10.0}},
-                                      stdui::layout_direction::right_to_left,
-                                      stdui::layout_alignment::start, 1.0);
+  auto frames =
+      stdui::arrange_hstack(child_sizes, {{0.0, 0.0}, {10.0, 10.0}},
+                            stdui::stack_direction::reverse, stdui::layout_alignment::start, 1.0);
 
   REQUIRE(frames.size() == 2);
   CHECK(frames[0] == stdui::rect{{8.0, 0.0}, {2.0, 4.0}});
@@ -275,8 +275,9 @@ TEST_CASE("vertical end alignment offsets child") {
 TEST_CASE("vertical stretch alignment fills cross axis") {
   std::vector<stdui::size> const child_sizes{{2.0, 4.0}};
 
-  auto frames = stdui::arrange_vstack(child_sizes, {{0.0, 0.0}, {10.0, 10.0}},
-                                      stdui::layout_alignment::stretch);
+  auto frames = stdui::arrange_vstack(
+      child_sizes, {{0.0, 0.0}, {10.0, 10.0}}, stdui::layout_alignment::start, 0.0,
+      stdui::stack_direction::forward, stdui::cross_axis_sizing::stretch);
 
   REQUIRE(frames.size() == 1);
   CHECK(frames[0] == stdui::rect{{0.0, 0.0}, {10.0, 4.0}});
@@ -290,6 +291,18 @@ TEST_CASE("vertical arrangement places frames top to bottom") {
   REQUIRE(frames.size() == 2);
   CHECK(frames[0] == stdui::rect{{0.0, 0.0}, {2.0, 4.0}});
   CHECK(frames[1] == stdui::rect{{0.0, 4.0}, {3.0, 5.0}});
+}
+
+TEST_CASE("vertical arrangement supports reverse direction") {
+  std::vector<stdui::size> const child_sizes{{2.0, 4.0}, {3.0, 5.0}};
+
+  auto frames =
+      stdui::arrange_vstack(child_sizes, {{0.0, 0.0}, {10.0, 10.0}}, stdui::layout_alignment::start,
+                            0.0, stdui::stack_direction::reverse);
+
+  REQUIRE(frames.size() == 2);
+  CHECK(frames[0] == stdui::rect{{0.0, 6.0}, {2.0, 4.0}});
+  CHECK(frames[1] == stdui::rect{{0.0, 1.0}, {3.0, 5.0}});
 }
 
 TEST_CASE("combined horizontal layout measures and arranges") {
@@ -328,38 +341,36 @@ TEST_CASE("combined vertical layout measures and arranges") {
   CHECK(result.frames[1].extent.height == doctest::Approx(5.5));
 }
 
-TEST_CASE("stack options apply spacing and padding") {
+TEST_CASE("stack options apply spacing") {
   std::vector<fixed_box> children{
       {{2.0, 4.0}, {0.0, false}},
       {{3.0, 5.0}, {0.0, false}},
   };
   stdui::stack_options options{
-      .direction = stdui::layout_direction::left_to_right,
+      .direction = stdui::stack_direction::forward,
       .alignment = stdui::layout_alignment::start,
       .spacing = 1.0,
-      .padding = {1.0, 2.0, 1.0, 2.0},
   };
 
   auto result = stdui::layout_hstack(children, {{0.0, 0.0}, {10.0, 10.0}}, options);
 
-  CHECK(result.frames[0] == stdui::rect{{1.0, 2.0}, {2.0, 4.0}});
-  CHECK(result.frames[1] == stdui::rect{{4.0, 2.0}, {3.0, 5.0}});
+  CHECK(result.frames[0] == stdui::rect{{0.0, 0.0}, {2.0, 4.0}});
+  CHECK(result.frames[1] == stdui::rect{{3.0, 0.0}, {3.0, 5.0}});
 }
 
-TEST_CASE("stack options support vertical padding and spacing") {
+TEST_CASE("stack options support vertical spacing") {
   std::vector<fixed_box> children{
       {{2.0, 4.0}, {0.0, false}},
       {{3.0, 5.0}, {0.0, false}},
   };
   stdui::stack_options options{
-      .direction = stdui::layout_direction::left_to_right,
+      .direction = stdui::stack_direction::forward,
       .alignment = stdui::layout_alignment::start,
       .spacing = 2.0,
-      .padding = {1.0, 1.0, 1.0, 1.0},
   };
 
   auto result = stdui::layout_vstack(children, {{0.0, 0.0}, {10.0, 14.0}}, options);
 
-  CHECK(result.frames[0] == stdui::rect{{1.0, 1.0}, {2.0, 4.0}});
-  CHECK(result.frames[1] == stdui::rect{{1.0, 7.0}, {3.0, 5.0}});
+  CHECK(result.frames[0] == stdui::rect{{0.0, 0.0}, {2.0, 4.0}});
+  CHECK(result.frames[1] == stdui::rect{{0.0, 6.0}, {3.0, 5.0}});
 }

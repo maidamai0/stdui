@@ -23,10 +23,11 @@ TEST_CASE("grid measurement uses columns rows and spacing") {
   };
 
   stdui::grid_options options{
-      .columns = 2,
+      .columns = stdui::repeat_track(stdui::grid_track::flexible(), 2),
       .row_spacing = 1.0,
       .column_spacing = 2.0,
-      .cell_alignment = stdui::layout_alignment::stretch,
+      .alignment = stdui::layout_alignment::start,
+      .sizing = stdui::cross_axis_sizing::stretch,
   };
 
   auto result = stdui::measure_grid(children, stdui::proposal::unbounded(), options);
@@ -40,10 +41,11 @@ TEST_CASE("grid measurement uses columns rows and spacing") {
 TEST_CASE("grid arrangement places measured children by row") {
   std::vector<stdui::size> const child_sizes{{2.0, 3.0}, {4.0, 5.0}, {6.0, 7.0}};
   stdui::grid_options options{
-      .columns = 2,
+      .columns = stdui::repeat_track(stdui::grid_track::flexible(), 2),
       .row_spacing = 1.0,
       .column_spacing = 2.0,
-      .cell_alignment = stdui::layout_alignment::stretch,
+      .alignment = stdui::layout_alignment::start,
+      .sizing = stdui::cross_axis_sizing::stretch,
   };
 
   auto frames = stdui::arrange_grid(child_sizes, {{0.0, 0.0}, {12.0, 9.0}}, options);
@@ -57,10 +59,10 @@ TEST_CASE("grid arrangement places measured children by row") {
 TEST_CASE("grid center alignment positions content within its cell") {
   std::vector<stdui::size> const child_sizes{{2.0, 3.0}};
   stdui::grid_options options{
-      .columns = 1,
+      .columns = stdui::repeat_track(stdui::grid_track::flexible(), 1),
       .row_spacing = 0.0,
       .column_spacing = 0.0,
-      .cell_alignment = stdui::layout_alignment::center,
+      .alignment = stdui::layout_alignment::center,
   };
 
   auto frames = stdui::arrange_grid(child_sizes, {{0.0, 0.0}, {10.0, 10.0}}, options);
@@ -76,10 +78,11 @@ TEST_CASE("combined grid layout measures and arranges") {
       {{6.0, 7.0}},
   };
   stdui::grid_options options{
-      .columns = 2,
+      .columns = stdui::repeat_track(stdui::grid_track::flexible(), 2),
       .row_spacing = 1.0,
       .column_spacing = 2.0,
-      .cell_alignment = stdui::layout_alignment::stretch,
+      .alignment = stdui::layout_alignment::start,
+      .sizing = stdui::cross_axis_sizing::stretch,
   };
 
   auto result = stdui::layout_grid(children, {{0.0, 0.0}, {12.0, 9.0}}, options);
@@ -91,18 +94,18 @@ TEST_CASE("combined grid layout measures and arranges") {
   CHECK(result.frames[2] == stdui::rect{{0.0, 6.0}, {6.0, 7.0}});
 }
 
-TEST_CASE("zero-column grid returns an empty layout") {
+TEST_CASE("empty grid tracks default to one flexible column") {
   std::vector<grid_box> children{
       {{2.0, 3.0}},
   };
   stdui::grid_options options{
-      .columns = 0,
+      .columns = stdui::repeat_track(stdui::grid_track::flexible(), 0),
   };
 
   auto result = stdui::layout_grid(children, {{0.0, 0.0}, {10.0, 10.0}}, options);
 
-  CHECK(result.measurement.extent == stdui::size{0.0, 0.0});
-  CHECK(result.frames.empty());
+  CHECK(result.measurement.extent == stdui::size{10.0, 10.0});
+  REQUIRE(result.frames.size() == 1);
 }
 
 TEST_CASE("grid: single column layout") {
@@ -111,7 +114,7 @@ TEST_CASE("grid: single column layout") {
       {{10.0, 8.0}},
       {{10.0, 3.0}},
   };
-  stdui::grid_options options{.columns = 1};
+  stdui::grid_options options{.columns = stdui::repeat_track(stdui::grid_track::flexible(), 1)};
 
   auto result = stdui::measure_grid(children, stdui::proposal::unbounded(), options);
 
@@ -124,7 +127,7 @@ TEST_CASE("grid: single row layout") {
       {{5.0, 10.0}},
       {{8.0, 10.0}},
   };
-  stdui::grid_options options{.columns = 2};
+  stdui::grid_options options{.columns = stdui::repeat_track(stdui::grid_track::flexible(), 2)};
 
   auto result = stdui::measure_grid(children, stdui::proposal::unbounded(), options);
 
@@ -140,7 +143,7 @@ TEST_CASE("grid: with large spacing") {
       {{5.0, 5.0}},
   };
   stdui::grid_options options{
-      .columns = 2,
+      .columns = stdui::repeat_track(stdui::grid_track::flexible(), 2),
       .row_spacing = 10.0,
       .column_spacing = 20.0,
   };
@@ -153,7 +156,7 @@ TEST_CASE("grid: with large spacing") {
 
 TEST_CASE("grid: empty children") {
   std::vector<grid_box> children;
-  stdui::grid_options options{.columns = 2};
+  stdui::grid_options options{.columns = stdui::repeat_track(stdui::grid_track::flexible(), 2)};
 
   auto result = stdui::measure_grid(children, stdui::proposal::unbounded(), options);
 
@@ -164,8 +167,8 @@ TEST_CASE("grid: empty children") {
 TEST_CASE("grid: alignment start") {
   std::vector<stdui::size> const child_sizes{{5.0, 5.0}};
   stdui::grid_options options{
-      .columns = 1,
-      .cell_alignment = stdui::layout_alignment::start,
+      .columns = stdui::repeat_track(stdui::grid_track::flexible(), 1),
+      .alignment = stdui::layout_alignment::start,
   };
 
   auto frames = stdui::arrange_grid(child_sizes, {{0.0, 0.0}, {20.0, 20.0}}, options);
@@ -178,8 +181,8 @@ TEST_CASE("grid: alignment start") {
 TEST_CASE("grid: alignment end") {
   std::vector<stdui::size> const child_sizes{{5.0, 5.0}};
   stdui::grid_options options{
-      .columns = 1,
-      .cell_alignment = stdui::layout_alignment::end,
+      .columns = stdui::repeat_track(stdui::grid_track::flexible(), 1),
+      .alignment = stdui::layout_alignment::end,
   };
 
   auto frames = stdui::arrange_grid(child_sizes, {{0.0, 0.0}, {20.0, 20.0}}, options);
@@ -194,11 +197,11 @@ TEST_CASE("grid: many columns") {
     children.push_back({{5.0, 5.0}});
   }
 
-  stdui::grid_options options{.columns = 5};
+  stdui::grid_options options{.columns = stdui::repeat_track(stdui::grid_track::flexible(), 5)};
 
   auto result = stdui::measure_grid(children, stdui::proposal::unbounded(), options);
 
-  CHECK(result.extent.width == 25.0); // 5 * 5
+  CHECK(result.extent.width == 25.0);  // 5 * 5
   CHECK(result.extent.height == 10.0); // 2 rows * 5
   CHECK(result.children.size() == 10);
 }
@@ -209,7 +212,7 @@ TEST_CASE("grid: uneven last row") {
       {{5.0, 5.0}},
       {{5.0, 5.0}},
   };
-  stdui::grid_options options{.columns = 2};
+  stdui::grid_options options{.columns = stdui::repeat_track(stdui::grid_track::flexible(), 2)};
 
   auto result = stdui::measure_grid(children, stdui::proposal::unbounded(), options);
 
@@ -224,7 +227,7 @@ TEST_CASE("grid: different sized cells in same column") {
       {{5.0, 7.0}},
       {{5.0, 15.0}},
   };
-  stdui::grid_options options{.columns = 2};
+  stdui::grid_options options{.columns = stdui::repeat_track(stdui::grid_track::flexible(), 2)};
 
   auto result = stdui::measure_grid(children, stdui::proposal::unbounded(), options);
 
@@ -238,7 +241,7 @@ TEST_CASE("grid: zero spacing") {
       {{5.0, 5.0}},
   };
   stdui::grid_options options{
-      .columns = 2,
+      .columns = stdui::repeat_track(stdui::grid_track::flexible(), 2),
       .row_spacing = 0.0,
       .column_spacing = 0.0,
   };
@@ -246,4 +249,22 @@ TEST_CASE("grid: zero spacing") {
   auto result = stdui::measure_grid(children, stdui::proposal::unbounded(), options);
 
   CHECK(result.extent == stdui::size{10.0, 5.0});
+}
+
+TEST_CASE("grid: fixed and flexible tracks combine") {
+  std::vector<grid_box> children{
+      {{5.0, 5.0}},
+      {{5.0, 5.0}},
+  };
+  stdui::grid_options options{
+      .columns = {stdui::grid_track::fixed(20.0), stdui::grid_track::flexible()},
+  };
+
+  auto result = stdui::layout_grid(children, {{0.0, 0.0}, {50.0, 5.0}}, options);
+
+  REQUIRE(result.frames.size() == 2);
+  CHECK(result.frames[0].extent.width == 5.0);
+  CHECK(result.frames[1].extent.width == 5.0);
+  CHECK(result.frames[1].origin.x == 20.0);
+  CHECK(result.measurement.extent.width == 50.0);
 }

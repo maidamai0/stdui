@@ -1,11 +1,13 @@
 #pragma once
 
 #include <stdui/core/geometry.hpp>
+#include <stdui/core/grid.hpp>
 #include <stdui/core/inspection.hpp>
 #include <stdui/core/layout.hpp>
-#include <stdui/core/overlay.hpp>
+#include <stdui/core/zstack.hpp>
 
 #include <algorithm>
+#include <cmath>
 #include <functional>
 #include <memory>
 #include <optional>
@@ -26,7 +28,11 @@ enum class layout_kind {
   text,
   hstack,
   vstack,
-  overlay,
+  zstack,
+  grid,
+  spacer,
+  padding,
+  frame,
   dynamic_list,
 };
 
@@ -38,8 +44,16 @@ inline auto to_string(layout_kind kind) -> std::string {
     return "hstack";
   case layout_kind::vstack:
     return "vstack";
-  case layout_kind::overlay:
-    return "overlay";
+  case layout_kind::zstack:
+    return "zstack";
+  case layout_kind::grid:
+    return "grid";
+  case layout_kind::spacer:
+    return "spacer";
+  case layout_kind::padding:
+    return "padding";
+  case layout_kind::frame:
+    return "frame";
   case layout_kind::dynamic_list:
     return "dynamic_list";
   }
@@ -55,8 +69,20 @@ inline auto to_layout_kind(std::string_view kind) -> std::optional<layout_kind> 
   if (kind == "vstack") {
     return layout_kind::vstack;
   }
-  if (kind == "overlay") {
-    return layout_kind::overlay;
+  if (kind == "zstack") {
+    return layout_kind::zstack;
+  }
+  if (kind == "grid") {
+    return layout_kind::grid;
+  }
+  if (kind == "spacer") {
+    return layout_kind::spacer;
+  }
+  if (kind == "padding") {
+    return layout_kind::padding;
+  }
+  if (kind == "frame") {
+    return layout_kind::frame;
   }
   if (kind == "dynamic_list") {
     return layout_kind::dynamic_list;
@@ -88,7 +114,11 @@ struct layout_node {
   std::shared_ptr<text_measure_fn const> text_measure;
   flex_policy policy{};
   stack_options stack;
-  overlay_options overlay;
+  zstack_options zstack;
+  grid_options grid;
+  frame_options frame;
+  edge_insets padding;
+  size spacer_minimum;
 
   auto flex() const -> stdui::flex_policy { return policy; }
 
@@ -96,8 +126,20 @@ struct layout_node {
     if (kind == layout_kind::text) {
       return measure_text(proposal);
     }
-    if (kind == layout_kind::overlay) {
-      return clamp_size(measure_overlay(children, proposal).extent, proposal);
+    if (kind == layout_kind::spacer) {
+      return clamp_size(spacer_minimum, proposal);
+    }
+    if (kind == layout_kind::padding) {
+      return measure_padding(proposal);
+    }
+    if (kind == layout_kind::frame) {
+      return measure_frame(proposal);
+    }
+    if (kind == layout_kind::grid) {
+      return clamp_size(measure_grid(children, proposal, grid).extent, proposal);
+    }
+    if (kind == layout_kind::zstack) {
+      return clamp_size(measure_zstack(children, proposal).extent, proposal);
     }
     auto axis =
         kind == layout_kind::hstack ? detail::stack_axis::horizontal : detail::stack_axis::vertical;
@@ -112,6 +154,10 @@ struct layout_node {
                     measure_text(proposal::bounded(bounds.extent.width, bounds.extent.height))};
       return box;
     }
+    if (kind == layout_kind::spacer) {
+      box.bounds = bounds;
+      return box;
+    }
     if (children.empty()) {
       box.bounds = {bounds.origin, {}};
       return box;
@@ -122,7 +168,14 @@ struct layout_node {
     for (std::size_t i = 0; i < children.size(); ++i) {
       box.children.push_back(children[i].arrange(child_frames[i]));
     }
-    box.bounds = {bounds.origin, occupied_extent(bounds, box.children)};
+    if (kind == layout_kind::padding || kind == layout_kind::frame) {
+      box.bounds = {
+          bounds.origin,
+          measure(proposal::bounded(bounds.extent.width, bounds.extent.height)),
+      };
+    } else {
+      box.bounds = {bounds.origin, occupied_extent(bounds, box.children)};
+    }
     return box;
   }
 
@@ -138,36 +191,75 @@ private:
   }
 
   auto measure_stack(proposal const &proposal, detail::stack_axis axis) const -> size {
-    auto content_proposal = inset_proposal(proposal, stack.padding);
     layout_result result;
     if (axis == detail::stack_axis::horizontal) {
-      result = measure_hstack(children, content_proposal, stack.spacing);
+      result = measure_hstack(children, proposal, stack.spacing.value_or(0.0));
     } else {
-      result = measure_vstack(children, content_proposal, stack.spacing);
+      result = measure_vstack(children, proposal, stack.spacing.value_or(0.0));
     }
-    return add_padding(clamp_size(result.extent, content_proposal), stack.padding);
+    return clamp_size(result.extent, proposal);
   }
 
   auto arrange_children(rect const &bounds) const -> std::vector<rect> {
     if (kind == layout_kind::hstack) {
       return layout_hstack(children, bounds, stack).frames;
     }
-    if (kind == layout_kind::overlay) {
-      return layout_overlay(children, bounds, overlay).frames;
+    if (kind == layout_kind::zstack) {
+      return layout_zstack(children, bounds, zstack).frames;
+    }
+    if (kind == layout_kind::grid) {
+      return layout_grid(children, bounds, grid).frames;
+    }
+    if (kind == layout_kind::padding) {
+      return {inset_rect(bounds, padding)};
+    }
+    if (kind == layout_kind::frame) {
+      return {align_frame(bounds)};
     }
     return layout_vstack(children, bounds, stack).frames;
   }
 
-  /// Union of the arranged child boxes relative to the assigned bounds.
-  static auto occupied_extent(rect const &bounds, std::span<layout_box const> boxes) -> size {
-    size result;
-    for (auto const &child : boxes) {
-      result.width = std::max(result.width,
-                              child.bounds.origin.x + child.bounds.extent.width - bounds.origin.x);
-      result.height = std::max(result.height, child.bounds.origin.y + child.bounds.extent.height -
-                                                  bounds.origin.y);
+  auto measure_padding(proposal const &proposal) const -> size {
+    if (children.empty()) {
+      return {};
     }
-    return result;
+    auto content_proposal = inset_proposal(proposal, padding);
+    return add_padding(clamp_size(children.front().measure(content_proposal), content_proposal),
+                       padding);
+  }
+
+  auto measure_frame(proposal const &proposal) const -> size {
+    if (children.empty()) {
+      return {};
+    }
+    auto measured = children.front().measure(proposal);
+    return clamp_size({resolve_frame_axis(measured.width, proposal.width.max, frame.width,
+                                          frame.min_width, frame.ideal_width, frame.max_width),
+                       resolve_frame_axis(measured.height, proposal.height.max, frame.height,
+                                          frame.min_height, frame.ideal_height, frame.max_height)},
+                      proposal);
+  }
+
+  auto align_frame(rect const &bounds) const -> rect {
+    if (children.empty()) {
+      return {bounds.origin, {}};
+    }
+
+    auto frame_extent = measure(proposal::bounded(bounds.extent.width, bounds.extent.height));
+    rect frame_bounds{bounds.origin, frame_extent};
+    auto child_size = children.front().measure(
+        proposal::bounded(frame_bounds.extent.width, frame_bounds.extent.height));
+
+    double x = frame_bounds.origin.x;
+    double y = frame_bounds.origin.y;
+    if (frame.alignment == layout_alignment::center) {
+      x += (frame_bounds.extent.width - child_size.width) * 0.5;
+      y += (frame_bounds.extent.height - child_size.height) * 0.5;
+    } else if (frame.alignment == layout_alignment::end) {
+      x += frame_bounds.extent.width - child_size.width;
+      y += frame_bounds.extent.height - child_size.height;
+    }
+    return {{x, y}, child_size};
   }
 
   static auto inset_proposal(proposal value, edge_insets const &insets) -> proposal {
@@ -184,6 +276,39 @@ private:
     value.width += insets.left + insets.right;
     value.height += insets.top + insets.bottom;
     return value;
+  }
+
+  static auto resolve_frame_axis(double measured, std::optional<double> proposal_max,
+                                 std::optional<double> fixed, std::optional<double> minimum,
+                                 std::optional<double> ideal, std::optional<double> maximum)
+      -> double {
+    if (fixed) {
+      return *fixed;
+    }
+
+    double result = ideal.value_or(measured);
+    if (maximum && std::isinf(*maximum) && proposal_max) {
+      result = *proposal_max;
+    }
+    if (minimum) {
+      result = std::max(result, *minimum);
+    }
+    if (maximum) {
+      result = std::min(result, *maximum);
+    }
+    return result;
+  }
+
+  /// Union of the arranged child boxes relative to the assigned bounds.
+  static auto occupied_extent(rect const &bounds, std::span<layout_box const> boxes) -> size {
+    size result;
+    for (auto const &child : boxes) {
+      result.width = std::max(result.width,
+                              child.bounds.origin.x + child.bounds.extent.width - bounds.origin.x);
+      result.height = std::max(result.height, child.bounds.origin.y + child.bounds.extent.height -
+                                                  bounds.origin.y);
+    }
+    return result;
   }
 };
 
@@ -202,9 +327,17 @@ inline auto materialize_layout(inspection_node const &node,
   layout_node result;
   result.kind = *kind;
   result.content = node.content;
+  result.stack = node.stack.value_or(stack_options{});
+  result.zstack = node.zstack.value_or(zstack_options{});
+  result.grid = node.grid.value_or(grid_options{});
+  result.frame = node.frame.value_or(frame_options{});
+  result.padding = node.padding.value_or(edge_insets{});
+  result.spacer_minimum = node.spacer_minimum.value_or(size{});
   if (result.kind == layout_kind::text) {
     result.text_measure = text_measure;
     result.policy.grow = 0.0;
+  } else if (result.kind == layout_kind::spacer) {
+    result.policy = flex_policy{.grow = 0.0, .fill = true};
   }
 
   result.children.reserve(node.children.size());

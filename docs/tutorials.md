@@ -70,13 +70,13 @@ auto make_contact_card() {
 
 `hstack` arranges children from left to right.
 
-### Step 5: Use Overlay for Layering
+### Step 5: Use ZStack for Layering
 
-Overlay places elements on top of each other:
+ZStack places elements on top of each other:
 
 ```cpp
 auto make_badge() {
-    return stdui::overlay(
+    return stdui::zstack(
         stdui::text("Background Layer"),
         stdui::text("Foreground")
     );
@@ -92,8 +92,9 @@ For more structured layouts, use grids:
 ```cpp
 auto make_dashboard() {
     auto options = stdui::grid_options{};
-    options.columns = 2;
-    options.spacing = 10.0;
+    options.columns = stdui::repeat_track(stdui::grid_track::flexible(), 2);
+    options.column_spacing = 10.0;
+    options.row_spacing = 10.0;
     
     return stdui::grid(
         options,
@@ -137,7 +138,7 @@ int main() {
 ### Key Takeaways
 
 1. **View expressions describe structure** - They're not the actual UI
-2. **Three layout primitives** - VStack, HStack, Overlay (plus Grid)
+2. **Three layout primitives** - VStack, HStack, ZStack (plus Grid)
 3. **Composition is powerful** - Nest stacks to create complex layouts
 4. **Two-phase layout** - Measure constraints, then arrange geometry
 
@@ -419,4 +420,3 @@ auto doc = stdui::vstack(
 - Explore the standard component library (when available)
 - Read design-decisions.md to understand the philosophy
 - Check examples/ for complete applications
-

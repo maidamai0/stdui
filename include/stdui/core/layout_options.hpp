@@ -69,7 +69,6 @@ struct grid_track {
   enum class kind {
     fixed,
     flexible,
-    adaptive,
   };
 
   kind type = kind::flexible;
@@ -78,8 +77,6 @@ struct grid_track {
   static auto fixed(double value) -> grid_track { return {kind::fixed, value}; }
 
   static auto flexible(double minimum = 0.0) -> grid_track { return {kind::flexible, minimum}; }
-
-  static auto adaptive(double minimum) -> grid_track { return {kind::adaptive, minimum}; }
 };
 
 inline auto repeat_track(grid_track track, std::size_t count) -> std::vector<grid_track> {

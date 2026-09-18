@@ -4,6 +4,7 @@
 #include <stdui/core/layout_tree.hpp>
 #include <stdui/runtime/runtime.hpp>
 
+#include <limits>
 #include <vector>
 
 namespace {
@@ -74,7 +75,8 @@ TEST_CASE("zstack alignment positions children within the shared frame") {
   auto ended = tree.arrange(bounds);
   CHECK(ended.children[0].bounds.origin == stdui::point{92.0, 84.0});
 
-  tree.zstack.alignment = stdui::layout_alignment::stretch;
+  tree.zstack.alignment = stdui::layout_alignment::start;
+  tree.zstack.sizing = stdui::cross_axis_sizing::stretch;
   auto stretched = tree.arrange(bounds);
   CHECK(stretched.children[0].bounds == stdui::rect{{0.0, 0.0}, {8.0, 16.0}});
 }
@@ -131,17 +133,16 @@ TEST_CASE("empty containers measure to zero and arrange empty boxes") {
 }
 
 TEST_CASE("stack padding applies through the materialized tree") {
-  auto snapshot = stdui::inspect(stdui::vstack(stdui::text("A")));
+  auto snapshot = stdui::inspect(stdui::padding(
+      {.left = 1.0, .top = 2.0, .right = 1.0, .bottom = 2.0}, stdui::vstack(stdui::text("A"))));
   auto tree = stdui::materialize_layout(snapshot, measured_text);
-  tree.stack.padding = {1.0, 2.0, 1.0, 2.0};
 
   CHECK(tree.measure(stdui::proposal::unbounded()) == stdui::size{10.0, 20.0});
-  CHECK(tree.measure(stdui::proposal::bounded(50.0, 50.0)) == stdui::size{10.0, 50.0});
 
   auto frame = tree.arrange({{0.0, 0.0}, {100.0, 100.0}});
   REQUIRE(frame.children.size() == 1);
   CHECK(frame.children[0].bounds == stdui::rect{{1.0, 2.0}, {8.0, 16.0}});
-  CHECK(frame.bounds.extent == stdui::size{9.0, 18.0});
+  CHECK(frame.bounds.extent == stdui::size{10.0, 20.0});
 }
 
 TEST_CASE("flex distribution applies through the materialized tree") {
@@ -215,11 +216,8 @@ TEST_CASE("layout tree: hstack with spacing") {
 }
 
 TEST_CASE("layout tree: zstack with multiple children") {
-  auto snapshot = stdui::inspect(stdui::zstack(
-      stdui::text("A"),
-      stdui::text("BB"),
-      stdui::text("CCC")
-  ));
+  auto snapshot =
+      stdui::inspect(stdui::zstack(stdui::text("A"), stdui::text("BB"), stdui::text("CCC")));
   auto tree = stdui::materialize_layout(snapshot, measured_text);
 
   CHECK(tree.kind == stdui::layout_kind::zstack);
@@ -228,15 +226,7 @@ TEST_CASE("layout tree: zstack with multiple children") {
 }
 
 TEST_CASE("layout tree: deeply nested hierarchy") {
-  auto snapshot = stdui::inspect(
-      stdui::vstack(
-          stdui::hstack(
-              stdui::vstack(
-                  stdui::text("Deep")
-              )
-          )
-      )
-  );
+  auto snapshot = stdui::inspect(stdui::vstack(stdui::hstack(stdui::vstack(stdui::text("Deep")))));
   auto tree = stdui::materialize_layout(snapshot, measured_text);
 
   CHECK(tree.kind == stdui::layout_kind::vstack);
@@ -254,11 +244,8 @@ TEST_CASE("layout tree: proposal bounded width only") {
 }
 
 TEST_CASE("layout tree: proposal bounded height only") {
-  auto snapshot = stdui::inspect(stdui::vstack(
-      stdui::text("A"),
-      stdui::text("B"),
-      stdui::text("C")
-  ));
+  auto snapshot =
+      stdui::inspect(stdui::vstack(stdui::text("A"), stdui::text("B"), stdui::text("C")));
   auto tree = stdui::materialize_layout(snapshot, measured_text);
 
   auto size = tree.measure(stdui::proposal::bounded(1000.0, 30.0));
@@ -278,12 +265,12 @@ TEST_CASE("layout tree: arrange with constrained bounds") {
 }
 
 TEST_CASE("layout tree: padding all sides different") {
-  auto snapshot = stdui::inspect(stdui::vstack(stdui::text("X")));
+  auto snapshot = stdui::inspect(stdui::padding(
+      {.left = 10.0, .top = 20.0, .right = 30.0, .bottom = 40.0}, stdui::vstack(stdui::text("X"))));
   auto tree = stdui::materialize_layout(snapshot, measured_text);
-  tree.stack.padding = {10.0, 20.0, 30.0, 40.0}; // left, top, right, bottom
 
   auto size = tree.measure(stdui::proposal::unbounded());
-  CHECK(size.width == 8.0 + 10.0 + 30.0); // content + left + right
+  CHECK(size.width == 8.0 + 10.0 + 30.0);   // content + left + right
   CHECK(size.height == 16.0 + 20.0 + 40.0); // content + top + bottom
 }
 
@@ -315,10 +302,8 @@ TEST_CASE("layout tree: zstack start alignment") {
 TEST_CASE("layout tree: dynamic list empty") {
   stdui::runtime runtime;
   auto snapshot = runtime.reconcile(stdui::dynamic_list(
-      std::vector<int>{},
-      [](int item) { return item; },
-      [](int item) { return stdui::text(std::to_string(item)); }
-  ));
+      std::vector<int>{}, [](int item) { return item; },
+      [](int item) { return stdui::text(std::to_string(item)); }));
 
   auto tree = stdui::materialize_layout(snapshot, measured_text);
   CHECK(tree.kind == stdui::layout_kind::dynamic_list);
@@ -329,10 +314,8 @@ TEST_CASE("layout tree: dynamic list empty") {
 TEST_CASE("layout tree: dynamic list single item") {
   stdui::runtime runtime;
   auto snapshot = runtime.reconcile(stdui::dynamic_list(
-      std::vector<int>{42},
-      [](int item) { return item; },
-      [](int item) { return stdui::text(std::to_string(item)); }
-  ));
+      std::vector<int>{42}, [](int item) { return item; },
+      [](int item) { return stdui::text(std::to_string(item)); }));
 
   auto tree = stdui::materialize_layout(snapshot, measured_text);
   CHECK(tree.children.size() == 1);
@@ -346,4 +329,71 @@ TEST_CASE("layout tree: measure with different proposals") {
   auto bounded = tree.measure(stdui::proposal::bounded(100.0, 100.0));
 
   CHECK(unbounded.width <= bounded.width);
+}
+
+TEST_CASE("layout tree: stack options apply spacing and alignment") {
+  auto snapshot = stdui::inspect(stdui::vstack(
+      stdui::stack_options{.alignment = stdui::layout_alignment::center, .spacing = 4.0},
+      stdui::text("A"), stdui::text("BB")));
+  auto tree = stdui::materialize_layout(snapshot, measured_text);
+
+  CHECK(tree.measure(stdui::proposal::unbounded()) == stdui::size{16.0, 36.0});
+
+  auto frame = tree.arrange({{0.0, 0.0}, {100.0, 100.0}});
+  REQUIRE(frame.children.size() == 2);
+  CHECK(frame.children[0].bounds.origin.x == 46.0);
+  CHECK(frame.children[1].bounds.origin.x == 42.0);
+  CHECK(frame.children[1].bounds.origin.y == 20.0);
+}
+
+TEST_CASE("layout tree: frame constrains and aligns its child") {
+  auto snapshot = stdui::inspect(
+      stdui::frame(stdui::frame_options{.width = 50.0, .height = 30.0}, stdui::text("A")));
+  auto tree = stdui::materialize_layout(snapshot, measured_text);
+
+  CHECK(tree.measure(stdui::proposal::unbounded()) == stdui::size{50.0, 30.0});
+
+  auto frame = tree.arrange({{0.0, 0.0}, {100.0, 100.0}});
+  REQUIRE(frame.children.size() == 1);
+  CHECK(frame.children[0].bounds == stdui::rect{{21.0, 7.0}, {8.0, 16.0}});
+  CHECK(frame.bounds.extent == stdui::size{50.0, 30.0});
+}
+
+TEST_CASE("layout tree: infinite max frame fills the proposal") {
+  auto snapshot = stdui::inspect(
+      stdui::frame(stdui::frame_options{.max_width = std::numeric_limits<double>::infinity()},
+                   stdui::text("A")));
+  auto tree = stdui::materialize_layout(snapshot, measured_text);
+
+  CHECK(tree.measure(stdui::proposal::bounded(100.0, 16.0)) == stdui::size{100.0, 16.0});
+}
+
+TEST_CASE("layout tree: grid expression materializes and arranges") {
+  stdui::grid_options options{
+      .columns = stdui::repeat_track(stdui::grid_track::flexible(), 2),
+      .row_spacing = 4.0,
+      .column_spacing = 2.0,
+  };
+  auto snapshot =
+      stdui::inspect(stdui::grid(options, stdui::text("A"), stdui::text("B"), stdui::text("C")));
+  auto tree = stdui::materialize_layout(snapshot, measured_text);
+
+  CHECK(tree.kind == stdui::layout_kind::grid);
+  CHECK(tree.measure(stdui::proposal::unbounded()) == stdui::size{18.0, 36.0});
+
+  auto frame = tree.arrange({{0.0, 0.0}, {18.0, 36.0}});
+  REQUIRE(frame.children.size() == 3);
+  CHECK(frame.children[2].bounds.origin.y == 20.0);
+}
+
+TEST_CASE("layout tree: spacer consumes remaining stack space") {
+  auto snapshot = stdui::inspect(stdui::hstack(stdui::text("A"), stdui::spacer()));
+  auto tree = stdui::materialize_layout(snapshot, measured_text);
+
+  CHECK(tree.measure(stdui::proposal::bounded(100.0, 16.0)) == stdui::size{100.0, 16.0});
+
+  auto frame = tree.arrange({{0.0, 0.0}, {100.0, 16.0}});
+  REQUIRE(frame.children.size() == 2);
+  CHECK(frame.children[0].bounds.extent.width == 8.0);
+  CHECK(frame.children[1].bounds.extent.width == 92.0);
 }

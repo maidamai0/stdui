@@ -58,7 +58,8 @@ TEST_CASE("zstack center alignment centers each child") {
 TEST_CASE("zstack stretch alignment fills all children") {
   std::vector<stdui::size> const child_sizes{{2.0, 4.0}, {6.0, 3.0}};
   stdui::zstack_options options{
-      .alignment = stdui::layout_alignment::stretch,
+      .alignment = stdui::layout_alignment::start,
+      .sizing = stdui::cross_axis_sizing::stretch,
   };
 
   auto frames = stdui::arrange_zstack(child_sizes, {{0.0, 0.0}, {10.0, 10.0}}, options);
@@ -105,11 +106,7 @@ TEST_CASE("zstack: single child") {
 
 TEST_CASE("zstack: many children different sizes") {
   std::vector<zstack_box> children{
-      {{1.0, 1.0}},
-      {{5.0, 3.0}},
-      {{3.0, 8.0}},
-      {{7.0, 2.0}},
-      {{2.0, 6.0}},
+      {{1.0, 1.0}}, {{5.0, 3.0}}, {{3.0, 8.0}}, {{7.0, 2.0}}, {{2.0, 6.0}},
   };
 
   auto result = stdui::measure_zstack(children, stdui::proposal::unbounded());
@@ -150,7 +147,8 @@ TEST_CASE("zstack: center alignment with small child in large bounds") {
 
 TEST_CASE("zstack: stretch with multiple children") {
   std::vector<stdui::size> const child_sizes{{5.0, 5.0}, {10.0, 10.0}, {3.0, 3.0}};
-  stdui::zstack_options options{.alignment = stdui::layout_alignment::stretch};
+  stdui::zstack_options options{.alignment = stdui::layout_alignment::start,
+                                .sizing = stdui::cross_axis_sizing::stretch};
 
   auto frames = stdui::arrange_zstack(child_sizes, {{0.0, 0.0}, {50.0, 60.0}}, options);
 

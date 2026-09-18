@@ -31,7 +31,7 @@ auto measure_zstack(Range const &children, proposal const &proposal) -> layout_r
 
 /// Places measured children within the same bounds.
 inline auto arrange_zstack(std::span<size const> child_sizes, rect const &bounds,
-                            zstack_options const &options) -> std::vector<rect> {
+                           zstack_options const &options) -> std::vector<rect> {
   std::vector<rect> frames;
   frames.reserve(child_sizes.size());
 
@@ -45,7 +45,8 @@ inline auto arrange_zstack(std::span<size const> child_sizes, rect const &bounds
     } else if (options.alignment == layout_alignment::end) {
       x += bounds.extent.width - child_size.width;
       y += bounds.extent.height - child_size.height;
-    } else if (options.alignment == layout_alignment::stretch) {
+    }
+    if (options.sizing == cross_axis_sizing::stretch) {
       child_size.width = bounds.extent.width;
       child_size.height = bounds.extent.height;
     }

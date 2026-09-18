@@ -97,7 +97,7 @@ auto make_status_bar() {
 auto make_application_layout() {
     // Grid-based application layout
     auto grid_opts = stdui::grid_options{};
-    grid_opts.columns = 3;
+    grid_opts.columns = stdui::repeat_track(stdui::grid_track::flexible(), 3);
 
     return stdui::vstack(
         stdui::text("═══════════════════════════════════════════════════════════"),

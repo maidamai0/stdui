@@ -92,8 +92,9 @@ For more structured layouts, use grids:
 ```cpp
 auto make_dashboard() {
     auto options = stdui::grid_options{};
-    options.columns = 2;
-    options.spacing = 10.0;
+    options.columns = stdui::repeat_track(stdui::grid_track::flexible(), 2);
+    options.column_spacing = 10.0;
+    options.row_spacing = 10.0;
     
     return stdui::grid(
         options,

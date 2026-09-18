@@ -35,7 +35,7 @@ This plan builds upon your existing Phase 1 foundation (typed expressions, recon
 ### 🔄 In Progress (Complete This Sprint)
 - [ ] **1.1:** Expose all layout options through DSL (current branch: feat/layout-config-dsl)
   - **Test:** Create stacks with padding, spacing, alignment, direction via DSL
-  - **Acceptance:** `vstack({.spacing=10, .padding={5,5,5,5}}, child1, child2)` compiles and applies options
+  - **Acceptance:** `padding({5,5,5,5}, vstack({.spacing=10}, child1, child2))` compiles and applies options
 
 - [ ] **1.2:** Add grid expressions to DSL
   - **Implementation:** Create `grid_expression<T...>` wrapper
@@ -135,8 +135,8 @@ This plan builds upon your existing Phase 1 foundation (typed expressions, recon
 - **Test:** Image with 16:9 ratio in 400pt width measures at 225pt height
 
 #### Step 2.3.3: Size modifiers
-- **API:** `frame(child, {.width=100, .height=50})` - fixed size
-- **API:** `frame(child, {.max_width=200})` - constrained size
+- **API:** `frame({.width=100, .height=50}, child)` - fixed size
+- **API:** `frame({.max_width=200}, child)` - constrained size
 - **Test:** Fixed frame overrides child's intrinsic size
 
 ### Deliverable: Phase 2 Completion
